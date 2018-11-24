@@ -14,13 +14,19 @@
 
 ## Coding Conventions
 
-[코딩 컨벤션 보기](https://github.com/hw0k/daerida/coding-convention.md)
+[코딩 컨벤션 보기](https://github.com/hw0k/daerida/blob/master/coding-convention.md)
+
+## Commit Conventions
+
+&lsqb;ADD | MODIFY | CHANGE | DELETE&rsqb; 간단한 커밋 내용
+
+> 예시: &lsqb;ADD&rsqb; Commit Conventions 추가
 
 ## Contributors
 
-> 남현욱
-> 서상희
-> 진우민
-> 김민기
-> 채단비
-> 남가영
+- 남현욱
+- 서상희
+- 진우민
+- 김민기
+- 채단비
+- 남가영
