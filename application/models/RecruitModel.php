@@ -23,7 +23,7 @@ class RecruitModel extends CI_Model
      * @param $re_content String 내용
      * @return mixed SQL Value
      */
-    function insertRecruit($co_idx, $re_startDate, $re_endDate, $re_content) {
+    public function insertRecruit($co_idx, $re_startDate, $re_endDate, $re_content) {
         $sql = "insert into RECRUIT_TB (co_idx, re_startDate, re_endDate, re_content) values (?, ?, ?, ?)";
         $bind = array(
            $co_idx,
@@ -40,7 +40,7 @@ class RecruitModel extends CI_Model
      * @param $re_idx number 채용공고 번호
      * @return mixed SQL Value
      */
-    function deleteRecruit($re_idx) {
+    public function deleteRecruit($re_idx) {
         $sql = "delete from RECRUIT_tB where re_idx = ?";
         $bind = array(
            $re_idx
@@ -58,7 +58,7 @@ class RecruitModel extends CI_Model
      * @param $re_content String 종료 시간
      * @return mixed SQL Value
      */
-    function updateRecruit($re_idx, $re_startDate, $re_endDate, $re_content) {
+    public function updateRecruit($re_idx, $re_startDate, $re_endDate, $re_content) {
         $sql = "update RECRUIT_TB set re_startDate = ?, re_endDate = ?, re_content = ? where re_idx = ?";
         $bind = array(
            $re_startDate,
@@ -75,7 +75,7 @@ class RecruitModel extends CI_Model
      * @param $co_idx number 회사 번호
      * @return mixed SQL Value
      */
-    function listRecruit($co_idx) {
+    public function listRecruit($co_idx) {
         $sql = "select * from RECRUIT_TB where co_idx = ?";
         $bind = array(
             $co_idx
