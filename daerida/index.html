@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="./img/icon_57.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="./img/icon_72.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="./img/icon_114.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="./img/icon_144.png">
+    <link href="./css/index.css" rel="stylesheet">
+
+    <script src="./js/jquery-1.11.2.min.js"></script>
+    <script src="./js/device.min.js"></script>
+    <script src="./js/jquery.vide.js"></script>
+    <script src="./js/common_scripts_min.js"></script>
+    <script src="./js/functions.js"></script>
+
+    <title>데리다 - 스타트업 네트워크</title>
+</head>
+
+<body>
+    <div id="introMovie">
+        <div class="main_no_login_landing">
+            <div class="container-fluid main_nav_first_position">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <a href="./index.html">
+                            <img src="./img/logo.png" alt="데리다" style="width: 125px;">
+                        </a>
+                    </div>
+                    <div class="col-xs-7 text-right main_side_menu">
+                        <ul class="main_side_ul_wrap pull-right">
+                            <li>
+                                <a href="#tsignin" class="">로그인</a>
+                            </li>
+                            <li class="main_menu_bar_sp"></li>
+                            <li class="main_mobile_none">
+                                <a href="#tsignup" class="">회원가입</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="main_text_copy">
+                    <h1 class="main_copy_text_img">
+                        <img class="main_title_img_copy" src="./img/main_title_img.png">
+                    </h1>
+                </div>
+
+                <div class="main_lead_copy">
+                    <p class="main_lead_sub_copy wow fadeIn" data-wow-delay="0.5s">데리다는 데려오다의 준말로, 함께 일하고 싶은 사람들과의 '팀빌딩'에 초점을 맞춘 소셜 팀빌딩, 채용 서비스입니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mouse-icon hidden-xs">
+            <div class="scroll"></div>
+        </div>
+
+        <section class="main_promo_intro pad-lg">
+            <div class="container">
+                <h2 class="text-center">서로를 원하는 사람들과의 팀빌딩을 경험할 수 있을까요?</h2>
+                <div class="row">
+                    <div class="col-sm-4 text-center wow fadeIn" data-wow-delay="0.4s">
+                        <img src="./img/main_1.png" class="img-responsive">
+                        <h3> 개성 프로필</h3>
+                        <p>나만의 특징을 어필할 수 있는 자소서를 작성하세요.</p>
+                    </div>
+                    <div class="col-sm-4 text-center wow fadeIn" data-wow-delay="0.8s">
+                        <img src="./img/main_2.png" class="img-responsive">
+                        <h3>두근두근 데리다 쪽지</h3>
+                        <p>관심 있는 기업 실무자와 직접 대화하세요.</p>
+                    </div>
+                    <div class="col-sm-4 text-center wow fadeIn" data-wow-delay="1.2s">
+                        <img src="./img/main_3.png" class="img-responsive">
+                        <h3>설렘설렘 캐쥬얼 미팅</h3>
+                        <p>마음 가는 기업에 부담없이 방문하세요.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            if (!device.tablet() && !device.mobile()) {
+                $('#introMovie').vide({
+                    mp4: './video/main',
+                    poster: './video/main',
+                }, {
+                        posterType: 'png',
+                        position: '0% 0%',
+                    });
+            } else {
+                $('#introMovie').css("background-image", "url(./video/main.png)");
+                $('#introMovie').css("background-size", "cover");
+            }
+        </script>
+
+        <footer>
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-3 col-sm-3">
+                        <p id="logo_footer">
+                            <img src="./img/logo.png" width="125" alt="데리다" data-retina="true">
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <h4>About</h4>
+                        <ul>
+                            <li>
+                                <a href="/about">데리다 소개</a>
+                            </li>
+                            <li>
+                                <a href="/term">이용약관</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <h4>Guide</h4>
+                        <ul>
+                            <li>
+                                <a href="/offer">구인 안내</a>
+                            </li>
+                            <li>
+                                <a href="/hunt">구직 안내</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <h4>Service</h4>
+                        <ul>
+                            <li>
+                                <a href="/recruit">채용 공고</a>
+                            </li>
+                            <li>
+                                <a href="/teamterview">팀터뷰</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <h4>Contact us</h4>
+                        <ul>
+                            <li>
+                                <a href="http://naver.me/IDJrzLcD" target="_blank">대구광역시 달성군 구지면
+                                    <br>창리로 11길 93 랩 17실</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div id="copy">
+            <div class="container">
+                © DAERIDA - All rights reserved.
+            </div>
+        </div>
+</body>
+
+</html>

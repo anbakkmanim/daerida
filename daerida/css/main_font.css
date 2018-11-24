@@ -1,0 +1,188 @@
+@font-face {
+  font-family: "proxima_novalight";
+  src: url("../fonts/proximanova-light-webfont.eot");
+  src: url("../fonts/proximanova-light-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/proximanova-light-webfont.woff2") format("woff2"),
+    url("../fonts/proximanova-light-webfont.woff") format("woff"),
+    url("../fonts/proximanova-light-webfont.ttf") format("truetype"),
+    url("../fonts/proximanova-light-webfont.svg#proxima_novalight")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "proxima_novalight_italic";
+  src: url("../fonts/proximanova-lightitalic-webfont.eot");
+  src: url("../fonts/proximanova-lightitalic-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/proximanova-lightitalic-webfont.woff2") format("woff2"),
+    url("../fonts/proximanova-lightitalic-webfont.woff") format("woff"),
+    url("../fonts/proximanova-lightitalic-webfont.ttf") format("truetype"),
+    url("../fonts/proximanova-lightitalic-webfont.svg#proxima_novalight_italic")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "proxima_nova_rgregular";
+  src: url("../fonts/proximanova-regular-webfont.eot");
+  src: url("../fonts/proximanova-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/proximanova-regular-webfont.woff2") format("woff2"),
+    url("../fonts/proximanova-regular-webfont.woff") format("woff"),
+    url("../fonts/proximanova-regular-webfont.ttf") format("truetype"),
+    url("../fonts/proximanova-regular-webfont.svg#proxima_nova_rgregular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "proxima_novaregular_italic";
+  src: url("../fonts/proximanova-regularitalic-webfont.eot");
+  src: url("../fonts/proximanova-regularitalic-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/proximanova-regularitalic-webfont.woff2") format("woff2"),
+    url("../fonts/proximanova-regularitalic-webfont.woff") format("woff"),
+    url("../fonts/proximanova-regularitalic-webfont.ttf") format("truetype"),
+    url("../fonts/proximanova-regularitalic-webfont.svg#proxima_novaregular_italic")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "proxima_novasemibold";
+  src: url("../fonts/proximanova-semibold-webfont.eot");
+  src: url("../fonts/proximanova-semibold-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/proximanova-semibold-webfont.woff2") format("woff2"),
+    url("../fonts/proximanova-semibold-webfont.woff") format("woff"),
+    url("../fonts/proximanova-semibold-webfont.ttf") format("truetype"),
+    url("../fonts/proximanova-semibold-webfont.svg#proxima_novasemibold")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "proxima_novasemibold_italic";
+  src: url("../fonts/proximanova-semibolditalic-webfont.eot");
+  src: url("../fonts/proximanova-semibolditalic-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/proximanova-semibolditalic-webfont.woff2") format("woff2"),
+    url("../fonts/proximanova-semibolditalic-webfont.woff") format("woff"),
+    url("../fonts/proximanova-semibolditalic-webfont.ttf") format("truetype"),
+    url("../fonts/proximanova-semibolditalic-webfont.svg#proxima_novasemibold_italic")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "proxima_nova_rgbold";
+  src: url("../fonts/proximanova-bold-webfont.eot");
+  src: url("../fonts/proximanova-bold-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/proximanova-bold-webfont.woff2") format("woff2"),
+    url("../fonts/proximanova-bold-webfont.woff") format("woff"),
+    url("../fonts/proximanova-bold-webfont.ttf") format("truetype"),
+    url("../fonts/proximanova-bold-webfont.svg#proxima_nova_rgbold")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "proxima_nova_rgbold_italic";
+  src: url("../fonts/proximanova-boldit-webfont.eot");
+  src: url("../fonts/proximanova-boldit-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/proximanova-boldit-webfont.woff2") format("woff2"),
+    url("../fonts/proximanova-boldit-webfont.woff") format("woff"),
+    url("../fonts/proximanova-boldit-webfont.ttf") format("truetype"),
+    url("../fonts/proximanova-boldit-webfont.svg#proxima_nova_rgbold_italic")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*============================================================================================*/
+/* Noto Sans */
+/*============================================================================================*/
+/*노토 산스 한글은 우리를 발할라로 데려가 주실 겁니다.*/
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-style: normal;
+  font-weight: 100;
+  src: local("Noto Sans Thin"), local("NotoSans-Thin"),
+    url(../fonts/NotoSansKR-Thin-Hestia.eot),
+    url(../fonts/NotoSansKR-Thin-Hestia.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSansKR-Thin-Hestia.woff) format("woff"),
+    url(../fonts/NotoSansKR-Thin-Hestia.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Noto Sans Light"), local("NotoSans-Light"),
+    url(../fonts/NotoSansKR-Light-Hestia.eot),
+    url(../fonts/NotoSansKR-Light-Hestia.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSansKR-Light-Hestia.woff) format("woff"),
+    url(../fonts/NotoSansKR-Light-Hestia.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-style: normal;
+  font-weight: 350;
+  src: local("Noto Sans DemiLight"), local("NotoSans-DemiLight"),
+    url(../fonts/NotoSansKR-DemiLight-Hestia.eot),
+    url(../fonts/NotoSansKR-DemiLight-Hestia.eot?#iefix)
+      format("embedded-opentype"),
+    url(../fonts/NotoSansKR-DemiLight-Hestia.woff) format("woff"),
+    url(../fonts/NotoSansKR-DemiLight-Hestia.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Noto Sans Regular"), local("NotoSans-Regular"),
+    url(../fonts/NotoSansKR-Regular-Hestia.eot),
+    url(../fonts/NotoSansKR-Regular-Hestia.eot?#iefix)
+      format("embedded-opentype"),
+    url(../fonts/NotoSansKR-Regular-Hestia.woff) format("woff"),
+    url(../fonts/NotoSansKR-Regular-Hestia.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Noto Sans Medium"), local("NotoSans-Medium"),
+    url(../fonts/NotoSansKR-Medium-Hestia.eot),
+    url(../fonts/NotoSansKR-Medium-Hestia.eot?#iefix)
+      format("embedded-opentype"),
+    url(../fonts/NotoSansKR-Medium-Hestia.woff) format("woff"),
+    url(../fonts/NotoSansKR-Medium-Hestia.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Noto Sans Bold"), local("NotoSans-Bold"),
+    url(../fonts/NotoSansKR-Bold-Hestia.eot),
+    url(../fonts/NotoSansKR-Bold-Hestia.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSansKR-Bold-Hestia.woff) format("woff"),
+    url(../fonts/NotoSansKR-Bold-Hestia.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Noto Sans Korean";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Noto Sans Black"), local("NotoSans-Black"),
+    url(../fonts/NotoSansKR-Black-Hestia.eot),
+    url(../fonts/NotoSansKR-Black-Hestia.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/NotoSansKR-Black-Hestia.woff) format("woff"),
+    url(../fonts/NotoSansKR-Black-Hestia.otf) format("opentype");
+}
