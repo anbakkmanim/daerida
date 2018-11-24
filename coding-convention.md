@@ -44,7 +44,7 @@ class TestModel extends CI_Model
      */
     public function insertTest($name, $date)
     {
-        $sql = "INSERT INTO TEST(name, date) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO TEST(name, date) VALUES (?, ?)";
         $bind = [
             $name,
             $date
