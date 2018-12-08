@@ -10,7 +10,7 @@ class Main extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Member_m');
+        $this->load->model('Member_model');
         $this->load->model('ProFile_Model');
     }
 
@@ -111,7 +111,7 @@ class Main extends CI_Controller
     public function register()
     {
 
-        $this->load->model('Member_m');
+        $this->load->model('Member_model');
         $param['custName'] = $this->input->post('custName');
         $param['custEmail'] = $this->input->post('custEmail');
         $param['custPw'] = $this->input->post('custPw');

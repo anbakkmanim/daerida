@@ -55,7 +55,7 @@ class RecruitModel extends CI_Model
      * @param $re_idx number 채용공고 번호
      * @param $re_startDate DateTime 시작 시간 수정 값
      * @param $re_endDate DateTime 종료 시간 수정 값
-     * @param $re_content String 종료 시간
+     * @param $re_content String 채용 공고 내용
      * @return mixed SQL Value
      */
     public function updateRecruit($re_idx, $re_startDate, $re_endDate, $re_content) {

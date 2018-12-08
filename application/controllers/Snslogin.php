@@ -6,7 +6,7 @@ class Snslogin extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Member_m');
+        $this->load->model('Member_model');
     }
 
     public function kakao()
@@ -15,7 +15,7 @@ class Snslogin extends CI_Controller
             $result = $this->kakao_login->get_profile();
 //            print_r($result);
 
-            $this->load->model('Member_m');
+            $this->load->model('Member_model');
             $param['custEmail'] = 'kakao'.$result['id'];
             $param['userSnsId'] = $result['id'];
             $param['userImage'] = $result['properties']['thumbnail_image'];
@@ -88,7 +88,7 @@ class Snslogin extends CI_Controller
         $json_result = json_decode($result,true);
         print_r($json_result);
 
-        $this->load->model("Member_m");
+        $this->load->model("Member_model");
         $param['custEmail'] = $json_result['emails']['0']['value'];
         $param['userSnsId'] = $json_result['id'];
         $param['custName'] = $json_result['displayName'];

@@ -10,7 +10,7 @@ class Profile extends CI_Controller
     {
         parent::__construct();
         $this->load->model('ProFile_Model');
-        $this->load->model('Member_m');
+        $this->load->model('Member_model');
     }
 
     public function main()

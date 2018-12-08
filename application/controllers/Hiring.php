@@ -9,7 +9,7 @@ class Hiring extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Hiring_m');
+        $this->load->model('Hiring_model');
     }
 
     public function resume_send()

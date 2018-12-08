@@ -8,7 +8,7 @@ class ProfileEdit extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Member_m');
+        $this->load->model('Member_model');
         $this->load->model('ProfileEdit_Model');
         $this->load->model('ProFile_Model');
     }
