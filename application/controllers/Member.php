@@ -14,14 +14,14 @@ class Member extends CI_Controller
     }
 
     public function index(){
-        location_href(site_url('Member/login'));
+        location_href(site_url('/member/login'));
     }
 
     public function login(){
-        $m_id = $this->session->m_id;
+        $me_idx = $this->session->me_idx;
 
-        if($m_id != null){
-            location_href(site_url("Hiring/list"));
+        if($me_idx != null){
+            location_href(site_url("/hiring/list"));
         }else{
             $this->load->view('Member/login');
         }
@@ -30,7 +30,7 @@ class Member extends CI_Controller
     public function authUser()
     {
         $data['me_id'] = $this->input->post('me_id');
-        $data['me_pw'] = $this->input->post('me_pw');
+        $data['me_password'] = $this->input->post('me_password');
 
         $auth = $this->AuthModel->authUser($data);
         $data['me_table'] = $auth;
@@ -38,23 +38,38 @@ class Member extends CI_Controller
 
         if ($auth == false){
             alert("아이디 또는 비밀번호가 맞지 않습니다.");
-            location_href(site_url("Member/login"));
+            location_href(site_url("/member/login"));
+            return;
         } else if ($auth == "MEMBER_NORMAL_TB") {
             $type = "me_n_";
         } else if ($auth == "MEMBER_COMPANY_TB") {
             $type = "me_c_";
         }
+        $data['me_type'] = $type;
 
         $row = $this->AuthModel->getCust($data);
-        $user_data = array(
-            'me_idx' => $row[$type . 'idx'],
-            'me_name' => $row[$type . 'name'],
-            'me_profile' => $row[$type . 'profile'],
-            'me_id' => $row[$type . 'id'],
-            'me_password' => $row[$type . 'password'],
-            'me_table' => $data['table'],
-            'me_type' => $type
-        );
+
+        if($data['me_table'] == "MEMBER_NORMAL_TB") {
+            $user_data = array(
+                'me_idx' => $row->me_n_idx,
+                'me_name' => $row->me_n_name,
+                'me_profile' => $row->me_n_profile,
+                'me_id' => $row->me_n_id,
+                'me_password' => $row->me_n_password,
+                'me_table' => $data['me_table'],
+                'me_type' => $type
+            );
+        } else {
+            $user_data = array(
+                'me_idx' => $row->me_c_idx,
+                'me_name' => $row->me_c_name,
+                'me_profile' => $row->me_c_profile,
+                'me_id' => $row->me_c_id,
+                'me_password' => $row->me_c_password,
+                'me_table' => $data['me_table'],
+                'me_type' => $type
+            );
+        }
 
         $this->session->set_userdata($user_data);
         location_href(site_url("/hiring/list"));
@@ -62,7 +77,7 @@ class Member extends CI_Controller
 
     public function logout(){
         $this->session->sess_destroy();
-        alert('로그아웃 되었습니다.', site_url('member/login'));
+        alert('로그아웃 되었습니다.', site_url('/member/login'));
     }
 
     public function registerNormal(){
@@ -89,8 +104,8 @@ class Member extends CI_Controller
         $data['me_email'] = $this->input->post('me_email');
         $data['me_phone'] = $this->input->post('me_phone');
 
+        $data['me_profile'];
         if($this->upload->do_upload('me_profile')){
-
             $data['me_profile'] = $this->upload->data('full_path');
         }
 
@@ -116,10 +131,10 @@ class Member extends CI_Controller
 
         if($result){
             alert('회원가입에 성공하였습니다.');
-            location_href(site_url('Member/login'));
+            location_href(site_url('/member/login'));
         }else{
             alert("회원가입에 실패했습니다. 다시 시도해주세요");
-            location_href(site_url('Member/login'));
+            location_href(site_url('/member/login'));
         }
     }
 
@@ -141,7 +156,7 @@ class Member extends CI_Controller
             $this->load->view('Member/findId',$result);
         } else {
             alert("아이디가 존재하지 않습니다.");
-            location_href(site_url('Member/findId'));
+            location_href(site_url('/member/findId'));
         }
     }
 
@@ -155,7 +170,7 @@ class Member extends CI_Controller
             $this->load->view('Member/findPassword',$result);
         } else {
             alert("답변이 일치하지 않거나 존재하지 않는 아이디입니다.");
-            location_href(site_url('Member/findPassword'));
+            location_href(site_url('/member/findPassword'));
         }
     }
 }

@@ -59,7 +59,7 @@ class Before {
 //			if ($this->CI->session->custEmail == null){
 //                alert('로그인 후 이용해 주세요.', site_url('main/login'));
 //            }
-            if ($this->CI->session->m_id == null){
+            if ($this->CI->session->me_idx == null){
                 alert('로그인 후 이용해 주세요.', site_url('member/login'));
             }
 		endif;

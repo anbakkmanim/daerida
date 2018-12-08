@@ -34,7 +34,7 @@ class RegisterModel extends CI_Model
                                 VALUES
                                 (
                                 ?,
-                                ?,
+                                PASSWORD(?),
                                 ?,
                                 ?,
                                 ?,
@@ -50,7 +50,7 @@ class RegisterModel extends CI_Model
             ";
             $bind = array(
                 $param['me_id'],
-                password_hash($param['me_password'], PASSWORD_DEFAULT),
+                $param['me_password'],
                 $param['me_name'],
                 $param['me_answer'],
                 $param['me_email'],
@@ -83,7 +83,7 @@ class RegisterModel extends CI_Model
                                 VALUES
                                 (
                                 ?,
-                                password_hash(?),
+                                PASSWORD(?),
                                 ?,
                                 ?,
                                 ?,
@@ -99,7 +99,7 @@ class RegisterModel extends CI_Model
             ";
             $bind = array(
                 $param['me_id'],
-                password_hash($param['me_password'], PASSWORD_DEFAULT),
+                $param['me_password'],
                 $param['me_name'],
                 $param['me_c_manager'],
                 $param['me_answer'],
