@@ -10,8 +10,8 @@ class JobOffer extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('JobOffer_Model');
-        $this->load->model('ProFile_Model');
+        $this->load->model('JobOfferModel');
+        $this->load->model('ProFileModel');
     }
 
     /**

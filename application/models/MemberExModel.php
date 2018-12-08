@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class MemberEx_model extends CI_Model {
+class MemberExModel extends CI_Model {
 
     //codeigniter model 치면 한글 설명이 잘나와있는데 그 설명에 나오는 메서드들 거의 잘안씀 $this->db->query(쿼리문,들어갈 값)이 진리임.
     /**

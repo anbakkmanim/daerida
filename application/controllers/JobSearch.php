@@ -10,8 +10,8 @@ class JobSearch extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('JobSearch_Model');
-        $this->load->model('ProFile_Model');
+        $this->load->model('JobSearchModel');
+        $this->load->model('ProFileModel');
     }
 
     /**

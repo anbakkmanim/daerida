@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ProfileEdit_Model extends CI_Model
+class ProfileEditModel extends CI_Model
 {
     /**
      * 생성자

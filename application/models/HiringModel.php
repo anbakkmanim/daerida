@@ -5,7 +5,7 @@
  * Date: 2018-11-29
  * Time: 오후 7:34
  */
-Class Hiring_model extends CI_Model
+Class HiringModel extends CI_Model
 {
     function send_resume($param){
         $sql="

@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-class Member_model extends CI_Model {
+class MemberModel extends CI_Model {
 	/**
 	 * 생성자
 	 */

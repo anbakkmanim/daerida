@@ -10,8 +10,8 @@ class Main extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Member_model');
-        $this->load->model('ProFile_Model');
+        $this->load->model('MemberModel');
+        $this->load->model('ProFileModel');
     }
 
     /**

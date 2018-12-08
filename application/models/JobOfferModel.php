@@ -1,5 +1,5 @@
 <?php
-class JobOffer_Model extends CI_Model{
+class JobOfferModel extends CI_Model{
     function customer_jobofferlist(){
         $sql="
             select * 

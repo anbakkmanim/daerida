@@ -1,5 +1,5 @@
 <?php
-class JobSearch_Model extends CI_Model{
+class JobSearchModel extends CI_Model{
     function jobhunting_list(){
         $sql = "
             select * 
