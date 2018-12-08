@@ -96,8 +96,9 @@ class Member extends CI_Controller
         $sfield = $this->RegisterModel->getSField($data);
 
         foreach($sfield as $row){
-            echo $row->fi_s_name;
+            echo $row->fi_s_name."\n";
         }
+        return $sfield;
     }
 
     public function idCheck(){

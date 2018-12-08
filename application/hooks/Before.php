@@ -40,7 +40,8 @@ class Before {
             'register',
             'findUserId',
             'findUserPassword',
-            'idCheck'
+            'idCheck',
+            'getSmallField'
 //            'modifyMember'
         );
 		// 익명 접근 허용 페이지 여부 체크
