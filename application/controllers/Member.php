@@ -96,9 +96,12 @@ class Member extends CI_Controller
         $sfield = $this->RegisterModel->getSField($data);
 
         foreach($sfield as $row){
-            echo $row->fi_s_name."\n";
+            $array[] = array(
+                "fi_s_idx" => $row->fi_s_idx,
+                "fi_s_name" => $row->fi_s_name);
         }
-        return $sfield;
+
+        echo json_encode($array);
     }
 
     public function idCheck(){
@@ -107,7 +110,6 @@ class Member extends CI_Controller
         $result = $this->RegisterModel->idCheck($data);
 
         echo $result;
-        return $result;
     }
 
     //회원가입
