@@ -31,7 +31,7 @@ class Hiring extends CI_Controller
     }
 
     /**
-     * 채용공고 작성 페이지 (Only Get)
+     * 채용공고 작성 페이지 (Page)
      * METHOD : GET
      * Params : X
      */

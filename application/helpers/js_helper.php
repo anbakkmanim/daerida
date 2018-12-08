@@ -21,3 +21,9 @@ function location_href($url) {
 	echo "location.href = '$url'";
 	echo '</script>';
 }
+
+function location_previous() {
+    echo '<script type="text/javascript">';
+    echo 'history.back();';
+    echo '</script>';
+}
