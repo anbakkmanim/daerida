@@ -1,5 +1,5 @@
 <?php
-class ProFile_Model extends CI_Model{
+class ProFileModel extends CI_Model{
 
 //    유저 정보
 

@@ -47,8 +47,15 @@ class Hiring extends CI_Controller
     public function recruitAdd() {
         // Get Params - POST
         $co_idx = $_POST['co_idx'];
-        $re_startDate = $_POST['re_startDate'];
-        $re_endDate = $_POST['re_endDate'];
+        if (isset($_POST['re_startDate'])) {
+            $re_startDate = $_POST['re_startDate'];
+        } else {
+            $re_startDate = null;
+        }
+        if (isset($_POST['re_endDate']))
+            $re_endDate = $_POST['re_endDate'];
+        else
+            $re_endDate = null;
         $re_content = $_POST['re_content'];
 
         // insert 문 성공 여부
@@ -74,7 +81,6 @@ class Hiring extends CI_Controller
 
         // select 문 내용들 (list)
         $return = $this->RecruitModel->listRecruit($co_idx);
-
         // load View
         $this->load->view('hiring/hiringList', $return);
     }
@@ -90,7 +96,6 @@ class Hiring extends CI_Controller
 
         // Select 문 내용들 (list)
         $return = $this->RecruitModel->detailRecruit($re_idx);
-
         // load View
         $this->load->view('hiring/detail', $return);
     }
