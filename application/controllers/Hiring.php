@@ -31,11 +31,20 @@ class Hiring extends CI_Controller
     }
 
     /**
+     * 채용공고 작성 페이지 (Only Get)
+     * METHOD : GET
+     * Params : X
+     */
+    public function broadcastWrite() {
+        // load View
+        $this->load->view('hiring/broadcastWrite');
+    }
+    /**
      * 채용공고 작성
      * METHOD : POST
      * Params : co_idx, re_startDate, re_endDate, re_content
      */
-    public function broadcastWrite() {
+    public function recruitAdd() {
         // Get Params - POST
         $co_idx = $_POST['co_idx'];
         $re_startDate = $_POST['re_startDate'];
@@ -45,8 +54,13 @@ class Hiring extends CI_Controller
         // insert 문 성공 여부
         $return = $this->RecruitModel->insertRecruit($co_idx, $re_startDate, $re_endDate, $re_content);
 
-        // load View
-        $this->load->view('hiring/broadcastWrite', $return);
+        if ($return) {
+            alert('채용 공고 작성을 성공하였습니다');
+            location_href(site_url('hiring/hiringList'));
+        } else {
+            alert('채용 공고 작성 실패');
+            location_href(site_url('hiring/hiringList'));
+        }
     }
 
     /**
