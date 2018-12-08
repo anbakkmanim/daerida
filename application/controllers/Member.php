@@ -152,8 +152,14 @@ class Member extends CI_Controller
 
         $result = $this->AuthModel->findId($data);
 
-        if($result){
-            $this->load->view('Member/findId',$result);
+        if($result) {
+            if ($result->me_n_id != null){
+                $id = $result->me_n_id;
+            } else {
+                $id = $result->me_c_id;
+            }
+
+            $this->load->view('Member/findId', $id);
         } else {
             alert("아이디가 존재하지 않습니다.");
             location_href(site_url('/member/findId'));
@@ -167,7 +173,13 @@ class Member extends CI_Controller
         $result = $this->AuthModel->findPassword($data);
 
         if($result){
-            $this->load->view('Member/findPassword',$result);
+            if ($result->me_n_password != null){
+                $password = $result->me_n_password;
+            } else {
+                $password = $result->me_c_password;
+            }
+
+            $this->load->view('Member/findPassword', $password);
         } else {
             alert("답변이 일치하지 않거나 존재하지 않는 아이디입니다.");
             location_href(site_url('/member/findPassword'));

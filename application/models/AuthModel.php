@@ -69,7 +69,7 @@ class AuthModel extends CI_Model
         $normalMember = $query->row();
 
         $sql = "
-                SELECT me_n_id
+                SELECT me_c_id
                 FROM MEMBER_COMPANY_TB
                 WHERE me_c_email = ?
                 AND   me_c_phone = ?
