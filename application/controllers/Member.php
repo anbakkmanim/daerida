@@ -82,13 +82,33 @@ class Member extends CI_Controller
     }
 
     public function registerNormal(){
-        $this->load->view('Member/registerNormal');
+        $rfield = $this->RegisterModel->getRField();
+        $this->load->view('Member/registerNormal', $rfield);
     }
 
     public function registerCompany(){
-        $this->load->view('Member/registerCompany');
+        $rfield = $this->RegisterModel->getRField();
+        $this->load->view('Member/registerCompany', $rfield);
     }
-    
+
+    public function getSmallField(){
+        $data['rfield'] = $this->input->post('rfield');
+        $sfield = $this->RegisterModel->getSField($data);
+
+        foreach($sfield as $row){
+            echo $row->fi_s_name;
+        }
+    }
+
+    public function idCheck(){
+        $data['me_id'] = $this->input->post('me_id');
+
+        $result = $this->RegisterModel->idCheck($data);
+
+        echo $result;
+        return $result;
+    }
+
     //회원가입
     public function register(){
         $config['upload_path'] = './uploads/profile/';
@@ -96,6 +116,7 @@ class Member extends CI_Controller
         $config['max_size']     = '100';
         $config['max_width'] = '1024';
         $config['max_height'] = '768';
+        $config['file_name'] = uniqid();
         $this->load->library('upload', $config);
 
         $data['me_table'] = $this->input->post('me_table');

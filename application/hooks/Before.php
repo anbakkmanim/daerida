@@ -36,9 +36,11 @@ class Before {
         );
         $allow_page['member'] = array(
             'login',
-            'auth_user',
-            'create_account',
-            'register'
+            'authUser',
+            'register',
+            'findUserId',
+            'findUserPassword',
+            'idCheck'
 //            'modifyMember'
         );
 		// 익명 접근 허용 페이지 여부 체크
