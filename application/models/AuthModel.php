@@ -6,14 +6,14 @@
  * Time: 오전 11:34
  */
 
-class Auth_Model extends CI_Model
+class AuthModel extends CI_Model
 {
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function auth_user($param){
+    public function authUser($param){
         $sql = "
                    SELECT   count(*) as cnt
                    FROM     MEMBER_NORMAL_TB
@@ -43,7 +43,7 @@ class Auth_Model extends CI_Model
         return $normalMember == true ? "MEMBER_NORMAL_TB" : ($companyMember == true ? "MEMBER_COMPANY_TB" : false);
     }
 
-    public function get_cust($param){
+    public function getCust($param){
         $sql = "
                 SELECT *
                 FROM    ?
