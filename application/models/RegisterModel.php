@@ -6,14 +6,14 @@
  * Time: 오전 11:34
  */
 
-class Register_Model extends CI_Model
+class RegisterModel extends CI_Model
 {
     public function __construct()
     {
         parent::__construct();
     }
 
-    function register_user($param){
+    function registerUser($param){
         if($param['me_table'] == "MEMBER_NORMAL_TB") {
             $sql = "
                INSERT INTO ".$param['me_table']."(

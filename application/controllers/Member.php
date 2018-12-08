@@ -9,43 +9,43 @@ class Member extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Auth_Model');
-        $this->load->model('Register_Model');
+        $this->load->model('AuthModel');
+        $this->load->model('RegisterModel');
     }
 
     public function index(){
-        location_href('/member/login');
+        location_href('Member/login');
     }
 
     public function login(){
         $m_id = $this->session->m_id;
 
         if($m_id != null){
-            location_href("/hiring/list");
+            location_href("Hiring/list");
         }else{
-            $this->load->view('member/login');
+            $this->load->view('Member/login');
         }
     }
 
-    public function auth_user()
+    public function authUser()
     {
         $data['me_id'] = $this->input->post('me_id');
         $data['me_pw'] = $this->input->post('me_pw');
 
-        $auth = $this->Auth_Model->auth_user($data);
+        $auth = $this->Auth_Model->authUser($data);
         $data['me_table'] = $auth;
         $type = null;
 
         if ($auth == false){
             alert("아이디 또는 비밀번호가 맞지 않습니다.");
-            location_href("/member/login");
+            location_href("Member/login");
         } else if ($auth == "MEMBER_NORMAL_TB") {
             $type = "me_n_";
         } else if ($auth == "MEMBER_COMPANY_TB") {
             $type = "me_c_";
         }
 
-        $row = $this->Auth_Model->get_cust($data);
+        $row = $this->Auth_Model->getCust($data);
         $user_data = array(
             'me_idx' => $row[$type . 'idx'],
             'me_name' => $row[$type . 'name'],
@@ -65,12 +65,12 @@ class Member extends CI_Controller
         alert('로그아웃 되었습니다.', site_url('member/login'));
     }
 
-    public function register_normal(){
-        $this->load->view('member/register_normal');
+    public function registerNormal(){
+        $this->load->view('Member/registerNormal');
     }
 
-    public function register_company(){
-        $this->load->view('member/register_company');
+    public function registerCompany(){
+        $this->load->view('Member/registerCompany');
     }
     
     //회원가입
@@ -110,50 +110,50 @@ class Member extends CI_Controller
             $data['me_c_category'] = $this->input->post('me_c_category');
         }
 
-        $result = $this->Register_Model->register_user($data);
+        $result = $this->RegisterModel->registerUser($data);
 
         if($result){
             alert('회원가입에 성공하였습니다.');
-            location_href('/member/login');
+            location_href('Member/login');
         }else{
             alert("회원가입에 실패했습니다. 다시 시도해주세요");
-            location_href('/member/login');
+            location_href('Member/login');
         }
-    }
-
-    public function find_id(){
-        $this->load->view('/member/find_id');
-    }
-
-    public function find_password(){
-        $this->load->view('/member/find_password');
     }
 
     public function findId(){
-        $data['me_email'] = $this->input->post('me_email');
-        $data['me_phone'] = $this->input->post('me_phone');
-
-        $result = $this->Auth_Model->findId($data);
-
-        if($result){
-            $this->load->view('member/find_id',$result);
-        } else {
-            alert("아이디가 존재하지 않습니다.");
-            location_href('member/find_id');
-        }
+        $this->load->view('Member/findId');
     }
 
     public function findPassword(){
+        $this->load->view('Member/findPassword');
+    }
+
+    public function findUserId(){
+        $data['me_email'] = $this->input->post('me_email');
+        $data['me_phone'] = $this->input->post('me_phone');
+
+        $result = $this->AuthModel->findId($data);
+
+        if($result){
+            $this->load->view('Member/findId',$result);
+        } else {
+            alert("아이디가 존재하지 않습니다.");
+            location_href('Member/findId');
+        }
+    }
+
+    public function findUserPassword(){
         $data['me_id'] = $this->input->post('me_id');
         $data['me_answer'] = $this->input->post('me_answer');
 
-        $result = $this->Auth_Model->findPassword($data);
+        $result = $this->AuthModel->findPassword($data);
 
         if($result){
-            $this->load->view('member/find_password',$result);
+            $this->load->view('Member/findPassword',$result);
         } else {
-            alert("정답이 일치하지 않거나 존재하지 않는 아이디입니다.");
-            location_href('member/find_password');
+            alert("답변이 일치하지 않거나 존재하지 않는 아이디입니다.");
+            location_href('Member/findPassword');
         }
     }
 }
