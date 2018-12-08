@@ -8,8 +8,19 @@
 
 class Hiring extends CI_Controller
 {
+
+    /**
+     * Hiring 생성자.
+     */
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('RecruitModel');
+    }
+
+    public function addRecruit()
+    {
+        $co_idx = $this->session->co_idx;
+
     }
 }
