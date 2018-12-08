@@ -18,10 +18,10 @@ class AuthModel extends CI_Model
                    SELECT   count(*) as cnt
                    FROM     MEMBER_NORMAL_TB
                    WHERE    me_n_id = ?
-                   AND      me_n_pw = password_hash(?);
+                   AND      me_n_pw = ?;
             ";
 
-        $query = $this->db->query($sql, array($param['me_id'], $param['me_pw']));
+        $query = $this->db->query($sql, array($param['me_id'], password_hash($param['me_pw'], PASSWORD_DEFAULT),));
         $row = $query->row();
         $normalMember = $row->cnt;
 
@@ -31,10 +31,10 @@ class AuthModel extends CI_Model
                    SELECT   count(*) as cnt
                    FROM     MEMBER_COMPANY_TB
                    WHERE    me_c_id = ?
-                   AND      me_c_pw = password_hash(?);
+                   AND      me_c_pw = ?;
             ";
 
-        $query = $this->db->query($sql, array($param['me_id'], $param['me_pw']));
+        $query = $this->db->query($sql, array($param['me_id'], password_hash($param['me_pw'], PASSWORD_DEFAULT),));
         $row = $query->row();
         $companyMember = $row->cnt;
 

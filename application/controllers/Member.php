@@ -14,14 +14,14 @@ class Member extends CI_Controller
     }
 
     public function index(){
-        location_href('Member/login');
+        location_href(site_url('Member/login'));
     }
 
     public function login(){
         $m_id = $this->session->m_id;
 
         if($m_id != null){
-            location_href("Hiring/list");
+            location_href(site_url("Hiring/list"));
         }else{
             $this->load->view('Member/login');
         }
@@ -32,20 +32,20 @@ class Member extends CI_Controller
         $data['me_id'] = $this->input->post('me_id');
         $data['me_pw'] = $this->input->post('me_pw');
 
-        $auth = $this->Auth_Model->authUser($data);
+        $auth = $this->AuthModel->authUser($data);
         $data['me_table'] = $auth;
         $type = null;
 
         if ($auth == false){
             alert("아이디 또는 비밀번호가 맞지 않습니다.");
-            location_href("Member/login");
+            location_href(site_url("Member/login"));
         } else if ($auth == "MEMBER_NORMAL_TB") {
             $type = "me_n_";
         } else if ($auth == "MEMBER_COMPANY_TB") {
             $type = "me_c_";
         }
 
-        $row = $this->Auth_Model->getCust($data);
+        $row = $this->AuthModel->getCust($data);
         $user_data = array(
             'me_idx' => $row[$type . 'idx'],
             'me_name' => $row[$type . 'name'],
@@ -57,7 +57,7 @@ class Member extends CI_Controller
         );
 
         $this->session->set_userdata($user_data);
-        location_href("/hiring/list");
+        location_href(site_url("/hiring/list"));
     }
 
     public function logout(){
@@ -89,7 +89,6 @@ class Member extends CI_Controller
         $data['me_email'] = $this->input->post('me_email');
         $data['me_phone'] = $this->input->post('me_phone');
 
-        echo "A";
         if($this->upload->do_upload('me_profile')){
 
             $data['me_profile'] = $this->upload->data('full_path');
@@ -117,10 +116,10 @@ class Member extends CI_Controller
 
         if($result){
             alert('회원가입에 성공하였습니다.');
-            location_href('Member/login');
+            location_href(site_url('Member/login'));
         }else{
             alert("회원가입에 실패했습니다. 다시 시도해주세요");
-            location_href('Member/login');
+            location_href(site_url('Member/login'));
         }
     }
 
@@ -142,7 +141,7 @@ class Member extends CI_Controller
             $this->load->view('Member/findId',$result);
         } else {
             alert("아이디가 존재하지 않습니다.");
-            location_href('Member/findId');
+            location_href(site_url('Member/findId'));
         }
     }
 
@@ -156,7 +155,7 @@ class Member extends CI_Controller
             $this->load->view('Member/findPassword',$result);
         } else {
             alert("답변이 일치하지 않거나 존재하지 않는 아이디입니다.");
-            location_href('Member/findPassword');
+            location_href(site_url('Member/findPassword'));
         }
     }
 }
