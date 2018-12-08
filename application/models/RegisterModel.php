@@ -156,7 +156,7 @@ class RegisterModel extends CI_Model
         ";
 
         $query = $this->db->query($sql);
-        return $query->result();
+        return $query->result_array();
     }
 
     function getSField($param){
