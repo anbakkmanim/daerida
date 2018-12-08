@@ -1,4 +1,14 @@
 <?php
+
+/**
+ * ===============================
+ * ===== DECREPATED SETTINGS =====
+ * ===============================
+ * 
+ * This setting is decrepated. use new setting file sns_login.php!
+ * 
+ */
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * SOCIAL Setting
