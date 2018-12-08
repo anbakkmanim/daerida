@@ -1,4 +1,15 @@
 <?php
+
+/**
+ * ===============================
+ * ===== DECREPATED SETTINGS =====
+ * ===============================
+ * 
+ * This setting is decrepated. use new setting file token.php!
+ * 이 설정은 폐기되었습니다. token.php 파일을 사용해주세요.
+ * 
+ */
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * SOCIAL Setting

@@ -117,4 +117,56 @@ class RegisterModel extends CI_Model
         $result = $this->db->query($sql,$bind);
         return $result;
     }
+
+    function idCheck($param){
+        $sql = "
+                SELECT *
+                FROM MEMBER_NORMAL_TB
+                WHERE me_n_id = ?
+        ";
+
+        $query = $this->db->query($sql, array($param['me_id']));
+        $normalRow = $query->row();
+
+        if($normalRow == null){
+           return true;
+        } else {
+            $sql = "
+                SELECT *
+                FROM MEMBER_COMPANY_TB
+                WHERE me_c_id = ?
+            ";
+
+            $query = $this->db->query($sql, array($param['me_id']));
+
+            $companyRow = $query->row();
+
+            if($companyRow == null){
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    function getRField(){
+        $sql = "
+                SELECT *
+                FROM FIELD_LARGE_RF
+        ";
+
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+
+    function getSField($param){
+        $sql = "
+                SELECT *
+                FROM FIELD_SMALL_RF
+                WHERE fi_l_idx = ?
+        ";
+
+        $query = $this->db->query($sql, array($param['rfield']));
+        return $query->result();
+    }
 }
