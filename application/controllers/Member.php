@@ -11,6 +11,7 @@ class Member extends CI_Controller
         parent::__construct();
         $this->load->model('AuthModel');
         $this->load->model('RegisterModel');
+        $this->load->model('ProfileModel');
     }
 
     public function index(){
@@ -184,5 +185,51 @@ class Member extends CI_Controller
             alert("답변이 일치하지 않거나 존재하지 않는 아이디입니다.");
             location_href(site_url('/member/findPassword'));
         }
+    }
+
+    public function profileNormal(){
+        $data['me_id'] = $this->session->me_id;
+        $data['me_password'] = $this->session->me_password;
+        $data['me_table'] = $this->session->me_table;
+        $data['me_type'] = $this->session->me_type;
+
+        $row = $this->AuthModel->getCust($data);
+        $user_data = array(
+            'name' => $row->me_n_name,
+            'email' => $row->me_n_email,
+            'phone' => $row->me_n_phone,
+            'sido' => $row->me_n_sido,
+            'isMillitary' => $row->me_n_isMillitary,
+            'age' => $row->me_n_age,
+            'hopeSalary' => $row->me_n_hopeSalary,
+            'profile' => $row->me_n_profile,
+            'info' => $row->me_n_info,
+            'isOpen' => $row->me_n_isOpen
+        );
+
+        $this->load->view('Member/profileNormal', $user_data);
+    }
+
+    public function profileCompany(){
+        $data['me_id'] = $this->session->me_id;
+        $data['me_password'] = $this->session->me_password;
+        $data['me_table'] = $this->session->me_table;
+        $data['me_type'] = $this->session->me_type;
+
+        $row = $this->AuthModel->getCust($data);
+        $com_data = array(
+            'manager' => $row->me_c_manager,
+            'name' => $row->me_c_name,
+            'email' => $row->me_c_email,
+            'phone' => $row->me_c_phone,
+            'category' => $row->me_c_category,
+            'profile' => $row->me_c_profile,
+            'salary' => $row->me_c_salary,
+            'sido' => $row->me_c_sido,
+            'isMillitary' => $row->me_c_isMillitary,
+            'benefit' => $row->me_c_benefit
+        );
+
+        $this->load->view('Member/profileCompany', $com_data);
     }
 }

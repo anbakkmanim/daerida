@@ -4,7 +4,7 @@ class Hiring extends CI_Controller
 {
 
     /**
-     * Hiring 생성자.
+     * 이력서 작성 페이지
      */
     public function __construct()
     {
@@ -13,7 +13,12 @@ class Hiring extends CI_Controller
         $this->load->model('RecruitModel');
     }
 
-    public function resume_send()
+    public function resumeSend()
+    {
+        $this->load->view('hiring/resumeSend');
+    }
+
+    public function resumeInfoSend()
     {
         $data['re_idx'] = $_POST['re_idx'];
         $data['me_n_id'] = $_POST['me_n_id'];
@@ -24,14 +29,14 @@ class Hiring extends CI_Controller
         $this->load->view('hiring/list');
     }
 
-    public function resume_list()
+    public function resumeList()
     {
         $return = $this->Hiring_m->read_resume();
-        $this->load->view('hiring/resume_list', $return);
+        $this->load->view('hiring/resumeList', $return);
     }
 
     /**
-     * 채용공고 작성 페이지 (Only Get)
+     * 채용공고 작성 페이지 (Page)
      * METHOD : GET
      * Params : X
      */
