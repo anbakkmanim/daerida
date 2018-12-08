@@ -18,10 +18,10 @@ class AuthModel extends CI_Model
                    SELECT   count(*) as cnt
                    FROM     MEMBER_NORMAL_TB
                    WHERE    me_n_id = ?
-                   AND      me_n_pw = ?;
+                   AND      me_n_password = PASSWORD(?);
             ";
 
-        $query = $this->db->query($sql, array($param['me_id'], password_hash($param['me_pw'], PASSWORD_DEFAULT),));
+        $query = $this->db->query($sql, array($param['me_id'], $param['me_password']));
         $row = $query->row();
         $normalMember = $row->cnt;
 
@@ -31,10 +31,10 @@ class AuthModel extends CI_Model
                    SELECT   count(*) as cnt
                    FROM     MEMBER_COMPANY_TB
                    WHERE    me_c_id = ?
-                   AND      me_c_pw = ?;
+                   AND      me_c_password = PASSWORD(?);
             ";
 
-        $query = $this->db->query($sql, array($param['me_id'], password_hash($param['me_pw'], PASSWORD_DEFAULT),));
+        $query = $this->db->query($sql, array($param['me_id'], $param['me_password']));
         $row = $query->row();
         $companyMember = $row->cnt;
 
@@ -46,12 +46,12 @@ class AuthModel extends CI_Model
     public function getCust($param){
         $sql = "
                 SELECT *
-                FROM    ?
-                WHERE   me_n_id = ?
-                AND     me_n_pw = password_hash(?);
+                FROM    ".$param['me_table']."
+                WHERE   ".$param['me_type']."id = ?
+                AND     ".$param['me_type']."password = PASSWORD(?);
         ";
 
-        $query = $this->db->query($sql, array($param['me_table'],$param['me_id'], $param['me_pw']));
+        $query = $this->db->query($sql, array($param['me_id'], $param['me_password']));
 
         return $query->row();
     }
@@ -69,7 +69,7 @@ class AuthModel extends CI_Model
         $normalMember = $query->row();
 
         $sql = "
-                SELECT me_n_id
+                SELECT me_c_id
                 FROM MEMBER_COMPANY_TB
                 WHERE me_c_email = ?
                 AND   me_c_phone = ?
