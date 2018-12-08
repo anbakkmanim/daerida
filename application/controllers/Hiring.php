@@ -32,8 +32,9 @@ class Hiring extends CI_Controller
 
     /**
      * 채용공고 작성 페이지 (Page)
-     * METHOD : GET
-     * Params : X
+     * @METHOD GET
+     * @MainURL hiring/broadcastWrite
+     * @Params X
      */
     public function broadcastWrite() {
         // load View
@@ -41,22 +42,23 @@ class Hiring extends CI_Controller
     }
     /**
      * 채용공고 작성
-     * METHOD : POST
-     * Params : co_idx, re_startDate, re_endDate, re_content
+     * @METHOD POST
+     * @MainURL hiring/recruitAdd
+     * @Params co_idx, re_startDate, re_endDate, re_content
      */
     public function recruitAdd() {
         // Get Params - POST
-        $co_idx = $_POST['co_idx'];
+        $co_idx = $_POST['co_idx']; // 회사 아이디
         if (isset($_POST['re_startDate'])) {
-            $re_startDate = $_POST['re_startDate'];
+            $re_startDate = $_POST['re_startDate']; // 구인공고 시작일
         } else {
             $re_startDate = null;
         }
         if (isset($_POST['re_endDate']))
-            $re_endDate = $_POST['re_endDate'];
+            $re_endDate = $_POST['re_endDate']; // 구인공고 종료일
         else
             $re_endDate = null;
-        $re_content = $_POST['re_content'];
+        $re_content = $_POST['re_content']; // 구인공고 내용
 
         // insert 문 성공 여부
         $return = $this->RecruitModel->insertRecruit($co_idx, $re_startDate, $re_endDate, $re_content);
@@ -72,12 +74,13 @@ class Hiring extends CI_Controller
 
     /**
      * 구인공고 리스트
-     * METHOD : POST
-     * Params: co_idx
+     * @METHOD POST
+     * @MainURL hiring/hiringList
+     * @Params co_idx
      */
     public function hiringList() {
         // Get Params - POST
-        $co_idx = $_POST['co_idx'];
+        $co_idx = $_POST['co_idx']; // 회사 번호
 
         // select 문 내용들 (list)
         $return = $this->RecruitModel->listRecruit($co_idx);
@@ -87,12 +90,13 @@ class Hiring extends CI_Controller
 
     /**
      * 구인공고 상세보기
-     * METHOD : POST
-     * Params : re_idx
+     * @METHOD POST
+     * @MainURL hiring/detail
+     * @Params re_idx
      */
     public function detail() {
         // Get Params - POST
-        $re_idx = $_POST['re_idx'];
+        $re_idx = $_POST['re_idx']; // 구인공고 아이디
 
         // Select 문 내용들 (list)
         $return = $this->RecruitModel->detailRecruit($re_idx);
