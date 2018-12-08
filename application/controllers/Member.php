@@ -75,8 +75,8 @@ class Member extends CI_Controller
     
     //회원가입
     public function register(){
-        $config['upload_path'] = './uploads/';
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['upload_path'] = './uploads/profile/';
+        $config['allowed_types'] = 'jpg|png';
         $config['max_size']     = '100';
         $config['max_width'] = '1024';
         $config['max_height'] = '768';
@@ -88,10 +88,13 @@ class Member extends CI_Controller
         $data['me_password'] = $this->input->post('me_password');
         $data['me_email'] = $this->input->post('me_email');
         $data['me_phone'] = $this->input->post('me_phone');
+
+        echo "A";
         if($this->upload->do_upload('me_profile')){
+
             $data['me_profile'] = $this->upload->data('full_path');
         }
-        $data['me_profile'] = $this->upload->do_upload('me_profile');
+
         $data['me_answer'] = $this->input->post('me_answer');
         $data['me_rfield'] = $this->input->post('me_rfield');
         $data['me_sfield'] = $this->input->post('me_sfield');
