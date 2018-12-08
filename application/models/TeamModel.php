@@ -1,98 +1,65 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/**
- * Created by PhpStorm.
- * User: tbvja
- * Date: 2018-11-24
- * Time: 오전 11:07
- */
-
-class RecruitModel extends CI_Model
+class TeamModel extends CI_Model
 {
     public function __construct()
     {
         parent::__construct();
     }
 
-
     /**
-     * 채용 공고를 추가합니다.
-     * @param $co_idx number 회사 번호
-     * @param $re_startDate DateTime 시작 시간
-     * @param $re_endDate DateTime 종료 시간
-     * @param $re_content String 내용
-     * @return bool SQL Value (Boolean)
+     * 팀 생성
+     * @param $te_name 팀 이름
+     * @param $te_info 팀 정보 (소개)
+     * @param $fi_l_idx 팀 분야 (대분류)
+     * @param $te_isOpen 팀 공개여부
+     * @return bool SQL Value 쿼리 성공 여부
      */
-    public function insertRecruit($co_idx, $re_startDate, $re_endDate, $re_content) {
-        $sql = "insert into RECRUIT_TB (co_idx, re_startDate, re_endDate, re_content) values (?, ?, ?, ?)";
-        $bind = array(
-           $co_idx,
-           $re_startDate,
-           $re_endDate,
-           $re_content
-        );
+    public function createTeam($te_name, $te_info, $fi_l_idx, $te_isOpen) {
+        // SQL 문 생성
+        $sql = "insert into TEAM_TB (te_name, te_info, fi_l_idx, te_isOpen) values (?, ?, ?, ?)";
 
+        // bind
+        $bind = array(
+          $te_name,
+          $te_info,
+          $fi_l_idx,
+          $te_isOpen
+        );
+        // array로 반환
         return $this->db->query($sql, $bind);
     }
 
     /**
-     * 채용 공고를 삭제합니다.
-     * @param $re_idx number 채용공고 번호
-     * @return bool SQL Value (Boolean)
+     * 팀 목록
+     * @return array SQL Value 팀 array 값
      */
-    public function deleteRecruit($re_idx) {
-        $sql = "delete from RECRUIT_tB where re_idx = ?";
+    public function listTeam() {
+        // SQL 문 생성
+        $sql = "select * from TEAM_TB where te_isOpen = '공개'";
+
+        // array로 반환
+        return $this->db->query($sql)->result_array();
+    }
+
+    /**
+     * @param $te_idx 팀 인덱스
+     * @param $me_n_id 사용자 인덱스
+     * @param $fi_s_idx 소분야 아이디
+     * @return bool SQL_Value 성공 여부 (Boolean)
+     */
+    public function joinTeam($te_idx, $me_n_id, $fi_s_idx) {
+        // SQL 문 생성
+        $sql = "insert into TEAM_JOIN_TB (te_idx, me_n_id, fi_s_idx) values (?, ?, ?)";
+
+        // bind
         $bind = array(
-           $re_idx
+            $te_idx,
+            $me_n_id,
+            $fi_s_idx
         );
 
+        // bool 로 반환
         return $this->db->query($sql, $bind);
-    }
-
-
-    /**
-     * 채용 공고를 변경합니다.
-     * @param $re_idx number 채용공고 번호
-     * @param $re_startDate DateTime 시작 시간 수정 값
-     * @param $re_endDate DateTime 종료 시간 수정 값
-     * @param $re_content String 채용공고 내용 수정 값
-     * @return mixed SQL Value (Boolean)
-     */
-    public function updateRecruit($re_idx, $re_startDate, $re_endDate, $re_content) {
-        $sql = "update RECRUIT_TB set re_startDate = ?, re_endDate = ?, re_content = ? where re_idx = ?";
-        $bind = array(
-           $re_startDate,
-           $re_endDate,
-           $re_content,
-           $re_idx
-        );
-
-        return $this->db->query($sql, $bind);
-    }
-
-    /**
-     * 채용 공고의 리스트를 들고 옵니다.
-     * @param $co_idx number 회사 번호
-     * @return mixed SQL Value (Array)
-     */
-    public function listRecruit($co_idx) {
-        $sql = "select * from RECRUIT_TB where co_idx = ?";
-        $bind = array(
-            $co_idx
-        );
-        return $this->db->query($sql, $bind)->result_array();
-    }
-
-    /**
-     * 채용 공고의 자세한 정보를 반환합니다.
-     * @param $re_idx 채용 공고 번호
-     * @return mixed SQL Value (Array)
-     */
-    public function detailRecruit($re_idx) {
-        $sql = "select * from RECRUIT_TB where re_idx = ?";
-        $bind = array(
-            $re_idx
-        );
-        return $this->db->query($sql, $bind)->result_array();
     }
 }
