@@ -113,7 +113,6 @@
 									</div>
 			
 									<div class="remember">
-			
 										<div class="checkbox">
 											<label>
 												<input name="optionsCheckboxes" type="checkbox">
@@ -122,16 +121,7 @@
 										</div>
 										<a href="#" class="forgot">Forgot my Password</a>
 									</div>
-			
 									<a href="#" class="btn btn-lg btn-primary full-width">Login</a>
-			
-									<div class="or"></div>
-			
-									<a href="#" class="btn btn-lg bg-green full-width btn-icon-left"><i class="fab fa-naver" aria-hidden="true"></i>카카오로 로그인하기</a>
-			
-									<a href="#" class="btn btn-lg bg-google full-width btn-icon-left"><i class="fab fa-google" aria-hidden="true"></i>구글로 로그인하기</a>
-			
-			
 									<p>Don’t you have an account? <a href="#">Register Now!</a> it’s really simple and you can start enjoing all the benefits!</p>
 								</div>
 							</div>
@@ -139,8 +129,7 @@
 					</div>
 				</div>
 			</div>
-			
-      <!-- ... end Login-Registration Form  -->		
+      <!-- ... end Login-Registration Form  -->
     </div>
 	</div>
 </div>
