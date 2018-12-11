@@ -914,13 +914,13 @@
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-empty">
 									<label class="control-label">비밀번호</label>
-									<input class="form-control" name="pwd" placeholder="" type="password" onchange="pwdCheck()">
+									<input class="form-control" id="pwd" name="pwd" placeholder="" type="password">
 								</div>
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<div class="form-group label-floating is-empty">
+								<div class="form-group label-floating is-empty has-success">
 									<label class="control-label">비밀번호 확인</label>
-									<input class="form-control" id="pwd_result" name="pwd_check" placeholder="" type="password" onchange="pwdCheck()">
+									<input class="form-control" id="pwd_result" name="pwd_check" placeholder="" type="password">
 								</div>
 							</div>
 
@@ -1016,10 +1016,10 @@
 							</div>
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<div class="checkbox ml-2">
+								<div class="checkbox ml-2 d-none">
 									<label>
 										<input id="military" name="optionsCheckboxes" type="checkbox" unchecked>
-										병력 이행 여부
+										병역 이행 여부
 									</label>
 								</div>
 							</div>
@@ -1028,9 +1028,12 @@
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<label class="control-label">프로필 사진</label>
 								<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
-									<div class="file-upload">
+									<div class="file-upload d-inline-block">
 										<label for="upload" class="file-upload__label">Upload Button</label>
 										<input id="upload" class="file-upload__input" type="file" name="file-upload">
+									</div>
+									<div id="uploaded-file" class="d-inline-block">
+										<img id="preview" src="">
 									</div>
 								</div>
 							</div>

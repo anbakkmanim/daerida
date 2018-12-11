@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -30,6 +30,21 @@
 			}
 		});
 	</script>
+
+	<style>
+		.starR{
+			background: url('http://miuu227.godohosting.com/images/icon/ico_review.png') no-repeat right 0;
+			background-size: auto 100%;
+			width: 30px;
+			height: 30px;
+			display: inline-block;
+			text-indent: -9999px;
+			cursor: pointer;
+			margin-right: 5px;
+			margin-bottom: 10px;
+		}
+		.starR.on{background-position:0 0;}
+	</style>
 
 </head>
 <body>
@@ -2656,6 +2671,16 @@
 <script defer src="fonts/fontawesome-all.js"></script>
 
 <script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+<script>
+	
+$('.starRev span').click(function(){
+  $(this).parent().children('span').removeClass('on');
+  $(this).addClass('on').prevAll('span').addClass('on');
+  return false;
+});
+
+</script>
 
 </body>
 </html>
