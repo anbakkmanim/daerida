@@ -1,8 +1,8 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Subpage extends CI_Controller
 {
-    use PageTrait;
     /**
      * Subpage constructor.
      */
@@ -62,6 +62,8 @@ class Subpage extends CI_Controller
      * @MainURL subpage/_404
      */
     public function _404() {
-        $this->LoadView('subpage/404');
+        $this->load->view('layout/header');
+        $this->load->view('subpage/404');
+        $this->load->view('layout/footer');
     }
 }
