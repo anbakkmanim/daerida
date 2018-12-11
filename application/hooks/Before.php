@@ -23,17 +23,17 @@ class Before {
             $method = 'login';
         }
 //		 $allow_page['컨트롤러'][0] = 메소드;
-		$allow_page['main'] = array(
-			'login',
-			'logout',
-			'index'
-		);
-		$allow_page['intro'] = array(
-		    'main',
-            'profile',
-            'contactUs',
-            'company'
-        );
+//		$allow_page['main'] = array(
+//			'login',
+//			'logout',
+//			'index'
+//		);
+//		$allow_page['intro'] = array(
+//		    'main',
+//            'profile',
+//            'contactUs',
+//            'company'
+//        );
         $allow_page['member'] = array(
             'login',
             'authUser',
@@ -43,6 +43,13 @@ class Before {
             'idCheck',
             'getSmallField'
 //            'modifyMember'
+        );
+        $allow_page['subpage'] = array(
+            'about',
+            'credits',
+            'teamterview',
+            'support',
+            'error'
         );
 		// 익명 접근 허용 페이지 여부 체크
 		$is_allowed = FALSE;
