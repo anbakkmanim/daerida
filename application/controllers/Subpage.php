@@ -2,6 +2,7 @@
 
 class Subpage extends CI_Controller
 {
+    use PageTrait;
     /**
      * Subpage constructor.
      */
@@ -53,5 +54,14 @@ class Subpage extends CI_Controller
      */
     public function error() {
         $this->load->view('subpage/error');
+    }
+
+    /**
+     * 404 Not Found 페이지
+     * @METHDO ALL
+     * @MainURL subpage/_404
+     */
+    public function _404() {
+        $this->LoadView('subpage/404');
     }
 }
