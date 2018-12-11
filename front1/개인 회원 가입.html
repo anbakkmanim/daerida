@@ -1329,5 +1329,60 @@
 
 <script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
 
+<script>
+		 
+function gender(str) {
+  const millitary = document.getElementById("military").parentElement.parentElement;
+  if (str == 'man') {
+    millitary.classList.remove("d-none");
+  }
+  else if (str == 'woman'){
+    millitary.classList.add("d-none");
+  } 
+}
+
+document.onkeyup = e => {
+  const password = document.getElementById('pwd').value;
+  const password_check = document.getElementById('pwd_result').value;
+
+  const pwd_result = document.getElementById("pwd_result").parentElement;
+
+  if (password == "" || password_check == "") {
+    pwd_result.classList.remove("has-error");
+    pwd_result.classList.remove("has-success");
+    pwd_result.classList.add("has-error");
+  } else if (password == password_check) {
+    pwd_result.classList.remove("has-error");
+    pwd_result.classList.remove("has-success");
+    pwd_result.classList.add("has-success");
+  } else if (password != password_check) {
+    pwd_result.classList.remove("has-error");
+    pwd_result.classList.remove("has-success");
+    pwd_result.classList.add("has-error");
+  } else {
+    pwd_result.classList.remove("has-error");
+    pwd_result.classList.remove("has-success");
+    
+    pwd_result.classList.add("has-error");
+  }
+};
+
+$("#upload").change(function() {
+  readImage(this);
+});
+
+const readImage = input => {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+      let image = document.getElementById("preview");
+      image.setAttribute('src', e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+};
+</script>
+
 </body>
 </html>
