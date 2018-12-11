@@ -1,5 +1,6 @@
-<div class="content-bg-wrap"></div>
+<?php $this->load->view('layout/header'); ?>
 
+<div class="content-bg-wrap"></div>
 
 <!-- Header Standard Landing  -->
 
@@ -137,3 +138,5 @@
 <script>
   document.body.classList.add("landing-page");
 </script>
+
+<?php $this->load->view('layout/footer'); ?>
