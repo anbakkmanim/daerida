@@ -1545,7 +1545,7 @@
 											<a href="12-FavouritePage.html" class="active">정보</a>
 										</li>
 										<li>
-											<a href="00_portfolio.html">포트폴리오</a>
+											<a href="00_portfolio.html">질문/평가</a>
 										</li>
 										<!-- <li>
 											<a href="07-ProfilePage-Photos.html">이력서 관리</a>
@@ -1729,19 +1729,15 @@
 								<span class="text">Austin, Texas, USA</span>
 							</li>
 							<li>
-								<span class="title">이름:</span>
-								<span class="text">San Francisco, California, USA</span>
-							</li>
-							<li>
 								<span class="title">휴대전화:</span>
 								<span class="text">UI/UX Designer</span>
 							</li>
 							<li>
-								<span class="title">분야:</span>
+								<span class="title">초봉:</span>
 								<span class="text">April 31st, 2014</span>
 							</li>
 							<li>
-								<span class="title">초봉:</span>
+								<span class="title">분야:</span>
 								<span class="text">Male</span>
 							</li>
 							<li>
@@ -1860,6 +1856,11 @@
 									<label class="control-label">내용</label>
 									<textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
 								</div>
+					</div>
+
+					<div class="col">
+						<label class="control-label">프로필 사진</label>
+						<input type="file">
 					</div>
 					<a href="#" class="btn btn-secondary btn-lg btn--half-width">추가</a>
 					<a href="#" class="btn btn-primary btn-lg btn--half-width">취소</a>
@@ -2059,10 +2060,10 @@
 									<label class="control-label">휴대전화</label>
 									<input class="form-control" placeholder="" type="number">
 								</div>
-
+							</div>
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
-									<label class="control-label">답변</label>
+									<label class="control-label">초봉</label>
 									<input class="form-control" placeholder="" type="text">
 								</div>
 							</div>
@@ -2077,58 +2078,32 @@
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<select class="selectpicker form-control" tabindex="-98">
-									<option value="none">나이</option>
-									<option value="one">20세 이상 25세 미만</option>
-									<option value="two">25세 이상 30세 미만</option>
-									<option value="three">30세 이상 35세 미만</option>
-									<option value="four">35세 이상 40세 미만</option>
-									<option value="five">40세 이상 45세 미만</option>
-									<option value="six">45세 이상 50세 미만</option>
-									<option value="seven">50세 이상 55세 미만</option>
-									<option value="eight">55세 이상 60세 미만</option>
-								</select>
-							</div>
-
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<select class="selectpicker form-control" tabindex="-98">
-									<option value="none">거주지</option>
+									<option value="none">지역</option>
 									<option value="computer">서울</option>
 									<option value="farmer">대구</option>
 								</select>
 							</div>
-
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<select class="selectpicker form-control" tabindex="-98">
-									<option value="none">희망연봉</option>
-									<option value="one">2500 미만</option>
-									<option value="two">2500 이상 3000 미만</option>
-									<option value="three">3000 이상 3500 미만</option>
-									<option value="four">3500 이상 4000 미만</option>
-									<option value="five">4000 이상 4500 미만</option>
-									<option value="six">4500 이상 5000미만</option>
-									<option value="seven">5000 이상</option>
-								</select>
-							</div>
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-3">
 								<div class="row">
-									<div class="radio col">
+									<div class="checkbox col">
 										<label>
-											<input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
-											남자
-										</label>
-									</div>
-									<div class="radio col">
-										<label>
-											<input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
-											여자
+											<input name="optionsCheckboxes" type="checkbox">
+											병역 이행 여부
 										</label>
 									</div>
 									<div class="checkbox col">
 										<label>
 											<input name="optionsCheckboxes" type="checkbox">
-											병력 이행 여부
+											복리후생
 										</label>
 									</div>
+								</div>
+							</div>
+
+							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<div class="form-group label-floating">
+									<label class="control-label">주소</label>
+									<input class="form-control" placeholder="" type="text">
 								</div>
 							</div>
 

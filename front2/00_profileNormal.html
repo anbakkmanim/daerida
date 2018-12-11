@@ -1727,12 +1727,8 @@
 														<h5 class="card-title">대구소프트웨어고</h5>
 														<ul class="widget w-personal-info">
 															<li>
-																<span class="title">전공계열:</span>
+																<span class="title">소개글:</span>
 																<span class="text">ㅁㅇㅁㅇㅁ</span>
-															</li>
-															<li>
-																<span class="title">재학기간:</span>
-																<span class="text">ㅇㅇㅇ</span>
 															</li>
 														</ul>
 													</div>
@@ -1753,12 +1749,8 @@
 														<h5 class="card-title">대구소프트웨어고</h5>
 														<ul class="widget w-personal-info">
 															<li>
-																<span class="title">전공계열:</span>
+																<span class="title">소개글:</span>
 																<span class="text">ㅁㅇㅁㅇㅁ</span>
-															</li>
-															<li>
-																<span class="title">재학기간:</span>
-																<span class="text">ㅇㅇㅇ</span>
 															</li>
 														</ul>
 													</div>
@@ -1872,10 +1864,6 @@
 																<span class="title">발행처:</span>
 																<span class="text">ㅁㄴㅇㄹ</span>
 															</li>
-															<li>
-																<span class="title">취득일:</span>
-																<span class="text">ㅁㄴㅇㄹ</span>
-															</li>
 														</ul>
 													</div>
 												</div>
@@ -1894,10 +1882,6 @@
 														<ul class="widget w-personal-info">
 															<li>
 																<span class="title">발행처:</span>
-																<span class="text">ㅁㄴㅇㄹ</span>
-															</li>
-															<li>
-																<span class="title">취득일:</span>
 																<span class="text">ㅁㄴㅇㄹ</span>
 															</li>
 														</ul>
@@ -2097,6 +2081,12 @@
 							<textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
 						</div>
 					</div>
+
+					<div class="col">
+						<label class="control-label">이미지</label>
+						<input type="file">
+					</div>
+
 					<a href="#" class="btn btn-secondary btn-lg btn--half-width">추가</a>
 					<a href="#" class="btn btn-primary btn-lg btn--half-width">취소</a>
 
@@ -2119,70 +2109,25 @@
 				</div>
 
 				<div class="modal-body">
-					<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-						<div class="row">
-							<div class="col-sm-2 text-center">
-								<label style="margin-top: 1rem;">학교구분</label>
-							</div>
-							<div class="col">
-								<select class="selectpicker form-control" tabindex="-98">
-									<option value="univer">대학교</option>
-									<option value="high-school">고등학교</option>
-									<option value="middle-school">중학교</option>
-								</select>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-2 text-center">
-								<label style="margin-top: 1rem;">전공계열</label>
-							</div>
-							<div class="col">
-								<select class="selectpicker form-control" tabindex="-98">
-									<option value="univer">문과</option>
-									<option value="high-school">고등학교</option>
-									<option value="middle-school">중학교</option>
-								</select>
-							</div>
+				
+					<div class="col">
+
+						<form class="form-group label-floating">
+							<label class="control-label">학교명</label>
+							<input class="form-control" placeholder="" type="text">
+						</form>
+					</div>
+
+					<div class="col">
+						<div class="form-group label-floating">
+							<label class="control-label">간단한 소개</label>
+							<textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
 						</div>
 					</div>
 
-					<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-						<div class="row">
-							<div class="col">
-								<div class="form-group date-time-picker is-focused">
-									<input type="text" name="datetimepicker" placeholder="입학년도">
-									<span class="input-group-addon">
-										<svg class="olymp-month-calendar-icon icon">
-											<use xlink:href="#olymp-month-calendar-icon"></use>
-										</svg>
-									</span>
-								</div>
-							</div>
-
-							<div class="col-sm-1 w-25 text-center">
-								<label style="margin-top: 1rem;">~</label>
-							</div>
-
-							<div class="col">
-								<div class="form-group date-time-picker is-focused">
-									<input type="text" name="datetimepicker" placeholder="졸업년도">
-									<span class="input-group-addon">
-										<svg class="olymp-month-calendar-icon icon">
-											<use xlink:href="#olymp-month-calendar-icon"></use>
-										</svg>
-									</span>
-								</div>
-							</div>
-							<div class="checkbox col">
-								<label style="margin-top: 1rem;">
-									<input name="optionsCheckboxes" type="checkbox">
-									재학중
-								</label>
-							</div>
-
-						</div>
-
-
+					<div class="col">
+						<label class="control-label">이미지</label>
+						<input type="file">
 					</div>
 
 					<a href="#" class="btn btn-secondary btn-lg btn--half-width">추가</a>
@@ -2222,21 +2167,13 @@
 								</form>
 							</div>
 						</div>
-
-						<div class="row">
-							<div class="col">
-								<div class="form-group date-time-picker is-focused">
-									<input type="text" name="datetimepicker" placeholder="취득일">
-									<span class="input-group-addon">
-										<svg class="olymp-month-calendar-icon icon">
-											<use xlink:href="#olymp-month-calendar-icon"></use>
-										</svg>
-									</span>
-								</div>
-							</div>
-						</div>
 					</div>
 
+
+					<div class="col">
+						<label class="control-label">이미지</label>
+						<input type="file">
+					</div>
 					<a href="#" class="btn btn-secondary btn-lg btn--half-width">추가</a>
 					<a href="#" class="btn btn-primary btn-lg btn--half-width">취소</a>
 
