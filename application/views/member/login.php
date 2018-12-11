@@ -46,12 +46,12 @@
 				<ul class="nav nav-tabs" role="tablist">
 					<li class="nav-item">
 						<a class="nav-link active" data-toggle="tab" href="#home" role="tab">
-							<svg class="olymp-login-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-login-icon') ?>"></use></svg>
+							<svg class="happy-face-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-happy-face-icon') ?>"></use></svg>
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" data-toggle="tab" href="#profile" role="tab">
-							<svg class="olymp-register-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-register-icon') ?>"></use></svg>
+							<svg class="happy-faces-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon') ?>"></use></svg>
 						</a>
 					</li>
 				</ul>
