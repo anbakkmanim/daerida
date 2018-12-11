@@ -66,9 +66,6 @@ class Before {
 		// 익명 접근 허용되지 않은 페이지일 경우 로그인 페이지로 강제 이동
 		if ($is_allowed == FALSE):
 			// 로그인 여부 확인
-//			if ($this->CI->session->custEmail == null){
-//                alert('로그인 후 이용해 주세요.', site_url('main/login'));
-//            }
             if ($this->CI->session->me_idx == null){
                 alert('로그인 후 이용해 주세요.', site_url('member/login'));
             }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-	<title>Your Account - Change Password</title>
+	<title>기업 회원가입</title>
 
 	<!-- Required meta tags always come first -->
 	<meta charset="utf-8">
@@ -890,7 +890,7 @@
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
-									<label class="control-label">이름</label>
+									<label class="control-label">회사 이름</label>
 									<input class="form-control" placeholder="" type="text">
 								</div>
 							</div>
@@ -905,13 +905,13 @@
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-empty">
 									<label class="control-label">비밀번호</label>
-									<input class="form-control" placeholder="" type="password">
+									<input class="form-control" id="pwd" name="pwd" placeholder="" type="password">
 								</div>
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-empty">
 									<label class="control-label">비밀번호 확인</label>
-									<input class="form-control" placeholder="" type="password">
+									<input class="form-control" id="pwd_result" name="pwd_check" placeholder="" type="password">
 								</div>
 							</div>
 
@@ -931,15 +931,7 @@
               
 				
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<fieldset disabled>
-									<div class="form-group label-floating has-disabled.is-empty">
-										<label class="control-label">기억에 남는 추억의 장소는 어디 입니까?</label>
-										<input class="form-control" placeholder="" type="text">
-									</div>
-								</fieldset>	
-							</div>
-
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<label for="">Q. 가장 기억에 남는 장소는?</label>
 								<div class="form-group label-floating">
 									<label class="control-label">답변</label>
 									<input class="form-control" placeholder="" type="text">
@@ -1020,11 +1012,19 @@
 								</div>
               </div>
               
-              
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                  <label class="control-label">기업 로고 사진</label>
-                  <input type="file">
-                </div>
+									<label class="control-label">로고 사진</label>
+									<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
+										<div class="file-upload d-inline-block">
+											<label for="upload" class="file-upload__label">Upload Button</label>
+											<input id="upload" class="file-upload__input" type="file" name="file-upload">
+										</div>
+										<div id="uploaded-file" class="d-inline-block">
+											<img id="preview" src="">
+										</div>
+									</div>
+								</div>
+							</div>
                 
                 <div class="col col-lg-12 col-sm-12 col-sm-12 col-12">
                     <div class="remember">
@@ -1311,5 +1311,49 @@
 
 <script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
 
+<script>
+document.onkeyup = e => {
+  const password = document.getElementById('pwd').value;
+  const password_check = document.getElementById('pwd_result').value;
+
+  const pwd_result = document.getElementById("pwd_result").parentElement;
+
+  if (password == "" || password_check == "") {
+    pwd_result.classList.remove("has-error");
+    pwd_result.classList.remove("has-success");
+    pwd_result.classList.add("has-error");
+  } else if (password == password_check) {
+    pwd_result.classList.remove("has-error");
+    pwd_result.classList.remove("has-success");
+    pwd_result.classList.add("has-success");
+  } else if (password != password_check) {
+    pwd_result.classList.remove("has-error");
+    pwd_result.classList.remove("has-success");
+    pwd_result.classList.add("has-error");
+  } else {
+    pwd_result.classList.remove("has-error");
+    pwd_result.classList.remove("has-success");
+    pwd_result.classList.add("has-error");
+  }
+};
+
+$("#upload").change(function() {
+  readImage(this);
+});
+
+const readImage = input => {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+      let image = document.getElementById("preview");
+      image.setAttribute('src', e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+};
+</script>
+
 </body>
 </html>
+
