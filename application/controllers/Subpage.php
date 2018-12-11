@@ -17,7 +17,9 @@ class Subpage extends CI_Controller
      * @MainURL subpage/about
      */
     public function about() {
+        $this->load->view('layout/header');
         $this->load->view('subpage/about');
+        $this->load->view('layout/footer');
     }
 
     /**
@@ -26,7 +28,9 @@ class Subpage extends CI_Controller
      * @MainURL subpage/credits
      */
     public function credits() {
+        $this->load->view('layout/header');
         $this->load->view('subpage/credits');
+        $this->load->view('layout/footer');
     }
 
     /**
@@ -35,7 +39,9 @@ class Subpage extends CI_Controller
      * @MainURL subpage/teamterview
      */
     public function teamterview() {
+        $this->load->view('layout/header');
         $this->load->view('subpage/teamterview');
+        $this->load->view('layout/footer');
     }
 
     /**
@@ -44,7 +50,9 @@ class Subpage extends CI_Controller
      * @MainURL subpage/support
      */
     public function support() {
+        $this->load->view('layout/header');
         $this->load->view('subpage/support');
+        $this->load->view('layout/footer');
     }
 
     /**
@@ -53,7 +61,9 @@ class Subpage extends CI_Controller
      * @MainURL subpage/error
      */
     public function error() {
+        $this->load->view('layout/header');
         $this->load->view('subpage/error');
+        $this->load->view('layout/footer');
     }
 
     /**
@@ -64,6 +74,5 @@ class Subpage extends CI_Controller
     public function _404() {
         $this->load->view('layout/header');
         $this->load->view('subpage/404');
-        $this->load->view('layout/footer');
     }
 }
