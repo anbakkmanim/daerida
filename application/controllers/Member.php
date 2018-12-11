@@ -218,8 +218,20 @@ class Member extends CI_Controller
         $data['me_password'] = $this->session->me_password;
         $data['me_table'] = $this->session->me_table;
         $data['me_type'] = $this->session->me_type;
-
         $row = $this->AuthModel->getCust($data);
+
+        $data['me_n_idx'] = $row->me_n_idx;
+        $row2 = $this->ProfileModel->getCareer($data);
+
+        foreach ($row2 as $result){
+            $career[] = array(
+                'career' => $result->ca_career,
+                'info' => $result->ca_info,
+                'type' => $result->ca_type,
+                'image' => $result->ca_image,
+            );
+        }
+
         $user_data = array(
             'name' => $row->me_n_name,
             'email' => $row->me_n_email,
@@ -230,19 +242,17 @@ class Member extends CI_Controller
             'hopeSalary' => $row->me_n_hopeSalary,
             'profile' => $row->me_n_profile,
             'info' => $row->me_n_info,
-            'isOpen' => $row->me_n_isOpen
+            'isOpen' => $row->me_n_isOpen,
         );
 
-        $this->load->view('Member/profileNormal', $user_data);
+        $this->load->view('Member/profileNormal', $user_data, $career);
     }
 
     public function profileCompany(){
-        $data['me_id'] = $this->session->me_id;
-        $data['me_password'] = $this->session->me_password;
-        $data['me_table'] = $this->session->me_table;
-        $data['me_type'] = $this->session->me_type;
+        $data['me_c_idx'] = $this->input->post('me_c_idx');
 
-        $row = $this->AuthModel->getCust($data);
+        $row = $this->ProfileModel->getComData($data);
+        $row2 = $this->ProfileModel->getFollowData($data);
         $com_data = array(
             'manager' => $row->me_c_manager,
             'name' => $row->me_c_name,
@@ -253,9 +263,33 @@ class Member extends CI_Controller
             'salary' => $row->me_c_salary,
             'sido' => $row->me_c_sido,
             'isMillitary' => $row->me_c_isMillitary,
-            'benefit' => $row->me_c_benefit
+            'benefit' => $row->me_c_benefit,
+            'isFollowed' => $row2,
         );
 
         $this->load->view('Member/profileCompany', $com_data);
+    }
+
+    public function portfolio(){
+        $data['me_n_idx'] = $this->input->post('me_n_idx');
+
+        $row = $this->ProfileModel->getCareer($data);
+
+        foreach ($row as $result){
+            $career[] = array(
+                'career' => $result->ca_career,
+                'info' => $result->ca_info,
+                'type' => $result->ca_type,
+                'file' => $result->ca_image,
+            );
+        }
+
+        $this->load->view('Member/portfolio', $career);
+    }
+
+    public function rating(){
+        $data['me_c_idx'] = $this->input->post('me_c_idx');
+
+        
     }
 }
