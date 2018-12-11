@@ -8,7 +8,7 @@
   <script src="<?= site_url('assets/js/webfontloader.min.js') ?>"></script>
 
   <script>
-    Webfont.load({
+    WebFont.load({
       google: {
         families: ['Roboto:300,400,500,700:latin']
       }
