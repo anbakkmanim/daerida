@@ -1,0 +1,64 @@
+.open-photo-popup-v2{
+  width: 750px;
+}
+
+.photo-album-item .title {
+  padding-top: 22px;
+}
+
+/* .window-popup .form-group {
+  margin-bottom: 50px;
+} */
+
+.btn--half-width {
+  width: 48.3%;
+  margin-top: 20px;
+}
+
+#open-photo-popup-v2 .modal-body {
+  padding: 23px 5px 23px 23px;
+}
+
+#open-photo-popup-v2 .form-control:disabled, .form-control[readonly]{
+  background-color: #fff;
+}
+
+/* .finding-account{
+  width: 50%;
+} */
+
+#update-profile textarea{
+   border: 1px solid #e6ecf5;
+    border-radius: .25rem;
+}
+
+#accordion .btn{
+  color: #fff;
+}
+
+.card-header:first-child {
+  border-radius: 5px 5px 5px 5px;
+}
+
+.career .card-body .w-personal-info li .title{
+  margin-right: 0;
+  width: 15%;
+}
+
+.career .card-body .w-personal-info li{
+  padding: 7px 0;
+}
+
+.togglebutton{
+  margin-bottom: 0;
+}
+
+
+.career .card-body{
+  border: 1px solid #e6ecf5;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.career{
+  margin-bottom: 2rem;
+}

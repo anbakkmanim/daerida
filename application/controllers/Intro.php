@@ -16,7 +16,9 @@ class Intro extends CI_Controller
      * 메인화면
      */
     public function index(){
-        location_href(site_url('intro/main'));
+        $this->load->view('layout/header');
+        $this->load->view('intro/test');
+        $this->load->view('layout/footer');
     }
     public function profile()
     {

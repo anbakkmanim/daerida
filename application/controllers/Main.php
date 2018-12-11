@@ -19,7 +19,9 @@ class Main extends CI_Controller
      */
     public function index()
     {
-        location_href(site_url('main/login'));
+        $this->load->view('layout/header');
+        $this->load->view('intro/test');
+        $this->load->view('layout/footer');
     }
 
     /**
