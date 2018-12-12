@@ -442,7 +442,7 @@ class Member extends CI_Controller
      * @RESPONSE (Array)Career
      */
     public function portfolio(){
-        $data['me_n_idx'] = $this->input->post('me_n_idx');
+        $data['me_n_idx'] = $this->input->get('me_n_idx');
 
         $row = $this->ProfileModel->getCareer($data);
 
@@ -455,7 +455,11 @@ class Member extends CI_Controller
             );
         }
 
-        $this->load->view('Member/portfolio', $career);
+        if(isset($career)) {
+            $this->load->view('Member/portfolio', $career);
+        } else {
+            $this->load->view('Member/portfolio');
+        }
     }
     /**
      * 포트폴리오 추가
@@ -512,7 +516,9 @@ class Member extends CI_Controller
             alert("해당 사용자가 존재하지 않습니다.");
             location_href(site_url("/"));
         } else {
-            $this->load->view("Member/profileNormal", $result);
+            $rfield = $this->RegisterModel->getRField();
+            $sfield = $this->RegisterModel->getSField($result->fi_l_idx);
+            $this->load->view("Member/profileNormal", $result, $rfield, $sfield);
         }
     }
 
