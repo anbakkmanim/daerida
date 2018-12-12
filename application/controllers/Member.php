@@ -104,6 +104,17 @@ class Member extends CI_Controller
         $this->load->view('Member/registerCompany', $data);
     }
 
+    public function getLargeField(){
+        $rfield = $this->RegisterModel->getRField();
+        foreach($rfield as $row){
+            $array[] = array(
+                "fi_l_idx" => $row['fi_l_idx'],
+                "fi_l_name" => $row['fi_l_name']
+            );
+        }
+        echo json_encode($array);
+    }
+
     // 소분류 받아오기
     public function getSmallField(){
         $data['rfield'] = $this->input->get('rfield');
