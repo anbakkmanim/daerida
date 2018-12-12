@@ -1,6 +1,6 @@
 <?php $this->load->view('layout/header'); ?>
 
-<?php $this->load->view('layout/fluid_header', ['title' => '소개']); ?>
+<?php $this->load->view('layout/fluid-header', ['title' => '소개']); ?>
 
 <section class="pt120">
 	<div class="container">
@@ -27,7 +27,7 @@
 					
 					<div class="crumina-module crumina-info-box" data-mh="box--classic">
 						<div class="info-box-image">
-							<img src="/assets/img/info1.png" alt="icon">
+							<img src="img/info1.png" alt="icon">
 						</div>
 						<div class="info-box-content">
 							<h3 class="info-box-title">구인·구직</h3>
@@ -47,7 +47,7 @@
 					
 					<div class="crumina-module crumina-info-box" data-mh="box--classic">
 						<div class="info-box-image">
-							<img src="/assets/img/info2.png" alt="icon">
+							<img src="img/info2.png" alt="icon">
 						</div>
 						<div class="info-box-content">
 							<h3 class="info-box-title">포트폴리오</h3>
@@ -67,7 +67,7 @@
 					
 					<div class="crumina-module crumina-info-box" data-mh="box--classic">
 						<div class="info-box-image">
-							<img src="/assets/img/info3.png" alt="icon">
+							<img src="img/info3.png" alt="icon">
 						</div>
 						<div class="info-box-content">
 							<h3 class="info-box-title">이력서</h3>
@@ -87,7 +87,7 @@
 					
 					<div class="crumina-module crumina-info-box" data-mh="box--classic">
 						<div class="info-box-image">
-							<img src="/assets/img/info4.png" alt="icon">
+							<img src="img/info4.png" alt="icon">
 						</div>
 						<div class="info-box-content">
 							<h3 class="info-box-title">팀빌딩</h3>
@@ -132,7 +132,7 @@
 			</div>
 
 			<div class="col col-xl-6 col-lg-6 ml-auto col-md-12 col-sm-12  align-right">
-				<img src="/assets/img/screen_.png" alt="screen" class="negative-margin-right150">
+				<img src="img/screen_.png" alt="screen" class="negative-margin-right150">
 			</div>
 		</div>
 
@@ -162,8 +162,8 @@
 				<div class="crumina-module crumina-teammembers-item">
 				
 					<div class="teammembers-thumb">
-						<img class="main" src="/assets/img/NHW.jpg" alt="team member">
-						<img class="hover" src="/assets/img/NHW.jpg" alt="team member">
+						<img class="main" src="img/NHW.jpg" alt="team member">
+						<img class="hover" src="img/NHW.jpg" alt="team member">
 					</div>
 				
 					<div class="teammember-content">
@@ -205,8 +205,8 @@
 				<div class="crumina-module crumina-teammembers-item">
 				
 					<div class="teammembers-thumb">
-						<img class="main" src="/assets/img/KMG.jpg" alt="team member">
-						<img class="hover" src="/assets/img/KMG.jpg" alt="team member">
+						<img class="main" src="img/KMG.jpg" alt="team member">
+						<img class="hover" src="img/KMG.jpg" alt="team member">
 					</div>
 				
 					<div class="teammember-content">
@@ -249,8 +249,8 @@
 				<div class="crumina-module crumina-teammembers-item">
 				
 					<div class="teammembers-thumb">
-						<img class="main" src="/assets/img/NGY.jpg" alt="team member">
-						<img class="hover" src="/assets/img/NGY.jpg" alt="team member">
+						<img class="main" src="img/NGY.jpg" alt="team member">
+						<img class="hover" src="img/NGY.jpg" alt="team member">
 					</div>
 				
 					<div class="teammember-content">
@@ -292,8 +292,8 @@
 				<div class="crumina-module crumina-teammembers-item">
 				
 					<div class="teammembers-thumb">
-						<img class="main" src="/assets/img/SSH.jpg" alt="team member">
-						<img class="hover" src="/assets/img/SSH.jpg" alt="team member">
+						<img class="main" src="img/SSH.jpg" alt="team member">
+						<img class="hover" src="img/SSH.jpg" alt="team member">
 					</div>
 				
 					<div class="teammember-content">
@@ -328,8 +328,8 @@
 				<div class="crumina-module crumina-teammembers-item">
 				
 					<div class="teammembers-thumb">
-						<img class="main" src="/assets/img/JWM.jpg" alt="team member">
-						<img class="hover" src="/assets/img/JWM.jpg" alt="team member">
+						<img class="main" src="img/JWM.jpg" alt="team member">
+						<img class="hover" src="img/JWM.jpg" alt="team member">
 					</div>
 				
 					<div class="teammember-content">
@@ -371,8 +371,8 @@
 				<div class="crumina-module crumina-teammembers-item">
 				
 					<div class="teammembers-thumb">
-						<img class="main" src="/assets/img/CDB.jpg" alt="team member">
-						<img class="hover" src="/assets/img/CDB.jpg" alt="team member">
+						<img class="main" src="img/CDB.jpg" alt="team member">
+						<img class="hover" src="img/CDB.jpg" alt="team member">
 					</div>
 				
 					<div class="teammember-content">
@@ -569,7 +569,7 @@
 				<ul class="notification-list chat-message chat-message-field">
 					<li>
 						<div class="author-thumb">
-							<img src="/assets/img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
+							<img src="img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks</span>
@@ -579,7 +579,7 @@
 
 					<li>
 						<div class="author-thumb">
-							<img src="/assets/img/author-page.jpg" alt="author" class="mCS_img_loaded">
+							<img src="img/author-page.jpg" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Don’t worry Mathilda!</span>
@@ -590,7 +590,7 @@
 
 					<li>
 						<div class="author-thumb">
-							<img src="/assets/img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
+							<img src="img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks</span>
@@ -616,137 +616,137 @@
 					<ul class="more-dropdown more-with-triangle triangle-bottom-right">
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat1.png" alt="icon">
+								<img src="img/icon-chat1.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat2.png" alt="icon">
+								<img src="img/icon-chat2.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat3.png" alt="icon">
+								<img src="img/icon-chat3.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat4.png" alt="icon">
+								<img src="img/icon-chat4.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat5.png" alt="icon">
+								<img src="img/icon-chat5.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat6.png" alt="icon">
+								<img src="img/icon-chat6.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat7.png" alt="icon">
+								<img src="img/icon-chat7.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat8.png" alt="icon">
+								<img src="img/icon-chat8.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat9.png" alt="icon">
+								<img src="img/icon-chat9.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat10.png" alt="icon">
+								<img src="img/icon-chat10.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat11.png" alt="icon">
+								<img src="img/icon-chat11.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat12.png" alt="icon">
+								<img src="img/icon-chat12.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat13.png" alt="icon">
+								<img src="img/icon-chat13.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat14.png" alt="icon">
+								<img src="img/icon-chat14.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat15.png" alt="icon">
+								<img src="img/icon-chat15.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat16.png" alt="icon">
+								<img src="img/icon-chat16.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat17.png" alt="icon">
+								<img src="img/icon-chat17.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat18.png" alt="icon">
+								<img src="img/icon-chat18.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat19.png" alt="icon">
+								<img src="img/icon-chat19.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat20.png" alt="icon">
+								<img src="img/icon-chat20.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat21.png" alt="icon">
+								<img src="img/icon-chat21.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat22.png" alt="icon">
+								<img src="img/icon-chat22.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat23.png" alt="icon">
+								<img src="img/icon-chat23.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat24.png" alt="icon">
+								<img src="img/icon-chat24.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat25.png" alt="icon">
+								<img src="img/icon-chat25.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat26.png" alt="icon">
+								<img src="img/icon-chat26.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="/assets/img/icon-chat27.png" alt="icon">
+								<img src="img/icon-chat27.png" alt="icon">
 							</a>
 						</li>
 					</ul>
@@ -765,11 +765,11 @@
 
 
 <a class="back-to-top" href="#">
-	<img src="/assets/svg-icons/back-to-top.svg" alt="arrow" class="back-icon">
+	<img src="svg-icons/back-to-top.svg" alt="arrow" class="back-icon">
 </a>
 
 <script>
   document.body.classList.add('body-bg-white');
 </script>
 
-<?php $this->load->view('layout/footer'); ?>
+<?php $this->load->view('layout/footer');?>
