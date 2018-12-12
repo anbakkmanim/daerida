@@ -162,7 +162,7 @@ class Member extends CI_Controller
 
         $data['me_profile'] = null;
         if($this->upload->do_upload('me_profile')){
-            $data['me_profile'] = $this->upload->data('full_path');
+            $data['me_profile'] = $this->upload->data('file_name');
         }
 
         $data['me_answer'] = $this->input->post('me_answer');
