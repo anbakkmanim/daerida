@@ -14,7 +14,7 @@
 							<h3 class="mb-0">
 								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"  aria-expanded="true" aria-controls="collapseOne">
 									왜 데리다 입니까?
-									<span class="icons-wrap">
+									<span class="icons-wrap d-none">
 										<svg class="olymp-plus-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-plus-icon') ?>" ></use></svg>
 										<svg class="olymp-accordion-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-accordion-close-icon') ?>" ></use></svg>
 									</span>
@@ -34,7 +34,7 @@
 							<h3 class="mb-0">
 								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne-1"  aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 									팀이름이 왜 안밖마님입니까?
-									<span class="icons-wrap">
+									<span class="icons-wrap d-none">
 														<svg class="olymp-plus-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-plus-icon') ?>" ></use></svg>
 														<svg class="olymp-accordion-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-accordion-close-icon') ?>" ></use></svg>
 													</span>
@@ -58,7 +58,7 @@
 							<h3 class="mb-0">
 								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne-2"  aria-expanded="true" aria-controls="collapseOne" class="collapsed">
 									SNS로그인은 어떻게 하나요?
-									<span class="icons-wrap">
+									<span class="icons-wrap d-none">
 														<svg class="olymp-plus-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-plus-icon') ?>" ></use></svg>
 														<svg class="olymp-accordion-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-accordion-close-icon') ?>" ></use></svg>
 													</span>
@@ -76,7 +76,7 @@
 							<h3 class="mb-0">
 								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne-3"  aria-expanded="true" aria-controls="collapseOne-3" class="collapsed">
 									이 사이트를 이용하려면 돈이 드나요?
-									<span class="icons-wrap">
+									<span class="icons-wrap d-none">
 														<svg class="olymp-plus-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-plus-icon') ?>" ></use></svg>
 														<svg class="olymp-accordion-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-accordion-close-icon') ?>" ></use></svg>
 													</span>

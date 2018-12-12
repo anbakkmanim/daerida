@@ -11,8 +11,8 @@
 						<img src="<?= site_url('assets/img/데리다57_주.png') ?>" alt="Olympus" class="logo-colored">
 					</div>
 					<div class="title-block">
-						<h6 class="logo-title">olympus</h6>
-						<div class="sub-title">SOCIAL NETWORK</div>
+						<h6 class="logo-title">DAERIDA</h6>
+						<div class="sub-title">전국 잡 매칭 서비스</div>
 					</div>
 				</a>
 	
