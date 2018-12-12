@@ -120,7 +120,7 @@ class RegisterModel extends CI_Model
 
     function addField($param){
         $sql = "INSERT INTO FIELD_TB(
-                                me_idx,
+                                me_id,
                                 fi_s_idx
                                 ) 
                                 VALUE
@@ -129,7 +129,7 @@ class RegisterModel extends CI_Model
                                 ?    
                                 );
                 ";
-        $query = $this->db->query($sql,array($param['me_idx'],$param['me_sfield']));
+        $query = $this->db->query($sql,array($param['me_id'],$param['me_sfield']));
         return $query;
     }
 

@@ -67,7 +67,7 @@ Class ProfileModel extends CI_Model{
 
     public function setProfileCompany($param){
         $sql = "
-                  UPDATE  
+                  UPDATE  MEMBER_COMPANY_TB
                   SET
                   me_c_manager = ?,
                   me_c_name = ?,
@@ -79,8 +79,6 @@ Class ProfileModel extends CI_Model{
                   me_c_sido = ?,
                   me_c_isMilitary = ?,
                   me_c_benefit = ?
-                  INTO
-                  MEMBER_COMPANY_TB
                   WHERE
                   me_c_idx = ?
         ";
@@ -105,7 +103,7 @@ Class ProfileModel extends CI_Model{
 
     public function setProfileNormal($param){
         $sql = "
-                    UPDATE 
+                    UPDATE MEMBER_NORMAL_TB
                     SET
                     me_n_name = ?,
                     me_n_email = ?,
@@ -117,8 +115,6 @@ Class ProfileModel extends CI_Model{
                     me_n_profile = ?,
                     me_n_info = ?,
                     me_n_isOpen = ?
-                    INTO
-                    MEMBER_NORMAL_TB
                     WHERE
                     me_n_idx = ?
         ";

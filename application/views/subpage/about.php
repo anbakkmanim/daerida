@@ -27,7 +27,7 @@
 					
 					<div class="crumina-module crumina-info-box" data-mh="box--classic">
 						<div class="info-box-image">
-							<img src="/assets/img/info1.png" alt="icon">
+							<img src="/assets/img/구인구직.png" alt="icon" style="width:110px">
 						</div>
 						<div class="info-box-content">
 							<h3 class="info-box-title">구인·구직</h3>
@@ -47,7 +47,7 @@
 					
 					<div class="crumina-module crumina-info-box" data-mh="box--classic">
 						<div class="info-box-image">
-							<img src="/assets/img/info2.png" alt="icon">
+							<img src="/assets/img/포트폴리오.png" alt="icon" style="width:110px">
 						</div>
 						<div class="info-box-content">
 							<h3 class="info-box-title">포트폴리오</h3>
@@ -67,7 +67,7 @@
 					
 					<div class="crumina-module crumina-info-box" data-mh="box--classic">
 						<div class="info-box-image">
-							<img src="/assets/img/info3.png" alt="icon">
+							<img src="/assets/img/이력서.png" alt="icon" style="width:110px">
 						</div>
 						<div class="info-box-content">
 							<h3 class="info-box-title">이력서</h3>
@@ -87,7 +87,7 @@
 					
 					<div class="crumina-module crumina-info-box" data-mh="box--classic">
 						<div class="info-box-image">
-							<img src="/assets/img/info4.png" alt="icon">
+							<img src="/assets/img/팀빌딩.png" alt="icon" style="width:110px">
 						</div>
 						<div class="info-box-content">
 							<h3 class="info-box-title">팀빌딩</h3>
