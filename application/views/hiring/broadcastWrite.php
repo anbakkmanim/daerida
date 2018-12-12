@@ -16,7 +16,6 @@
 			</div>
 		</div>
 	</div>
-	<img class="img-bottom" src="img/account-bottom.png" alt="friends">
 </div>
 
 <div class="container">
