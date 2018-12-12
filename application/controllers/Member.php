@@ -24,7 +24,7 @@ class Member extends CI_Controller
         $me_idx = $this->session->me_idx;
 
         if($me_idx != null){
-            location_href(site_url("/hiring/list"));
+            location_href(site_url("/hiring/hiringList"));
         }else{
             $this->load->view('member/login');
         }
@@ -81,7 +81,7 @@ class Member extends CI_Controller
         }
 
         $this->session->set_userdata($user_data);
-        location_href(site_url("/hiring/list"));
+        location_href(site_url("/hiring/hiringList"));
     }
 
     // 로그아웃
