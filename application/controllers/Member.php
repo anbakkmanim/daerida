@@ -516,9 +516,9 @@ class Member extends CI_Controller
             alert("해당 사용자가 존재하지 않습니다.");
             location_href(site_url("/"));
         } else {
-            $rfield = $this->RegisterModel->getRField();
-            $sfield = $this->RegisterModel->getSField($result->fi_l_idx);
-            $this->load->view("Member/profileNormal", $result, $rfield, $sfield);
+            $result->rfield = $this->RegisterModel->getRField();
+            $result->sfield = $this->RegisterModel->getSField(array('rfield' => $result->fi_l_idx));
+            $this->load->view("Member/profileNormal", $result);
         }
     }
 
