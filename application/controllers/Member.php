@@ -11,7 +11,6 @@ class Member extends CI_Controller
         parent::__construct();
         $this->load->model('AuthModel');
         $this->load->model('RegisterModel');
-        $this->load->model('ProfileModel');
     }
 
     // url 이 /member 까지만 적었을시 /member/login 으로 리다이렉트
