@@ -185,7 +185,7 @@
 	<div class="header-spacer--standard"></div>
 
 	<div class="stunning-header-content">
-		<h1 class="stunning-header-title"><?= title ?></h1>
+		<h1 class="stunning-header-title"><?= $title ?></h1>
 		<ul class="breadcrumbs">
 			<li class="breadcrumbs-item">
 				<a href="#">Home</a>
