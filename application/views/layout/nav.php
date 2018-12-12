@@ -358,7 +358,7 @@
 		<div class="control-block">
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
-					<img alt="author" src="<?= site_url('assets/img/author-page.jpg') ?>" class="avatar">
+					<img alt="author" src="<?= "/uploads/profile/".$this->session->me_profile ?>" style="width:40px" class="avatar">
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar ps ps--theme_default" data-mcs-theme="dark" data-ps-id="709ba5dd-e3ff-23ee-d8ab-52f0da53e507">
 							<div class="ui-block-title ui-block-title-small">
@@ -381,7 +381,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="#">
+									<a href="/member/logout">
 										<svg class="olymp-logout-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-logout-icon') ?>"></use></svg>
 
 										<span>Log Out</span>
@@ -392,11 +392,22 @@
 
 					</div>
 				</div>
-				<a href="02-ProfilePage.html" class="author-name fn">
+				<a href="<?php
+				if ($this->session->me_type == "me_n_")
+					echo "/member/profileNormal";
+				else
+					echo "/member/profileCompany";
+		?>
+				?>" class="author-name fn">
 					<div class="author-title">
-						James Spiegel <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon') ?>"></use></svg>
+						<?= $this->session->me_name?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon') ?>"></use></svg>
 					</div>
-					<span class="author-subtitle">SPACE COWBOY</span>
+					<span class="author-subtitle"><?php
+					 	if ($this->session->me_type == "me_n_")
+						 	echo "일반 회원";
+						else
+							echo "기업 회원";
+					 ?></span>
 				</a>
 			</div>
 
