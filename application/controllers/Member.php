@@ -30,7 +30,7 @@ class Member extends CI_Controller
         }
     }
 
-    /*
+    /**
      * 로그인
      * @METHOD POST
      * @MainURL /member/authUser
@@ -117,7 +117,7 @@ class Member extends CI_Controller
     }
 
 
-    /*
+    /**
      * 아이디 중복체크
      * @METHOD GET
      * @MainURL /main/idCheck
@@ -131,7 +131,7 @@ class Member extends CI_Controller
         echo $result;
     }
 
-    /*
+    /**
      * 회원가입
      * @METHOD POST
      * @MainURL /main/register
@@ -202,7 +202,7 @@ class Member extends CI_Controller
     }
 
 
-    /*
+    /**
      * 아이디 찾기
      * @METHOD POST
      * @MainURL /main/findUserId
@@ -229,7 +229,7 @@ class Member extends CI_Controller
         }
     }
 
-    /*
+    /**
      * 비밀번호 찾기
      * @METHOD POST
      * @MainURL /main/findUserPassword
