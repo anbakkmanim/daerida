@@ -218,7 +218,7 @@ class Member extends CI_Controller
     /**
      * 아이디 찾기
      * @METHOD POST
-     * @MainURL /main/findUserId
+     * @MainURL /member/findUserId
      * @REQUEST me_email, me_phone
      * @RESPONSE id
      */
@@ -237,15 +237,15 @@ class Member extends CI_Controller
             $id = array('id' => $id);
             echo json_encode($id);
         } else {
-            $id = array('id' => 'null');
-            echo json_encodd($id);
+            $id = array('id' => null);
+            echo json_encode($id);
         }
     }
 
     /**
      * 비밀번호 찾기
      * @METHOD POST
-     * @MainURL /main/findUserPassword
+     * @MainURL /member/findUserPassword
      * @REQUEST me_id, me_password
      * @RESPONSE $password
      */
@@ -265,7 +265,7 @@ class Member extends CI_Controller
             $password = array('password' => $password);
             echo json_encode($password);
         } else {
-            $password = array('password' => 'null');
+            $password = array('password' => null);
             echo json_encode($password);
         }
     }
