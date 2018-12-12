@@ -1,461 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<?php $this->load->view('layout/header'); ?>
 
-	<title>기업 회원가입</title>
-
-	<!-- Required meta tags always come first -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-reboot.css">
-	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap-grid.css">
-
-	<!-- Main Styles CSS -->
-	<link rel="stylesheet" type="text/css" href="css/main.min.css">
-	<link rel="stylesheet" type="text/css" href="css/fonts.min.css">
-
-	<!-- Main Font -->
-	<script src="js/webfontloader.min.js"></script>
-	<script>
-		WebFont.load({
-			google: {
-				families: ['Roboto:300,400,500,700:latin']
-			}
-		});
-	</script>
-
-</head>
-<body>
-
-<!-- Profile Settings Responsive -->
-
-<div class="profile-settings-responsive">
-
-	<a href="#" class="js-profile-settings-open profile-settings-open">
-		<i class="fa fa-angle-right" aria-hidden="true"></i>
-		<i class="fa fa-angle-left" aria-hidden="true"></i>
-	</a>
-	<div class="mCustomScrollbar" data-mcs-theme="dark">
-		<div class="ui-block">
-			<div class="your-profile">
-				<div class="ui-block-title ui-block-title-small">
-					<h6 class="title">Your PROFILE</h6>
-				</div>
-
-				<div id="accordion1" role="tablist" aria-multiselectable="true">
-					<div class="card">
-						<div class="card-header" role="tab" id="headingOne-1">
-							<h6 class="mb-0">
-								<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne-1" aria-expanded="true" aria-controls="collapseOne">
-									Profile Settings
-									<svg class="olymp-dropdown-arrow-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
-								</a>
-							</h6>
-						</div>
-
-						<div id="collapseOne-1" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-							<ul class="your-profile-menu">
-								<li>
-									<a href="28-YourAccount-PersonalInformation.html">Personal Information</a>
-								</li>
-								<li>
-									<a href="29-YourAccount-AccountSettings.html">Account Settings</a>
-								</li>
-								<li>
-									<a href="30-YourAccount-ChangePassword.html">Change Password</a>
-								</li>
-								<li>
-									<a href="31-YourAccount-HobbiesAndInterests.html">Hobbies and Interests</a>
-								</li>
-								<li>
-									<a href="32-YourAccount-EducationAndEmployement.html">Education and Employement</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-
-				<div class="ui-block-title">
-					<a href="33-YourAccount-Notifications.html" class="h6 title">Notifications</a>
-					<a href="#" class="items-round-little bg-primary">8</a>
-				</div>
-				<div class="ui-block-title">
-					<a href="34-YourAccount-ChatMessages.html" class="h6 title">Chat / Messages</a>
-				</div>
-				<div class="ui-block-title">
-					<a href="35-YourAccount-FriendsRequests.html" class="h6 title">Friend Requests</a>
-					<a href="#" class="items-round-little bg-blue">4</a>
-				</div>
-				<div class="ui-block-title ui-block-title-small">
-					<h6 class="title">FAVOURITE PAGE</h6>
-				</div>
-				<div class="ui-block-title">
-					<a href="36-FavPage-SettingsAndCreatePopup.html" class="h6 title">Create Fav Page</a>
-				</div>
-				<div class="ui-block-title">
-					<a href="36-FavPage-SettingsAndCreatePopup.html" class="h6 title">Fav Page Settings</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!-- ... end Profile Settings Responsive -->
-
-
-
-<!-- Fixed Sidebar Left -->
-
-<div class="fixed-sidebar">
-	<div class="fixed-sidebar-left sidebar--small" id="sidebar-left">
-
-		<a href="02-ProfilePage.html" class="logo">
-			<div class="img-wrap">
-				<img src="img/logo.png" alt="Olympus">
-			</div>
-		</a>
-
-		<div class="mCustomScrollbar" data-mcs-theme="dark">
-			<ul class="left-menu">
-				<li>
-					<a href="#" class="js-sidebar-open">
-						<svg class="olymp-menu-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="OPEN MENU"><use xlink:href="svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="03-Newsfeed.html">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="16-FavPagesFeed.html">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="17-FriendGroups.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="18-MusicAndPlaylists.html">
-						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MUSIC&PLAYLISTS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-headphones-icon"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="19-WeatherWidget.html">
-						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WEATHER APP"><use xlink:href="svg-icons/sprites/icons.svg#olymp-weather-icon"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="20-CalendarAndEvents-MonthlyCalendar.html">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="24-CommunityBadges.html">
-						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Community Badges"><use xlink:href="svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="25-FriendsBirthday.html">
-						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Friends Birthdays"><use xlink:href="svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="26-Statistics.html">
-						<svg class="olymp-stats-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Account Stats"><use xlink:href="svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="27-ManageWidgets.html">
-						<svg class="olymp-manage-widgets-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Manage Widgets"><use xlink:href="svg-icons/sprites/icons.svg#olymp-manage-widgets-icon"></use></svg>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-
-	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1">
-		<a href="02-ProfilePage.html" class="logo">
-			<div class="img-wrap">
-				<img src="img/logo.png" alt="Olympus">
-			</div>
-			<div class="title-block">
-				<h6 class="logo-title">olympus</h6>
-			</div>
-		</a>
-
-		<div class="mCustomScrollbar" data-mcs-theme="dark">
-			<ul class="left-menu">
-				<li>
-					<a href="#" class="js-sidebar-open">
-						<svg class="olymp-close-icon left-menu-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
-						<span class="left-menu-title">Collapse Menu</span>
-					</a>
-				</li>
-				<li>
-					<a href="03-Newsfeed.html">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
-						<span class="left-menu-title">Newsfeed</span>
-					</a>
-				</li>
-				<li>
-					<a href="16-FavPagesFeed.html">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
-						<span class="left-menu-title">Fav Pages Feed</span>
-					</a>
-				</li>
-				<li>
-					<a href="17-FriendGroups.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
-						<span class="left-menu-title">Friend Groups</span>
-					</a>
-				</li>
-				<li>
-					<a href="18-MusicAndPlaylists.html">
-						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MUSIC&PLAYLISTS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-headphones-icon"></use></svg>
-						<span class="left-menu-title">Music & Playlists</span>
-					</a>
-				</li>
-				<li>
-					<a href="19-WeatherWidget.html">
-						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WEATHER APP"><use xlink:href="svg-icons/sprites/icons.svg#olymp-weather-icon"></use></svg>
-						<span class="left-menu-title">Weather App</span>
-					</a>
-				</li>
-				<li>
-					<a href="20-CalendarAndEvents-MonthlyCalendar.html">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
-						<span class="left-menu-title">Calendar and Events</span>
-					</a>
-				</li>
-				<li>
-					<a href="24-CommunityBadges.html">
-						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Community Badges"><use xlink:href="svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
-						<span class="left-menu-title">Community Badges</span>
-					</a>
-				</li>
-				<li>
-					<a href="25-FriendsBirthday.html">
-						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Friends Birthdays"><use xlink:href="svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use></svg>
-						<span class="left-menu-title">Friends Birthdays</span>
-					</a>
-				</li>
-				<li>
-					<a href="26-Statistics.html">
-						<svg class="olymp-stats-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Account Stats"><use xlink:href="svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
-						<span class="left-menu-title">Account Stats</span>
-					</a>
-				</li>
-				<li>
-					<a href="27-ManageWidgets.html">
-						<svg class="olymp-manage-widgets-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Manage Widgets"><use xlink:href="svg-icons/sprites/icons.svg#olymp-manage-widgets-icon"></use></svg>
-						<span class="left-menu-title">Manage Widgets</span>
-					</a>
-				</li>
-			</ul>
-
-			<div class="profile-completion">
-
-				<div class="skills-item">
-					<div class="skills-item-info">
-						<span class="skills-item-title">Profile Completion</span>
-						<span class="skills-item-count"><span class="count-animate" data-speed="1000" data-refresh-interval="50" data-to="76" data-from="0"></span><span class="units">76%</span></span>
-					</div>
-					<div class="skills-item-meter">
-						<span class="skills-item-meter-active bg-primary" style="width: 76%"></span>
-					</div>
-				</div>
-
-				<span>Complete <a href="#">your profile</a> so people can know more about you!</span>
-
-			</div>
-		</div>
-	</div>
-</div>
-
-<!-- ... end Fixed Sidebar Left -->
-
-
-<!-- Fixed Sidebar Left -->
-
-<div class="fixed-sidebar fixed-sidebar-responsive">
-
-	<div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
-		<a href="#" class="logo js-sidebar-open">
-			<img src="img/logo.png" alt="Olympus">
-		</a>
-
-	</div>
-
-	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
-		<a href="#" class="logo">
-			<div class="img-wrap">
-				<img src="img/logo.png" alt="Olympus">
-			</div>
-			<div class="title-block">
-				<h6 class="logo-title">olympus</h6>
-			</div>
-		</a>
-
-		<div class="mCustomScrollbar" data-mcs-theme="dark">
-
-			<div class="control-block">
-				<div class="author-page author vcard inline-items">
-					<div class="author-thumb">
-						<img alt="author" src="img/author-page.jpg" class="avatar">
-						<span class="icon-status online"></span>
-					</div>
-					<a href="02-ProfilePage.html" class="author-name fn">
-						<div class="author-title">
-							James Spiegel <svg class="olymp-dropdown-arrow-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
-						</div>
-						<span class="author-subtitle">SPACE COWBOY</span>
-					</a>
-				</div>
-			</div>
-
-			<div class="ui-block-title ui-block-title-small">
-				<h6 class="title">MAIN SECTIONS</h6>
-			</div>
-
-			<ul class="left-menu">
-				<li>
-					<a href="#" class="js-sidebar-open">
-						<svg class="olymp-close-icon left-menu-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
-						<span class="left-menu-title">Collapse Menu</span>
-					</a>
-				</li>
-				<li>
-					<a href="mobile-index.html">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
-						<span class="left-menu-title">Newsfeed</span>
-					</a>
-				</li>
-				<li>
-					<a href="Mobile-28-YourAccount-PersonalInformation.html">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
-						<span class="left-menu-title">Fav Pages Feed</span>
-					</a>
-				</li>
-				<li>
-					<a href="mobile-29-YourAccount-AccountSettings.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
-						<span class="left-menu-title">Friend Groups</span>
-					</a>
-				</li>
-				<li>
-					<a href="Mobile-30-YourAccount-ChangePassword.html">
-						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MUSIC&PLAYLISTS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-headphones-icon"></use></svg>
-						<span class="left-menu-title">Music & Playlists</span>
-					</a>
-				</li>
-				<li>
-					<a href="Mobile-31-YourAccount-HobbiesAndInterests.html">
-						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WEATHER APP"><use xlink:href="svg-icons/sprites/icons.svg#olymp-weather-icon"></use></svg>
-						<span class="left-menu-title">Weather App</span>
-					</a>
-				</li>
-				<li>
-					<a href="Mobile-32-YourAccount-EducationAndEmployement.html">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
-						<span class="left-menu-title">Calendar and Events</span>
-					</a>
-				</li>
-				<li>
-					<a href="Mobile-33-YourAccount-Notifications.html">
-						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Community Badges"><use xlink:href="svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
-						<span class="left-menu-title">Community Badges</span>
-					</a>
-				</li>
-				<li>
-					<a href="Mobile-34-YourAccount-ChatMessages.html">
-						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Friends Birthdays"><use xlink:href="svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use></svg>
-						<span class="left-menu-title">Friends Birthdays</span>
-					</a>
-				</li>
-				<li>
-					<a href="Mobile-35-YourAccount-FriendsRequests.html">
-						<svg class="olymp-stats-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Account Stats"><use xlink:href="svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
-						<span class="left-menu-title">Account Stats</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<svg class="olymp-manage-widgets-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Manage Widgets"><use xlink:href="svg-icons/sprites/icons.svg#olymp-manage-widgets-icon"></use></svg>
-						<span class="left-menu-title">Manage Widgets</span>
-					</a>
-				</li>
-			</ul>
-
-			<div class="ui-block-title ui-block-title-small">
-				<h6 class="title">YOUR ACCOUNT</h6>
-			</div>
-
-			<ul class="account-settings">
-				<li>
-					<a href="#">
-
-						<svg class="olymp-menu-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
-
-						<span>Profile Settings</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
-
-						<span>Create Fav Page</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<svg class="olymp-logout-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
-
-						<span>Log Out</span>
-					</a>
-				</li>
-			</ul>
-
-			<div class="ui-block-title ui-block-title-small">
-				<h6 class="title">About Olympus</h6>
-			</div>
-
-			<ul class="about-olympus">
-				<li>
-					<a href="#">
-						<span>Terms and Conditions</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span>FAQs</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span>Careers</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span>Contact</span>
-					</a>
-				</li>
-			</ul>
-
-		</div>
-	</div>
-</div>
-
-<!-- ... end Fixed Sidebar Left -->
-
+<?php $this->load->view('layout/nav'); ?>
 
 <!-- Fixed Sidebar Right-Responsive -->
 
@@ -885,27 +430,56 @@
 					
 					<!-- Change Password Form -->
 					
-					<form>
+					<form action="/member/register" method="POST" enctype="multipart/form-data">
+						<input type="hidden" name="me_table" value="MEMBER_COMPANY_TB">
 						<div class="row">
-
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">회사 이름</label>
-									<input class="form-control" placeholder="" type="text">
+									<input class="form-control" placeholder="" type="text" name="me_name">
 								</div>
 							</div>
-				
+							
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<div class="form-group label-floating">
-									<label class="control-label">아이디</label>
-									<input class="form-control" placeholder="" type="text">
-								</div>
-							</div>
+									<div class="form-group label-floating">
+										<label class="control-label">담당자 이름</label>
+										<input class="form-control" placeholder="" type="text" name="me_c_manager">
+									</div>
+                </div>
+				
+							<div class="col col-lg-8 col-md-6 col-sm-12 col-12">
+										<div class="form-group label-floating">
+											<label class="control-label">아이디</label>
+											<input class="form-control" placeholder="" type="text" id="me_id" name="me_id">
+										</div>
+									</div>
+									<div class="col col-lg-4 col-md-6 col-sm-12 col-12">
+										<script>
+											function checkID() {
+												$.ajax({
+													type: "GET",
+													url: "/member/idCheck",
+													data: {"me_id" : $("#me_id")[0].value},
+													success (data) {
+														console.log(data)
+														if (data == 1) {
+															alert("사용 가능한 아이디입니다.");
+															$("#submit")[0].disabled = false;
+
+														} else {
+															alert("중북된 아이디입니다.");
+														}
+													}
+												})
+											}
+										</script>
+										<a onclick="checkID()" class="btn btn-primary btn-lg full-width">중복확인<div class="ripple-container"></div></a>
+									</div>
 					
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-empty">
 									<label class="control-label">비밀번호</label>
-									<input class="form-control" id="pwd" name="pwd" placeholder="" type="password">
+									<input class="form-control" id="pwd" name="me_password" placeholder="" type="password">
 								</div>
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
@@ -918,14 +492,14 @@
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">이메일</label>
-									<input class="form-control" placeholder="" type="email">
+									<input class="form-control" placeholder="" type="email" name="me_email">
 								</div>
 							</div>
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">전화번호</label>
-									<input class="form-control" placeholder="" type="number">
+									<input class="form-control" placeholder="" type="number" name="me_phone">
 								</div>
               </div>
               
@@ -934,90 +508,94 @@
 								<label for="">Q. 가장 기억에 남는 장소는?</label>
 								<div class="form-group label-floating">
 									<label class="control-label">답변</label>
-									<input class="form-control" placeholder="" type="text">
+									<input class="form-control" placeholder="" type="text" name="me_answer">
 								</div>
 							</div>
 
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-empty">
-										<select class="selectpicker form-control" id="selectPart"tabindex="-98">
-											<option value="none">대분야</option>
+								<script>
+										function getsfield(e) {
+											$.ajax({
+												type: "GET",
+												url: "/member/getSmallField",
+												data: {"rfield" : e.target.value},
+												success (data) {
+													data = JSON.parse(data);
+													$("#sfield").html("");
+													for(var i of data) {
+														var a = $("<option></option>")
+															.attr("value",i.fi_s_idx)
+															.text(i.fi_s_name);
+														$("#sfield").append(a); 
+													}
+													$("#sfield").selectpicker("refresh"); 
+												}
+											})
+										}
+										</script>
+										<select class="selectpicker form-control" id="selectPart"tabindex="-98" onchange="getsfield(event)" name="me_rfield">
+											<?php
+												foreach($rfield as $row){
+													echo "<option name='me_rfield' value=".$row['fi_l_idx'].">".$row['fi_l_name']."</option>";
+												}
+											?>
 										</select>
 								</div>
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-empty">
-									<select class="selectpicker form-control" id="selectPart_2">
-										<option value="none">소분야</option>
+									<select class="selectpicker form-control" id="sfield" name="me_sfield">
+										<?php
+											foreach($sfield as $row){
+												echo "<option value=".$row['fi_s_idx'].">".$row['fi_s_name']."</option>";
+											}
+										?>
 									</select>
 								</div>
 							</div>
 
-
                 <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                  <select class="selectpicker form-control" tabindex="-98">
-                    <option value="none">연혁</option>
-                    <option value="one">1년</option>
-                    <option value="two">2년</option>
-                    <option value="three">3년</option>
-                    <option value="four">4년</option>
-                    <option value="five">5년</option>
-                    <option value="six">6년</option>
-                    <option value="seven">7년</option>
-                    <option value="eight">8년</option>
-                    <option value="nine">9년</option>
-                    <option value="ten">10년</option>
-                    <option value="eleven">11년</option>
-                    <option value="twelve">12년</option>
-                    <option value="thirteen">13년</option>
-                    <option value="fourteen">14년</option>
-                    <option value="fifteen">15년 이상</option>
-                  </select>
+									<div class="form-group label-floating">
+										<label class="control-label">지역</label>
+										<input class="form-control" placeholder="" type="text" name="me_region">
+									</div>
                 </div>
 
+                
                 <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                  <select class="selectpicker form-control" tabindex="-98">
-                    <option value="none">지역</option>
-                    <option value="computer">서울</option>
-                    <option value="farmer">대구</option>
-                  </select>
-                </div>
-
-                <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                  <select class="selectpicker form-control" tabindex="-98">
-                    <option value="none">연봉</option>
-                    <option value="one">2500 미만</option>
-                    <option value="two">2500 이상 3000 미만</option>
-                    <option value="three">3000 이상 3500 미만</option>
-                    <option value="four">3500 이상 4000 미만</option>
-                    <option value="five">4000 이상 4500 미만</option>
-                    <option value="six">4500 이상 5000미만</option>
-                    <option value="seven">5000 이상</option>
-                  </select>
+									<div class="form-group label-floating">
+										<label class="control-label">연봉</label>
+										<input class="form-control" placeholder="" type="number" name="me_salary">
+									</div>
                 </div>
 
 						</div>
-
-							
-
 					
             <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="row">
 									<div class="checkbox col">
 										<label>
-											<input name="optionsCheckboxes" type="checkbox">
+											<input type="checkbox" name="me_military">
 											병력 특례 여부
 										</label>
 									</div>
 								</div>
-              </div>
+							</div>
+							
+							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+									<div class="form-group label-floating">
+										<label class="control-label">복리후생</label>
+										<input class="form-control" placeholder="" type="text" name="me_c_benefit">
+									</div>
+                </div>
               
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 									<label class="control-label">로고 사진</label>
 									<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
 										<div class="file-upload d-inline-block">
 											<label for="upload" class="file-upload__label">Upload Button</label>
-											<input id="upload" class="file-upload__input" type="file" name="file-upload">
+											<input id="upload" class="file-upload__input" type="file" name="me_profile">
 										</div>
 										<div id="uploaded-file" class="d-inline-block">
 											<img id="preview" src="">
@@ -1270,46 +848,8 @@
 </a>
 
 
+<?php $this->load->view('layout/footer'); ?>
 
-<!-- JS Scripts -->
-<script src="js/jquery-3.2.1.js"></script>
-<script src="js/jquery.appear.js"></script>
-<script src="js/jquery.mousewheel.js"></script>
-<script src="js/perfect-scrollbar.js"></script>
-<script src="js/jquery.matchHeight.js"></script>
-<script src="js/svgxuse.js"></script>
-<script src="js/imagesloaded.pkgd.js"></script>
-<script src="js/Headroom.js"></script>
-<script src="js/velocity.js"></script>
-<script src="js/ScrollMagic.js"></script>
-<script src="js/jquery.waypoints.js"></script>
-<script src="js/jquery.countTo.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/material.min.js"></script>
-<script src="js/bootstrap-select.js"></script>
-<script src="js/smooth-scroll.js"></script>
-<script src="js/selectize.js"></script>
-<script src="js/swiper.jquery.js"></script>
-<script src="js/moment.js"></script>
-<script src="js/daterangepicker.js"></script>
-<script src="js/simplecalendar.js"></script>
-<script src="js/fullcalendar.js"></script>
-<script src="js/isotope.pkgd.js"></script>
-<script src="js/ajax-pagination.js"></script>
-<script src="js/Chart.js"></script>
-<script src="js/chartjs-plugin-deferred.js"></script>
-<script src="js/circle-progress.js"></script>
-<script src="js/loader.js"></script>
-<script src="js/run-chart.js"></script>
-<script src="js/jquery.magnific-popup.js"></script>
-<script src="js/jquery.gifplayer.js"></script>
-<script src="js/mediaelement-and-player.js"></script>
-<script src="js/mediaelement-playlist-plugin.min.js"></script>
-
-<script src="js/base-init.js"></script>
-<script defer src="fonts/fontawesome-all.js"></script>
-
-<script src="Bootstrap/dist/js/bootstrap.bundle.js"></script>
 
 <script>
 document.onkeyup = e => {

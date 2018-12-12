@@ -29,6 +29,7 @@ class RegisterModel extends CI_Model
                                 me_n_hopeSalary,
                                 me_n_profile,
                                 me_n_info,
+                                me_n_gender,
                                 me_n_isOpen
                                 )
                                 VALUES
@@ -45,9 +46,11 @@ class RegisterModel extends CI_Model
                                 ?,
                                 ?,
                                 ?,
+                                ?,
                                 ?
                                 )
             ";
+
             $bind = array(
                 $param['me_id'],
                 $param['me_password'],
@@ -61,6 +64,7 @@ class RegisterModel extends CI_Model
                 $param['me_salary'],
                 $param['me_profile'],
                 $param['me_info'],
+                $param['me_n_gender'],
                 $param['me_n_isOpen']
             );
         } else if ($param['me_table'] == "MEMBER_COMPANY_TB") {
@@ -76,15 +80,13 @@ class RegisterModel extends CI_Model
                                 me_c_sido,
                                 me_c_isMillitary,
                                 me_c_benefit,
-                                me_c_category,
                                 me_c_profile,
-                                me_c_salary,
+                                me_c_salary
                                 )
                                 VALUES
                                 (
                                 ?,
                                 PASSWORD(?),
-                                ?,
                                 ?,
                                 ?,
                                 ?,
@@ -108,14 +110,27 @@ class RegisterModel extends CI_Model
                 $param['me_region'],
                 $param['me_military'],
                 $param['me_c_benefit'],
-                $param['me_c_category'],
                 $param['me_profile'],
                 $param['me_salary']
             );
         }
-
             $result = $this->db->query($sql,$bind);
             return $result;
+    }
+
+    function addField($param){
+        $sql = "INSERT INTO FIELD_TB(
+                                me_idx,
+                                fi_s_idx
+                                ) 
+                                VALUE
+                                (
+                                ?,
+                                ?    
+                                );
+                ";
+        $query = $this->db->query($sql,array($param['me_idx'],$param['me_sfield']));
+        return $query;
     }
 
     function idCheck($param){
@@ -167,6 +182,6 @@ class RegisterModel extends CI_Model
         ";
 
         $query = $this->db->query($sql, array($param['rfield']));
-        return $query->result();
+        return $query->result_array();
     }
 }

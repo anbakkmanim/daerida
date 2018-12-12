@@ -33,7 +33,7 @@
 				사람을 데리다 모집하고, 공유하고, 팀을 만들어 보세요! 
 				</p>
 				<div class="row">
-					<a href="#" class="btn mr-4 btn-md btn-border col c-white">개인 회원가입</a>
+					<a href="./registerNormal" class="btn mr-4 btn-md btn-border col c-white">개인 회원가입</a>
 					<a href="#" class="btn btn-md btn-border col c-white">기업 회원가입</a>
 				</div>
 			</div>

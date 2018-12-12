@@ -93,12 +93,14 @@ class Member extends CI_Controller
     // 일반회원 회원가입 페이지
     public function registerNormal(){
         $data['rfield'] = $this->RegisterModel->getRField();
+        $data['sfield'] = $this->RegisterModel->getSField(array('rfield' => '1'));
         $this->load->view('Member/registerNormal', $data);
     }
 
     // 기업회원 회원가입 페이지
     public function registerCompany(){
         $data['rfield'] = $this->RegisterModel->getRField();
+        $data['sfield'] = $this->RegisterModel->getSField($param = array('rfield' => '1'));
         $this->load->view('Member/registerCompany', $data);
     }
 
@@ -106,11 +108,10 @@ class Member extends CI_Controller
     public function getSmallField(){
         $data['rfield'] = $this->input->get('rfield');
         $sfield = $this->RegisterModel->getSField($data);
-
         foreach($sfield as $row){
             $array[] = array(
-                "fi_s_idx" => $row->fi_s_idx,
-                "fi_s_name" => $row->fi_s_name);
+                "fi_s_idx" => $row['fi_s_idx'],
+                "fi_s_name" => $row['fi_s_name']);
         }
 
         echo json_encode($array);
@@ -143,20 +144,23 @@ class Member extends CI_Controller
     public function register(){
         $config['upload_path'] = './uploads/profile/';
         $config['allowed_types'] = 'jpg|png';
-        $config['max_size']     = '100';
-        $config['max_width'] = '1024';
-        $config['max_height'] = '768';
-        $config['file_name'] = uniqid();
+        $config['encrypt_name'] = TRUE;
         $this->load->library('upload', $config);
 
         $data['me_table'] = $this->input->post('me_table');
+
+        if($data['me_table'] == "MEMBER_NORMAL_TB"){
+            $data['me_type'] = "me_n_";
+        } else {
+            $data['me_type'] = "me_c_";
+        }
         $data['me_name'] = $this->input->post('me_name');
         $data['me_id'] = $this->input->post('me_id');
         $data['me_password'] = $this->input->post('me_password');
         $data['me_email'] = $this->input->post('me_email');
         $data['me_phone'] = $this->input->post('me_phone');
 
-        $data['me_profile'];
+        $data['me_profile'] = null;
         if($this->upload->do_upload('me_profile')){
             $data['me_profile'] = $this->upload->data('full_path');
         }
@@ -180,8 +184,17 @@ class Member extends CI_Controller
         }
 
         $result = $this->RegisterModel->registerUser($data);
+        
+        $userInfo = $this->AuthModel->getCust($data);
+        if($data['me_table'] == "MEMBER_NORMAL_TB"){
+            $data['me_idx'] = $userInfo->me_n_idx;
+        } else {
+            $data['me_idx'] = $userInfo->me_c_idx;
+        }
 
-        if($result){
+        $result2 = $this->RegisterModel->addField($data);
+
+        if($result && $result2){
             alert('회원가입에 성공하였습니다.');
             location_href(site_url('/member/login'));
         }else{
