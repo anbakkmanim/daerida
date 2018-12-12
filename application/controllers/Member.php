@@ -104,7 +104,7 @@ class Member extends CI_Controller
 
     // 소분류 받아오기
     public function getSmallField(){
-        $data['rfield'] = $this->input->post('rfield');
+        $data['rfield'] = $this->input->get('rfield');
         $sfield = $this->RegisterModel->getSField($data);
 
         foreach($sfield as $row){
