@@ -256,7 +256,7 @@ class Member extends CI_Controller
         $result = $this->AuthModel->findPassword($data);
 
         if($result){
-            if ($result->me_n_password != null){
+            if (isset($result->me_n_password)){
                 $password = $result->me_n_password;
             } else {
                 $password = $result->me_c_password;
