@@ -11,7 +11,7 @@ Class HiringModel extends CI_Model
         parent::__construct();
     }
 
-    function send_resume($param){
+    function sendResume($param){
         $sql="
             insert into RECRUIT_APPLICATION_TB(
                                               re_idx, 
@@ -41,7 +41,7 @@ Class HiringModel extends CI_Model
         return $result;
     }
 
-    function read_resume(){
+    function readResume(){
         $sql="
             SELECT *
             FROM RECRUIT_APPLICATION_TB
