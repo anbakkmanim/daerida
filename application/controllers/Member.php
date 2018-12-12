@@ -11,25 +11,30 @@ class Member extends CI_Controller
         parent::__construct();
         $this->load->model('AuthModel');
         $this->load->model('RegisterModel');
-        $this->load->model('ProfileModel');
     }
 
+    // url 이 /member 까지만 적었을시 /member/login 으로 리다이렉트
     public function index(){
         location_href(site_url('/member/login'));
     }
 
+    // 세션에 자신의 인덱스가 존재하면 메인페이지 아니면 로그인 페이지로 리다이렉트
     public function login(){
         $me_idx = $this->session->me_idx;
 
         if($me_idx != null){
             location_href(site_url("/hiring/list"));
         }else{
-            $this->load->view('layout/header');
-            $this->load->view('Member/login');
-            $this->load->view('layout/footer');
+            $this->load->view('member/login');
         }
     }
 
+    /**
+     * 로그인
+     * @METHOD POST
+     * @MainURL /member/authUser
+     * @REQUEST me_id, me_password
+     */
     public function authUser()
     {
         $data['me_id'] = $this->input->post('me_id');
@@ -78,21 +83,25 @@ class Member extends CI_Controller
         location_href(site_url("/hiring/list"));
     }
 
+    // 로그아웃
     public function logout(){
         $this->session->sess_destroy();
         alert('로그아웃 되었습니다.', site_url('/member/login'));
     }
 
+    // 일반회원 회원가입 페이지
     public function registerNormal(){
         $rfield = $this->RegisterModel->getRField();
         $this->load->view('Member/registerNormal', $rfield);
     }
 
+    // 기업회원 회원가입 페이지
     public function registerCompany(){
         $rfield = $this->RegisterModel->getRField();
         $this->load->view('Member/registerCompany', $rfield);
     }
 
+    // 소분류 받아오기
     public function getSmallField(){
         $data['rfield'] = $this->input->post('rfield');
         $sfield = $this->RegisterModel->getSField($data);
@@ -106,15 +115,30 @@ class Member extends CI_Controller
         echo json_encode($array);
     }
 
+
+    /**
+     * 아이디 중복체크
+     * @METHOD GET
+     * @MainURL /main/idCheck
+     * @REQUEST me_id
+     */
     public function idCheck(){
-        $data['me_id'] = $this->input->post('me_id');
+        $data['me_id'] = $this->input->get('me_id');
 
         $result = $this->RegisterModel->idCheck($data);
 
         echo $result;
     }
 
-    //회원가입
+    /**
+     * 회원가입
+     * @METHOD POST
+     * @MainURL /main/register
+     * @REQUEST me_table, me_name, me_id, me_password, me_email, me_phone, me_profile, me_answer, me_rfield, me_sfield, me_region, me_salary, me_military, me_info
+     * 일반 회원일시 me_n_age, me_n_gender, me_n_isOpen
+     * 기업 회원일시 me_c_manager, me_c_benefit, me_c_category
+     * 몇몇 리퀘스트는 없어도 됨
+     */
     public function register(){
         $config['upload_path'] = './uploads/profile/';
         $config['allowed_types'] = 'jpg|png';
@@ -165,14 +189,25 @@ class Member extends CI_Controller
         }
     }
 
+
+    // 아이디 찾기
     public function findId(){
         $this->load->view('Member/findId');
     }
 
+    // 패스워드 찾기
     public function findPassword(){
         $this->load->view('Member/findPassword');
     }
 
+
+    /**
+     * 아이디 찾기
+     * @METHOD POST
+     * @MainURL /main/findUserId
+     * @REQUEST me_email, me_phone
+     * @RESPONSE id
+     */
     public function findUserId(){
         $data['me_email'] = $this->input->post('me_email');
         $data['me_phone'] = $this->input->post('me_phone');
@@ -193,6 +228,13 @@ class Member extends CI_Controller
         }
     }
 
+    /**
+     * 비밀번호 찾기
+     * @METHOD POST
+     * @MainURL /main/findUserPassword
+     * @REQUEST me_id, me_password
+     * @RESPONSE $password
+     */
     public function findUserPassword(){
         $data['me_id'] = $this->input->post('me_id');
         $data['me_answer'] = $this->input->post('me_answer');
@@ -269,6 +311,7 @@ class Member extends CI_Controller
 
         $this->load->view('Member/profileCompany', $com_data);
     }
+<<<<<<< HEAD
 
     public function portfolio(){
         $data['me_n_idx'] = $this->input->post('me_n_idx');
@@ -293,3 +336,6 @@ class Member extends CI_Controller
         
     }
 }
+=======
+}
+>>>>>>> master

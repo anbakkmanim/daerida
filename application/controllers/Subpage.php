@@ -62,8 +62,6 @@ class Subpage extends CI_Controller
      * @MainURL subpage/_404
      */
     public function _404() {
-        $this->load->view('layout/header');
         $this->load->view('subpage/404');
-        $this->load->view('layout/footer');
     }
 }
