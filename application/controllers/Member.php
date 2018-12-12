@@ -311,7 +311,6 @@ class Member extends CI_Controller
 
         $this->load->view('Member/profileCompany', $com_data);
     }
-<<<<<<< HEAD
 
     public function portfolio(){
         $data['me_n_idx'] = $this->input->post('me_n_idx');
@@ -336,6 +335,3 @@ class Member extends CI_Controller
         
     }
 }
-=======
-}
->>>>>>> master
