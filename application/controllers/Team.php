@@ -51,7 +51,7 @@ class Team extends CI_Controller
      *
      * @Redirect : team/teamList
      */
-    public function invite() {
+    public function joinTeam() {
 
         $te_idx = $_POST['te_idx']; // 팀 인덱스
         $me_n_idx = $_POST['me_n_idx']; // 멤버 아이디
@@ -65,6 +65,17 @@ class Team extends CI_Controller
         }
 
         location_href(site_url('team/teamList'));
+    }
+
+    /**
+     * 팀 공고 작성
+     * @METHOD GET
+     * @MainURL team/invite
+     * @Params null
+     */
+
+    public function invite() {
+        $this->load->view('team/invite');
     }
 
     /**
