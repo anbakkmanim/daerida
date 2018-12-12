@@ -84,6 +84,16 @@ class RecruitModel extends CI_Model
     }
 
     /**
+     * 모든 최근 채용 공고를 가지고 옵니다.
+     * @return mixed SQL Value (Array)
+     */
+    public function allRecruit() {
+        $sql = "select * from RECRUIT_TB order by re_idx desc";
+
+        return $this->db->query($sql)->result_array();
+    }
+
+    /**
      * 채용 공고의 자세한 정보를 반환합니다.
      * @param $re_idx 채용 공고 번호
      * @return mixed SQL Value (Array)

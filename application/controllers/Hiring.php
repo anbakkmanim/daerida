@@ -85,10 +85,14 @@ class Hiring extends CI_Controller
      */
     public function hiringList() {
         // Get Params - POST
-        $co_idx = $_GET['co_idx']; // 회사 번호
-
-        // select 문 내용들 (list)
-        $return = $this->RecruitModel->listRecruit($co_idx);
+        if (isset($_GET['co_idx'])) {
+            $co_idx = $_GET['co_idx']; // 회사 번호
+            // 특정 회사에 대한 구인공고들
+            $return = $this->RecruitModel->listRecruit($co_idx);
+        } else {
+            // 모든 회사에 대한 구인 공고들
+            $return = $this->RecruitModel->allRecruit();
+        }
         
         // load View
         $this->load->view('hiring/hiringList', $return);
