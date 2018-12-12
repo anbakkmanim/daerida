@@ -237,7 +237,7 @@ class Member extends CI_Controller
             $id = array('id' => $id);
             echo json_encode($id);
         } else {
-            $id = array('id' => 'null');
+            $id = array('id' => null);
             echo json_encode($id);
         }
     }
@@ -265,7 +265,7 @@ class Member extends CI_Controller
             $password = array('password' => $password);
             echo json_encode($password);
         } else {
-            $password = array('password' => 'null');
+            $password = array('password' => null);
             echo json_encode($password);
         }
     }
