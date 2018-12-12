@@ -109,7 +109,7 @@ class Member extends CI_Controller
         foreach($rfield as $row){
             $array[] = array(
                 "fi_l_idx" => $row['fi_l_idx'],
-                "fi_l_name" => $row['fi_i_name']
+                "fi_l_name" => $row['fi_l_name']
             );
         }
         echo json_encode($array);
