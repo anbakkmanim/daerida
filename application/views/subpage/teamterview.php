@@ -1,211 +1,5 @@
 <?php $this->load->view('layout/header'); ?>
-<!-- Stunning header -->
-
-<div class="stunning-header bg-primary-opacity">
-
-	
-	<!-- Header Standard Landing  -->
-	
-	<div class="header--standard header--standard-landing" id="header--standard">
-		<div class="container">
-			<div class="header--standard-wrap">
-	
-				<a href="<?= site_url('#') ?>" class="logo">
-					<div class="img-wrap">
-						<img src="<?= site_url('assets/img/데리다57_흰.png') ?>" alt="Olympus">
-						<img src="<?= site_url('assets/img/데리다57_주.png') ?>" alt="Olympus" class="logo-colored">
-					</div>
-					<div class="title-block">
-						<h6 class="logo-title">DAERIDA</h6>
-					</div>
-				</a>
-	
-				<a href="<?= site_url('#') ?>" class="open-responsive-menu js-open-responsive-menu">
-					<svg class="olymp-menu-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-menu-icon') ?>"></use></svg>
-				</a>
-	
-				<div class="nav nav-pills nav1 header-menu">
-					<div class="mCustomScrollbar">
-						<ul>
-							<li class="nav-item">
-								<a href="<?= site_url('#') ?>" class="nav-link">Home</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href="<?= site_url('#') ?>" role="button" aria-haspopup="false" aria-expanded="false" tabindex='1'>Profile</a>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-									<a class="dropdown-item" href="<?= site_url('#') ?>">Newsfeed</a>
-									<a class="dropdown-item" href="<?= site_url('#') ?>">Post Versions</a>
-								</div>
-							</li>
-							<li class="nav-item dropdown dropdown-has-megamenu">
-								<a href="<?= site_url('#') ?>" class="nav-link dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false" tabindex='1'>Forums</a>
-								<div class="dropdown-menu megamenu">
-									<div class="row">
-										<div class="col col-sm-3">
-											<h6 class="column-tittle">Main Links</h6>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page<span class="tag-label bg-blue-light">new</span></a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-										</div>
-										<div class="col col-sm-3">
-											<h6 class="column-tittle">BuddyPress</h6>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page<span class="tag-label bg-primary">HOT!</span></a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-										</div>
-										<div class="col col-sm-3">
-											<h6 class="column-tittle">Corporate</h6>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-										</div>
-										<div class="col col-sm-3">
-											<h6 class="column-tittle">Forums</h6>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-											<a class="dropdown-item" href="<?= site_url('#') ?>">Profile Page</a>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="nav-item">
-								<a href="<?= site_url('#') ?>" class="nav-link">Terms & Conditions</a>
-							</li>
-							<li class="nav-item">
-								<a href="<?= site_url('#') ?>" class="nav-link">Events</a>
-							</li>
-							<li class="nav-item">
-								<a href="<?= site_url('#') ?>" class="nav-link">Privacy Policy</a>
-							</li>
-							<li class="close-responsive-menu js-close-responsive-menu">
-								<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
-							</li>
-							<li class="nav-item js-expanded-menu">
-								<a href="<?= site_url('#') ?>" class="nav-link">
-									<svg class="olymp-menu-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-menu-icon') ?>"></use></svg>
-									<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
-								</a>
-							</li>
-							<li class="shoping-cart more">
-								<a href="<?= site_url('#') ?>" class="nav-link">
-									<svg class="olymp-shopping-bag-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-shopping-bag-icon') ?>"></use></svg>
-									<span class="count-product">2</span>
-								</a>
-								<div class="more-dropdown shop-popup-cart">
-									<ul>
-										<li class="cart-product-item">
-											<div class="product-thumb">
-												<img src="<?= site_url('assets/img/product1.png') ?>" alt="product">
-											</div>
-											<div class="product-content">
-												<h6 class="title">White Enamel Mug</h6>
-												<ul class="rait-stars">
-													<li>
-														<i class="fa fa-star star-icon c-primary" aria-hidden="true"></i>
-													</li>
-													<li>
-														<i class="fa fa-star star-icon c-primary" aria-hidden="true"></i>
-													</li>
-	
-													<li>
-														<i class="fa fa-star star-icon c-primary" aria-hidden="true"></i>
-													</li>
-													<li>
-														<i class="fa fa-star star-icon c-primary" aria-hidden="true"></i>
-													</li>
-													<li>
-														<i class="far fa-star star-icon" aria-hidden="true"></i>
-													</li>
-												</ul>
-												<div class="counter">x2</div>
-											</div>
-											<div class="product-price">$20</div>
-											<div class="more">
-												<svg class="olymp-little-delete"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-little-delete') ?>"></use></svg>
-											</div>
-										</li>
-										<li class="cart-product-item">
-											<div class="product-thumb">
-												<img src="<?= site_url('assets/img/product2.png') ?>" alt="product">
-											</div>
-											<div class="product-content">
-												<h6 class="title">Olympus Orange Shirt</h6>
-												<ul class="rait-stars">
-													<li>
-														<i class="fa fa-star star-icon c-primary" aria-hidden="true"></i>
-													</li>
-													<li>
-														<i class="fa fa-star star-icon c-primary" aria-hidden="true"></i>
-													</li>
-	
-													<li>
-														<i class="fa fa-star star-icon c-primary" aria-hidden="true"></i>
-													</li>
-													<li>
-														<i class="fa fa-star star-icon c-primary" aria-hidden="true"></i>
-													</li>
-													<li>
-														<i class="far fa-star star-icon" aria-hidden="true"></i>
-													</li>
-												</ul>
-												<div class="counter">x1</div>
-											</div>
-											<div class="product-price">$40</div>
-											<div class="more">
-												<svg class="olymp-little-delete"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-little-delete') ?>"></use></svg>
-											</div>
-										</li>
-									</ul>
-	
-									<div class="cart-subtotal">Cart Subtotal:<span>$80</span></div>
-	
-									<div class="cart-btn-wrap">
-										<a href="<?= site_url('#') ?>" class="btn btn-primary btn-sm">Go to Your Cart</a>
-										<a href="<?= site_url('#') ?>" class="btn btn-purple btn-sm">Go to Checkout</a>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- ... end Header Standard Landing  -->
-	<div class="header-spacer--standard"></div>
-
-	<div class="stunning-header-content">
-		<h1 class="stunning-header-title">TeamTerview</h1>
-
-		<!-- <ul class="breadcrumbs">
-			<li class="breadcrumbs-item">
-				<a href="<?= site_url('#') ?>">Home</a>
-				<span class="icon breadcrumbs-custom">/</span>
-			</li>
-			<li class="breadcrumbs-item active">
-				<span>Blog Grid</span>
-			</li>
-		</ul> -->
-	</div>
-
-	<div class="content-bg-wrap stunning-header-bg1"></div>
-</div>
-
-<!-- ... end Stunning header -->
+<?php $this->load->view('layout/fluid_header', ['title' => 'Teamterview']); ?>
 
 <section class="blog-post-wrap medium-padding80">
 	<div class="container">
@@ -576,7 +370,7 @@
 	<div class="modal-dialog window-popup registration-login-form-popup" role="document">
 		<div class="modal-content">
 			<a href="<?= site_url('#') ?>" class="close icon-close" data-dismiss="modal" aria-label="Close">
-				<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+				<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 			</a>
 			<div class="modal-body">
 				<div class="registration-login-form">
@@ -585,14 +379,14 @@
 						<li class="nav-item">
 							<a class="nav-link active" data-toggle="tab" href="<?= site_url('#home1') ?>" role="tab">
 								<svg class="olymp-login-icon">
-									<use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-login-icon') ?>"></use>
+									<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-login-icon') ?>"></use>
 								</svg>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" data-toggle="tab" href="<?= site_url('#profile1') ?>" role="tab">
 								<svg class="olymp-register-icon">
-									<use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-register-icon') ?>"></use>
+									<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-register-icon') ?>"></use>
 								</svg>
 							</a>
 						</li>
@@ -630,7 +424,7 @@
 											<label class="control-label">Your Birthday</label>
 											<input name="datetimepicker" value="10/24/1984" />
 											<span class="input-group-addon">
-											<svg class="olymp-calendar-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-calendar-icon') ?>"></use></svg>
+											<svg class="olymp-calendar-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-calendar-icon') ?>"></use></svg>
 										</span>
 										</div>
 
@@ -884,8 +678,8 @@
 			<span class="icon-status online"></span>
 			<h6 class="title" >Chat</h6>
 			<div class="more">
-				<svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use></svg>
-				<svg class="olymp-little-delete js-chat-open"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-little-delete') ?>"></use></svg>
+				<svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use></svg>
+				<svg class="olymp-little-delete js-chat-open"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-little-delete') ?>"></use></svg>
 			</div>
 		</div>
 		<div class="modal-body">
@@ -931,11 +725,11 @@
 			<textarea class="form-control" placeholder=""></textarea>
 			<div class="add-options-message">
 				<a href="<?= site_url('#') ?>" class="options-message">
-					<svg class="olymp-computer-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-computer-icon') ?>"></use></svg>
+					<svg class="olymp-computer-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-computer-icon') ?>"></use></svg>
 				</a>
 				<div class="options-message smile-block">
 
-					<svg class="olymp-happy-sticker-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-happy-sticker-icon') ?>"></use></svg>
+					<svg class="olymp-happy-sticker-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-happy-sticker-icon') ?>"></use></svg>
 
 					<ul class="more-dropdown more-with-triangle triangle-bottom-right">
 						<li>
@@ -1089,7 +883,7 @@
 
 
 <a class="back-to-top" href="<?= site_url('#') ?>">
-	<img src="<?= site_url('svg-icons/back-to-top.svg') ?>" alt="arrow" class="back-icon">
+	<img src="<?= site_url('assets/svg-icons/back-to-top.svg') ?>" alt="arrow" class="back-icon">
 </a>
 
 
