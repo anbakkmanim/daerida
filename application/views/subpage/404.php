@@ -1,3 +1,4 @@
+<?php $this->load->view('layout/header'); ?>
 
 <!-- Stunning header -->
 
@@ -690,3 +691,5 @@
 <a class="back-to-top" href="#">
 	<img src="<?= site_url('assets/svg-icons/back-to-top.svg') ?>" alt="arrow" class="back-icon">
 </a>
+
+<?php $this->load->view('layout/footer'); ?>

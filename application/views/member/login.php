@@ -9,7 +9,7 @@
 		<div class="header--standard-wrap">
 			<a href="#" class="logo">
 				<div class="img-wrap">
-					<img src="<?= site_url('assets/img/logo-colored-small.png') ?>" alt="Olympus" class="logo-colored">
+				<img src="<?= site_url('assets/img/데리다57_흰.png') ?>" alt="Olympus">
 				</div>
 				<div class="title-block">
 					<h6 class="logo-title">데리다</h6>
@@ -25,11 +25,12 @@
 
 <div class="container">
 	<div class="row display-flex">
-		<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+		<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mr-5">
 			<div class="landing-content">
-				<h1>Welcome to the Biggest Social Network in the World</h1>
-				<p>We are the best and biggest social network with 5 billion active users all around the world. Share you
-					thoughts, write blog posts, show your favourite music via Stopify, earn badges and much more!
+				<h1>Welcome to the DAERIDA</h1>
+				<p>데리다는 전국 스타트업 네트워크 서비스입니다. <br>
+				이력서, 팀빌딩, 포트폴리오, 구인구직 다양한 기능을 만나보세요! <br>
+				사람을 데리다 모집하고, 공유하고, 팀을 만들어 보세요! 
 				</p>
 				<div class="row">
 					<a href="#" class="btn mr-4 btn-md btn-border col c-white">개인 회원가입</a>
@@ -61,30 +62,23 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="home" role="tabpanel" data-mh="log-tab">
 						<div class="title h6">개인 로그인</div>
-						<form class="content">
+						<form class="content" action="/member/authUser" method="post">
 							<div class="row">
 								<div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
 									<div class="form-group label-floating is-empty">
 										<label class="control-label">아이디</label>
-										<input class="form-control" placeholder="" type="id">
+										<input class="form-control" placeholder="" type="id" name="me_id">
 									</div>
 									<div class="form-group label-floating is-empty">
 										<label class="control-label">비밀번호</label>
-										<input class="form-control" placeholder="" type="password">
+										<input class="form-control" placeholder="" type="password" name="me_password">
 									</div>
 			
 									<div class="remember">
-			
-										<div class="checkbox">
-											<label>
-												<input name="optionsCheckboxes" type="checkbox">
-												Remember Me
-											</label>
-										</div>
-										<a href="#" class="forgot">Forgot my Password</a>
+										<a href="#" class="forget mr-4" style="color:#888da8">Forgot my ID</a>
+										<a href="#" class="forget" style="color:#888da8">Forgot my Password</a>
 									</div>
-			
-									<a href="#" class="btn btn-lg btn-primary full-width">Login</a>
+									<input type="submit" class="btn btn-lg btn-primary full-width" value="Login">
 			
 									<div class="or"></div>
 			
@@ -101,28 +95,23 @@
 			
 					<div class="tab-pane" id="profile" role="tabpanel" data-mh="log-tab">
 						<div class="title h6">기업 로그인</div>
-						<form class="content">
+						<form class="content" action="/member/authUser" method="post">
 							<div class="row">
 								<div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
 									<div class="form-group label-floating is-empty">
 										<label class="control-label">아이디</label>
-										<input class="form-control" placeholder="" type="id">
+										<input class="form-control" placeholder="" type="id" name="me_id">
 									</div>
 									<div class="form-group label-floating is-empty">
 										<label class="control-label">비밀번호</label>
-										<input class="form-control" placeholder="" type="password">
+										<input class="form-control" placeholder="" type="password" name="me_password">
 									</div>
 			
 									<div class="remember">
-										<div class="checkbox">
-											<label>
-												<input name="optionsCheckboxes" type="checkbox">
-												Remember Me
-											</label>
-										</div>
-										<a href="#" class="forgot">Forgot my Password</a>
+										<a href="#" class="forget mr-4" style="color:#888da8">Forgot my ID</a>
+										<a href="#" class="forget" style="color:#888da8">Forgot my Password</a>
 									</div>
-									<a href="#" class="btn btn-lg btn-primary full-width">Login</a>
+									<input type="submit" class="btn btn-lg btn-primary full-width" value="Login">
 									<p>Don’t you have an account? <a href="#">Register Now!</a> it’s really simple and you can start enjoing all the benefits!</p>
 								</div>
 							</div>
