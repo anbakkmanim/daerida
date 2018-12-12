@@ -40,7 +40,7 @@ Class ProfileModel extends CI_Model{
         $sql = "
                 SELECT *
                 FROM   MEMBER_COMPANY_TB
-                join FIELD_TB as b on me_id = me_c_id 
+                join FIELD_TB as b on b.me_id = me_c_id 
                 join FIELD_SMALL_RF as c on b.fi_s_idx = c.fi_s_idx 
                 join FIELD_LARGE_RF as d on c.fi_l_idx = d.fi_l_idx  
                 WHERE  me_c_idx = ?;

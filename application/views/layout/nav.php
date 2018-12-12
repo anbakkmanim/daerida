@@ -368,7 +368,7 @@
 				if ($this->session->me_type == "me_n_")
 					echo "/member/User?me_n_idx=". $this->session->me_idx;
 				else
-					echo "/member/profileCompany";
+					echo "/member/Company?me_c_idx=". $this->session->me_idx;
 				?>
 				" class="author-name fn">
 					<div class="author-title">

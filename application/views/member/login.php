@@ -34,7 +34,7 @@
 				</p>
 				<div class="row">
 					<a href="./registerNormal" class="btn mr-4 btn-md btn-border col c-white">개인 회원가입</a>
-					<a href="#" class="btn btn-md btn-border col c-white">기업 회원가입</a>
+					<a href="./registerCompany" class="btn btn-md btn-border col c-white">기업 회원가입</a>
 				</div>
 			</div>
 		</div>

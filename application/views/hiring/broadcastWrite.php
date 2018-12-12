@@ -47,7 +47,7 @@
 									<label class="control-label">Since</label>
 									<input name="datetimepicker" value="10/24/1984">
 									<span class="input-group-addon">
-															<svg class="olymp-calendar-icon icon"><use xlink:href="#olymp-calendar-icon"></use></svg>
+															<svg class="olymp-calendar-icon icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
 														</span>
 								</div>
 							</div>
