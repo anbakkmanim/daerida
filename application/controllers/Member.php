@@ -162,7 +162,7 @@ class Member extends CI_Controller
 
         $data['me_profile'] = null;
         if($this->upload->do_upload('me_profile')){
-            $data['me_profile'] = $this->upload->data('full_path');
+            $data['me_profile'] = $this->upload->data('file_name');
         }
 
         $data['me_answer'] = $this->input->post('me_answer');
@@ -237,8 +237,8 @@ class Member extends CI_Controller
             $id = array('id' => $id);
             echo json_encode($id);
         } else {
-            alert("아이디가 존재하지 않습니다.");
-            location_href(site_url('/member/findId'));
+            $id = array('id' => 'null');
+            echo json_encodd($id);
         }
     }
 
@@ -265,8 +265,8 @@ class Member extends CI_Controller
             $password = array('password' => $password);
             echo json_encode($password);
         } else {
-            alert("답변이 일치하지 않거나 존재하지 않는 아이디입니다.");
-            location_href(site_url('/member/findPassword'));
+            $password = array('password' => 'null');
+            echo json_encode($password);
         }
     }
 
