@@ -19,7 +19,7 @@ Class ProfileModel extends CI_Model{
                 WHERE   me_n_idx = ?;
         ";
 
-        $query = $this->db->query($sql, array($param['me_n_idx']));
+        $query = $this->db->query($sql, array($param['me_idx']));
 
         return $query->result();
     }

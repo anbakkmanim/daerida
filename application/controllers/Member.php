@@ -92,14 +92,14 @@ class Member extends CI_Controller
 
     // 일반회원 회원가입 페이지
     public function registerNormal(){
-        $rfield = $this->RegisterModel->getRField();
-        $this->load->view('Member/registerNormal', $rfield);
+        $data['rfield'] = $this->RegisterModel->getRField();
+        $this->load->view('Member/registerNormal', $data);
     }
 
     // 기업회원 회원가입 페이지
     public function registerCompany(){
-        $rfield = $this->RegisterModel->getRField();
-        $this->load->view('Member/registerCompany', $rfield);
+        $data['rfield'] = $this->RegisterModel->getRField();
+        $this->load->view('Member/registerCompany', $data);
     }
 
     // 소분류 받아오기
@@ -264,13 +264,12 @@ class Member extends CI_Controller
      * @RESPONSE (Array)career, name, email, phone, sido, isMillitary, age, hopeSalary, profile, info, isOpen
      */
     public function profileNormal(){
+        $data['me_idx'] = $this->session->me_idx;
         $data['me_id'] = $this->session->me_id;
         $data['me_password'] = $this->session->me_password;
         $data['me_table'] = $this->session->me_table;
         $data['me_type'] = $this->session->me_type;
-        $row = $this->AuthModel->getCust($data);
-
-        $data['me_n_idx'] = $row->me_n_idx;
+        $row = $this->AuthModel->getCustAfterLogin($data);
         $row2 = $this->ProfileModel->getCareer($data);
 
         foreach ($row2 as $result){
@@ -295,7 +294,11 @@ class Member extends CI_Controller
             'isOpen' => $row->me_n_isOpen,
         );
 
-        $this->load->view('Member/profileNormal', $user_data, $career);
+        if(!isset($career)){
+            $this->load->view('Member/profileNormal', $user_data);
+        } else {
+            $this->load->view('Member/profileNormal', $user_data, $career);
+        }
     }
 
     /**

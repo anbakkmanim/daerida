@@ -56,6 +56,19 @@ class AuthModel extends CI_Model
         return $query->row();
     }
 
+    public function getCustAfterLogin($param){
+        $sql = "
+                SELECT *
+                FROM    ".$param['me_table']."
+                WHERE   ".$param['me_type']."id = ?
+                AND     ".$param['me_type']."password = ?;
+        ";
+
+        $query = $this->db->query($sql, array($param['me_id'], $param['me_password']));
+
+        return $query->row();
+    }
+
     public function findId($param){
         $sql = "
                 SELECT me_n_id
