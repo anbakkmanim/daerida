@@ -238,7 +238,7 @@ class Member extends CI_Controller
             echo json_encode($id);
         } else {
             $id = array('id' => 'null');
-            echo json_encodd($id);
+            echo json_encode($id);
         }
     }
 
