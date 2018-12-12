@@ -24,7 +24,7 @@ class RegisterModel extends CI_Model
                                 me_n_email,
                                 me_n_phone,
                                 me_n_sido,
-                                me_n_isMillitary,
+                                me_n_isMilitary,
                                 me_n_age,
                                 me_n_hopeSalary,
                                 me_n_profile,
@@ -78,7 +78,7 @@ class RegisterModel extends CI_Model
                                 me_c_email,
                                 me_c_phone,
                                 me_c_sido,
-                                me_c_isMillitary,
+                                me_c_isMilitary,
                                 me_c_benefit,
                                 me_c_profile,
                                 me_c_salary
