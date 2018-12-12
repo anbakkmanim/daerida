@@ -36,6 +36,18 @@ Class ProfileModel extends CI_Model{
         return $query->row();
     }
 
+    public function getUserData($me_n_idx) {
+        $sql = "
+                SELECT *
+                FROM MEMBER_NORMAL_TB
+                WHERE me_n_idx = ?;
+        ";
+
+        $query = $this->db->query($sql, array($me_n_idx));
+
+        return $query->row();
+    }
+
     public function getFollowData($param){
         $sql = "
                 SELECT *
@@ -65,7 +77,7 @@ Class ProfileModel extends CI_Model{
                   me_c_profile = ?,
                   me_c_salary = ?,
                   me_c_sido = ?,
-                  me_c_isMillitary = ?,
+                  me_c_isMilitary = ?,
                   me_c_benefit = ?
                   INTO
                   MEMBER_COMPANY_TB
@@ -82,7 +94,7 @@ Class ProfileModel extends CI_Model{
           $param['me_c_profile'],
           $param['me_c_salary'],
           $param['me_c_sido'],
-          $param['me_c_isMillitary'],
+          $param['me_c_isMilitary'],
           $param['me_c_benefit'],
           $param['me_c_idx'],
         );
@@ -99,7 +111,7 @@ Class ProfileModel extends CI_Model{
                     me_n_email = ?,
                     me_n_phone = ?,
                     me_n_sido = ?,
-                    me_n_isMillitary = ?,
+                    me_n_isMilitary = ?,
                     me_n_age = ?,
                     me_n_hopeSalary = ?,
                     me_n_profile = ?,
@@ -116,7 +128,7 @@ Class ProfileModel extends CI_Model{
             $param['me_n_email'],
             $param['me_n_phone'],
             $param['me_n_sido'],
-            $param['me_n_isMillitary'],
+            $param['me_n_isMilitary'],
             $param['me_n_age'],
             $param['me_n_hopeSalary'],
             $param['me_n_profile'],
