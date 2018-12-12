@@ -270,6 +270,20 @@ class Member extends CI_Controller
         }
     }
 
+    public function changeUserPassword(){
+        $data['me_id'] = $this->input->post('me_id');
+        $data['me_password'] = $this->input->post('me_password');
+
+        $result = $this->AuthModel->changePassword($data);
+
+        if($result){
+            $return = array('Status' => 'Success');
+            echo json_encode($return);
+        }else{
+            $return = array('Status' => 'Failed');
+            echo json_encode($return);
+        }
+    }
     /**
      * 일반 프로필 보기
      * @METHOD get
