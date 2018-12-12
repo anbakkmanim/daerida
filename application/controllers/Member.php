@@ -500,8 +500,24 @@ class Member extends CI_Controller
         if ($result == null) {
             alert("해당 사용자가 존재하지 않습니다.");
             location_href(site_url("/"));
-        } else
+        } else {
             $this->load->view("Member/profileNormal", $result);
+        }
     }
 
+    /**
+     * 기업 정보 보기
+     */
+    public function Company() {
+        $me_c_idx = $this->input->get("me_c_idx");
+
+        $result = $this->ProfileModel->getCompanyData($me_c_idx);
+
+        if ($result == null) {
+            alert("해당 기업이 존재하지 않습니다.");
+            location_href(site_url("/"));
+        } else {
+            $this->load->view("Member/profileCompany", $result);
+        }
+    }
 }

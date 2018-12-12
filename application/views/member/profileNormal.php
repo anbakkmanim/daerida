@@ -427,7 +427,7 @@
 						<ul class="widget w-personal-info">
 							<li>
 								<span class="title">자기소개:</span>
-                                <span class="text"><?= $me_n_info ?></span>
+              	<span class="text"><?= $me_n_info ?> </span>
 							</li>
 							<li>
 								<span class="title">이름:</span>
@@ -467,6 +467,7 @@
 							</li>
 
 						</ul>
+						<br>
 
 						<!-- ... end W-Personal-Info -->
 						<!-- W-Socials -->
