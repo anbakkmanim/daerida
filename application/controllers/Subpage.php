@@ -58,7 +58,7 @@ class Subpage extends CI_Controller
 
     /**
      * 404 Not Found 페이지
-     * @METHDO ALL
+     * @METHOD ALL
      * @MainURL subpage/_404
      */
     public function _404() {
