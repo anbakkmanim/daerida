@@ -128,8 +128,8 @@ class RegisterModel extends CI_Model
         $query = $this->db->query($sql, array($param['me_id']));
         $normalRow = $query->row();
 
-        if($normalRow == null){
-           return true;
+        if(isset($normalRow->me_n_id)){
+           return 0;
         } else {
             $sql = "
                 SELECT *
@@ -141,10 +141,10 @@ class RegisterModel extends CI_Model
 
             $companyRow = $query->row();
 
-            if($companyRow == null){
-                return true;
+            if(isset($companyRow)){
+                return 0;
             } else {
-                return false;
+                return 1;
             }
         }
     }
