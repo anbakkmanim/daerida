@@ -234,8 +234,8 @@ class Member extends CI_Controller
             } else {
                 $id = $result->me_c_id;
             }
-
-            $this->load->view('Member/findId', $id);
+            $id = array('id' => $id);
+            echo json_encode($id);
         } else {
             alert("아이디가 존재하지 않습니다.");
             location_href(site_url('/member/findId'));
@@ -262,7 +262,8 @@ class Member extends CI_Controller
                 $password = $result->me_c_password;
             }
 
-            $this->load->view('Member/findPassword', $password);
+            $password = array('password' => $password);
+            echo json_encode($password);
         } else {
             alert("답변이 일치하지 않거나 존재하지 않는 아이디입니다.");
             location_href(site_url('/member/findPassword'));
