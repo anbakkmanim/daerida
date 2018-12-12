@@ -3,9 +3,9 @@
 <div class="fixed-sidebar">
 	<div class="fixed-sidebar-left sidebar--small" id="sidebar-left">
 
-		<a href="02-ProfilePage.html" class="logo">
+		<a href="/" class="logo">
 			<div class="img-wrap">
-				<img src="<?= site_url('assets/img/logo.png') ?>" alt="Olympus">
+				<img src="<?= site_url('assets/img/logo.png') ?>" alt="Daerida">
 			</div>
 		</a>
 
@@ -13,70 +13,61 @@
 			<ul class="left-menu">
 				<li>
 					<a href="#" class="js-sidebar-open">
-						<svg class="olymp-menu-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="OPEN MENU"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-menu-icon') ?>"></use></svg>
+						<svg class="olymp-menu-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="메뉴 열기"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-menu-icon') ?>"></use></svg>
 					</a>
 				</li>
 				<li>
-					<a href="03-Newsfeed.html">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon') ?>"></use></svg>
+					<a href="#">
+						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="최근 구인 공고들"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon') ?>"></use></svg>
 					</a>
 				</li>
 				<li>
-					<a href="16-FavPagesFeed.html">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-star-icon') ?>"></use></svg>
+					<a href="#">
+						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팔로우 한 회사의 구인"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-star-icon') ?>"></use></svg>
 					</a>
 				</li>
 				<li>
-					<a href="17-FriendGroups.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon') ?>"></use></svg>
+					<a href="#">
+						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀 빌딩 공고"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon') ?>"></use></svg>
 					</a>
 				</li>
 				<li>
-					<a href="18-MusicAndPlaylists.html">
-						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MUSIC&PLAYLISTS"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-headphones-icon') ?>"></use></svg>
+					<a href="#">
+						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="내 팀"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-headphones-icon') ?>"></use></svg>
 					</a>
 				</li>
 				<li>
-					<a href="19-WeatherWidget.html">
-						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WEATHER APP"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-weather-icon') ?>"></use></svg>
+					<a href="#">
+						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="기업 구인 공고"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-weather-icon') ?>"></use></svg>
 					</a>
 				</li>
 				<li>
-					<a href="20-CalendarAndEvents-MonthlyCalendar.html">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-calendar-icon') ?>"></use></svg>
+					<a href="#">
+						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="구직 신청 한 공고"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-calendar-icon') ?>"></use></svg>
 					</a>
 				</li>
 				<li>
-					<a href="24-CommunityBadges.html">
-						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Community Badges"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-badge-icon') ?>"></use></svg>
+					<a href="#">
+						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="지도"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-badge-icon') ?>"></use></svg>
 					</a>
 				</li>
 				<li>
-					<a href="25-FriendsBirthday.html">
-						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Friends Birthdays"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-cupcake-icon') ?>"></use></svg>
+					<a href="/subpage/teamterview">
+						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀터뷰"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-cupcake-icon') ?>"></use></svg>
 					</a>
 				</li>
-				<li>
-					<a href="26-Statistics.html">
-						<svg class="olymp-stats-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Account Stats"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-stats-icon') ?>"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="27-ManageWidgets.html">
-						<svg class="olymp-manage-widgets-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Manage Widgets"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-manage-widgets-icon') ?>"></use></svg>
-					</a>
-				</li>
+			
 			</ul>
 		</div>
 	</div>
 
 	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1">
-		<a href="02-ProfilePage.html" class="logo">
+		<a href="/" class="logo">
 			<div class="img-wrap">
-				<img src="<?= site_url('assets/img/logo.png') ?>" alt="Olympus">
+				<img src="<?= site_url('assets/img/logo.png') ?>" alt="Daerida">
 			</div>
 			<div class="title-block">
-				<h6 class="logo-title">olympus</h6>
+				<h6 class="logo-title">Daerida</h6>
 			</div>
 		</a>
 
@@ -85,67 +76,55 @@
 				<li>
 					<a href="#" class="js-sidebar-open">
 						<svg class="olymp-close-icon left-menu-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
-						<span class="left-menu-title">Collapse Menu</span>
+						<span class="left-menu-title">닫기</span>
 					</a>
 				</li>
 				<li>
-					<a href="03-Newsfeed.html">
+					<a href="#">
 						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon') ?>"></use></svg>
-						<span class="left-menu-title">Newsfeed</span>
+						<span class="left-menu-title">최근 구인 공고들</span>
 					</a>
 				</li>
 				<li>
-					<a href="16-FavPagesFeed.html">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-star-icon') ?>"></use></svg>
-						<span class="left-menu-title">Fav Pages Feed</span>
+					<a href="#">
+					<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Follow Job Offer"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-star-icon') ?>"></use></svg>
+					<span class="left-menu-title">팔로우 한 회사의 구인</span>
 					</a>
 				</li>
 				<li>
-					<a href="17-FriendGroups.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon') ?>"></use></svg>
-						<span class="left-menu-title">Friend Groups</span>
+					<a href="#">
+						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="TEAM BUILD"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon') ?>"></use></svg>
+						<span class="left-menu-title">팀 빌딩 공고</span>
 					</a>
 				</li>
 				<li>
-					<a href="18-MusicAndPlaylists.html">
-						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MUSIC&PLAYLISTS"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-headphones-icon') ?>"></use></svg>
-						<span class="left-menu-title">Music & Playlists</span>
+					<a href="#">
+						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY TEAM"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-headphones-icon') ?>"></use></svg>
+						<span class="left-menu-title">내 팀</span>
 					</a>
 				</li>
 				<li>
-					<a href="19-WeatherWidget.html">
-						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WEATHER APP"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-weather-icon') ?>"></use></svg>
-						<span class="left-menu-title">Weather App</span>
+					<a href="#">
+						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="JOB OFFER"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-weather-icon') ?>"></use></svg>
+						<span class="left-menu-title">기업 구인 공고</span>
 					</a>
 				</li>
 				<li>
-					<a href="20-CalendarAndEvents-MonthlyCalendar.html">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-calendar-icon') ?>"></use></svg>
-						<span class="left-menu-title">Calendar and Events</span>
+					<a href="#">
+						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY JOB OFFER"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-calendar-icon') ?>"></use></svg>
+						<span class="left-menu-title">구직 신청 한 공고</span>
 					</a>
 				</li>
 				<li>
-					<a href="24-CommunityBadges.html">
-						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Community Badges"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-badge-icon') ?>"></use></svg>
-						<span class="left-menu-title">Community Badges</span>
+					<a href="#">
+						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MAP"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-badge-icon') ?>"></use></svg>
+						<span class="left-menu-title">지도</span>
 					</a>
 				</li>
 				<li>
-					<a href="25-FriendsBirthday.html">
-						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Friends Birthdays"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-cupcake-icon') ?>"></use></svg>
-						<span class="left-menu-title">Friends Birthdays</span>
-					</a>
-				</li>
-				<li>
-					<a href="26-Statistics.html">
-						<svg class="olymp-stats-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Account Stats"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-stats-icon') ?>"></use></svg>
-						<span class="left-menu-title">Account Stats</span>
-					</a>
-				</li>
-				<li>
-					<a href="27-ManageWidgets.html">
-						<svg class="olymp-manage-widgets-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Manage Widgets"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-manage-widgets-icon') ?>"></use></svg>
-						<span class="left-menu-title">Manage Widgets</span>
+					<a href="/subpage/teamterview">
+						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="TEAMTERVIEW"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-cupcake-icon') ?>"></use></svg>
+						<span class="left-menu-title">팀터뷰</span>
 					</a>
 				</li>
 			</ul>
@@ -178,7 +157,7 @@
 
 	<div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
 		<a href="#" class="logo js-sidebar-open">
-			<img src="<?= site_url('assets/img/logo.png') ?>" alt="Olympus">
+			<img src="<?= site_url('assets/img/logo.png') ?>" alt="Daerida">
 		</a>
 
 	</div>
@@ -186,10 +165,10 @@
 	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
 		<a href="#" class="logo">
 			<div class="img-wrap">
-				<img src="<?= site_url('assets/img/logo.png') ?>" alt="Olympus">
+				<img src="<?= site_url('assets/img/logo.png') ?>" alt="Daerida">
 			</div>
 			<div class="title-block">
-				<h6 class="logo-title">olympus</h6>
+				<h6 class="logo-title">Daerida</h6>
 			</div>
 		</a>
 
@@ -201,7 +180,7 @@
 						<img alt="author" src="<?= site_url('assets/img/author-page.jpg') ?>" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
-					<a href="02-ProfilePage.html" class="author-name fn">
+					<a href="/" class="author-name fn">
 						<div class="author-title">
 							<?= $this->session->me_name ?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= $this->session->me_profile ?>"></use></svg>
 						</div>
@@ -214,7 +193,7 @@
 					</a>
 				</div>
 			</div>
-
+<!--
 			<div class="ui-block-title ui-block-title-small">
 				<h6 class="title">MAIN SECTIONS</h6>
 			</div>
@@ -287,7 +266,7 @@
 					</a>
 				</li>
 			</ul>
-
+		-->
 			<div class="ui-block-title ui-block-title-small">
 				<h6 class="title">YOUR ACCOUNT</h6>
 			</div>
@@ -318,7 +297,7 @@
 			</ul>
 
 			<div class="ui-block-title ui-block-title-small">
-				<h6 class="title">About Olympus</h6>
+				<h6 class="title">About Daerida</h6>
 			</div>
 
 			<ul class="about-olympus">
@@ -362,7 +341,7 @@
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar ps ps--theme_default" data-mcs-theme="dark" data-ps-id="709ba5dd-e3ff-23ee-d8ab-52f0da53e507">
 							<div class="ui-block-title ui-block-title-small">
-								<h6 class="title">Your Account</h6>
+								<h4 class="title">내 계정</h4>
 							</div>
 
 							<ul class="account-settings">
@@ -370,21 +349,14 @@
 									<a href="#">
 										<svg class="olymp-menu-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-menu-icon') ?>"></use></svg>
 
-										<span>Profile Settings</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<svg class="olymp-star-icon left-menu-icon" data-toggle="tooltip" data-placement="right" data-original-title="FAV PAGE"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-star-icon') ?>"></use></svg>
-
-										<span>Create Fav Page</span>
+										<span>프로필 설정</span>
 									</a>
 								</li>
 								<li>
 									<a href="/member/logout">
 										<svg class="olymp-logout-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-logout-icon') ?>"></use></svg>
 
-										<span>Log Out</span>
+										<span>로그아웃</span>
 									</a>
 								</li>
 							</ul>
