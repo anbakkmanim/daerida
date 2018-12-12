@@ -95,12 +95,36 @@ class Team extends CI_Controller
      * @Params : te_idx
      */
     public function board() {
-        $te_idx = $_POST['te_idx']; // 팀 인덱스
+        $te_idx = $_GET['te_idx']; // 팀 인덱스
 
         $result = $this->TeamModel->listPost($te_idx);
 
         // 뷰 로딩
         $this->load->view('team/board', $result);
+    }
+
+    /**
+     * 팀 게시물 보기
+     * @METHOD GET
+     * @MainURL team/board_view
+     * @Params te_po_idx
+     */
+
+     public function boardView() {
+         $te_co_idx = $_GET['te_po_idx'];
+
+         $this->load->view('team/boardView');
+     }
+
+    /**
+     * 팀 게시물 보기
+     * @METHOD GET
+     * @MainURL team/board_view
+     * @Params te_po_idx
+     */
+
+    public function boardWrite() {
+        $this->load->view('team/boardWrite');
     }
 
     /**

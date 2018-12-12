@@ -120,4 +120,34 @@ class AuthModel extends CI_Model
 
         return $normalMember == null ? $companyMember : $normalMember;
     }
+
+    public function changePassword($param){
+        $sql = "SELECT me_n_idx
+                FROM MEMBER_NORMAL_TB
+                WHERE me_n_id = ?
+         ";
+        $query = $this->db->query($sql, array($param['me_id']));
+
+        $result = $query->row();
+
+        if(isset($result->me_n_idx)){
+            $sql = "
+                UPDATE MEMBER_NORMAL_TB
+                SET me_n_password = PASSWORD(?)
+                WHERE me_n_id = ?
+            ";
+            $query = $this->db->query($sql, array($param['me_password'], $param['me_id']));
+
+            return $query;
+        } else {
+            $sql = "
+                UPDATE MEMBER_COMPANY_TB
+                SET me_c_password = PASSWORD(?)
+                WHERE me_c_id = ?
+            ";
+            $query = $this->db->query($sql, array($param['me_password'], $param['me_id']));
+
+            return $query;
+        }
+    }
 }
