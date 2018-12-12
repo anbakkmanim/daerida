@@ -117,6 +117,17 @@ class Team extends CI_Controller
      }
 
     /**
+     * 팀 게시물 보기
+     * @METHOD GET
+     * @MainURL team/board_view
+     * @Params te_po_idx
+     */
+
+    public function boardWrite() {
+        $this->load->view('team/boardWrite');
+    }
+
+    /**
      * 팀 게시물  추가
      * @METHOD POST
      * @MainURL team/addPost
