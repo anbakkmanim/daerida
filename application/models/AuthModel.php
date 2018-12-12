@@ -138,7 +138,7 @@ class AuthModel extends CI_Model
             ";
             $query = $this->db->query($sql, array($param['me_password'], $param['me_id']));
 
-            return $query->row();
+            return $query;
         } else {
             $sql = "
                 UPDATE MEMBER_COMPANY_TB
