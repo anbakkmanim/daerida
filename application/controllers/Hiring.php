@@ -89,6 +89,7 @@ class Hiring extends CI_Controller
 
         // select 문 내용들 (list)
         $return = $this->RecruitModel->listRecruit($co_idx);
+        
         // load View
         $this->load->view('hiring/hiringList', $return);
     }
