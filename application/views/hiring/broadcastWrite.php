@@ -73,29 +73,32 @@
 							<div class="col col-lg-4 col-md-4 col-sm-12 col-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your Country</label>
-									<div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" role="button" title="United States"><span class="filter-option pull-left">United States</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="0" class="selected"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">United States</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Australia</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker form-control" tabindex="-98">
-										<option value="US">United States</option>
-										<option value="AU">Australia</option>
-									</select></div>
-								<span class="material-input"></span></div>
+										<select class="selectpicker form-control" tabindex="-98">
+											<option value="US">United States</option>
+											<option value="AU">Australia</option>
+										</select>
+									</div>
+								<span class="material-input"></span>
 							</div>
 							<div class="col col-lg-4 col-md-4 col-sm-12 col-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your State / Province</label>
-									<div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" role="button" title="California"><span class="filter-option pull-left">California</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="0" class="selected"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">California</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Texas</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker form-control" tabindex="-98">
-										<option value="CA">California</option>
-										<option value="TE">Texas</option>
-									</select></div>
-								<span class="material-input"></span></div>
+										<select class="selectpicker form-control" tabindex="-98">
+											<option value="US">United States</option>
+											<option value="AU">Australia</option>
+										</select>
+									</div>
+								<span class="material-input"></span>
 							</div>
 							<div class="col col-lg-4 col-md-4 col-sm-12 col-12">
 								<div class="form-group label-floating is-select">
 									<label class="control-label">Your City</label>
-									<div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" role="button" title="San Francisco"><span class="filter-option pull-left">San Francisco</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="0" class="selected"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">San Francisco</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">New York</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker form-control" tabindex="-98">
-										<option value="SF">San Francisco</option>
-										<option value="NY">New York</option>
-									</select></div>
-								<span class="material-input"></span></div>
+										<select class="selectpicker form-control" tabindex="-98">
+											<option value="US">United States</option>
+											<option value="AU">Australia</option>
+										</select>
+									</div>
+								<span class="material-input"></span>
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating">
@@ -112,13 +115,13 @@
 								<span class="material-input"></span></div>
 					
 								<div class="form-group label-floating is-select">
-									<label class="control-label">Category</label>
-									<div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" role="button" title="Rock Band"><span class="filter-option pull-left">Rock Band</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="0" class="selected"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">Rock Band</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Pop Band</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Jazz Band</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker form-control" tabindex="-98">
-										<option value="MA">Rock Band</option>
-										<option value="FE">Pop Band</option>
-										<option value="FE">Jazz Band</option>
-									</select></div>
-								<span class="material-input"></span></div>
+									<label class="control-label">Your City</label>
+										<select class="selectpicker form-control" tabindex="-98">
+											<option value="US">United States</option>
+											<option value="AU">Australia</option>
+										</select>
+									</div>
+								<span class="material-input"></span>
 							</div>
 					
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -184,21 +187,23 @@
 					
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-select">
-									<label class="control-label">Who Can Friend You?</label>
-									<div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" role="button" title="Everyone"><span class="filter-option pull-left">Everyone</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="0" class="selected"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">Everyone</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">No One</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker form-control" tabindex="-98">
-										<option value="EO">Everyone</option>
-										<option value="NO">No One</option>
-									</select></div>
-								<span class="material-input"></span></div>
+									<label class="control-label">Your City</label>
+										<select class="selectpicker form-control" tabindex="-98">
+											<option value="US">United States</option>
+											<option value="AU">Australia</option>
+										</select>
+									</div>
+								<span class="material-input"></span>
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-select">
-									<label class="control-label">Who Can View Your Posts</label>
-									<div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" role="button" title="Friends Only"><span class="filter-option pull-left">Friends Only</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="0" class="selected"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">Friends Only</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Everyone</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker form-control" tabindex="-98">
-										<option value="US">Friends Only</option>
-										<option value="EO">Everyone</option>
-									</select></div>
-								<span class="material-input"></span></div>
+									<label class="control-label">Your City</label>
+										<select class="selectpicker form-control" tabindex="-98">
+											<option value="US">United States</option>
+											<option value="AU">Australia</option>
+										</select>
+									</div>
+								<span class="material-input"></span>
 							</div>
 					
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -210,7 +215,7 @@
 					
 									<div class="togglebutton">
 										<label>
-											<input type="checkbox" checked=""><span class="toggle"></span>
+											<input type="checkbox" checked="">
 										</label>
 									</div>
 								</div>
@@ -222,7 +227,7 @@
 					
 									<div class="togglebutton">
 										<label>
-											<input type="checkbox" checked=""><span class="toggle"></span>
+											<input type="checkbox" checked="">
 										</label>
 									</div>
 								</div>
@@ -234,7 +239,7 @@
 					
 									<div class="togglebutton">
 										<label>
-											<input type="checkbox" checked=""><span class="toggle"></span>
+											<input type="checkbox" checked="">
 										</label>
 									</div>
 								</div>
@@ -246,7 +251,7 @@
 					
 									<div class="togglebutton">
 										<label>
-											<input type="checkbox" checked=""><span class="toggle"></span>
+											<input type="checkbox" checked="">
 										</label>
 									</div>
 								</div>
