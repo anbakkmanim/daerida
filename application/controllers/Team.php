@@ -109,9 +109,11 @@ class Team extends CI_Controller
         $te_idx = $_GET['te_idx']; // 팀 인덱스
 
         $result = $this->TeamModel->listPost($te_idx);
-
+        $data = [
+            "boards" => $result
+        ];
         // 뷰 로딩
-        $this->load->view('team/board', $result);
+        $this->load->view('team/board', $data);
     }
 
     /**

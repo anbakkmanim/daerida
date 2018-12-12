@@ -27,7 +27,7 @@ class TeamModel extends CI_Model
           $te_isOpen
         );
         // array로 반환
-        return $this->db->query($sql, $bind);
+        return $this->db->query($sql, $bind)->result_array();
     }
 
     /**
@@ -60,7 +60,7 @@ class TeamModel extends CI_Model
         );
 
         // bool 로 반환
-        return $this->db->query($sql, $bind);
+        return $this->db->query($sql, $bind)->result_array();
     }
 
     /**
@@ -82,7 +82,7 @@ class TeamModel extends CI_Model
         );
         
         // bool 로 반환
-        return $this->db->query($sql, $bind);
+        return $this->db->query($sql, $bind)->result_array();
     }
 
     /**
@@ -106,7 +106,7 @@ class TeamModel extends CI_Model
         );
 
         // bool 로 반환
-        return $this->db->query($sql, $bind);
+        return $this->db->query($sql, $bind)->result_array();
     }
 
     /**
@@ -116,7 +116,7 @@ class TeamModel extends CI_Model
      */
     public function listPost($te_idx) {
         // SQL 문 생성
-        $sql = "select * from TEAM_POST_TB where te_idx = ?";
+        $sql = "select a.*, b.me_n_name, b.me_n_profile from TEAM_POST_TB as a join MEMBER_NORMAL_TB as b on a.me_n_idx = b.me_n_idx where te_idx = ?";
 
         // bind
         $bind = array(
@@ -124,6 +124,6 @@ class TeamModel extends CI_Model
         );
 
         // array 로 반환
-        return $this->db->query($sql, $bind);
+        return $this->db->query($sql, $bind)->result_array();
     }
 }

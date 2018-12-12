@@ -55,21 +55,21 @@
 					<thead>
 				
 					<tr>
-				
-						<th class="forum">
-							Forum
+
+						<th>
+							순번
 						</th>
 				
-						<th class="topics">
-							Topics
+						<th>
+							제목
+						</th>
+
+						<th>
+                            작성 일자
 						</th>
 				
-						<th class="posts">
-							Posts
-						</th>
-				
-						<th class="freshness">
-							Freshness
+						<th>
+							글쓴이
 						</th>
 				
 					</tr>
@@ -77,263 +77,46 @@
 					</thead>
 				
 					<tbody>
+                    <?php
+                        foreach ($boards as $rows) {
+                    ?>
 					<tr class="bg-smoke-light">
+                        <td class="topics">
+                            <a href="#" class="h6 count"><?= $rows['te_po_idx']?></a>
+                        </td>
 						<td class="forum">
 							<div class="forum-item">
 								
 								<div class="content">
-									<a href="#" class="h6 title">This year’s ComixCon will have the best presentations</a>
+									<a href="#" class="h6 title"><?= $rows['te_po_title'] ?></a>
 								</div>
-								<div class="author-started">
-									<span>Started by:</span>
-									<div class="author-thumb">
-										<img src="/assets/img/avatar48-sm.jpg" alt="author">
-									</div>
-									<a href="#" class="h6 title">Marina Valentine</a>
-								</div>
+<!--								<div class="author-started">-->
+<!--									<span>Started by:</span>-->
+<!--									<div class="author-thumb">-->
+<!--										<img src="--><?//= "/uploads/profile/".$rows['me_n_profile'] ?><!--" alt="author">-->
+<!--									</div>-->
+<!--									<a href="#" class="h6 title">--><?//= $rows['me_n_name'] ?><!-- </a>-->
+<!--								</div>-->
 							</div>
 						</td>
-						<td class="topics">
-				
-						</td>
+
 						<td class="posts">
-							<a href="#" class="h6 count">24</a>
+							<a href="#" class="h6 count"><?=explode( " ", $rows['te_po_date'])[0] ?></a>
 						</td>
 						<td class="freshness">
 							<div class="author-freshness">
 								<div class="author-thumb">
-									<img src="/assets/img/avatar72-sm.jpg" alt="author">
+									<img src="<?= "/uploads/profile/".$rows['me_n_profile'] ?>" alt="author">
 								</div>
-								<a href="#" class="h6 title">Nicholas Grissom</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">6 minutes ago</time>
+								<a href="#" class="h6 title"><?= $rows['me_n_name'] ?></a>
+<!--								<time class="entry-date updated" datetime="--><?//=$rows['te_po_date'] ?><!--">6 minutes ago</time>-->
 							</div>
 						</td>
 					</tr>
-				
-					<tr>
-						<td class="forum">
-							<div class="forum-item">
-								<div class="content">
-									<a href="#" class="h6 title">What do you think it’s the most powerfull character of all universes?</a>
-								</div>
-								<div class="author-started">
-									<span>Started by:</span>
-									<div class="author-thumb">
-										<img src="/assets/img/avatar70-sm.jpg" alt="author">
-									</div>
-									<a href="#" class="h6 title">Rachel Howlett</a>
-								</div>
-							</div>
-						</td>
-						<td class="topics">
-				
-						</td>
-						<td class="posts">
-							<a href="#" class="h6 count">196</a>
-						</td>
-						<td class="freshness">
-							<div class="author-freshness">
-								<div class="author-thumb">
-									<img src="/assets/img/avatar79-sm.jpg" alt="author">
-								</div>
-								<a href="#" class="h6 title">Jake Stevens</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">47 minutes ago</time>
-							</div>
-						</td>
-					</tr>
-				
-					<tr class="bg-smoke-light">
-						<td class="forum">
-							<div class="forum-item">
-								<div class="content">
-									<a href="#" class="h6 title">Cowboy Champloo will have a live action adaptation, yay or nay?</a>
-								</div>
-								<div class="author-started">
-									<span>Started by:</span>
-									<div class="author-thumb">
-										<img src="/assets/img/avatar80-sm.jpg" alt="author">
-									</div>
-									<a href="#" class="h6 title">Fred Summers</a>
-								</div>
-							</div>
-						</td>
-						<td class="topics">
-				
-						</td>
-						<td class="posts">
-							<a href="#" class="h6 count">1</a>
-						</td>
-						<td class="freshness">
-							<div class="author-freshness">
-								<div class="author-thumb">
-									<img src="/assets/img/avatar80-sm.jpg" alt="author">
-								</div>
-								<a href="#" class="h6 title">Fred Summers</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">58 minutes ago</time>
-							</div>
-						</td>
-					</tr>
-				
-					<tr>
-						<td class="forum">
-							<div class="forum-item">
-								<div class="content">
-									<a href="#" class="h6 title">The Wonder cinematic universe keeps expanding!</a>
-								</div>
-								<div class="author-started">
-									<span>Started by:</span>
-									<div class="author-thumb">
-										<img src="/assets/img/avatar53-sm.jpg" alt="author">
-									</div>
-									<a href="#" class="h6 title">Bruce Peterson</a>
-								</div>
-							</div>
-						</td>
-						<td class="topics">
-				
-						</td>
-						<td class="posts">
-							<a href="#" class="h6 count">15</a>
-						</td>
-						<td class="freshness">
-							<div class="author-freshness">
-								<div class="author-thumb">
-									<img src="/assets/img/avatar52-sm.jpg" alt="author">
-								</div>
-								<a href="#" class="h6 title">Green Goo Rock</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">1 hour, 49 minutes ago</time>
-							</div>
-						</td>
-					</tr>
-				
-					<tr class="bg-smoke-light">
-						<td class="forum">
-							<div class="forum-item">
-								<div class="content">
-									<a href="#" class="h6 title">The Masked Crusader #56 will be released in August 2018</a>
-								</div>
-								<div class="author-started">
-									<span>Started by:</span>
-									<div class="author-thumb">
-										<img src="/assets/img/avatar81-sm.jpg" alt="author">
-									</div>
-									<a href="#" class="h6 title">Marc Roberts</a>
-								</div>
-							</div>
-						</td>
-						<td class="topics">
-				
-						</td>
-						<td class="posts">
-							<a href="#" class="h6 count">27</a>
-						</td>
-						<td class="freshness">
-							<div class="author-freshness">
-								<div class="author-thumb">
-									<img src="/assets/img/avatar59-sm.jpg" alt="author">
-								</div>
-								<a href="#" class="h6 title">Diana Jameson</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">2 hours, 7 minutes ago</time>
-							</div>
-						</td>
-					</tr>
-				
-					<tr>
-						<td class="forum">
-							<div class="forum-item">
-								<div class="content">
-									<a href="#" class="h6 title">Benjamin Nolan is the new Masked Crusader</a>
-								</div>
-								<div class="author-started">
-									<span>Started by:</span>
-									<div class="author-thumb">
-										<img src="/assets/img/avatar64-sm.jpg" alt="author">
-									</div>
-									<a href="#" class="h6 title">Sarah Hetfield</a>
-								</div>
-							</div>
-						</td>
-						<td class="topics">
-				
-						</td>
-						<td class="posts">
-							<a href="#" class="h6 count">20</a>
-						</td>
-						<td class="freshness">
-							<div class="author-freshness">
-								<div class="author-thumb">
-									<img src="/assets/img/avatar82-sm.jpg" alt="author">
-								</div>
-								<a href="#" class="h6 title">Jenny Carter</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">2 hours, 33 minutes ago</time>
-							</div>
-						</td>
-					</tr>
-				
-					<tr class="bg-smoke-light">
-						<td class="forum">
-							<div class="forum-item">
-								<div class="content">
-									<a href="#" class="h6 title">Do you think there should be a cinematic universe reboot? [Poll]</a>
-								</div>
-								<div class="author-started">
-									<span>Started by:</span>
-									<div class="author-thumb">
-										<img src="/assets/img/avatar52-sm.jpg" alt="author">
-									</div>
-									<a href="#" class="h6 title">Green Goo Rock</a>
-								</div>
-							</div>
-						</td>
-						<td class="topics">
-				
-						</td>
-						<td class="posts">
-							<a href="#" class="h6 count">46</a>
-						</td>
-						<td class="freshness">
-							<div class="author-freshness">
-								<div class="author-thumb">
-									<img src="/assets/img/avatar51-sm.jpg" alt="author">
-								</div>
-								<a href="#" class="h6 title">Nicholas Grissom</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">4 hours, 26 minutes ago</time>
-							</div>
-						</td>
-					</tr>
-				
-					<tr>
-						<td class="forum">
-							<div class="forum-item">
-								<div class="content">
-									<a href="#" class="h6 title">Iron Alchemist japanese live action has mixed reviews</a>
-								</div>
-								<div class="author-started">
-									<span>Started by:</span>
-									<div class="author-thumb">
-										<img src="/assets/img/faved-page5.jpg" alt="author">
-									</div>
-									<a href="#" class="h6 title">Carol Summers</a>
-								</div>
-							</div>
-						</td>
-						<td class="topics">
-				
-						</td>
-						<td class="posts">
-							<a href="#" class="h6 count">33</a>
-						</td>
-						<td class="freshness">
-							<div class="author-freshness">
-								<div class="author-thumb">
-									<img src="/assets/img/faved-page10.jpg" alt="author">
-								</div>
-								<a href="#" class="h6 title">Matt Simpson</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">5 hours, 58 minutes ago</time>
-							</div>
-						</td>
-					</tr>
-				
+
+                    <?php
+                        }
+                    ?>
 					</tbody>
 				</table>
 				
