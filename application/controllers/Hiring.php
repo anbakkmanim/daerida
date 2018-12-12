@@ -108,4 +108,17 @@ class Hiring extends CI_Controller
         // load View
         $this->load->view('hiring/detail', $return);
     }
+
+    /**
+     * 채용 맵
+     * @METHOD GET
+     * @MainURL hiring/map
+     * @Params null
+     */
+    public function map() {
+        $data = [
+            'value' => '대구소프트웨어고등학교'
+        ];
+        $this->load->view('hiring/map', $data);
+    }
 }
