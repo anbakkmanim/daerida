@@ -400,4 +400,4 @@
 
 </header>
 
-<div class="header-spacer"></div>
+<div class="header-spacer" style="height: 70px; max-height: 70px;"></div>
