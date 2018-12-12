@@ -52,5 +52,128 @@ Class ProfileModel extends CI_Model{
             return true;
         }
     }
+
+    public function setProfileCompany($param){
+        $sql = "
+                  UPDATE  
+                  SET
+                  me_c_manager = ?,
+                  me_c_name = ?,
+                  me_c_email = ?,
+                  me_c_phone = ?,
+                  me_c_category = ?,
+                  me_c_profile = ?,
+                  me_c_salary = ?,
+                  me_c_sido = ?,
+                  me_c_isMillitary = ?,
+                  me_c_benefit = ?
+                  INTO
+                  MEMBER_COMPANY_TB
+                  WHERE
+                  me_c_idx = ?
+        ";
+
+        $bind = array(
+          $param['me_c_manager'],
+          $param['me_c_name'],
+          $param['me_c_email'],
+          $param['me_c_phone'],
+          $param['me_c_category'],
+          $param['me_c_profile'],
+          $param['me_c_salary'],
+          $param['me_c_sido'],
+          $param['me_c_isMillitary'],
+          $param['me_c_benefit'],
+          $param['me_c_idx'],
+        );
+
+        $result = $this->db->query($sql, $bind);
+        return $result;
+    }
+
+    public function setProfileNormal($param){
+        $sql = "
+                    UPDATE 
+                    SET
+                    me_n_name = ?,
+                    me_n_email = ?,
+                    me_n_phone = ?,
+                    me_n_sido = ?,
+                    me_n_isMillitary = ?,
+                    me_n_age = ?,
+                    me_n_hopeSalary = ?,
+                    me_n_profile = ?,
+                    me_n_info = ?,
+                    me_n_isOpen = ?
+                    INTO
+                    MEMBER_NORMAL_TB
+                    WHERE
+                    me_n_idx = ?
+        ";
+
+        $bind = array(
+            $param['me_n_name'],
+            $param['me_n_email'],
+            $param['me_n_phone'],
+            $param['me_n_sido'],
+            $param['me_n_isMillitary'],
+            $param['me_n_age'],
+            $param['me_n_hopeSalary'],
+            $param['me_n_profile'],
+            $param['me_n_info'],
+            $param['me_n_isOpen'],
+            $param['me_n_idx'],
+        );
+
+        $result = $this->db->query($sql, $bind);
+        return $result;
+    }
+
+    public function addCareer($param){
+        $sql = "
+                INSERT INTO CAREER_TB(
+                        ca_career,
+                        ca_info,
+                        ca_type,
+                        ca_image        
+                        )
+                        VALUES
+                        (
+                        ?,
+                        ?,
+                        ?,
+                        ?,
+                        ?,
+                        )
+        ";
+
+        $bind = array(
+            $param['ca_career'],
+            $param['ca_info'],
+            $param['ca_type'],
+            $param['ca_image']
+        );
+
+        $result = $this->db->query($sql, $bind);
+        return $result;
+    }
+
+    public function delCareer($param){
+        $sql = "
+                DELETE FROM CAREER_TB
+                WHERE
+                ca_idx = ?
+                AND 
+                me_n_idx = ?
+        ";
+
+        $bind = array(
+            $param['ca_idx'],
+            $param['ma_n_idx']
+        );
+
+        $result = $this->db->query($sql, $bind);
+        return $result;
+    }
 }
 ?>

@@ -11,6 +11,7 @@ class Member extends CI_Controller
         parent::__construct();
         $this->load->model('AuthModel');
         $this->load->model('RegisterModel');
+        $this->load->model('ProfileModel');
     }
 
     // url 이 /member 까지만 적었을시 /member/login 으로 리다이렉트
@@ -255,6 +256,13 @@ class Member extends CI_Controller
         }
     }
 
+    /**
+     * 일반 프로필 보기
+     * @METHOD get
+     * @MainURL /main/profileNormal
+     * @REQUEST X
+     * @RESPONSE (Array)career, name, email, phone, sido, isMillitary, age, hopeSalary, profile, info, isOpen
+     */
     public function profileNormal(){
         $data['me_id'] = $this->session->me_id;
         $data['me_password'] = $this->session->me_password;
@@ -290,6 +298,43 @@ class Member extends CI_Controller
         $this->load->view('Member/profileNormal', $user_data, $career);
     }
 
+    /**
+     * 일반 프로필 수정
+     * @METHOD POST
+     * @MainURL /main/setProfileNormal
+     * @REQUEST me_n_idx, me_n_email, me_n_email, me_n_phone, me_n_sido, me_n_isMillitary, me_n_age, me_n_hopeSalary, me_n_profile, me_n_info, me_n_isOpen
+     * @RESPONSE X
+     */
+    public function setProfileNormal(){
+        $data['me_n_idx'] = $this->session->me_idx;
+        $data['me_n_name'] = $this->input->post('me_n_name');
+        $data['me_n_email'] = $this->input->post('me_n_email');
+        $data['me_n_phone'] = $this->input->post('me_n_phone');
+        $data['me_n_sido'] = $this->input->post('me_n_sido');
+        $data['me_n_isMillitary'] = $this->input->post('me_n_isMillitary');
+        $data['me_n_age'] = $this->input->post('me_n_age');
+        $data['me_n_hopeSalary'] = $this->input->post('me_n_hopeSalary');
+        $data['me_n_profile'] = $this->input->post('me_n_profile');
+        $data['me_n_info'] = $this->input->post('me_n_info');
+        $data['me_n_isOpen'] = $this->input->post('me_n_isOpen');
+
+        $result = $this->ProfileModel->setProfileNormal($data);
+        if($result){
+            alert('정보 수정을 완료했습니다.');
+            location_href('Member/ProfileNormal');
+        }else{
+            alert('정보를 수정하지 못했습니다');
+            location_href('Member/ProfileNormal');
+        }
+    }
+
+    /**
+     * 기업 프로필 보기
+     * @METHOD POST
+     * @MainURL /main/profileCompany
+     * @REQUEST me_c_idx
+     * @RESPONSE manager, name, email, phone, category, profile, salary, sido, isMillitary, benefit, isFollowed
+     */
     public function profileCompany(){
         $data['me_c_idx'] = $this->input->post('me_c_idx');
 
@@ -312,6 +357,45 @@ class Member extends CI_Controller
         $this->load->view('Member/profileCompany', $com_data);
     }
 
+
+    /**
+     * 기업 프로필 수정
+     * @METHOD POST
+     * @MainURL /main/setProfileCompany
+     * @REQUEST me_c_idx, me_c_manager, me_c_name, me_c_email, me_c_phone, me_c_category, me_c_profile, me_c_salary, me_c_sido, me_c_isMillitary, me_c_benefit
+     * @RESPONSE X
+     */
+    public function setProfileCompany(){
+        $data['me_c_idx'] = $this->session->me_idx;
+        $data['me_c_manager'] = $this->input->post('me_c_manager');
+        $data['me_c_name'] = $this->input->post('me_c_name');
+        $data['me_c_email'] = $this->input->post('me_c_email');
+        $data['me_c_phone'] = $this->input->post('me_c_phone');
+        $data['me_c_category'] = $this->input->post('me_c_category');
+        $data['me_c_profile'] = $this->input->post('me_c_profile');
+        $data['me_c_salary'] = $this->input->post('me_c_salary');
+        $data['me_c_sido'] = $this->input->post('me_c_sido');
+        $data['me_c_isMillitary'] = $this->input->post('me_c_isMillitary');
+        $data['me_c_benefit'] = $this->input->post('me_c_benefit');
+
+        $result = $this->ProfileModel->setProfileCompany($data);
+
+        if($result){
+            alert('정보 수정을 완료했습니다.');
+            location_href('Member/ProfileCompany');
+        }else{
+            alert('정보를 수정하지 못했습니다');
+            location_href('Member/ProfileCompany');
+        }
+    }
+
+    /**
+     * 포트폴리오 보기
+     * @METHOD POST
+     * @MainURL /main/portfolio
+     * @REQUEST me_n_idx
+     * @RESPONSE (Array)Career
+     */
     public function portfolio(){
         $data['me_n_idx'] = $this->input->post('me_n_idx');
 
@@ -328,10 +412,42 @@ class Member extends CI_Controller
 
         $this->load->view('Member/portfolio', $career);
     }
+    /**
+     * 포트폴리오 추가
+     * @METHOD POST
+     * @MainURL /main/addPortfolio
+     * @REQUEST me_n_idx
+     * @RESPONSE X
+     */
+    public function addPortfolio(){
+        $data['me_n_idx'] = $this->input->post('me_n_idx');
+        $result = $this->ProfileModel->addCareer($data);
+        if($result){
+            alert('포트폴리오 추가를 완료했습니다.');
+            location_href('Member/protfolio');
+        }else{
+            alert('포트폴리오를 추가하지 못했습니다');
+            location_href('Member/protfolio');
+        }
+    }
 
-    public function rating(){
-        $data['me_c_idx'] = $this->input->post('me_c_idx');
-
-        
+    /**
+     * 포트폴리오 삭제
+     * @METHOD POST
+     * @MainURL /main/delPortfolio
+     * @REQUEST me_n_idx, ca_idx
+     * @RESPONSE X
+     */
+    public function delPortfolio(){
+        $data['me_n_idx'] = $this->input->post('me_n_idx');
+        $data['ca_idx'] = $this->input->post('ca_idx');
+        $result = $this->ProfileModel->delCareer($data);
+        if($result){
+            alert('포트폴리오 삭제를 완료했습니다.');
+            location_href('Member/protfolio');
+        }else{
+            alert('포트폴리오를 삭제하지 못했습니다');
+            location_href('Member/protfolio');
+        }
     }
 }

@@ -114,8 +114,8 @@ class RegisterModel extends CI_Model
             );
         }
 
-        $result = $this->db->query($sql,$bind);
-        return $result;
+            $result = $this->db->query($sql,$bind);
+            return $result;
     }
 
     function idCheck($param){
