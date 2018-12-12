@@ -203,9 +203,14 @@
 					</div>
 					<a href="02-ProfilePage.html" class="author-name fn">
 						<div class="author-title">
-							James Spiegel <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon') ?>"></use></svg>
+							<?= $this->session->me_name ?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= $this->session->me_profile ?>"></use></svg>
 						</div>
-						<span class="author-subtitle">SPACE COWBOY</span>
+						<span class="author-subtitle"><?php 
+							if ($this->session->me_type == "me_n_") 
+								echo "일반회원";
+							else
+								echo "기업회원";
+						?></span>
 					</a>
 				</div>
 			</div>
@@ -304,7 +309,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="/member/logout">
 						<svg class="olymp-logout-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-logout-icon') ?>"></use></svg>
 
 						<span>Log Out</span>
