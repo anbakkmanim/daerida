@@ -38,9 +38,11 @@ Class ProfileModel extends CI_Model{
 
     public function getUserData($me_n_idx) {
         $sql = "
-                SELECT *
-                FROM MEMBER_NORMAL_TB
-                WHERE me_n_idx = ?;
+                select * from MEMBER_NORMAL_TB 
+                join FIELD_TB as b on me_id = me_n_id 
+                join FIELD_SMALL_RF as c on b.fi_s_idx = c.fi_s_idx 
+                join FIELD_LARGE_RF as d on c.fi_l_idx = d.fi_l_idx  
+                where me_n_idx = ?;
         ";
 
         $query = $this->db->query($sql, array($me_n_idx));

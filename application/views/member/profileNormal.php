@@ -6,17 +6,17 @@
 		<div class="row">
 			<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="ui-block">
-					<div class="top-header top-header-favorit">
+					<div class="top-header top-header-favorite">
 						<div class="top-header-thumb">
 							<!-- dummy img -->
-							<img src="https://loremflickr.com/1368/472"  alt="nature">
+							<img src="<?= site_url('assets/img/top-header2.jpg') ?>"  alt="nature">
 							<div class="top-header-author">
 								<div class="author-thumb">
 									<img src="<?= "/uploads/profile/". $me_n_profile ?>"  alt="author">
 								</div>
 								<div class="author-content">
 									<a href="<?= site_url('assets/#') ?>"  class="h3 author-name"><?= $me_n_name ?></a>
-									<div class="country"><?= $me_n_sido . " | " . $me_idx ?></div>
+									<div class="country"><?= $me_n_sido . " | " . $fi_l_name . "/" . $fi_s_name ?></div>
 								</div>
 							</div>
 						</div>
@@ -137,8 +137,6 @@
 															</li>
 														</ul>
 													</div>
-
-
 												</div>
 											</div>
 										</div>
@@ -429,49 +427,43 @@
 						<ul class="widget w-personal-info">
 							<li>
 								<span class="title">자기소개:</span>
-								<span class="text">Hi, I’m James, I’m 36 and I work as a Digital Designer for the
-									“Daydreams” Agency in Pier 56
-								</span>
+                                <span class="text"><?= $me_n_info ?></span>
 							</li>
 							<li>
 								<span class="title">이름:</span>
-								<span class="text">December 14th, 1980</span>
+								<span class="text"><?= $me_n_name ?></span>
 							</li>
 							<li>
 								<span class="title">분야:</span>
-								<span class="text">Austin, Texas, USA</span>
+								<span class="text"><?= $fi_l_name . "/" . $fi_s_name ?></span>
 							</li>
 							<li>
 								<span class="title">거주지:</span>
-								<span class="text">San Francisco, California, USA</span>
+								<span class="text"><?= $me_n_sido ?></span>
 							</li>
 							<li>
 								<span class="title">희망연봉:</span>
-								<span class="text">UI/UX Designer</span>
+								<span class="text"><?= $me_n_hopeSalary ?></span>
 							</li>
 							<li>
 								<span class="title">나이:</span>
-								<span class="text">April 31st, 2014</span>
+								<span class="text"><?= $me_n_age ?></span>
 							</li>
 							<li>
 								<span class="title">성별:</span>
-								<span class="text">Male</span>
+								<span class="text"><?= $me_n_gender ?></span>
 							</li>
-							<li>
-								<span class="title">희망 근무지역:</span>
-								<span class="text">Married</span>
-							</li>
-							<li>
+                            <li>
 								<span class="title">이메일:</span>
-								<a href="<?= site_url('assets/#') ?>"  class="text">jspiegel@yourmail.com</a>
+								<a href="#"  class="text"><?= $me_n_email ?></a>
 							</li>
 							<li>
 								<span class="title">전화번호:</span>
-								<span class="text">(044) 555 - 4369 - 8957</span>
+								<span class="text"><?= $me_n_phone ?></span>
 							</li>
 							<li>
 								<span class="title">병력 이행 여부:</span>
-								<span class="text">-</span>
+								<span class="text"><?= $me_n_isMilitary ?></span>
 							</li>
 
 						</ul>
@@ -692,28 +684,28 @@
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">자기소개</label>
-									<textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
+									<textarea class="form-control" name="" id="" cols="30" rows="5"><?= $me_n_info ?></textarea>
 								</div>
 							</div>
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">이름</label>
-									<input class="form-control" placeholder="" type="text">
+									<input class="form-control" placeholder="" type="text" value="<?= $me_n_name ?>">
 								</div>
 							</div>
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">이메일</label>
-									<input class="form-control" placeholder="" type="email">
+									<input class="form-control" placeholder="" type="email" value="<?= $me_n_email ?>">
 								</div>
 							</div>
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">전화번호</label>
-									<input class="form-control" placeholder="" type="number">
+									<input class="form-control" placeholder="" type="number" value="<?= $me_n_phone ?>">
 								</div>
 							</div>
 
@@ -721,7 +713,7 @@
 								<fieldset disabled>
 									<div class="form-group label-floating has-disabled.is-empty">
 										<label class="control-label">기억에 남는 추억의 장소는 어디 입니까?</label>
-										<input class="form-control" placeholder="" type="text">
+										<input class="form-control" placeholder="" type="text" >
 									</div>
 								</fieldset>
 							</div>
@@ -729,7 +721,7 @@
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">답변</label>
-									<input class="form-control" placeholder="" type="text">
+									<input class="form-control" placeholder="" type="text" value="<?= $me_n_findpw ?>">
 								</div>
 							</div>
 
