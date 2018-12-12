@@ -960,12 +960,12 @@
 	<script>
 			
 	function gender(str) {
-		const millitary = document.getElementById("military").parentElement.parentElement;
+		const Military = document.getElementById("military").parentElement.parentElement;
 		if (str == 'man') {
-			millitary.classList.remove("d-none");
+			Military.classList.remove("d-none");
 		}
 		else if (str == 'woman'){
-			millitary.classList.add("d-none");
+			Military.classList.add("d-none");
 		} 
 	}
 

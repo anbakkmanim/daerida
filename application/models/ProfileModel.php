@@ -36,6 +36,35 @@ Class ProfileModel extends CI_Model{
         return $query->row();
     }
 
+    public function getCompanyData($me_c_idx) {
+        $sql = "
+                SELECT *
+                FROM   MEMBER_COMPANY_TB
+                join FIELD_TB as b on me_id = me_c_id 
+                join FIELD_SMALL_RF as c on b.fi_s_idx = c.fi_s_idx 
+                join FIELD_LARGE_RF as d on c.fi_l_idx = d.fi_l_idx  
+                WHERE  me_c_idx = ?;
+        ";
+
+        $query = $this->db->query($sql, array($me_c_idx));
+
+        return $query->row();
+    }
+
+    public function getUserData($me_n_idx) {
+        $sql = "
+                select * from MEMBER_NORMAL_TB 
+                join FIELD_TB as b on me_id = me_n_id 
+                join FIELD_SMALL_RF as c on b.fi_s_idx = c.fi_s_idx 
+                join FIELD_LARGE_RF as d on c.fi_l_idx = d.fi_l_idx  
+                where me_n_idx = ?;
+        ";
+
+        $query = $this->db->query($sql, array($me_n_idx));
+
+        return $query->row();
+    }
+
     public function getFollowData($param){
         $sql = "
                 SELECT *
@@ -55,7 +84,7 @@ Class ProfileModel extends CI_Model{
 
     public function setProfileCompany($param){
         $sql = "
-                  UPDATE  
+                  UPDATE  MEMBER_COMPANY_TB
                   SET
                   me_c_manager = ?,
                   me_c_name = ?,
@@ -65,10 +94,8 @@ Class ProfileModel extends CI_Model{
                   me_c_profile = ?,
                   me_c_salary = ?,
                   me_c_sido = ?,
-                  me_c_isMillitary = ?,
+                  me_c_isMilitary = ?,
                   me_c_benefit = ?
-                  INTO
-                  MEMBER_COMPANY_TB
                   WHERE
                   me_c_idx = ?
         ";
@@ -82,7 +109,7 @@ Class ProfileModel extends CI_Model{
           $param['me_c_profile'],
           $param['me_c_salary'],
           $param['me_c_sido'],
-          $param['me_c_isMillitary'],
+          $param['me_c_isMilitary'],
           $param['me_c_benefit'],
           $param['me_c_idx'],
         );
@@ -93,20 +120,18 @@ Class ProfileModel extends CI_Model{
 
     public function setProfileNormal($param){
         $sql = "
-                    UPDATE 
+                    UPDATE MEMBER_NORMAL_TB
                     SET
                     me_n_name = ?,
                     me_n_email = ?,
                     me_n_phone = ?,
                     me_n_sido = ?,
-                    me_n_isMillitary = ?,
+                    me_n_isMilitary = ?,
                     me_n_age = ?,
                     me_n_hopeSalary = ?,
                     me_n_profile = ?,
                     me_n_info = ?,
                     me_n_isOpen = ?
-                    INTO
-                    MEMBER_NORMAL_TB
                     WHERE
                     me_n_idx = ?
         ";
@@ -116,7 +141,7 @@ Class ProfileModel extends CI_Model{
             $param['me_n_email'],
             $param['me_n_phone'],
             $param['me_n_sido'],
-            $param['me_n_isMillitary'],
+            $param['me_n_isMilitary'],
             $param['me_n_age'],
             $param['me_n_hopeSalary'],
             $param['me_n_profile'],

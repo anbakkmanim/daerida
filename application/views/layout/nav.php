@@ -366,11 +366,11 @@
 				</div>
 				<a href="<?php
 				if ($this->session->me_type == "me_n_")
-					echo "/member/profileNormal";
+					echo "/member/User?me_n_idx=". $this->session->me_idx;
 				else
 					echo "/member/profileCompany";
-		?>
-				?>" class="author-name fn">
+				?>
+				" class="author-name fn">
 					<div class="author-title">
 						<?= $this->session->me_name?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon') ?>"></use></svg>
 					</div>

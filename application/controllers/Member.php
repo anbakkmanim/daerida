@@ -104,6 +104,17 @@ class Member extends CI_Controller
         $this->load->view('Member/registerCompany', $data);
     }
 
+    public function getLargeField(){
+        $rfield = $this->RegisterModel->getRField();
+        foreach($rfield as $row){
+            $array[] = array(
+                "fi_l_idx" => $row['fi_l_idx'],
+                "fi_l_name" => $row['fi_i_name']
+            );
+        }
+        echo json_encode($array);
+    }
+
     // 소분류 받아오기
     public function getSmallField(){
         $data['rfield'] = $this->input->get('rfield');
@@ -284,12 +295,15 @@ class Member extends CI_Controller
             echo json_encode($return);
         }
     }
+
+    
+
     /**
      * 일반 프로필 보기
      * @METHOD get
      * @MainURL /main/profileNormal
      * @REQUEST X
-     * @RESPONSE (Array)career, name, email, phone, sido, isMillitary, age, hopeSalary, profile, info, isOpen
+     * @RESPONSE (Array)career, name, email, phone, sido, isMilitary, age, hopeSalary, profile, info, isOpen
      */
     public function profileNormal(){
         $data['me_idx'] = $this->session->me_idx;
@@ -314,7 +328,7 @@ class Member extends CI_Controller
             'email' => $row->me_n_email,
             'phone' => $row->me_n_phone,
             'sido' => $row->me_n_sido,
-            'isMillitary' => $row->me_n_isMillitary,
+            'isMilitary' => $row->me_n_isMilitary,
             'age' => $row->me_n_age,
             'hopeSalary' => $row->me_n_hopeSalary,
             'profile' => $row->me_n_profile,
@@ -333,7 +347,7 @@ class Member extends CI_Controller
      * 일반 프로필 수정
      * @METHOD POST
      * @MainURL /main/setProfileNormal
-     * @REQUEST me_n_idx, me_n_email, me_n_email, me_n_phone, me_n_sido, me_n_isMillitary, me_n_age, me_n_hopeSalary, me_n_profile, me_n_info, me_n_isOpen
+     * @REQUEST me_n_idx, me_n_email, me_n_email, me_n_phone, me_n_sido, me_n_isMilitary, me_n_age, me_n_hopeSalary, me_n_profile, me_n_info, me_n_isOpen
      * @RESPONSE X
      */
     public function setProfileNormal(){
@@ -342,7 +356,7 @@ class Member extends CI_Controller
         $data['me_n_email'] = $this->input->post('me_n_email');
         $data['me_n_phone'] = $this->input->post('me_n_phone');
         $data['me_n_sido'] = $this->input->post('me_n_sido');
-        $data['me_n_isMillitary'] = $this->input->post('me_n_isMillitary');
+        $data['me_n_isMilitary'] = $this->input->post('me_n_isMilitary');
         $data['me_n_age'] = $this->input->post('me_n_age');
         $data['me_n_hopeSalary'] = $this->input->post('me_n_hopeSalary');
         $data['me_n_profile'] = $this->input->post('me_n_profile');
@@ -364,7 +378,7 @@ class Member extends CI_Controller
      * @METHOD POST
      * @MainURL /main/profileCompany
      * @REQUEST me_c_idx
-     * @RESPONSE manager, name, email, phone, category, profile, salary, sido, isMillitary, benefit, isFollowed
+     * @RESPONSE manager, name, email, phone, category, profile, salary, sido, isMilitary, benefit, isFollowed
      */
     public function profileCompany(){
         $data['me_c_idx'] = $this->input->post('me_c_idx');
@@ -380,7 +394,7 @@ class Member extends CI_Controller
             'profile' => $row->me_c_profile,
             'salary' => $row->me_c_salary,
             'sido' => $row->me_c_sido,
-            'isMillitary' => $row->me_c_isMillitary,
+            'isMilitary' => $row->me_c_isMilitary,
             'benefit' => $row->me_c_benefit,
             'isFollowed' => $row2,
         );
@@ -393,7 +407,7 @@ class Member extends CI_Controller
      * 기업 프로필 수정
      * @METHOD POST
      * @MainURL /main/setProfileCompany
-     * @REQUEST me_c_idx, me_c_manager, me_c_name, me_c_email, me_c_phone, me_c_category, me_c_profile, me_c_salary, me_c_sido, me_c_isMillitary, me_c_benefit
+     * @REQUEST me_c_idx, me_c_manager, me_c_name, me_c_email, me_c_phone, me_c_category, me_c_profile, me_c_salary, me_c_sido, me_c_isMilitary, me_c_benefit
      * @RESPONSE X
      */
     public function setProfileCompany(){
@@ -406,7 +420,7 @@ class Member extends CI_Controller
         $data['me_c_profile'] = $this->input->post('me_c_profile');
         $data['me_c_salary'] = $this->input->post('me_c_salary');
         $data['me_c_sido'] = $this->input->post('me_c_sido');
-        $data['me_c_isMillitary'] = $this->input->post('me_c_isMillitary');
+        $data['me_c_isMilitary'] = $this->input->post('me_c_isMilitary');
         $data['me_c_benefit'] = $this->input->post('me_c_benefit');
 
         $result = $this->ProfileModel->setProfileCompany($data);
@@ -479,6 +493,42 @@ class Member extends CI_Controller
         }else{
             alert('포트폴리오를 삭제하지 못했습니다');
             location_href('Member/protfolio');
+        }
+    }
+
+    /**
+     * 사용자 정보 보기
+     * @METHOD GET
+     * @MainURL /main/User
+     * @REQUEST me_n_idx
+     * @RESPONSE X
+     */
+    public function User() {
+        $me_n_idx = $this->input->get('me_n_idx');
+
+        $result = $this->ProfileModel->getUserData($me_n_idx);
+
+        if ($result == null) {
+            alert("해당 사용자가 존재하지 않습니다.");
+            location_href(site_url("/"));
+        } else {
+            $this->load->view("Member/profileNormal", $result);
+        }
+    }
+
+    /**
+     * 기업 정보 보기
+     */
+    public function Company() {
+        $me_c_idx = $this->input->get("me_c_idx");
+
+        $result = $this->ProfileModel->getCompanyData($me_c_idx);
+
+        if ($result == null) {
+            alert("해당 기업이 존재하지 않습니다.");
+            location_href(site_url("/"));
+        } else {
+            $this->load->view("Member/profileCompany", $result);
         }
     }
 }
