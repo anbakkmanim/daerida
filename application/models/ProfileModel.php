@@ -287,5 +287,50 @@ Class ProfileModel extends CI_Model{
         $result = $this->db->query($sql, $bind);
         return $result;
     }
+
+    public function getCompanyQnA($param){
+        $sql = "SELECT *
+                FROM COMPNAY_QNA_TB
+                WHERE me_c_idx = ?
+                JOIN MEMBER_NORMAL_TB on me_n_idx = me_n_idx
+        ";
+
+        $result = $this->db->query($sql, array($param['me_c_idx']));
+        return $result->result();
+    }
+
+    public function addQuestion($param){
+        $sql = "INSERT INTO COMPANY_QNA_TB(
+                              me_c_idx,
+                              me_n_idx,
+                              co_qna_content
+                              )
+                              VALUES
+                              (
+                              ?,
+                              ?,
+                              ?
+                              )
+        ";
+
+        $bind = array(
+            $param['me_c_idx'],
+            $param['me_n_idx'],
+            $param['qna_question']
+        );
+
+        $result = $this->db->query($sql, $bind);
+        return $result;
+    }
+
+    public function addAnswer($param){
+        $sql = "UPDATE COMPANY_QNA_TB
+                SET co_qna_answer = ?
+                WHERE co_qna_idx = ?
+        ";
+
+        $result = $this->db->query($sql,array($param['qna_answer'],$param['qna_idx']));
+        return $result;
+    }
 }
 ?>

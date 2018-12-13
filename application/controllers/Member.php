@@ -573,4 +573,34 @@ class Member extends CI_Controller
         $this->load->view("Member/rating", $data);
     }
 
+    public function companyQuestion(){
+        $data['me_c_idx'] = $this->input->post('me_c_idx');
+        $data['me_n_idx'] = $this->session->me_idx;
+        $data['qna_question'] = $this->input->post('qna_question');
+
+        $data['result'] = $this->ProfileModel->addQuestion($data);
+
+        if($data['result']){
+            alert("질문을 작성하였습니다.");
+            location_href("/Member/companyQnA?me_c_idx=".$data['me_c_idx']);
+        } else {
+            alert("질문을 작성하지 못했습니다.");
+            location_href("/Member/companyQnA?me_c_idx=".$data['me_c_idx']);
+        }
+    }
+
+    public function companyAnswer(){
+        $data['qna_idx'] = $this->input->post('qna_idx');
+        $data['qna_answer'] = $this->input->post('qna_answer');
+
+        $data['result'] = $this->ProfileModel->addAnswer($data);
+
+        if($data['result']){
+            alert("답변을 작성하였습니다.");
+            location_href("/Member/companyQnA?me_c_idx=".$data['me_c_idx']);
+        } else {
+            alert("답변을 작성하지 못했습니다.");
+            location_href("/Member/companyQnA?me_c_idx=".$data['me_c_idx']);
+        }
+    }
 }
