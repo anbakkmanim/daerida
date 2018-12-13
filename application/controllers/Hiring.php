@@ -179,5 +179,15 @@ class Hiring extends CI_Controller
         ];
         $this->load->view('hiring/map', $data);
     }
+
+    /**
+     * 지원한 회사 결과
+     * @METHOD GET
+     * @MainURL hiring/appliedList
+     * @Params null
+     */
+    public function appliedList() {
+        $this->load->view('hiring/appliedList');
+    }
     
 }
