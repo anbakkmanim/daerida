@@ -128,12 +128,12 @@ Class ProfileModel extends CI_Model{
                   me_c_name = ?,
                   me_c_email = ?,
                   me_c_phone = ?,
-                  me_c_category = ?,
                   me_c_profile = ?,
                   me_c_salary = ?,
                   me_c_sido = ?,
                   me_c_isMilitary = ?,
-                  me_c_benefit = ?
+                  me_c_benefit = ?,
+                  me_c_info = ?
                   WHERE
                   me_c_idx = ?
         ";
@@ -143,13 +143,13 @@ Class ProfileModel extends CI_Model{
           $param['me_c_name'],
           $param['me_c_email'],
           $param['me_c_phone'],
-          $param['me_c_category'],
           $param['me_c_profile'],
           $param['me_c_salary'],
           $param['me_c_sido'],
           $param['me_c_isMilitary'],
           $param['me_c_benefit'],
-          $param['me_c_idx'],
+          $param['me_c_info'],
+          $param['me_c_idx']
         );
 
         $result = $this->db->query($sql, $bind);

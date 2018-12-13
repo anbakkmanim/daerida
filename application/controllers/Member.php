@@ -430,7 +430,7 @@ class Member extends CI_Controller
         $data['me_c_name'] = $this->input->post('me_c_name');
         $data['me_c_email'] = $this->input->post('me_c_email');
         $data['me_c_phone'] = $this->input->post('me_c_phone');
-        $data['me_c_category'] = $this->input->post('me_c_category');
+        $data['me_c_info'] = $this->input->post('me_c_info');
         if($this->upload->do_upload('me_c_profile')){
             $data['me_c_profile'] = $this->upload->data('file_name');
         }
