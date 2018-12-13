@@ -453,7 +453,7 @@ class Member extends CI_Controller
     public function portfolio(){
         $data['me_n_idx'] = $this->input->get('me_n_idx');
 
-        $data['userInfo'] = $this->ProfileModel->getUserData($data['me_n_idx']);
+        $data['userInfo'] = $this->ProfileModel->getUserData($data);
 
         $row = $this->ProfileModel->getPortfolio($data);
         foreach ($row as $result){
@@ -464,12 +464,7 @@ class Member extends CI_Controller
                 'file' => $result->ca_image,
             );
         }
-
-        if(isset($career)) {
-            $this->load->view('Member/portfolio', $career);
-        } else {
-            $this->load->view('Member/portfolio');
-        }
+        $this->load->view('Member/portfolio', $data);
     }
     /**
      * 커리어 추가

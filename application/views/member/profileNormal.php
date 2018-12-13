@@ -28,7 +28,7 @@
 											<a href="<?= site_url('assets/12-FavouritePage.html') ?>"  class="active">정보</a>
 										</li>
 										<li>
-											<a href="<?= site_url('member/portfolio') ?>" >포트폴리오</a>
+											<a href="<?= site_url('member/portfolio?me_n_idx='.$me_n_idx.'') ?>" >포트폴리오</a>
 										</li>
 										<!-- <li>
 											<a href="<?= site_url('assets/07-ProfilePage-Photos.html') ?>" >이력서 관리</a>
