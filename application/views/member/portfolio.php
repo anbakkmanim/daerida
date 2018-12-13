@@ -266,7 +266,9 @@
 									url:"/member/getportfolio?ca_idx="+index,
 									success (data){
 										data = JSON.parse(data);
+										console.log(data)
 										$("#port_title").text(data[0].ca_career);
+										$("#ca_idx").val(data[0].ca_idx);
 										$("#port_info").val(data[0].ca_info);
 										$("#port_file").html(data[0].ca_image);
 										$("#port_file").attr('href','/uploads/profile/'+data[0].ca_image);
@@ -592,7 +594,9 @@
 				</div>
 	
 				<div class="modal-body pr-0">
-					
+				<form action="/member/delportfolio" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="ca_idx" id ="ca_idx">
+					<input type="hidden" name="me_n_idx" value="<?=$me_n_idx?>">
 						<div class="col">
 							<fieldset disabled="">
 									<div class="form-group has-disabled is-empty mr-3">
@@ -609,10 +613,11 @@
 								</fieldset>
 						</div>
 					<div class="col">
-					<a href="<?= site_url('#') ?>"  class="btn btn-secondary btn-lg btn--half-width m-0 mb-2">확인</a>
-					<a href="<?= site_url('#') ?>"  class="btn btn-primary btn-lg btn--half-width m-0 ml-2 mb-2">삭제</a>
+					
+					<input type="button"  class="btn btn-primary btn-lg btn--half-width  m-0 mb-2" value="확인">
+					<input type="submit"  class="btn btn-primary btn-lg btn--half-width  m-0 ml-2 mb-2" value="삭제">
 					</div>
-	
+				</form>
 				</div>
 			</div>
 		</div>

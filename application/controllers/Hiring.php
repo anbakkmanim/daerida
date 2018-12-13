@@ -204,10 +204,21 @@ class Hiring extends CI_Controller
      * @Params null
      */
     public function map() {
+        $this->config->load('token', true);
         $data = [
             'value' => '대구소프트웨어고등학교'
         ];
         $this->load->view('hiring/map', $data);
+    }
+
+    /**
+     * 지원한 회사 결과
+     * @METHOD GET
+     * @MainURL hiring/appliedList
+     * @Params null
+     */
+    public function appliedList() {
+        $this->load->view('hiring/appliedList');
     }
     
 }

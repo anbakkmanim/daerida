@@ -1,7 +1,6 @@
 <?php $this->load->view('layout/header'); ?>
 <?php $this->load->view('layout/nav'); ?>
 
-
 	<div class="container">
 		<div class="row">
 			<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -24,10 +23,10 @@
 								<div class="col col-xl-8 m-auto col-lg-8 col-md-12">
 									<ul class="profile-menu">
 										<li>
-											<a href="<?= site_url('12-FavouritePage.html') ?>"  class="active">정보</a>
+											<a href="<?= site_url('12-FavouritePage.html') ?>"  class="active">기업정보</a>
 										</li>
 										<li>
-											<a href="<?= site_url('00_portfolio.html') ?>" >질문/평가</a>
+											<a href="/member/companyQnA?me_c_idx=<?=$me_c_idx?>" >Q&A</a>
 										</li>
 										<!-- <li>
 											<a href="<?= site_url('07-ProfilePage-Photos.html') ?>" >이력서 관리</a>
@@ -246,8 +245,6 @@
 							<div class="row mr-1 ml-1">
 
 								<a href="<?= site_url('#') ?>"  class="btn btn-primary col mr-3" data-toggle="modal" data-target="#update-profile">프로필 수정<div class="ripple-container"></div></a>
-								<a href="<?= site_url('#') ?>"  class="btn btn-primary col" data-toggle="modal" data-target="#create-photo-album">비밀번호 변경<div class="ripple-container"></div></a>
-
 							</div>
 						<?php } ?>
 					</div>
@@ -268,34 +265,6 @@
 						<use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>" ></use>
 					</svg>
 				</a>
-
-				<div class="modal-header">
-					<h6 class="title">비밀번호 변경</h6>
-				</div>
-
-				<div class="modal-body">
-
-					<form class="form-group label-floating">
-						<label class="control-label">현재 비밀번호</label>
-						<input class="form-control" placeholder="" type="password">
-					</form>
-
-					<form class="form-group label-floating">
-						<label class="control-label">새 비밀번호 입력</label>
-						<input class="form-control" placeholder="" type="password">
-					</form>
-
-					<form>
-						<div class="form-group label-floating">
-							<label class="control-label">새 비밀번호 확인</label>
-							<input class="form-control" placeholder="" type="password">
-						</div>
-					</form>
-
-					<a href="<?= site_url('#') ?>"  class="btn btn-secondary btn-lg btn--half-width">변경</a>
-					<a href="<?= site_url('#') ?>"  class="btn btn-primary btn-lg btn--half-width">취소</a>
-
-				</div>
 			</div>
 		</div>
 	</div>

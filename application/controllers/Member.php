@@ -420,13 +420,20 @@ class Member extends CI_Controller
      * @RESPONSE X
      */
     public function setProfileCompany(){
-        $data['me_c_idx'] = $this->session->me_idx;
+        $config['upload_path'] = './uploads/profile/';
+        $config['allowed_types'] = 'jpg|png';
+        $config['encrypt_name'] = TRUE;
+        $this->load->library('upload', $config);
+
+        $data['me_c_idx'] = $this->input->post('me_c_idx');
         $data['me_c_manager'] = $this->input->post('me_c_manager');
         $data['me_c_name'] = $this->input->post('me_c_name');
         $data['me_c_email'] = $this->input->post('me_c_email');
         $data['me_c_phone'] = $this->input->post('me_c_phone');
-        $data['me_c_category'] = $this->input->post('me_c_category');
-        $data['me_c_profile'] = $this->input->post('me_c_profile');
+        $data['me_c_info'] = $this->input->post('me_c_info');
+        if($this->upload->do_upload('me_c_profile')){
+            $data['me_c_profile'] = $this->upload->data('file_name');
+        }
         $data['me_c_salary'] = $this->input->post('me_c_salary');
         $data['me_c_sido'] = $this->input->post('me_c_sido');
         $data['me_c_isMilitary'] = $this->input->post('me_c_isMilitary');
@@ -436,10 +443,10 @@ class Member extends CI_Controller
 
         if($result){
             alert('정보 수정을 완료했습니다.');
-            location_href('Member/ProfileCompany');
+            location_href('/Member/Company?me_c_idx='.$data['me_c_idx']);
         }else{
             alert('정보를 수정하지 못했습니다');
-            location_href('Member/ProfileCompany');
+            location_href('/Member/Company?me_c_idx='.$data['me_c_idx']);
         }
     }
 
@@ -520,10 +527,10 @@ class Member extends CI_Controller
         $result = $this->ProfileModel->delCareer($data);
         if($result){
             alert('포트폴리오 삭제를 완료했습니다.');
-            location_href('Member/portfolio?me_n_idx='+$data['me_n_idx']);
+            location_href('/Member/portfolio?me_n_idx='.$data['me_n_idx']);
         }else{
             alert('포트폴리오를 삭제하지 못했습니다');
-            location_href('Member/portfolio?me_n_idx='+$data['me_n_idx']);
+            location_href('/Member/portfolio?me_n_idx='.$data['me_n_idx']);
         }
     }
 
@@ -556,11 +563,13 @@ class Member extends CI_Controller
         $me_c_idx = $this->input->get("me_c_idx");
 
         $result = $this->ProfileModel->getCompanyData($me_c_idx);
-
+        $result->history = $this->ProfileModel->getHistory(array('me_c_idx' => $me_c_idx));
         if ($result == null) {
             alert("해당 기업이 존재하지 않습니다.");
             location_href(site_url("/"));
         } else {
+            $result->rfield = $this->RegisterModel->getRField();
+            $result->sfield = $this->RegisterModel->getSField(array('rfield' => $result->fi_l_idx));
             $this->load->view("Member/profileCompany", $result);
         }
     }
@@ -568,8 +577,8 @@ class Member extends CI_Controller
     public function companyQnA(){
         $data['me_c_idx'] = $this->input->get('me_c_idx');
 
-        $data['result'] = $this->ProfileModel->getCompanyQnA($data);
-
+        $data['QnA'] = $this->ProfileModel->getCompanyQnA($data);
+        $data['CompanyInfo'] = $this->ProfileModel->getCompanyData($data['me_c_idx']);
         $this->load->view("Member/rating", $data);
     }
 
