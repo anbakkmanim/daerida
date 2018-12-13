@@ -204,7 +204,8 @@ Class ProfileModel extends CI_Model{
     }
 
     public function addCareer($param){
-        $sql = "
+        if(isset($param['me_n_profile'])) {
+            $sql = "
                 INSERT INTO CAREER_TB(
                         me_n_idx,
                         ca_career,
@@ -220,16 +221,39 @@ Class ProfileModel extends CI_Model{
                         ?,
                         ?
                         )
-        ";
+            ";
 
-        $bind = array(
-            $param['me_n_idx'],
-            $param['ca_career'],
-            $param['ca_info'],
-            $param['ca_type'],
-            $param['ca_image']
-        );
+            $bind = array(
+                $param['me_n_idx'],
+                $param['ca_career'],
+                $param['ca_info'],
+                $param['ca_type'],
+                $param['ca_image']
+            );
+        } else {
+            $sql = "
+                INSERT INTO CAREER_TB(
+                        me_n_idx,
+                        ca_career,
+                        ca_info,
+                        ca_type,    
+                        )
+                        VALUES
+                        (
+                        ?,
+                        ?,
+                        ?,
+                        ?
+                        )
+            ";
 
+            $bind = array(
+                $param['me_n_idx'],
+                $param['ca_career'],
+                $param['ca_info'],
+                $param['ca_type']
+            );
+        }
         $result = $this->db->query($sql, $bind);
         return $result;
     }

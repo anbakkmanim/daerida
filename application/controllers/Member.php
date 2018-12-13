@@ -483,12 +483,8 @@ class Member extends CI_Controller
         $data['ca_career'] = $this->input->post('ca_career');
         $data['ca_info'] = $this->input->post('ca_info');
         $data['ca_type'] = $this->input->post('ca_type');
-        $data['ca_image'] = $this->input->post('ca_image');
-
-        if(isset($data['ca_image'])) {
-            if ($this->upload->do_upload('ca_image')) {
-                $data['ca_image'] = $this->upload->data('file_name');
-            }
+        if ($this->upload->do_upload('ca_image')) {
+            $data['ca_image'] = $this->upload->data('file_name');
         }
 
         $result = $this->ProfileModel->addCareer($data);
