@@ -358,8 +358,6 @@
 			</div>
 		</div>
 	</div>
-	<img class="first-img" alt="guy" src="<?= site_url('assets/img/guy.png') ?>">
-	<img class="second-img" alt="rocket" src="<?= site_url('assets/img/rocket1.png') ?>">
 	<div class="content-bg-wrap bg-section1"></div>
 </section>
 
