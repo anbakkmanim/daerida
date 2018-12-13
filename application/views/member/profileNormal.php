@@ -353,10 +353,7 @@
 						<!-- W-Socials -->
 
 						<?php if ($me_n_id == $this->session->me_id) {?>
-						<div class="row ml-1">
-
-							<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary col mr-3" data-toggle="modal" data-target="#update-profile">프로필 수정<div class="ripple-container"></div></a>
-						</div>
+						<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary mb-0 d-block" data-toggle="modal" data-target="#update-profile">프로필 수정</a>
 						<?php } ?>
 					</div>
 				</div>
@@ -412,7 +409,7 @@
 						</div>
 
 						<input type="submit"  class="btn btn-secondary btn-lg btn--half-width" value="추가">
-						<input type="button"  class="btn btn-secondary btn-lg btn--half-width" value="취소">
+						<input type="button"  class="btn btn-secondary btn-lg btn--half-width" data-dismiss="modal" aria-label="Close" value="취소">
 
 					</div>
 				</form>
@@ -678,20 +675,20 @@
 								<div class="row">
 									<div class="radio col">
 										<label>
-											<input type="radio" name="me_n_gender" id="man" onclick="gender('man')" <?php if($me_n_gender == "man"){ echo "checked"; }?>><span class="circle"></span><span class="check"></span>
+											<input type="radio" name="me_n_gender" id="man" value="man" onclick="gender('man')" <?php if($me_n_gender == "man"){ echo "checked"; }?>><span class="circle"></span><span class="check"></span>
 											남자
 										</label>
 									</div>
 									<div class="radio col">
 										<label>
-											<input type="radio" name="me_n_gender" id="woman" onclick="gender('woman')" <?php if($me_n_gender == "woman"){ echo "checked"; }?>><span class="circle"></span><span class="check"></span>
+											<input type="radio" name="me_n_gender" id="woman" value="woman" onclick="gender('woman')" <?php if($me_n_gender == "woman"){ echo "checked"; }?>><span class="circle"></span><span class="check"></span>
 											여자
 										</label>
 									</div>
 									
 									<div class="checkbox col">
 										<label>
-											<input name="optionsCheckboxes" type="checkbox" id="military" name="me_n_isMilitary" <?php if($me_n_isMilitary == "on"){ echo "checked"; }?>>
+											<input type="checkbox" id="military" name="me_n_isMilitary" <?php if($me_n_isMilitary == "on"){ echo "checked"; }?>>
 											병역 이행 여부
 										</label>
 									</div>
@@ -703,11 +700,11 @@
 								<label class="control-label">프로필 사진</label>
 								<div class="col col-lg-3 col-md-3 col-sm-12 col-12 pl-0">
 									<div class="file-upload d-inline-block">
-										<label for="upload" class="file-upload__label">Upload Button</label>
-										<input id="upload" class="file-upload__input" type="file" name="me_n_profile">
+										<label for="upload-profile" class="file-upload__label">Upload Button</label>
+										<input id="upload-profile" class="file-upload__input" type="file" name="me_n_profile">
 									</div>
 									<div id="uploaded-file" class="d-inline-block">
-										<img id="preview" src="<?= site_url('/uploads/profile/'.$me_n_profile)?> ">
+										<img id="preview-profile" src="<?= site_url('/uploads/profile/'.$me_n_profile)?> ">
 									</div>
 								</div>
 							</div>
@@ -732,7 +729,7 @@
 
 						</div>
 						<input type="submit" class="btn btn-secondary btn-lg btn--half-width" value="변경">
-						<input type="button" class="btn btn-secondary btn-lg btn--half-width" value="취소">
+						<input type="button" class="btn btn-secondary btn-lg btn--half-width" data-dismiss="modal" aria-label="Close" value="취소">
 					</form>
 
 												
@@ -1214,19 +1211,17 @@
 			Military.classList.remove("d-none");
 		}
 		else if (str == 'woman'){
+			$("#military").prop('checked',false);
 			Military.classList.add("d-none");
 		} 
 	}
 
 	const readImage = (input, str) => {
-		console.log('called');
 		if (input.files && input.files[0]) {
 			const reader = new FileReader();
 
 			reader.onload = function(e) {
 				 let image = document.getElementById(`preview-${str}`);
-				 console.log(`preview-${str}`);
-				 console.log(image);
 				 image.setAttribute('src', e.target.result);
 			}
 			reader.readAsDataURL(input.files[0]);
@@ -1241,6 +1236,9 @@
 	};
 	document.getElementById("upload-certificate").onchange = function() {
 		readImage(this, "certificate");
+	};
+	document.getElementById("upload-profile").onchange = function() {
+		readImage(this, "profile");
 	};
 
 	function modalclear(){

@@ -89,6 +89,43 @@ Class ProfileModel extends CI_Model{
         return $query->row();
     }
 
+    public function setField($param, $table){
+        if($table == "MEMBER_NORMAL_TB"){
+            $sql = "
+                SELECT *
+                FROM ".$table."
+                WHERE me_n_idx = ?
+            ";
+
+            $result = $this->db->query($sql, array($param['me_n_idx']));
+        } else {
+            $sql = "
+                SELECT *
+                FROM ".$table."
+                WHERE me_c_idx = ?
+            ";
+
+            $result = $this->db->query($sql, array($param['me_c_idx']));
+        }
+
+        $me_id = $result->result_array()[0];
+
+        if($table == "MEMBER_NORMAL_TB"){
+            $me_id = $me_id['me_n_id'];
+        } else {
+            $me_id = $me_id['me_c_id'];
+        }
+        $sql = "
+                UPDATE FIELD_TB
+                SET fi_s_idx = ?
+                WHERE  me_id = ?
+        ";
+
+        $result = $this->db->query($sql, array($param['me_sfield'], $me_id));
+
+        return $result;
+    }
+
     public function getUserData($me_n_idx) {
         $sql = "
                 select * from MEMBER_NORMAL_TB 
@@ -203,7 +240,8 @@ Class ProfileModel extends CI_Model{
                     me_n_profile = ?,
                     me_n_info = ?,
                     me_n_isOpen = ?,
-                    me_n_findpw = ?
+                    me_n_findpw = ?,
+                    me_n_gender = ?
                     WHERE
                     me_n_idx = ?
             ";
@@ -220,6 +258,7 @@ Class ProfileModel extends CI_Model{
                 $param['me_n_info'],
                 $param['me_n_isOpen'],
                 $param['me_n_answer'],
+                $param['me_n_gender'],
                 $param['me_n_idx']
             );
         } else {
@@ -235,7 +274,8 @@ Class ProfileModel extends CI_Model{
                     me_n_hopeSalary = ?,
                     me_n_info = ?,
                     me_n_isOpen = ?,
-                    me_n_findpw = ?
+                    me_n_findpw = ?,
+                    me_n_gender = ?
                     WHERE
                     me_n_idx = ?
             ";
@@ -251,6 +291,7 @@ Class ProfileModel extends CI_Model{
                 $param['me_n_info'],
                 $param['me_n_isOpen'],
                 $param['me_n_answer'],
+                $param['me_n_gender'],
                 $param['me_n_idx']
             );
         }
