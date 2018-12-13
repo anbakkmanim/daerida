@@ -67,6 +67,17 @@ Class HiringModel extends CI_Model
         );
         return $this->db->query($sql, $bind);
     }
+
+    function getFollowCompany($param){
+        $sql = "SELECT *
+                FROM MEMBER_FOLLOW_TB
+                JOIN MEMBER_COMPANY_TB on MEMBER_COMPANY_TB.me_c_idx = MEMBER_FOLLOW_TB.me_c_idx
+                WHERE me_n_idx = ?
+        ";
+
+        $result = $this->db->query($sql, array($param['me_idx']));
+        return $result->result_array();
+    }
 }
 
 ?>
