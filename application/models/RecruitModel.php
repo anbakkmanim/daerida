@@ -146,4 +146,16 @@ class RecruitModel extends CI_Model
         return $this->db->query($sql, $bind)->result_array();
     }
 
+    public function myRecruits($me_n_idx) {
+        $sql = "select * from RECRUIT_APPLICATION_TB as a 
+                join RECRUIT_FIELD_TB as b on a.re_fi_idx = b.re_fi_idx 
+                join RECRUIT_TB as c on b.re_idx = c.re_idx 
+                join MEMBER_COMPANY_TB as d on c.co_idx = d.me_c_idx 
+                where me_n_idx = ?
+                order by re_ap_idx desc";
+        $bind = array(
+            $me_n_idx
+        );
+        return $this->db->query($sql, $bind)->result_array();
+    }
 }

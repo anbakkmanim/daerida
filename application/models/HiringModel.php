@@ -47,6 +47,26 @@ Class HiringModel extends CI_Model
         $result = $query->result_array();
         return $result;
     }
+
+    function listResume($re_idx) {
+        $sql = "select * from RECRUIT_APPLICATION_TB as a join MEMBER_NORMAL_TB as b on a.me_n_idx = b.me_n_idx 
+                join RECRUIT_FIELD_TB as c on a.re_fi_idx = c.re_fi_idx 
+                where c.re_idx = ? and a.re_ap_state = '서류 접수'";
+        $bind = array(
+            $re_idx
+        );
+        return $this->db->query($sql, $bind)->result_array();
+    }
+
+    function changeResumeStatus($re_ap_idx, $state) {
+        $sql = "update RECRUIT_APPLICATION_TB set re_ap_state = ? where re_ap_idx = ?";
+
+        $bind = array(
+            $state,
+            $re_ap_idx
+        );
+        return $this->db->query($sql, $bind);
+    }
 }
 
 ?>

@@ -45,18 +45,48 @@ class Hiring extends CI_Controller
         } else {
             alert("이력서를 제출하는데 실패하였습니다.");
         }
-        location_href(site_url("/"));
+        location_href("/hiring/appliedList");
     }
 
     /**
      * 이력서 리스트
      * @METHOD GET
      * @MainURL hiring/resumeList
-     * @Params X
      */
     public function resumeList()
     {
-        $this->load->view('hiring/resumeList');
+        if ($this->session->me_type == "me_n_") {
+            alert("잘못된 요청입니다.");
+            location_previous();
+        }
+        $re_idx = $this->input->get("re_idx");
+
+        $resumes = $this->HiringModel->listResume($re_idx);
+
+        $detail = $this->RecruitModel->detailRecruit($re_idx);
+        $result = array(
+            "resumes" => $resumes,
+            "detail" => $detail[0]
+        );
+        $this->load->view('hiring/resumeList', $result);
+    }
+
+    /**
+     * 지원 상태 변경
+     * @METHOD GET
+     * @MainURL hiring/updateResume
+     */
+    public function updateResume() {
+        if ($this->session->me_type == "me_n_") {
+            alert("잘못된 요청입니다.");
+            location_previous();
+        }
+        $re_ap_idx = $this->input->get("re_ap_idx");
+        $state = $this->input->get("state");
+        $result = $this->HiringModel->changeResumeStatus($re_ap_idx, $state);
+
+        if ($result == true)
+            location_previous();
     }
 
     /**
@@ -188,7 +218,18 @@ class Hiring extends CI_Controller
      * @Params null
      */
     public function appliedList() {
-        $this->load->view('hiring/appliedList');
+        if ($this->session->me_type == "me_c_") {
+            alert("잘못된 요청입니다.");
+            location_previous();
+            return;
+        }
+        $me_n_idx = $this->session->me_idx;
+
+        $result = $this->RecruitModel->myRecruits($me_n_idx);
+        $result = array(
+            "recruits" => $result
+        );
+        $this->load->view('hiring/appliedList', $result);
     }
     
 }
