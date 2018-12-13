@@ -568,8 +568,8 @@ class Member extends CI_Controller
     public function companyQnA(){
         $data['me_c_idx'] = $this->input->get('me_c_idx');
 
-        $data['result'] = $this->ProfileModel->getCompanyQnA($data);
-
+        $data['QnA'] = $this->ProfileModel->getCompanyQnA($data);
+        $data['CompanyInfo'] = $this->ProfileModel->getCompanyData($data['me_c_idx']);
         $this->load->view("Member/rating", $data);
     }
 

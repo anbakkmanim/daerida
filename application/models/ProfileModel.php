@@ -290,9 +290,8 @@ Class ProfileModel extends CI_Model{
 
     public function getCompanyQnA($param){
         $sql = "SELECT *
-                FROM COMPNAY_QNA_TB
+                FROM COMPANY_QNA_TB
                 WHERE me_c_idx = ?
-                JOIN MEMBER_NORMAL_TB on me_n_idx = me_n_idx
         ";
 
         $result = $this->db->query($sql, array($param['me_c_idx']));
