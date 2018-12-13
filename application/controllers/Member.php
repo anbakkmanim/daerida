@@ -453,10 +453,11 @@ class Member extends CI_Controller
     public function portfolio(){
         $data['me_n_idx'] = $this->input->get('me_n_idx');
 
-        $row = $this->ProfileModel->getCareer($data);
+        $data['userInfo'] = $this->ProfileModel->getUserData($data['me_n_idx']);
 
+        $row = $this->ProfileModel->getPortfolio($data);
         foreach ($row as $result){
-            $career[] = array(
+            $data['career'][] = array(
                 'career' => $result->ca_career,
                 'info' => $result->ca_info,
                 'type' => $result->ca_type,
@@ -487,8 +488,12 @@ class Member extends CI_Controller
         $data['ca_career'] = $this->input->post('ca_career');
         $data['ca_info'] = $this->input->post('ca_info');
         $data['ca_type'] = $this->input->post('ca_type');
-        if($this->upload->do_upload('ca_image')){
-            $data['ca_image'] = $this->upload->data('file_name');
+        $data['ca_image'] = $this->input->post('ca_image');
+
+        if(isset($data['ca_image'])) {
+            if ($this->upload->do_upload('ca_image')) {
+                $data['ca_image'] = $this->upload->data('file_name');
+            }
         }
 
         $result = $this->ProfileModel->addCareer($data);
@@ -543,7 +548,6 @@ class Member extends CI_Controller
 
         $result = $this->ProfileModel->getUserData($me_n_idx);
         $result->career = $this->ProfileModel->getCareer(array('me_n_idx' => $me_n_idx));
-
         if ($result == null) {
             alert("해당 사용자가 존재하지 않습니다.");
             location_href(site_url("/"));
