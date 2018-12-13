@@ -351,7 +351,12 @@ class Member extends CI_Controller
      * @RESPONSE X
      */
     public function setProfileNormal(){
-        $data['me_n_idx'] = $this->session->me_idx;
+        $config['upload_path'] = './uploads/profile/';
+        $config['allowed_types'] = 'jpg|png';
+        $config['encrypt_name'] = TRUE;
+        $this->load->library('upload', $config);
+
+        $data['me_n_idx'] = $this->input->post('me_n_idx');
         $data['me_n_name'] = $this->input->post('me_n_name');
         $data['me_n_email'] = $this->input->post('me_n_email');
         $data['me_n_phone'] = $this->input->post('me_n_phone');
@@ -359,6 +364,10 @@ class Member extends CI_Controller
         $data['me_n_isMilitary'] = $this->input->post('me_n_isMilitary');
         $data['me_n_age'] = $this->input->post('me_n_age');
         $data['me_n_hopeSalary'] = $this->input->post('me_n_hopeSalary');
+        $data['me_n_answer'] = $this->input->post('me_n_answer');
+        if($this->upload->do_upload('me_n_profile')){
+            $data['me_profile'] = $this->upload->data('file_name');
+        }
         $data['me_n_profile'] = $this->input->post('me_n_profile');
         $data['me_n_info'] = $this->input->post('me_n_info');
         $data['me_n_isOpen'] = $this->input->post('me_n_isOpen');
@@ -366,10 +375,10 @@ class Member extends CI_Controller
         $result = $this->ProfileModel->setProfileNormal($data);
         if($result){
             alert('정보 수정을 완료했습니다.');
-            location_href('Member/ProfileNormal');
+            location_href('Member/ProfileNormal?me_n_idx'.$data['me_n_idx']);
         }else{
             alert('정보를 수정하지 못했습니다');
-            location_href('Member/ProfileNormal');
+            location_href('Member/ProfileNormal?me_n_idx'.$data['me_n_idx']);
         }
     }
 
