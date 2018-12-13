@@ -9,12 +9,12 @@
     <div class="card d-inline-block">
       <div class="card-body">
         <div class="form-group label-floating">
-            <h3>팔로우한 회사들</h3>
-            <ul>
-                <?php foreach($follow as $company){?>
-                    <li><h5><a href="/member/Company?me_c_idx=<?=$company['me_c_idx']?>"><?=$company['me_c_name']?></a></h5></li>
-                <?php }?>
-            </ul>
+            팔로우한 회사들
+            <div class="list-group mt-3 mb-0">
+                <?php foreach ($follow as $company) { ?>
+                    <a href="/member/Company?me_c_idx=<?=$company['me_c_idx']?>"><div class="list-group-item list-group-item-action"><?=$company['me_c_name']?></div></a>
+                <?php } ?>
+            </div>
       </div>
     </div>
   </div>
