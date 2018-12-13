@@ -90,16 +90,31 @@ Class ProfileModel extends CI_Model{
     }
 
     public function setField($param, $table){
-        $sql = "
+        if($table == "MEMBER_NORMAL_TB"){
+            $sql = "
                 SELECT *
                 FROM ".$table."
                 WHERE me_n_idx = ?
-        ";
+            ";
 
-        $result = $this->db->query($sql, array($param['me_n_idx']));
+            $result = $this->db->query($sql, array($param['me_n_idx']));
+        } else {
+            $sql = "
+                SELECT *
+                FROM ".$table."
+                WHERE me_c_idx = ?
+            ";
 
-        $me_id = $result->result()->me_n_id;
+            $result = $this->db->query($sql, array($param['me_c_idx']));
+        }
 
+        $me_id = $result->result_array()[0];
+
+        if($table == "MEMBER_NORMAL_TB"){
+            $me_id = $me_id['me_n_id'];
+        } else {
+            $me_id = $me_id['me_c_id'];
+        }
         $sql = "
                 UPDATE FIELD_TB
                 SET fi_s_idx = ?
@@ -108,7 +123,7 @@ Class ProfileModel extends CI_Model{
 
         $result = $this->db->query($sql, array($param['me_sfield'], $me_id));
 
-        return $result->row();
+        return $result;
     }
 
     public function getUserData($me_n_idx) {
