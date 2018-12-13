@@ -193,6 +193,7 @@ Class ProfileModel extends CI_Model{
     public function addCareer($param){
         $sql = "
                 INSERT INTO CAREER_TB(
+                        me_n_idx,
                         ca_career,
                         ca_info,
                         ca_type,
@@ -205,10 +206,12 @@ Class ProfileModel extends CI_Model{
                         ?,
                         ?,
                         ?,
+                        ?
                         )
         ";
 
         $bind = array(
+            $param['me_n_idx'],
             $param['ca_career'],
             $param['ca_info'],
             $param['ca_type'],
