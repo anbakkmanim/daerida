@@ -25,6 +25,19 @@ Class ProfileModel extends CI_Model{
         return $query->result();
     }
 
+    public function getPortfolio($param){
+        $sql = "
+                SELECT *
+                FROM    CAREER_TB
+                WHERE   me_n_idx = ?
+                AND     ca_type == 'portfolio';
+        ";
+
+        $query = $this->db->query($sql, array($param['me_n_idx']));
+
+        return $query->result();
+    }
+
     public function getComData($param){
         $sql = "
                 SELECT *
