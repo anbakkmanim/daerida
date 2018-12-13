@@ -106,7 +106,7 @@ class TeamModel extends CI_Model
         );
 
         // bool 로 반환
-        return $this->db->query($sql, $bind)->result_array();
+        return $this->db->query($sql, $bind);
     }
 
     /**
@@ -124,6 +124,20 @@ class TeamModel extends CI_Model
         );
 
         // array 로 반환
+        return $this->db->query($sql, $bind)->result_array();
+    }
+
+    /**
+     * @param $te_po_idx 팀 포스트 인덱스
+     * @return mixed SQL Value
+     */
+    public function getPost($te_po_idx) {
+        $sql = "select * from TEAM_POST_TB as a join MEMBER_NORMAL_TB as b on a.me_n_idx = b.me_n_idx where te_po_idx = ?";
+
+        $bind = array (
+            $te_po_idx
+        );
+
         return $this->db->query($sql, $bind)->result_array();
     }
 }

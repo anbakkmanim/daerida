@@ -263,7 +263,7 @@
 		<div class="control-block">
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
-					<img alt="author" src="<?= "/uploads/profile/".$this->session->me_profile ?>" style="width:40px" class="avatar">
+					<img alt="author" src="<?= "/uploads/profile/".($this->session->me_profile != null ? $this->session->me_profile : "default.png") ?>" style="width:40px" class="avatar">
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar ps ps--theme_default" data-mcs-theme="dark" data-ps-id="709ba5dd-e3ff-23ee-d8ab-52f0da53e507">
 							<div class="ui-block-title ui-block-title-small">
