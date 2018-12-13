@@ -520,10 +520,10 @@ class Member extends CI_Controller
         $result = $this->ProfileModel->delCareer($data);
         if($result){
             alert('포트폴리오 삭제를 완료했습니다.');
-            location_href('Member/protfolio');
+            location_href('Member/portfolio?me_n_idx='+$data['me_n_idx']);
         }else{
             alert('포트폴리오를 삭제하지 못했습니다');
-            location_href('Member/protfolio');
+            location_href('Member/portfolio?me_n_idx='+$data['me_n_idx']);
         }
     }
 
