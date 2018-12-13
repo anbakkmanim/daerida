@@ -258,7 +258,7 @@
 							<ul class="account-settings">
 								<li>
 									<a href="#">
-										<svg class="olymp-menu-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-menu-icon') ?>"></use></svg>
+                                            <svg class="olymp-menu-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-menu-icon') ?>"></use></svg>
 
 										<span>프로필 설정</span>
 									</a>

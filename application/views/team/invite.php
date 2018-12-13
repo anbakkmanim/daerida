@@ -63,9 +63,9 @@
 									<input class="form-control" placeholder="" type="email" value="www.ggrock.com">
 								<span class="material-input"></span></div>
 					
-					
+
 								<div class="form-group label-floating is-empty">
-									<label class="control-label">Your Phone Number</label>
+									<label   class="control-label">Your Phone Number</label>
 									<input class="form-control" placeholder="" type="text">
 								<span class="material-input"></span></div>
 							</div>
