@@ -33,7 +33,7 @@
 								</button>
 							<span class="material-input"></span></div>
 						</form>
-						<a href="#" class="btn btn-blue btn-md">Create New Topic</a>
+						<a href="/team/boardWrite" class="btn btn-blue btn-md">글쓰기</a>
 					</div>
 				</div>
 			</div>
@@ -88,7 +88,7 @@
 							<div class="forum-item">
 								
 								<div class="content">
-									<a href="#" class="h6 title"><?= $rows['te_po_title'] ?></a>
+									<a href="/team/boardView?te_po_idx=<?= $rows['te_po_idx'] ?>" class="h6 title"><?= $rows['te_po_title'] ?></a>
 								</div>
 <!--								<div class="author-started">-->
 <!--									<span>Started by:</span>-->
@@ -108,7 +108,7 @@
 								<div class="author-thumb">
 									<img src="<?= "/uploads/profile/".$rows['me_n_profile'] ?>" alt="author">
 								</div>
-								<a href="#" class="h6 title"><?= $rows['me_n_name'] ?></a>
+								<a href="/member/User?me_n_idx=<?= $rows['me_n_idx']?>" class="h6 title"><?= $rows['me_n_name'] ?></a>
 <!--								<time class="entry-date updated" datetime="--><?//=$rows['te_po_date'] ?><!--">6 minutes ago</time>-->
 							</div>
 						</td>

@@ -364,7 +364,7 @@ class Member extends CI_Controller
         $data['me_n_isMilitary'] = $this->input->post('me_n_isMilitary');
         $data['me_n_age'] = $this->input->post('me_n_age');
         $data['me_n_hopeSalary'] = $this->input->post('me_n_hopeSalary');
-
+        $data['me_n_answer'] = $this->input->post('me_n_answer');
         if($this->upload->do_upload('me_n_profile')){
             $data['me_profile'] = $this->upload->data('file_name');
         }
@@ -375,10 +375,10 @@ class Member extends CI_Controller
         $result = $this->ProfileModel->setProfileNormal($data);
         if($result){
             alert('정보 수정을 완료했습니다.');
-            location_href('Member/ProfileNormal');
+            location_href('/Member/User?me_n_idx='.$data['me_n_idx']);
         }else{
             alert('정보를 수정하지 못했습니다');
-            location_href('Member/ProfileNormal');
+            location_href('/Member/User?me_n_idx='.$data['me_n_idx']);
         }
     }
 
@@ -520,6 +520,7 @@ class Member extends CI_Controller
         $me_n_idx = $this->input->get('me_n_idx');
 
         $result = $this->ProfileModel->getUserData($me_n_idx);
+        $result->career = $this->ProfileModel->getCareer(array('me_n_idx' => $me_n_idx));
 
         if ($result == null) {
             alert("해당 사용자가 존재하지 않습니다.");

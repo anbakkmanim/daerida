@@ -93,9 +93,11 @@ class Hiring extends CI_Controller
             // 모든 회사에 대한 구인 공고들
             $return = $this->RecruitModel->allRecruit();
         }
-        
+        $data = array(
+            "hiringList" => $return
+        );
         // load View
-        $this->load->view('hiring/hiringList', $return);
+        $this->load->view('hiring/hiringList', $data);
     }
 
     /**
