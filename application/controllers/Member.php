@@ -520,7 +520,7 @@ class Member extends CI_Controller
         $me_n_idx = $this->input->get('me_n_idx');
 
         $result = $this->ProfileModel->getUserData($me_n_idx);
-        $result->carrer = $this->ProfileModel->getCarrer(array('me_n_idx' => $me_n_idx));
+        $result->career = $this->ProfileModel->getCareer(array('me_n_idx' => $me_n_idx));
 
         if ($result == null) {
             alert("해당 사용자가 존재하지 않습니다.");
