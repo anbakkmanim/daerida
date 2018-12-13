@@ -556,11 +556,13 @@ class Member extends CI_Controller
         $me_c_idx = $this->input->get("me_c_idx");
 
         $result = $this->ProfileModel->getCompanyData($me_c_idx);
-
+        $result->history = $this->ProfileModel->getHistory(array('me_c_idx' => $me_c_idx));
         if ($result == null) {
             alert("해당 기업이 존재하지 않습니다.");
             location_href(site_url("/"));
         } else {
+            $result->rfield = $this->RegisterModel->getRField();
+            $result->sfield = $this->RegisterModel->getSField(array('rfield' => $result->fi_l_idx));
             $this->load->view("Member/profileCompany", $result);
         }
     }

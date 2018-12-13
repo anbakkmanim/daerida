@@ -25,6 +25,18 @@ Class ProfileModel extends CI_Model{
         return $query->result();
     }
 
+    public function getHistory($param){
+        $sql = "
+                SELECT *
+                FROM HISTORY_TB
+                WHERE me_c_idx = ?
+        ";
+
+        $query = $this->db->query($sql, array($param['me_c_idx']));
+
+        return $query->result();
+    }
+
     public function getPortfolio($param){
         $sql = "
                 SELECT *
@@ -292,6 +304,7 @@ Class ProfileModel extends CI_Model{
         $sql = "SELECT *
                 FROM COMPANY_QNA_TB
                 WHERE me_c_idx = ?
+                JOIN MEMBER_NORMAL_TB on me_n_idx = me_n_idx
         ";
 
         $result = $this->db->query($sql, array($param['me_c_idx']));
