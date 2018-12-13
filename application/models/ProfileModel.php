@@ -281,7 +281,7 @@ Class ProfileModel extends CI_Model{
 
         $bind = array(
             $param['ca_idx'],
-            $param['ma_n_idx']
+            $param['me_n_idx']
         );
 
         $result = $this->db->query($sql, $bind);
