@@ -41,11 +41,19 @@
 						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="기업 구인 공고"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-weather-icon') ?>"></use></svg>
 					</a>
 				</li>
+				<?php if ($this->session->me_type == "me_n_") { ?>
 				<li>
-					<a href="#">
+					<a href="/hiring/appliedList">
 						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="구직 신청 한 공고"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-calendar-icon') ?>"></use></svg>
 					</a>
 				</li>
+				<?php } else { ?>
+				<li>
+					<a href="/hiring/resumeList">
+						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="지원자"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-calendar-icon') ?>"></use></svg>
+					</a>
+				</li>
+				<?php } ?>
 				<li>
 					<a href="/hiring/map">
 						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="지도"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-badge-icon') ?>"></use></svg>
@@ -109,12 +117,21 @@
 						<span class="left-menu-title">기업 구인 공고</span>
 					</a>
 				</li>
+				<?php if ($this->session->me_type == "me_n_") { ?>
 				<li>
-					<a href="#">
+					<a href="/hiring/appliedList">
 						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY JOB OFFER"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-calendar-icon') ?>"></use></svg>
 						<span class="left-menu-title">구직 신청 한 공고</span>
 					</a>
 				</li>
+				<?php } else { ?>
+				<li>
+					<a href="/hiring/resumeList">
+						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY JOB OFFER"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-calendar-icon') ?>"></use></svg>
+						<span class="left-menu-title">지원자</span>
+					</a>
+				</li>
+				<?php } ?>
 				<li>
 					<a href="/hiring/map">
 						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MAP"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-badge-icon') ?>"></use></svg>
