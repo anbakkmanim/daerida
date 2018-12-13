@@ -455,15 +455,7 @@ class Member extends CI_Controller
 
         $data['userInfo'] = $this->ProfileModel->getUserData($data);
 
-        $row = $this->ProfileModel->getPortfolio($data);
-        foreach ($row as $result){
-            $data['career'][] = array(
-                'career' => $result->ca_career,
-                'info' => $result->ca_info,
-                'type' => $result->ca_type,
-                'file' => $result->ca_image,
-            );
-        }
+        $data['career'] = $this->ProfileModel->getPortfolio($data);
         $this->load->view('Member/portfolio', $data);
     }
     /**
@@ -475,7 +467,7 @@ class Member extends CI_Controller
      */
     public function addCareer(){
         $config['upload_path'] = './uploads/profile/';
-        $config['allowed_types'] = 'jpg|png';
+        $config['allowed_types'] = '*';
         $config['encrypt_name'] = TRUE;
         $this->load->library('upload', $config);
 
@@ -483,6 +475,7 @@ class Member extends CI_Controller
         $data['ca_career'] = $this->input->post('ca_career');
         $data['ca_info'] = $this->input->post('ca_info');
         $data['ca_type'] = $this->input->post('ca_type');
+
         if ($this->upload->do_upload('ca_image')) {
             $data['ca_image'] = $this->upload->data('file_name');
         }
@@ -507,6 +500,13 @@ class Member extends CI_Controller
         }
     }
 
+    public function getPortfolio(){
+        $data['ca_idx'] = $this->input->get('ca_idx');
+
+        $data['career'] = $this->ProfileModel->getOnePortfolio($data);
+
+        echo json_encode($data['career']);
+    }
     /**
      * 포트폴리오 삭제
      * @METHOD POST
@@ -564,4 +564,13 @@ class Member extends CI_Controller
             $this->load->view("Member/profileCompany", $result);
         }
     }
+
+    public function companyQnA(){
+        $data['me_c_idx'] = $this->input->get('me_c_idx');
+
+        $data['result'] = $this->ProfileModel->getCompanyQnA($data);
+
+        $this->load->view("Member/rating", $data);
+    }
+
 }
