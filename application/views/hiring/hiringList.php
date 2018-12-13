@@ -7,61 +7,28 @@
 		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 			<div class="ui-block responsive-flex1200">
 				<div class="ui-block-title">
-					<ul class="filter-icons">
-						<li>
-							<a href="#">
-								<img src="/assets/img/icon-chat2.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="/assets/img/icon-chat15.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="/assets/img/icon-chat9.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="/assets/img/icon-chat4.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="/assets/img/icon-chat6.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="/assets/img/icon-chat26.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="/assets/img/icon-chat27.png" alt="icon">
-							</a>
-						</li>
-					</ul>
 					<div class="w-select">
 						<div class="title">Filter By:</div>
 						<fieldset class="form-group">
-							<div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" role="button" title="All Categories"><span class="filter-option pull-left">All Categories</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="0" class="selected"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">All Categories</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Favourite</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Likes</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker form-control" tabindex="-98">
+							<select class="selectpicker form-control" tabindex="-98">
 								<option value="NU">All Categories</option>
 								<option value="NU">Favourite</option>
 								<option value="NU">Likes</option>
-							</select></div>
-						<span class="material-input"></span></fieldset>
+							</select>
+							<span class="material-input"></span>
+						</fieldset>
 					</div>
 
 					<div class="w-select">
+						<div class="title">Filter By:</div>
 						<fieldset class="form-group">
-							<div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" role="button" title="Date (Descending)"><span class="filter-option pull-left">Date (Descending)</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="0" class="selected"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">Date (Descending)</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class=" dropdown-item" style="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Date (Ascending)</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select class="selectpicker form-control" tabindex="-98">
-								<option value="NU">Date (Descending)</option>
-								<option value="NU">Date (Ascending)</option>
-							</select></div>
-						<span class="material-input"></span></fieldset>
+							<select class="selectpicker form-control" tabindex="-98">
+								<option value="NU">All Categories</option>
+								<option value="NU">Favourite</option>
+								<option value="NU">Likes</option>
+							</select>
+							<span class="material-input"></span>
+						</fieldset>
 					</div>
 
 					<a href="#" data-toggle="modal" data-target="#create-photo-album" class="btn btn-primary btn-md-2">Filter</a>

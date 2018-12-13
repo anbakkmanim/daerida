@@ -17,12 +17,12 @@
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="/hiring/hiringList">
 						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="최근 구인 공고들"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon') ?>"></use></svg>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="/hiring/followList">
 						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팔로우 한 회사의 구인"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-star-icon') ?>"></use></svg>
 					</a>
 				</li>
@@ -80,13 +80,13 @@
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="/hiring/hiringList">
 						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon') ?>"></use></svg>
 						<span class="left-menu-title">최근 구인 공고들</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="/hiring/followList">
 					<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Follow Job Offer"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-star-icon') ?>"></use></svg>
 					<span class="left-menu-title">팔로우 한 회사의 구인</span>
 					</a>

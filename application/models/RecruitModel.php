@@ -105,4 +105,18 @@ class RecruitModel extends CI_Model
         );
         return $this->db->query($sql, $bind)->result_array();
     }
+
+    /**
+     * 팔로우 한 회사의 채용 공고의 리스트를 띄웁니다.
+     * @param $me_n_idx 채용 공고
+     * @return mixed SQL Value (Array)
+     */
+    public function followRecruit($me_n_idx) {
+        $sql = "select a.*, b.*, COUNT(c.re_fi_idx) recruitCnt from RECRUIT_TB as a join MEMBER_COMPANY_TB as b on a.co_idx = b.me_c_idx join RECRUIT_FIELD_TB as c on a.re_idx = c.re_idx join MEMBER_FOLLOW_TB as d on d.me_c_idx = a.co_idx where d.me_n_idx = ? order by re_idx desc";
+        $bind = array(
+            $me_n_idx
+        );
+        return $this->db->query($sql, $bind)->result_array();
+    }
+
 }
