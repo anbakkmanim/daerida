@@ -375,10 +375,10 @@ class Member extends CI_Controller
         $result = $this->ProfileModel->setProfileNormal($data);
         if($result){
             alert('정보 수정을 완료했습니다.');
-            location_href('Member/ProfileNormal');
+            location_href('Member/ProfileNormal?me_n_idx'.$data['me_n_idx']);
         }else{
             alert('정보를 수정하지 못했습니다');
-            location_href('Member/ProfileNormal');
+            location_href('Member/ProfileNormal?me_n_idx'.$data['me_n_idx']);
         }
     }
 
