@@ -1,5 +1,15 @@
 <?php $this->load->view('layout/header'); ?>
 <?php $this->load->view('layout/nav'); ?>
+
+<?php
+	if ($me_n_isOpen == "비공개" && $me_n_id != $this->session->me_id)
+	{
+		alert("비공개 계정입니다.");
+		location_previous();
+		return;
+	}
+?>
+
 	<!-- Top Header-Profile -->
 
 	<div class="container">
