@@ -21,6 +21,14 @@
   
   <link rel="stylesheet" href="<?= site_url('assets/css/main.min.css') ?>">
   <link rel="stylesheet" href="<?= site_url('assets/css/fonts.min.css') ?>">
+
+  <link rel='stylesheet' href='http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'>
+  <link rel='stylesheet' href='http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-jp.css'>
+
+  <style>
+    * { font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', sans-serif; }
+  </style>
+  
   <title>데리다</title>
 </head>
 <body>
