@@ -108,10 +108,12 @@
 												<use xlink:href="<?= site_url('#olymp-dropdown-arrow-icon') ?>" ></use>
 											</svg>
 										</a>
-
+									
+										<?php if ($me_c_id == $this->session->me_id) {?>
 										<div class="col-auto">
 											<a href="<?= site_url('#') ?>"  class="btn btn-primary btn-sm" data-toggle="modal" data-target="#create-career">추가<div class="ripple-container"></div></a>
 										</div>
+										<?php } ?>
 									</div>
 								</h6>
 							</div>
@@ -179,7 +181,9 @@
 				</div>
 
 				
-				<a href="<?= site_url('#') ?>"  class="btn btn-primary btn-md col" data-toggle="modal" data-target="#">저장<div class="ripple-container"></div></a>
+				<?php if ($me_c_id == $this->session->me_id) {?>
+					<a href="<?= site_url('#') ?>"  class="btn btn-primary btn-md col" data-toggle="modal" data-target="#">저장<div class="ripple-container"></div></a>
+				<?php } ?>
 			</div>
 
 			<div class="col col-xl-4 order-xl-1 col-lg-4 order-lg-1 col-md-12 order-md-2 col-sm-12 col-12">
@@ -237,13 +241,15 @@
                         <br>
 						<!-- ... end W-Personal-Info -->
 						<!-- W-Socials -->
+					
+						<?php if ($me_c_id == $this->session->me_id) {?>
+							<div class="row mr-1 ml-1">
 
-						<div class="row mr-1 ml-1">
+								<a href="<?= site_url('#') ?>"  class="btn btn-primary col mr-3" data-toggle="modal" data-target="#update-profile">프로필 수정<div class="ripple-container"></div></a>
+								<a href="<?= site_url('#') ?>"  class="btn btn-primary col" data-toggle="modal" data-target="#create-photo-album">비밀번호 변경<div class="ripple-container"></div></a>
 
-							<a href="<?= site_url('#') ?>"  class="btn btn-primary col mr-3" data-toggle="modal" data-target="#update-profile">프로필 수정<div class="ripple-container"></div></a>
-							<a href="<?= site_url('#') ?>"  class="btn btn-primary col" data-toggle="modal" data-target="#create-photo-album">비밀번호 변경<div class="ripple-container"></div></a>
-
-						</div>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
