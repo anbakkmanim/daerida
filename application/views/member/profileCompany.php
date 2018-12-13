@@ -23,7 +23,7 @@
 								<div class="col col-xl-8 m-auto col-lg-8 col-md-12">
 									<ul class="profile-menu">
 										<li>
-											<a href="<?= site_url('12-FavouritePage.html') ?>"  class="active">기업정보</a>
+											<a href="<?= site_url('/member/company?me_c_idx='.$me_c_idx.'') ?>"  class="active">기업정보</a>
 										</li>
 										<li>
 											<a href="/member/companyQnA?me_c_idx=<?=$me_c_idx?>" >Q&A</a>

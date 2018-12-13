@@ -31,7 +31,7 @@
 										<a href="<?= site_url('member/User?me_n_idx='.$userInfo->me_n_idx.'') ?>" >정보</a>
 									</li>
 									<li>
-										<a href="<?= site_url('13-FavouritePage-About.html') ?>"  class="active">포트폴리오</a>
+										<a href="<?= site_url('member/portfolio?me_n_idx='.$userInfo->me_n_idx.'') ?>"  class="active">포트폴리오</a>
 									</li>
 								</ul>
 							</div>
