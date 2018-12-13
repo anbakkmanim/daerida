@@ -132,7 +132,14 @@ class Hiring extends CI_Controller
         $re_idx = $_GET['re_idx']; // 구인공고 아이디
 
         // Select 문 내용들 (list)
-        $return = $this->RecruitModel->detailRecruit($re_idx);
+        $details = $this->RecruitModel->detailRecruit($re_idx);
+        $fields = $this->RecruitModel->detailField($re_idx);
+        print_r($details);
+        $return = array(
+            "details" => $details[0],
+            "fields" => $fields
+        );
+
         // load View
         $this->load->view('hiring/detail', $return);
     }

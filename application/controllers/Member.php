@@ -26,7 +26,7 @@ class Member extends CI_Controller
         if($me_idx != null){
             location_href(site_url("/hiring/hiringList"));
         }else{
-            $this->load->view('member/login');
+            $this->load->view('Member/login');
         }
     }
 

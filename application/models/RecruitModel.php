@@ -99,7 +99,20 @@ class RecruitModel extends CI_Model
      * @return mixed SQL Value (Array)
      */
     public function detailRecruit($re_idx) {
-        $sql = "select * from RECRUIT_TB where re_idx = ?";
+        $sql = "select * from RECRUIT_TB as a join MEMBER_COMPANY_TB as b on a.co_idx = b.me_c_idx where re_idx = ?";
+        $bind = array(
+            $re_idx
+        );
+        return $this->db->query($sql, $bind)->result_array();
+    }
+
+    /**
+     * 채용 공고의 필드 정보들을 반환합니다.
+     * @param $re_idx 채용 공고 번호
+     * @return mixed SQL Value (Array)
+     */
+    public function detailField($re_idx) {
+        $sql = "select * from RECRUIT_FIELD_TB as a join FIELD_SMALL_RF as b on a.fi_s_idx = b.fi_s_idx join FIELD_LARGE_RF as c on b.fi_l_idx = c.fi_l_idx where re_idx = ?";
         $bind = array(
             $re_idx
         );
