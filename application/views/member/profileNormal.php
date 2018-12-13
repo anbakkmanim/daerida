@@ -355,50 +355,6 @@
 		</div>
 	</div>
 
-	<!-- Window-popup Change Password Form -->
-
-	<div class="modal fade" id="create-photo-album" tabindex="-1" role="dialog" aria-labelledby="create-photo-album"
-	 aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered window-popup create-photo-album" role="document">
-			<div class="modal-content">
-				<a href="<?= site_url('assets/#') ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
-					<svg class="olymp-close-icon">
-						<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>" ></use>
-					</svg>
-				</a>
-
-				<div class="modal-header">
-					<h6 class="title">비밀번호 변경</h6>
-				</div>
-
-				<div class="modal-body">
-
-					<form class="form-group label-floating">
-						<label class="control-label">현재 비밀번호</label>
-						<input class="form-control" placeholder="" type="password">
-					</form>
-
-					<form class="form-group label-floating">
-						<label class="control-label">새 비밀번호 입력</label>
-						<input class="form-control" placeholder="" type="password">
-					</form>
-
-					<form>
-						<div class="form-group label-floating">
-							<label class="control-label">새 비밀번호 확인</label>
-							<input class="form-control" placeholder="" type="password">
-						</div>
-					</form>
-
-
-					<a href="<?= site_url('assets/#') ?>"  class="btn btn-secondary btn-lg btn--half-width">변경</a>
-					<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-lg btn--half-width">취소</a>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<div class="modal fade" id="create-career" tabindex="-1" role="dialog" aria-labelledby="create-photo-album"
 	 aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered window-popup create-photo-album" role="document">
@@ -499,7 +455,7 @@
 						</div>
 
 							<input type="submit"  class="btn btn-secondary btn-lg btn--half-width" value="추가">
-							<input type="button"  class="btn btn-secondary btn-lg btn--half-width" value="취소">
+							<input type="button"  class="btn btn-secondary btn-lg btn--half-width" data-dismiss="modal" aria-label="Close" value="취소">
 					</form>
 				</div>
 			</div>
@@ -554,8 +510,8 @@
 						</div>
 					</div>
 					<input type="submit"  class="btn btn-secondary btn-lg btn--half-width" value="추가">
-					<input type="button"  class="btn btn-secondary btn-lg btn--half-width" value="취소">
-
+					<input type="button"  class="btn btn-secondary btn-lg btn--half-width"  data-dismiss="modal" aria-label="Close" value="취소">
+				</form>
 				</div>
 				</div>
 			</div>
