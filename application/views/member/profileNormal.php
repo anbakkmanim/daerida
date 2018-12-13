@@ -353,10 +353,7 @@
 						<!-- W-Socials -->
 
 						<?php if ($me_n_id == $this->session->me_id) {?>
-						<div class="row ml-1">
-
-							<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary col mr-3" data-toggle="modal" data-target="#update-profile">프로필 수정<div class="ripple-container"></div></a>
-						</div>
+						<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary mb-0 d-block" data-toggle="modal" data-target="#update-profile">프로필 수정</a>
 						<?php } ?>
 					</div>
 				</div>
