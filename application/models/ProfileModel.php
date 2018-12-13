@@ -132,7 +132,8 @@ Class ProfileModel extends CI_Model{
                     me_n_hopeSalary = ?,
                     me_n_profile = ?,
                     me_n_info = ?,
-                    me_n_isOpen = ?
+                    me_n_isOpen = ?,
+                    me_n_findpw = ?
                     WHERE
                     me_n_idx = ?
             ";
@@ -148,7 +149,8 @@ Class ProfileModel extends CI_Model{
                 $param['me_n_profile'],
                 $param['me_n_info'],
                 $param['me_n_isOpen'],
-                $param['me_n_idx'],
+                $param['me_n_answer'],
+                $param['me_n_idx']
             );
         } else {
             $sql = "
@@ -162,7 +164,8 @@ Class ProfileModel extends CI_Model{
                     me_n_age = ?,
                     me_n_hopeSalary = ?,
                     me_n_info = ?,
-                    me_n_isOpen = ?
+                    me_n_isOpen = ?,
+                    me_n_findpw = ?
                     WHERE
                     me_n_idx = ?
             ";
@@ -174,10 +177,11 @@ Class ProfileModel extends CI_Model{
                 $param['me_n_sido'],
                 $param['me_n_isMilitary'],
                 $param['me_n_age'],
-                $param['me_n_hopeSalary'],  
+                $param['me_n_hopeSalary'],
                 $param['me_n_info'],
                 $param['me_n_isOpen'],
-                $param['me_n_idx'],
+                $param['me_n_answer'],
+                $param['me_n_idx']
             );
         }
 

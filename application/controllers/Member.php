@@ -364,7 +364,7 @@ class Member extends CI_Controller
         $data['me_n_isMilitary'] = $this->input->post('me_n_isMilitary');
         $data['me_n_age'] = $this->input->post('me_n_age');
         $data['me_n_hopeSalary'] = $this->input->post('me_n_hopeSalary');
-
+        $data['me_n_answer'] = $this->input->post('me_n_answer');
         if($this->upload->do_upload('me_n_profile')){
             $data['me_profile'] = $this->upload->data('file_name');
         }
