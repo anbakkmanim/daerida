@@ -4,28 +4,24 @@
 <div class="container mt-3">
 	<div class="row">
 		<div class="col col-xl-8 order-xl-2 col-lg-8 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<div>프론트엔드 개발자</div>
-				</div>
-				<div class="ui-block-content">
-					<h5><span class="badge badge-pill badge-primary">웹</span>&nbsp;<span class="badge badge-pill badge-danger">Vue</span></h5>
-					<div class="mt-3">설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명</div>
-					<div class="mt-3 text-muted">모집 인원: <span class="text-primary">6</span></div>
-					<div class="btn btn-primary mt-3 d-block">지원하기</div>
-				</div>
-			</div>
-			<div class="ui-block">
-				<div class="ui-block-title">
-					백엔드 개발자
-				</div>
-				<div class="ui-block-content">
-				<h5><span class="badge badge-pill badge-primary">서버</span>&nbsp;<span class="badge badge-pill badge-danger">Node.js</span></h5>
-					<div class="mt-3">설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명</div>
-					<div class="mt-3 text-muted">모집 인원: <span class="text-primary">6</span></div>
-					<div class="btn btn-primary mt-3 d-block">지원하기</div>
-				</div>
-			</div>
+            <?php
+            foreach ($fields as $field) {
+                ?>
+                <div class="ui-block">
+                    <div class="ui-block-title">
+                        <h4><?= $field['re_fi_explain'] ?></h4>
+                    </div>
+                    <div class="ui-block-content">
+                        <h5><span class="badge badge-pill badge-primary"><?= $field['fi_l_name'] ?></span>&nbsp;<span
+                                    class="badge badge-pill badge-danger"><?= $field['fi_s_name'] ?></span></h5>
+<!--                        <div class="mt-3">설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명</div>-->
+                        <div class="mt-3 text-muted">모집 인원: <span class="text-primary"><?= $field['re_fi_personal'] ?></span></div>
+                        <div class="btn btn-primary mt-3 d-block">지원하기</div>
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
 		</div>
 
 		<div class="col col-xl-4 order-xl-1 col-lg-4 order-lg-1 col-md-12 order-md-2 col-sm-12 col-12">
@@ -40,60 +36,34 @@
 					<!-- W-Personal-Info -->
 					
 					<ul class="widget w-personal-info">
-						<li>
-							<span class="title">About Me:</span>
-							<span class="text">Hi, I’m James, I’m 36 and I work as a Digital Designer for the
-													“Daydreams” Agency in Pier 56
-												</span>
-						</li>
-						<li>
-							<span class="title">Birthday:</span>
-							<span class="text">December 14th, 1980</span>
-						</li>
-						<li>
-							<span class="title">Birthplace:</span>
-							<span class="text">Austin, Texas, USA</span>
-						</li>
-						<li>
-							<span class="title">Lives in:</span>
-							<span class="text">San Francisco, California, USA</span>
-						</li>
-						<li>
-							<span class="title">Occupation:</span>
-							<span class="text">UI/UX Designer</span>
-						</li>
-						<li>
-							<span class="title">Joined:</span>
-							<span class="text">April 31st, 2014</span>
-						</li>
-						<li>
-							<span class="title">Gender:</span>
-							<span class="text">Male</span>
-						</li>
-						<li>
-							<span class="title">Status:</span>
-							<span class="text">Married</span>
-						</li>
-						<li>
-							<span class="title">Email:</span>
-							<a href="#" class="text">jspiegel@yourmail.com</a>
-						</li>
-						<li>
-							<span class="title">Website:</span>
-							<a href="#" class="text">daydreamsagency.com</a>
-						</li>
-						<li>
-							<span class="title">Phone Number:</span>
-							<span class="text">(044) 555 - 4369 - 8957</span>
-						</li>
-						<li>
-							<span class="title">Religious Belifs:</span>
-							<span class="text">-</span>
-						</li>
-						<li>
-							<span class="title">Political Incline:</span>
-							<span class="text">Democrat</span>
-						</li>
+                        <li>
+                            <span class="title">기업명:</span>
+                            <span class="text"><?= $details['me_c_name']?></span>
+                        </li>
+                        <li>
+                            <span class="title">기업담당자:</span>
+                            <span class="text"><?= $details['me_c_manager'] ?></span>
+                        </li>
+                        <li>
+                            <span class="title">이메일:</span>
+                            <span class="text"><?= $details['me_c_email'] ?></span>
+                        </li>
+                        <li>
+                            <span class="title">초봉:</span>
+                            <span class="text"><?= $details['me_c_salary'] ?></span>
+                        </li>
+                        <li>
+                            <span class="title">지역:</span>
+                            <span class="text"><?= $details['me_c_sido'] ?></span>
+                        </li>
+                        <li>
+                            <span class="title">복리후생:</span>
+                            <span class="text"><?= $details['me_c_benefit'] ?></span>
+                        </li>
+                        <li>
+                            <span class="title">병역 여부:</span>
+                            <span class="text"><?= $details['me_c_isMilitary'] ?></span>
+                        </li>
 					</ul>
 					
 					<!-- ... end W-Personal-Info -->
