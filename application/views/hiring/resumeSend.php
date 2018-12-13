@@ -43,7 +43,7 @@
             </li>
           </ul>
 
-          <input type="submit" class="btn btn-primary d-block mt-3" value="지원하기" >
+          <input type="submit" class="btn btn-primary d-block mt-3 mb-0" value="지원하기" >
         </div>
       </div>
     </form>
