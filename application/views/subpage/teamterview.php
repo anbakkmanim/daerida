@@ -53,7 +53,7 @@
 					
 						<div class="post-content">
 							<a href="<?= site_url('#') ?>" class="post-category bg-primary">Interview</a>
-							<a href="<?= site_url('#') ?>" class="h4 post-title">손영달 멘토</a>
+							<a href="<?= site_url('#') ?>" class="h4 post-title">스마트심마니</a>
 							<p>스마트팜 구축을 위한 IoT 플랫폼 개발</p>
 					
 							<div class="author-date">
@@ -123,7 +123,7 @@
 					
 						<div class="post-content">
 							<a href="<?= site_url('#') ?>" class="post-category bg-primary">Interview</a>
-							<a href="<?= site_url('#') ?>" class="h4 post-title">이철희 멘토</a>
+							<a href="<?= site_url('#') ?>" class="h4 post-title">자치차량</a>
 							<p>방범	레이다용 임베디드 소프트웨어 개발</p>
 					
 							<div class="author-date">
@@ -188,12 +188,12 @@
 					<article class="hentry blog-post">
 					
 						<div class="post-thumb">
-							<img src="<?= site_url('assets/img/post6.jpg') ?>" alt="photo">
+							<img src="<?= site_url('assets/img/post6.jpg') ?>" alt="ph	oto">
 						</div>
 					
 						<div class="post-content">
 							<a href="<?= site_url('#') ?>" class="post-category bg-blue-light">Interview</a>
-							<a href="<?= site_url('#') ?>" class="h4 post-title">임홍준 멘토</a>
+							<a href="<?= site_url('#') ?>" class="h4 post-title">도지삽니다</a>
 							<p>아날로그 필터와 OpAmp</p>
 					
 							<div class="author-date">
@@ -265,7 +265,7 @@
 					
 						<div class="post-content">
 							<a href="<?= site_url('#') ?>" class="post-category bg-purple">Interview</a>
-							<a href="<?= site_url('#') ?>" class="h4 post-title">박민우 멘토</a>
+							<a href="<?= site_url('#') ?>" class="h4 post-title">쿠키요미</a>
 							<p>Kraken unleashed VR Roller Coaster</p>
 					
 							<div class="author-date">
