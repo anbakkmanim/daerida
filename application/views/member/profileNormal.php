@@ -12,7 +12,7 @@
 							<img src="<?= site_url('assets/img/top-header2.jpg') ?>"  alt="nature">
 							<div class="top-header-author">
 								<div class="author-thumb">
-									<img src="<?= "/uploads/profile/". $me_n_profile ?>"  alt="author">
+									<img src="<?= "/uploads/profile/". ($me_n_profile != null ? $me_n_profile : "default.png") ?>"  alt="author">
 								</div>
 								<div class="author-content">
 									<a href="<?= site_url('assets/#') ?>"  class="h3 author-name"><?= $me_n_name ?></a>
