@@ -23,16 +23,12 @@
         <div class="ui-block-content">
           <ul class="widget w-personal-info item-block">
             <li>
-              <span class="title">지원 회사</span>
-              <span class="text mt-1">대소고</span>
-            </li>
-            <li>
               <span class="title">지원 분야</span>
-              <span class="text mt-1"><h5><span class="badge badge-pill badge-primary">웹</span>&nbsp;<span class="badge badge-pill badge-danger">Vue</span></h5></span>
+              <span class="text mt-1"><h5><span class="badge badge-pill badge-primary"><?= $fi_l_name ?></span>&nbsp;<span class="badge badge-pill badge-danger"><?= $fi_s_name ?></span></h5></span>
             </li>
             <li>
               <span class="title">지원 공고</span>
-              <span class="text mt-1">프론트엔드 개발자 모집해용 ㅎㅎ</span>
+              <span class="text mt-1"><?= $re_fi_explain ?></span>
             </li>
             <li>
               <span class="title">포트폴리오</span>

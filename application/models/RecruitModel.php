@@ -120,6 +120,20 @@ class RecruitModel extends CI_Model
     }
 
     /**
+     * 채용 공고의 필드 하나를 불러옵니다.
+     * @param $re_fi_idx 채용 필드 번호
+     * @return mixed SQL Value (One)
+     */
+    public function getField($re_fi_idx) {
+        $sql = "select * from RECRUIT_FIELD_TB as a join FIELD_SMALL_RF as b on a.fi_s_idx = b.fi_s_idx join FIELD_LARGE_RF as c on b.fi_l_idx = c.fi_l_idx where re_fi_idx = ?";
+        $bind = array(
+            $re_fi_idx
+        );
+        return $this->db->query($sql, $bind)->result_array();
+    }
+
+
+    /**
      * 팔로우 한 회사의 채용 공고의 리스트를 띄웁니다.
      * @param $me_n_idx 채용 공고
      * @return mixed SQL Value (Array)

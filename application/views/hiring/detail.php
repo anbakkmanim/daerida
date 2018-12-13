@@ -16,7 +16,7 @@
                                     class="badge badge-pill badge-danger"><?= $field['fi_s_name'] ?></span></h5>
 <!--                        <div class="mt-3">설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명</div>-->
                         <div class="mt-3 text-muted">모집 인원: <span class="text-primary"><?= $field['re_fi_personal'] ?></span></div>
-                        <div class="btn btn-primary mt-3 d-block">지원하기</div>
+                        <a href="/hiring/resumeSend?re_fi_idx=<?= $field['re_fi_idx'] ?>" class="btn btn-primary mt-3 d-block text-white">지원하기</a>
                     </div>
                 </div>
                 <?php
