@@ -38,6 +38,18 @@ Class ProfileModel extends CI_Model{
         return $query->result();
     }
 
+    public function getOnePortfolio($param){
+        $sql = "
+                SELECT *
+                FROM CAREER_TB
+                WHERE ca_idx = ?
+        ";
+
+        $query = $this->db->query($sql, array($param['ca_idx']));
+
+        return $query->result_array();
+    }
+
     public function getComData($param){
         $sql = "
                 SELECT *
