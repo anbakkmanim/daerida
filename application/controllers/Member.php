@@ -486,7 +486,7 @@ class Member extends CI_Controller
         $data['me_n_idx'] = $this->input->post('me_n_idx');
         $data['ca_career'] = $this->input->post('ca_career');
         $data['ca_info'] = $this->input->post('ca_info');
-        $data['ca_type'] = $this->input->post('c_type');
+        $data['ca_type'] = $this->input->post('ca_type');
         if($this->upload->do_upload('ca_image')){
             $data['ca_image'] = $this->upload->data('file_name');
         }
