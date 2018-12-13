@@ -205,7 +205,6 @@ Class ProfileModel extends CI_Model{
                         ?,
                         ?,
                         ?,
-                        ?,
                         ?
                         )
         ";
