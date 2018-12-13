@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="header--standard-wrap">
 	
-				<a href="#" class="logo">
+				<a href="/" class="logo">
 					<div class="img-wrap">
 						<img src="<?= site_url('assets/img/데리다57_흰.png') ?>" alt="Olympus">
 						<img src="<?= site_url('assets/img/데리다57_주.png') ?>" alt="Olympus" class="logo-colored">
