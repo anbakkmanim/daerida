@@ -119,7 +119,8 @@ Class ProfileModel extends CI_Model{
     }
 
     public function setProfileNormal($param){
-        $sql = "
+        if(isset($param['me_n_profile'])) {
+            $sql = "
                     UPDATE MEMBER_NORMAL_TB
                     SET
                     me_n_name = ?,
@@ -134,21 +135,51 @@ Class ProfileModel extends CI_Model{
                     me_n_isOpen = ?
                     WHERE
                     me_n_idx = ?
-        ";
+            ";
 
-        $bind = array(
-            $param['me_n_name'],
-            $param['me_n_email'],
-            $param['me_n_phone'],
-            $param['me_n_sido'],
-            $param['me_n_isMilitary'],
-            $param['me_n_age'],
-            $param['me_n_hopeSalary'],
-            $param['me_n_profile'],
-            $param['me_n_info'],
-            $param['me_n_isOpen'],
-            $param['me_n_idx'],
-        );
+            $bind = array(
+                $param['me_n_name'],
+                $param['me_n_email'],
+                $param['me_n_phone'],
+                $param['me_n_sido'],
+                $param['me_n_isMilitary'],
+                $param['me_n_age'],
+                $param['me_n_hopeSalary'],
+                $param['me_n_profile'],
+                $param['me_n_info'],
+                $param['me_n_isOpen'],
+                $param['me_n_idx'],
+            );
+        } else {
+            $sql = "
+                    UPDATE MEMBER_NORMAL_TB
+                    SET
+                    me_n_name = ?,
+                    me_n_email = ?,
+                    me_n_phone = ?,
+                    me_n_sido = ?,
+                    me_n_isMilitary = ?,
+                    me_n_age = ?,
+                    me_n_hopeSalary = ?,
+                    me_n_info = ?,
+                    me_n_isOpen = ?
+                    WHERE
+                    me_n_idx = ?
+            ";
+
+            $bind = array(
+                $param['me_n_name'],
+                $param['me_n_email'],
+                $param['me_n_phone'],
+                $param['me_n_sido'],
+                $param['me_n_isMilitary'],
+                $param['me_n_age'],
+                $param['me_n_hopeSalary'],  
+                $param['me_n_info'],
+                $param['me_n_isOpen'],
+                $param['me_n_idx'],
+            );
+        }
 
         $result = $this->db->query($sql, $bind);
         return $result;

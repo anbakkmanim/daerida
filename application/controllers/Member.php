@@ -351,7 +351,12 @@ class Member extends CI_Controller
      * @RESPONSE X
      */
     public function setProfileNormal(){
-        $data['me_n_idx'] = $this->session->me_idx;
+        $config['upload_path'] = './uploads/profile/';
+        $config['allowed_types'] = 'jpg|png';
+        $config['encrypt_name'] = TRUE;
+        $this->load->library('upload', $config);
+
+        $data['me_n_idx'] = $this->input->post('me_n_idx');
         $data['me_n_name'] = $this->input->post('me_n_name');
         $data['me_n_email'] = $this->input->post('me_n_email');
         $data['me_n_phone'] = $this->input->post('me_n_phone');
@@ -359,6 +364,10 @@ class Member extends CI_Controller
         $data['me_n_isMilitary'] = $this->input->post('me_n_isMilitary');
         $data['me_n_age'] = $this->input->post('me_n_age');
         $data['me_n_hopeSalary'] = $this->input->post('me_n_hopeSalary');
+
+        if($this->upload->do_upload('me_n_profile')){
+            $data['me_profile'] = $this->upload->data('file_name');
+        }
         $data['me_n_profile'] = $this->input->post('me_n_profile');
         $data['me_n_info'] = $this->input->post('me_n_info');
         $data['me_n_isOpen'] = $this->input->post('me_n_isOpen');
