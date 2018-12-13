@@ -45,7 +45,7 @@ class Hiring extends CI_Controller
         } else {
             alert("이력서를 제출하는데 실패하였습니다.");
         }
-        location_href(site_url("/"));
+        location_href("/hiring/appliedList");
     }
 
     /**
@@ -218,7 +218,18 @@ class Hiring extends CI_Controller
      * @Params null
      */
     public function appliedList() {
-        $this->load->view('hiring/appliedList');
+        if ($this->session->me_type == "me_c_") {
+            alert("잘못된 요청입니다.");
+            location_previous();
+            return;
+        }
+        $me_n_idx = $this->session->me_idx;
+
+        $result = $this->RecruitModel->myRecruits($me_n_idx);
+        $result = array(
+            "recruits" => $result
+        );
+        $this->load->view('hiring/appliedList', $result);
     }
     
 }
