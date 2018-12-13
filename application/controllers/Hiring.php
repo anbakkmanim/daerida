@@ -31,17 +31,21 @@ class Hiring extends CI_Controller
      * 이력서 정보 전송 페이지
      * @METHOD POST
      * @MainURL hiring/resumeInfoSend
-     * @Params re_idx, me_n_id,, re_ap_info, re_ap_date
+     * @Params re_fi_idx, me_n_id,, re_ap_info, re_ap_date
      */
     public function resumeInfoSend()
     {
-        $data['re_idx'] = $_POST['re_idx'];
-        $data['me_n_id'] = $_POST['me_n_id'];
+        $data['re_fi_idx'] = $_POST['re_fi_idx'];
+        $data['me_n_idx'] = $this->session->me_idx;
         $data['re_ap_info'] = $_POST['re_ap_info'];
-        $data['re_ap_date'] = $_POST['re_ap_date'];
 
-        $this->Hiring_m->send_resume($data);
-        $this->load->view('hiring/list');
+        $result = $this->HiringModel->sendResume($data);
+        if ($result == true) {
+            alert("성공적으로 이력서를 제출하였습니다!");
+        } else {
+            alert("이력서를 제출하는데 실패하였습니다.");
+        }
+        location_href(site_url("/"));
     }
 
     /**
@@ -52,7 +56,7 @@ class Hiring extends CI_Controller
      */
     public function resumeList()
     {
-        $return = $this->Hiring_m->read_resume();
+        $return = $this->HiringModel->read_resume();
         $this->load->view('hiring/resumeList', $return);
     }
 
@@ -137,7 +141,6 @@ class Hiring extends CI_Controller
         $data = array(
             "hiringList" => $return
         );
-        
 
         $this->load->view("hiring/hiringList", $data);
     }
@@ -155,7 +158,7 @@ class Hiring extends CI_Controller
         // Select 문 내용들 (list)
         $details = $this->RecruitModel->detailRecruit($re_idx);
         $fields = $this->RecruitModel->detailField($re_idx);
-        print_r($details);
+
         $return = array(
             "details" => $details[0],
             "fields" => $fields

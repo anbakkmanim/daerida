@@ -214,7 +214,7 @@
 							</li>
 							<li>
 								<span class="title">이메일:</span>
-								<span class="text"><?= $me_c_email ?></span>
+								<a href="mailto:<?= $me_c_email ?>" class="text"><?= $me_c_email ?></a>
 							</li>
 							<li>
 								<span class="title">초봉:</span>

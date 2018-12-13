@@ -322,7 +322,7 @@
 							</li>
                             <li>
 								<span class="title">이메일:</span>
-								<a href="#"  class="text"><?= $me_n_email ?></a>
+								<a href="mailto:<?= $me_n_email ?>" class="text"><?= $me_n_email ?></a>
 							</li>
 							<li>
 								<span class="title">전화번호:</span>

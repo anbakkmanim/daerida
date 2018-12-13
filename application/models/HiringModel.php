@@ -14,15 +14,12 @@ Class HiringModel extends CI_Model
     function sendResume($param){
         $sql="
             insert into RECRUIT_APPLICATION_TB(
-                                              re_idx, 
-                                              me_n_id, 
-                                              re_ap_info, 
-                                              re_ap_date
+                                              re_fi_idx, 
+                                              me_n_idx, 
+                                              re_ap_info
                                               )
                                               values 
                                               (
-                                                ?, 
-                                                ?, 
                                                 ?, 
                                                 ?, 
                                                 ?
@@ -31,14 +28,12 @@ Class HiringModel extends CI_Model
         ";
 
         $data = array(
-            $param['re_idx'],
-            $param['me_n_id'],
-            $param['re_ap_info'],
-            $param['re_ap_date']
+            $param['re_fi_idx'],
+            $param['me_n_idx'],
+            $param['re_ap_info']
         );
         $query = $this->db->query($sql, $data);
-        $result = $query->result_array();
-        return $result;
+        return $query;
     }
 
     function readResume(){
