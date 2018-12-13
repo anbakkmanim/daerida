@@ -9,7 +9,7 @@
 					<div class="top-header top-header-favorite">
 						<div class="top-header-thumb">
 							<!-- dummy img -->
-							<img src="<?= site_url('assets/img/top-header2.jpg') ?>"  alt="nature">
+							<img src="https://loremflickr.com/1368/472"  alt="nature">
 							<div class="top-header-author">
 								<div class="author-thumb">
 									<img src="<?= "/uploads/profile/". ($me_n_profile != null ? $me_n_profile : "default.png") ?>"  alt="author">
@@ -109,10 +109,11 @@
 												<use xlink:href="<?= site_url('assets/#olymp-dropdown-arrow-icon') ?>" ></use>
 											</svg>
 										</a>
-
-										<div class="col-auto">
-											<a href="#"  class="btn btn-primary btn-sm" data-toggle="modal" data-target="#create-career" onclick="modalclear()">추가<div class="ripple-container"></div></a>
-										</div>
+										<?php if ($me_n_id == $this->session->me_id) {?>
+											<div class="col-auto">
+												<a href="#"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-career" onclick="modalclear()">추가<div class="ripple-container"></div></a>
+											</div>
+										<?php } ?>
 									</div>
 								</h6>
 							</div>
@@ -169,9 +170,11 @@
 											</svg>
 										</a>
 
+										<?php if ($me_n_id == $this->session->me_id) {?>
 										<div class="col-auto">
-											<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-sm" data-toggle="modal" data-target="#create-edu">추가<div class="ripple-container"></div></a>
+											<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-edu">추가<div class="ripple-container"></div></a>
 										</div>
+										<?php } ?>
 									</div>
 								</h6>
 							</div>
@@ -227,9 +230,11 @@
 											</svg>
 										</a>
 
+										<?php if ($me_n_id == $this->session->me_id) {?>
 										<div class="col-auto">
-											<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-sm" data-toggle="modal" data-target="#create-card">추가<div class="ripple-container"></div></a>
+											<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-card">추가<div class="ripple-container"></div></a>
 										</div>
+										<?php } ?>
 									</div>
 								</h6>
 							</div>
@@ -337,10 +342,12 @@
 						<!-- ... end W-Personal-Info -->
 						<!-- W-Socials -->
 
+						<?php if ($me_n_id == $this->session->me_id) {?>
 						<div class="row ml-1">
 
 							<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary col mr-3" data-toggle="modal" data-target="#update-profile">프로필 수정<div class="ripple-container"></div></a>
 						</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
