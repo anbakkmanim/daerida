@@ -52,8 +52,7 @@ class Hiring extends CI_Controller
      */
     public function resumeList()
     {
-        $return = $this->Hiring_m->read_resume();
-        $this->load->view('hiring/resumeList', $return);
+        $this->load->view('hiring/resumeList');
     }
 
     /**
