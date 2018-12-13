@@ -471,21 +471,43 @@ class Member extends CI_Controller
         }
     }
     /**
-     * 포트폴리오 추가
+     * 커리어 추가
      * @METHOD POST
-     * @MainURL /main/addPortfolio
-     * @REQUEST me_n_idx
+     * @MainURL /main/addCareer
+     * @REQUEST me_n_idx, ca_career, ca_info, ca_image, ca_type
      * @RESPONSE X
      */
-    public function addPortfolio(){
+    public function addCareer(){
+        $config['upload_path'] = './uploads/profile/';
+        $config['allowed_types'] = 'jpg|png';
+        $config['encrypt_name'] = TRUE;
+        $this->load->library('upload', $config);
+
         $data['me_n_idx'] = $this->input->post('me_n_idx');
+        $data['ca_career'] = $this->input->post('ca_career');
+        $data['ca_info'] = $this->input->post('ca_info');
+        $data['ca_type'] = $this->input->post('c_type');
+        if($this->upload->do_upload('ca_image')){
+            $data['ca_image'] = $this->upload->data('file_name');
+        }
+
         $result = $this->ProfileModel->addCareer($data);
         if($result){
-            alert('포트폴리오 추가를 완료했습니다.');
-            location_href('Member/protfolio');
+            if($data['ca_type'] == "portfolio") {
+                alert('포트폴리오 추가를 완료했습니다.');
+                location_href('/Member/portfolio?me_n_idx='.$data['me_n_idx']);
+            } else {
+                alert('커리어 추가를 완료했습니다.');
+                location_href('/Member/User?me_n_idx='.$data['me_n_idx']);
+            }
         }else{
-            alert('포트폴리오를 추가하지 못했습니다');
-            location_href('Member/protfolio');
+            if($data['ca_type'] == "portfolio") {
+                alert('포트폴리오를 추가하지 못했습니다');
+                location_href('/Member/portfolio?me_n_idx=' . $data['me_n_idx']);
+            } else {
+                alert('커리어를 추가하지 못했습니다.');
+                location_href('/Member/User?me_n_idx='.$data['me_n_idx']);
+            }
         }
     }
 
