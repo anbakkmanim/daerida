@@ -236,7 +236,7 @@ Class ProfileModel extends CI_Model{
                         me_n_idx,
                         ca_career,
                         ca_info,
-                        ca_type,    
+                        ca_type    
                         )
                         VALUES
                         (
