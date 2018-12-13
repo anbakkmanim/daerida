@@ -30,7 +30,7 @@
 										<a href="<?= site_url('/member/Company?me_c_idx='.$CompanyInfo->me_c_idx.'') ?>">기업정보</a>
 									</li>
 									<li>
-										<a href="<?= site_url('/member/companyQnA?me_c_idx'.$CompanyInfo->me_c_idx.'') ?>" class="active">Q&A</a>
+										<a href="<?= site_url('/member/companyQnA?me_c_idx='.$CompanyInfo->me_c_idx.'') ?>" class="active">Q&A</a>
 									</li>
 								</ul>
 							</div>
@@ -53,252 +53,138 @@
 	<div class="row">
 		<div class="col col-xl-8 order-xl-2 col-lg-12 order-lg-1 col-sm-12 col-12">
 			<div id="newsfeed-items-grid">
+                <?php
+                    if($this->session->me_idx != $CompanyInfo->me_c_idx && $this->session->me_type == "me_n_") {
+                        echo "<div class='ui-block' >
+                            <form action = '/member/companyQuestion' class='comment-form inline-items' method = 'POST' >
+                                <input type = 'hidden' name = 'me_c_idx' value = '$CompanyInfo->me_c_idx'' >
+                                <div class='post__author author vcard inline-items' >
+                                        <textarea class='form-control' name = 'qna_question' ></textarea >
+        
+                                </div >
+                                <input type = 'submit' class='btn btn-md-2 btn-primary' value = '질문하기' >
+                            </form >
+                        </div >";
+				    }
+				?>
 				<div class="ui-block">
-					<form action="" class="comment-form inline-items">
-						<div class="post__author author vcard inline-items">
-								<textarea class="form-control" placeholder=""></textarea>
-
-						</div>
-						<button class="btn btn-md-2 btn-primary">질문하기</button>
-					</form>
-				</div>
-				<div class="ui-block">
-
-					
 					<!-- Post -->
-					
-					
-					<article class="hentry post">
-					
-						<div class="post__author author vcard inline-items">
-							<img src="<?= site_url('img/avatar5-sm.jpg') ?>" alt="author">
-					
-							<div class="author-date">
-								<a class="h6 post__author-name fn" href="<?= site_url('#') ?>">Green Goo Rock</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										4 hours ago
-									</time>
-								</div>
-							</div>
-					
-							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use></svg>
-								<ul class="more-dropdown">
-									<li>
-										<a href="<?= site_url('#') ?>">Edit Post</a>
-									</li>
-									<li>
-										<a href="<?= site_url('#') ?>">Delete Post</a>
-									</li>
-									<li>
-										<a href="<?= site_url('#') ?>">Turn Off Notifications</a>
-									</li>
-									<li>
-										<a href="<?= site_url('#') ?>">Select as Featured</a>
-									</li>
-								</ul>
-							</div>
-					
-						</div>
-					
-						<p>Hi guys! We just wanted to let everyone know that we are currently recording
-							our new album “News of the Goo”. We’ll be playing one of our new songs this Friday at 8pm in
-							our Fake Street 320 recording studio, come and join us!
-						</p>
-					
-					</article>
-					
-					<!-- ... end Post -->
+                    <?php
+                    foreach($QnA as $rows) {
+                        ?>
 
-					
-					<!-- Comments -->
-					
-					<ul class="comments-list">
-						<li class="comment-item">
-							<div class="post__author author vcard inline-items">
-								<img src="<?= site_url('img/avatar2-sm.jpg') ?>" alt="author">
-					
-								<div class="author-date">
-									<a class="h6 post__author-name fn" href="<?= site_url('#') ?>">Nicholas Grissom</a>
-									<div class="post__date">
-										<time class="published" datetime="2017-03-24T18:18">
-											28 mins ago
-										</time>
-									</div>
-								</div>
-					
-								<a href="<?= site_url('#') ?>" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use></svg></a>
-					
-							</div>
-					
-							<p>Dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
-					
-							<a href="<?= site_url('#') ?>" class="post-add-icon inline-items">
-								<svg class="olymp-heart-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-heart-icon') ?>"></use></svg>
-								<span>6</span>
-							</a>
-							<a href="<?= site_url('#') ?>" class="reply">Reply</a>
-						</li>
-						<li class="comment-item">
-							<div class="post__author author vcard inline-items">
-								<img src="<?= site_url('img/avatar19-sm.jpg') ?>" alt="author">
-					
-								<div class="author-date">
-									<a class="h6 post__author-name fn" href="<?= site_url('#') ?>">Jimmy Elricson</a>
-									<div class="post__date">
-										<time class="published" datetime="2017-03-24T18:18">
-											2 hours ago
-										</time>
-									</div>
-								</div>
-					
-								<a href="<?= site_url('#') ?>" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use></svg></a>
-					
-							</div>
-					
-							<p>Ratione voluptatem sequi en lod nesciunt. Neque porro quisquam est, quinder dolorem ipsum
-								quia dolor sit amet, consectetur adipisci velit en lorem ipsum duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
-							</p>
-					
-							<a href="<?= site_url('#') ?>" class="post-add-icon inline-items">
-								<svg class="olymp-heart-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-heart-icon') ?>"></use></svg>
-								<span>8</span>
-							</a>
-							<a href="<?= site_url('#') ?>" class="reply">Reply</a>
-						</li>
-					</ul>
-					
-					<!-- ... end Comments -->
+                        <article class="hentry post">
 
-					<a href="<?= site_url('#') ?>" class="more-comments">View more comments <span>+</span></a>
+                            <div class="post__author author vcard inline-items">
+                                <img src="<?= "/uploads/profile/" . $rows['me_n_profile'] ?>" alt="author">
 
-					
-					<!-- Comment Form  -->
-					
-					<form class="comment-form inline-items">
-					
-						<div class="post__author author vcard inline-items">
-							<img src="<?= site_url('img/author-page.jpg') ?>" alt="author">
-					
-							<div class="form-group with-icon-right ">
-								<textarea class="form-control" placeholder=""></textarea>
-								<div class="add-options-message">
-									<a href="<?= site_url('#') ?>" class="options-message" data-toggle="modal" data-target="#update-header-photo">
-										<svg class="olymp-camera-icon">
-											<use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-camera-icon') ?>"></use>
-										</svg>
-									</a>
-								</div>
-							</div>
-						</div>
-					
-						<button class="btn btn-md-2 btn-primary">댓글 달기</button>
-					
-						<button class="btn btn-md-2 btn-border-think c-grey btn-transparent custom-color">취소하기</button>
-					
-					</form>
-					
+                                <div class="author-date">
+                                    <a class="h6 post__author-name fn"
+                                       href="<?= site_url('#') ?>"><?= $rows['me_n_name'] ?></a>
+                                </div>
+
+                                <div class="more">
+                                    <svg class="olymp-three-dots-icon">
+                                        <use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use>
+                                    </svg>
+                                    <ul class="more-dropdown">
+                                        <li>
+                                            <a href="<?= site_url('#') ?>">Edit Post</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= site_url('#') ?>">Delete Post</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= site_url('#') ?>">Turn Off Notifications</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?= site_url('#') ?>">Select as Featured</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <p><?= $rows['co_qna_content'] ?>
+                            </p>
+
+                        </article>
+
+                        <!-- ... end Post -->
+
+
+                        <!-- Comments -->
+                        <?php
+                        if ($rows['co_qna_answer']) {
+                            ?>
+                            <ul class="comments-list">
+                                <li class="comment-item">
+                                    <div class="post__author author vcard inline-items">
+                                        <img src="<?= "/uploads/profile/" . $rows['me_c_profile'] ?>" alt="author">
+
+                                        <div class="author-date">
+                                            <a class="h6 post__author-name fn" href="<?= site_url('#') ?>"> <?=$rows['me_c_name']?> </a>
+                                            <div class="post__date">
+                                                <time class="published" datetime="2017-03-24T18:18">
+                                                    <?= explode(" ", $rows['co_qna_time'])[0] ?>
+                                                </time>
+                                            </div>
+                                        </div>
+
+                                        <a href="<?= site_url('#') ?>" class="more">
+                                            <svg class="olymp-three-dots-icon">
+                                                <use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use>
+                                            </svg>
+                                        </a>
+
+                                    </div>
+
+                                    <p><?=$rows['co_qna_answer']?></p>
+                                </li>
+
+                            </ul>
+
+
+                            <?php
+                        }else{?>
+                            <?php
+                            if($this->session->me_idx == $CompanyInfo->me_c_idx && $this->session->me_type == "me_c_"){
+                                echo "<form class='comment-form inline-items' action= '/member/companyAnswer' method='POST'>
+    
+                                    <div class='post__author author vcard inline-items'>
+                                        <img src='site_url('img/author-page.jpg')' alt='author'>
+    
+                                        <div class='form-group with-icon-right'>
+                                            <textarea class='form-control' name='qna_answer'></textarea>
+                                            <div class='add-options-message'>
+                                                <a href='site_url('#')' class='options-message' data-toggle='modal'
+                                                   data-target='#update-header-photo'>
+                                                    <svg class='olymp-camera-icon'>
+                                                        <use xlink:href='site_url('assets/svg-icons/sprites/icons.svg#olymp-camera-icon')'></use>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type='hidden' name='me_c_idx' value='".$CompanyInfo->me_c_idx."'>
+                                    <input type='hidden' name='qna_idx' value='".$rows['co_qna_idx']."'>
+                                    <input type='submit' class='btn btn-md-2 btn-primary' value='답변달기'>
+
+                                    <button class='btn btn-md-2 btn-border-think c-grey btn-transparent custom-color'>취소하기
+                                    </button>
+                                </form>";
+                            }
+                            ?>
+
+                    <?php
+                        }
+                    }
+                        ?>
 					<!-- ... end Comment Form  -->
 				</div>
 
-				<div class="ui-block">
-					
-					
-					<!-- Post -->
-					
-					<article class="hentry post has-post-thumbnail">
-					
-						<div class="post__author author vcard inline-items">
-							<img src="<?= site_url('img/avatar5-sm.jpg') ?>" alt="author">
-					
-							<div class="author-date">
-								<a class="h6 post__author-name fn" href="<?= site_url('#') ?>">Green Goo Rock</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										March 8 at 6:42pm
-									</time>
-								</div>
-							</div>
-					
-							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use></svg>
-								<ul class="more-dropdown">
-									<li>
-										<a href="<?= site_url('#') ?>">Edit Post</a>
-									</li>
-									<li>
-										<a href="<?= site_url('#') ?>">Delete Post</a>
-									</li>
-									<li>
-										<a href="<?= site_url('#') ?>">Turn Off Notifications</a>
-									</li>
-									<li>
-										<a href="<?= site_url('#') ?>">Select as Featured</a>
-									</li>
-								</ul>
-							</div>
-					
-						</div>
-					
-						<p>Hey guys! We are gona be playing this Saturday of <a href="<?= site_url('#') ?>">The Marina Bar</a> for their new Mystic Deer Party.
-							If you wanna hang out and have a really good time, come and join us. We’l be waiting for you!
-						</p>
-					
-						
-					
-					
-					</article>
-					
-					<!-- ... end Post -->
-				</div>
-
-				<div class="ui-block">
-					
-					<!-- Post -->
-					
-					<article class="hentry post video">
-					
-						<div class="post__author author vcard inline-items">
-							<img src="<?= site_url('img/avatar5-sm.jpg') ?>" alt="author">
-					
-							<div class="author-date">
-								<a class="h6 post__author-name fn" href="<?= site_url('#') ?>">Gren Goo Rock</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										March 4 at 2:05pm
-									</time>
-								</div>
-							</div>
-					
-							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use></svg>
-								<ul class="more-dropdown">
-									<li>
-										<a href="<?= site_url('#') ?>">Edit Post</a>
-									</li>
-									<li>
-										<a href="<?= site_url('#') ?>">Delete Post</a>
-									</li>
-									<li>
-										<a href="<?= site_url('#') ?>">Turn Off Notifications</a>
-									</li>
-									<li>
-										<a href="<?= site_url('#') ?>">Select as Featured</a>
-									</li>
-								</ul>
-							</div>
-					
-						</div>
-					
-						<p>Hey <a href="<?= site_url('#') ?>">Cindi</a>, you should really check out this new song by Iron Maid. The next time they come to the city we should totally go!</p>
-					
-						
-						
-					
-					
-					</article>
-					
-					<!-- ... end Post -->				</div>
 			</div>
-			<a id="load-more-button" href="<?= site_url('#') ?>" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use></svg></a>
+			
 
 		</div>
 
@@ -307,7 +193,7 @@
                 <div class="ui-block-title">
                     <h6 class="title">프로필</h6>
                     <a href="<?= site_url('#') ?>"  class="more"><svg class="olymp-three-dots-icon">
-                            <use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>" ></use>
+                            <use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>" ></use>
                         </svg></a>
                 </div>
                 <div class="ui-block-content">
@@ -371,7 +257,7 @@
 	
 
 	<a href="<?= site_url('') ?>" class="icon-close js-close-popup">
-		<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+		<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 	</a>
 
 	<table class="playlist-popup-table">
@@ -419,7 +305,7 @@
 		<tr>
 			<td class="play">
 				<a href="<?= site_url('#') ?>" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
@@ -449,7 +335,7 @@
 			</td>
 			<td class="remove">
 				<a href="<?= site_url('#') ?>" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -457,7 +343,7 @@
 		<tr>
 			<td class="play">
 				<a href="<?= site_url('#') ?>" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
@@ -487,7 +373,7 @@
 			</td>
 			<td class="remove">
 				<a href="<?= site_url('#') ?>" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -495,7 +381,7 @@
 		<tr>
 			<td class="play">
 				<a href="<?= site_url('#') ?>" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
@@ -525,7 +411,7 @@
 			</td>
 			<td class="remove">
 				<a href="<?= site_url('#') ?>" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -533,7 +419,7 @@
 		<tr>
 			<td class="play">
 				<a href="<?= site_url('#') ?>" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
@@ -563,7 +449,7 @@
 			</td>
 			<td class="remove">
 				<a href="<?= site_url('#') ?>" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -571,7 +457,7 @@
 		<tr>
 			<td class="play">
 				<a href="<?= site_url('#') ?>" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
@@ -601,7 +487,7 @@
 			</td>
 			<td class="remove">
 				<a href="<?= site_url('#') ?>" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -609,7 +495,7 @@
 		<tr>
 			<td class="play">
 				<a href="<?= site_url('#') ?>" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
@@ -639,7 +525,7 @@
 			</td>
 			<td class="remove">
 				<a href="<?= site_url('#') ?>" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -662,7 +548,7 @@
 	<div class="modal-dialog window-popup update-header-photo" role="document">
 		<div class="modal-content">
 			<a href="<?= site_url('#') ?>" class="close icon-close" data-dismiss="modal" aria-label="Close">
-				<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+				<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 			</a>
 
 			<div class="modal-header">
@@ -671,7 +557,7 @@
 
 			<div class="modal-body">
 				<a href="<?= site_url('#') ?>" class="upload-photo-item">
-				<svg class="olymp-computer-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-computer-icon') ?>"></use></svg>
+				<svg class="olymp-computer-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-computer-icon') ?>"></use></svg>
 
 				<h6>Upload Photo</h6>
 				<span>Browse your computer.</span>
@@ -679,7 +565,7 @@
 
 				<a href="<?= site_url('#') ?>" class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
 
-			<svg class="olymp-photos-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-photos-icon') ?>"></use></svg>
+			<svg class="olymp-photos-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-photos-icon') ?>"></use></svg>
 
 			<h6>Choose from My Photos</h6>
 			<span>Choose from your uploaded photos</span>
@@ -699,7 +585,7 @@
 
 		<div class="modal-content">
 			<a href="<?= site_url('#') ?>" class="close icon-close" data-dismiss="modal" aria-label="Close">
-				<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+				<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 			</a>
 			<div class="modal-header">
 				<h6 class="title">Choose from My Photos</h6>
@@ -708,12 +594,12 @@
 				<ul class="nav nav-tabs" role="tablist">
 					<li class="nav-item">
 						<a class="nav-link active" data-toggle="tab" href="<?= site_url('#home') ?>" role="tab" aria-expanded="true">
-							<svg class="olymp-photos-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-photos-icon') ?>"></use></svg>
+							<svg class="olymp-photos-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-photos-icon') ?>"></use></svg>
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" data-toggle="tab" href="<?= site_url('#profile') ?>" role="tab" aria-expanded="false">
-							<svg class="olymp-albums-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-albums-icon') ?>"></use></svg>
+							<svg class="olymp-albums-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-albums-icon') ?>"></use></svg>
 						</a>
 					</li>
 				</ul>
@@ -877,7 +763,7 @@
 
 
 <a class="back-to-top" href="<?= site_url('#') ?>">
-	<img src="<?= site_url('svg-icons/back-to-top.svg') ?>" alt="arrow" class="back-icon">
+	<img src="<?= site_url('assets/svg-icons/back-to-top.svg') ?>" alt="arrow" class="back-icon">
 </a>
 
 
@@ -892,8 +778,8 @@
 			<span class="icon-status online"></span>
 			<h6 class="title" >Chat</h6>
 			<div class="more">
-				<svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use></svg>
-				<svg class="olymp-little-delete js-chat-open"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-little-delete') ?>"></use></svg>
+				<svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use></svg>
+				<svg class="olymp-little-delete js-chat-open"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-little-delete') ?>"></use></svg>
 			</div>
 		</div>
 		<div class="modal-body">
@@ -939,11 +825,11 @@
 			<textarea class="form-control" placeholder=""></textarea>
 			<div class="add-options-message">
 				<a href="<?= site_url('#') ?>" class="options-message">
-					<svg class="olymp-computer-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-computer-icon') ?>"></use></svg>
+					<svg class="olymp-computer-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-computer-icon') ?>"></use></svg>
 				</a>
 				<div class="options-message smile-block">
 
-					<svg class="olymp-happy-sticker-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-happy-sticker-icon') ?>"></use></svg>
+					<svg class="olymp-happy-sticker-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-happy-sticker-icon') ?>"></use></svg>
 
 					<ul class="more-dropdown more-with-triangle triangle-bottom-right">
 						<li>

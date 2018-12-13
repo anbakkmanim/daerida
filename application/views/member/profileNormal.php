@@ -35,7 +35,7 @@
 								<div class="col col-xl-8 m-auto col-lg-8 col-md-12">
 									<ul class="profile-menu">
 										<li>
-											<a href="<?= site_url('assets/12-FavouritePage.html') ?>"  class="active">정보</a>
+											<a href="<?= site_url('member/User?me_n_idx='.$me_n_idx.'') ?>"  class="active">정보</a>
 										</li>
 										<li>
 											<a href="<?= site_url('member/portfolio?me_n_idx='.$me_n_idx.'') ?>" >포트폴리오</a>
@@ -64,42 +64,6 @@
 		</div>
 	</div>
 
-	<!-- ... end Top Header-Profile -->
-
-	<!-- UI-Block-Title -->
-	<!-- <div class="container">
-	<div class="row">
-		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-			<div class="ui-block responsive-flex">
-				<div class="ui-block-title">
-					<div class="h6 title">James’s Photo Gallery</div>
-
-					<div class="block-btn align-right">
-						<a href="<?= site_url('assets/#') ?>"  data-toggle="modal" data-target="#create-photo-album" class="btn btn-primary btn-md-2">Create Album  +</a>
-
-						<a href="<?= site_url('assets/#') ?>"  data-toggle="modal" data-target="#update-header-photo" class="btn btn-md-2 btn-border-think custom-color c-grey">Add Photos</a>
-					</div>
-
-					<ul class="nav nav-tabs photo-gallery" role="tablist">
-						<li class="nav-item">
-							<a class="nav-link" data-toggle="tab" href="<?= site_url('assets/#photo-page') ?>"  role="tab">
-								<svg class="olymp-photos-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-photos-icon') ?>" ></use></svg>
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link active" data-toggle="tab" href="<?= site_url('assets/#album-page') ?>"  role="tab">
-								<svg class="olymp-albums-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-albums-icon') ?>" ></use></svg>
-							</a>
-						</li>
-
-					</ul>
-					<a href="<?= site_url('assets/#') ?>"  class="more"><svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>" ></use></svg></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
 
 	<div class="container">
 		<div class="row">
@@ -292,9 +256,6 @@
 				<div class="ui-block">
 					<div class="ui-block-title">
 						<h6 class="title">프로필</h6>
-						<a href="<?= site_url('assets/#') ?>"  class="more"><svg class="olymp-three-dots-icon">
-								<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>" ></use>
-							</svg></a>
 					</div>
 					<div class="ui-block-content">
 

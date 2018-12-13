@@ -514,6 +514,23 @@ class Member extends CI_Controller
         }
     }
 
+    public function addHistory(){
+        $data['me_c_idx'] = $this->input->post('me_c_idx');
+        $data['hi_year'] = $this->input->post('hi_year');
+        $data['hi_content'] = $this->input->post('hi_content');
+
+        $result = $this->ProfileModel->addHistory($data);
+
+        if($result){
+            alert("연혁이 등록되었습니다.");
+            location_href("/member/Company?me_c_idx=".$data['me_c_idx']);
+        }else{
+            alert("연혁등록에 실패했습니다.");
+            location_href("/member/Company?me_c_idx=".$data['me_c_idx']);
+        }
+    }
+
+
     public function getPortfolio(){
         $data['ca_idx'] = $this->input->get('ca_idx');
 
@@ -608,6 +625,7 @@ class Member extends CI_Controller
     public function companyAnswer(){
         $data['qna_idx'] = $this->input->post('qna_idx');
         $data['qna_answer'] = $this->input->post('qna_answer');
+        $data['me_c_idx'] = $this->input->post('me_c_idx');
 
         $data['result'] = $this->ProfileModel->addAnswer($data);
 

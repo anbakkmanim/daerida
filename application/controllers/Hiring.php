@@ -204,10 +204,10 @@ class Hiring extends CI_Controller
      * @Params null
      */
     public function map() {
+        $data['me_idx'] = $this->session->me_idx;
         $this->config->load('token', true);
-        $data = [
-            'value' => '대구소프트웨어고등학교'
-        ];
+
+        $data['follow'] = $this->HiringModel->getFollowCompany($data);
         $this->load->view('hiring/map', $data);
     }
 

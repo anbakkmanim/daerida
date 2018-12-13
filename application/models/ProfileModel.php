@@ -375,13 +375,14 @@ Class ProfileModel extends CI_Model{
 
     public function getCompanyQnA($param){
         $sql = "SELECT *
-                FROM COMPANY_QNA_TB
-                WHERE me_c_idx = ?
-                JOIN MEMBER_NORMAL_TB on me_n_idx = me_n_idx
+                FROM COMPANY_QNA_TB as a
+                JOIN MEMBER_NORMAL_TB as b on a.me_n_idx = b.me_n_idx
+                JOIN MEMBER_COMPANY_TB as c on a.me_c_idx = c.me_c_idx
+                WHERE a.me_c_idx = ?
         ";
 
         $result = $this->db->query($sql, array($param['me_c_idx']));
-        return $result->result();
+        return $result->result_array();
     }
 
     public function addQuestion($param){
@@ -415,6 +416,31 @@ Class ProfileModel extends CI_Model{
         ";
 
         $result = $this->db->query($sql,array($param['qna_answer'],$param['qna_idx']));
+        return $result;
+    }
+
+    public function addHistory($param){
+        $sql = "INSERT INTO HISTORY_TB
+                (
+                me_c_idx,
+                hi_year,
+                hi_content
+                )
+                VALUES
+                (
+                ?,
+                ?,
+                ?
+                )
+        ";
+
+        $bind = array(
+            $param['me_c_idx'],
+            $param['hi_year'],
+            $param['hi_content'],
+        );
+
+        $result = $this->db->query($sql, $bind);
         return $result;
     }
 }

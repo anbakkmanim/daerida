@@ -324,26 +324,7 @@
 		</div>
 	</div>
 
-	
-	<!-- Pagination -->
-	
-	<nav aria-label="Page navigation">
-		<ul class="pagination justify-content-center">
-			<li class="page-item disabled">
-				<a class="page-link" href="<?= site_url('#') ?>" tabindex="-1">Previous</a>
-			</li>
-			<li class="page-item"><a class="page-link" href="<?= site_url('#') ?>">1<div class="ripple-container"><div class="ripple ripple-on ripple-out" style="left: -10.3833px; top: -16.8333px; background-color: rgb(255, 255, 255); transform: scale(16.7857);"></div></div></a></li>
-			<li class="page-item"><a class="page-link" href="<?= site_url('#') ?>">2</a></li>
-			<li class="page-item"><a class="page-link" href="<?= site_url('#') ?>">3</a></li>
-			<li class="page-item"><a class="page-link" href="<?= site_url('#') ?>">...</a></li>
-			<li class="page-item"><a class="page-link" href="<?= site_url('#') ?>">12</a></li>
-			<li class="page-item">
-				<a class="page-link" href="<?= site_url('#') ?>">Next</a>
-			</li>
-		</ul>
-	</nav>
-	
-	<!-- ... end Pagination -->
+
 
 </section>
 
@@ -354,10 +335,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col col-xl-10 m-auto col-lg-10 col-md-12 col-sm-12 col-12">
-				<a href="<?= site_url('#') ?>" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registration-login-form-popup">소중한 사람들을 데리다!</a>
+				<a href="#"  class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registration-login-form-popup">소중한 사람들을 데리다!</a>
 			</div>
 		</div>
 	</div>
+	<img class="first-img" alt="guy" src="<?= site_url('assets/img/guy.png') ?>" >
+	<img class="second-img" alt="rocket" src="<?= site_url('assets/img/rocket1.png') ?>" >
 	<div class="content-bg-wrap bg-section1"></div>
 </section>
 

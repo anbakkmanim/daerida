@@ -9,13 +9,12 @@
     <div class="card d-inline-block">
       <div class="card-body">
         <div class="form-group label-floating">
-          <label class="control-label">검색할 장소</label>
-          <input type="text" id="map_query" class="form-control" placeholder type="text" name="map_query" value="<?php echo $value != null ? $value : '' ?>">
-          <span class="material-input"></span>
-        </div>
-        <div class="form-group">
-          <div class="btn btn-primary d-block" onclick="search()">검색</div>
-        </div>
+            팔로우한 회사들
+            <div class="list-group mt-3 mb-0">
+                <?php foreach ($follow as $company) { ?>
+                    <a href="/member/Company?me_c_idx=<?=$company['me_c_idx']?>"><div class="list-group-item list-group-item-action"><?=$company['me_c_name']?></div></a>
+                <?php } ?>
+            </div>
       </div>
     </div>
   </div>
@@ -24,27 +23,53 @@
 <script src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=<?= $this->config->item('daum_map_token', 'token'); ?>&libraries=drawing,clusterer,services"></script>
 <script>
 const map = new daum.maps.Map(document.getElementById('map'), {
-	center: new daum.maps.LatLng(35.663185, 128.413770),
-	level: 4
+	center: new daum.maps.LatLng(38.663185, 124.413770),
+	level: 12
 });
 
-const place = new daum.maps.services.Places();
-place.setMap(map);
+// const place = new daum.maps.services.Places();
+// place.setMap(map);
+//
+// const getNewMarker = (map, lat, lng) => new daum.maps.Marker({map: map, position: new daum.maps.LatLng(lat, lng)});
+//
+// const search = () => {
+//   const keyword = document.getElementById("map_query").value;
+//   place.keywordSearch(keyword, (result, status) => {
+//     if (status === daum.maps.services.Status.OK) {
+//       console.log(result);
+//       map.setCenter(new daum.maps.LatLng(result[0].y, result[0].x));
+//       getNewMarker(map, result[0].y, result[0].x).setMap(map);
+//     }
+//   });
+// };
 
-const getNewMarker = (map, lat, lng) => new daum.maps.Marker({map: map, position: new daum.maps.LatLng(lat, lng)});
+const geocoder = new daum.maps.services.Geocoder();
 
-const search = () => {
-  const keyword = document.getElementById("map_query").value;
-  place.keywordSearch(keyword, (result, status) => {
+<?php foreach ($follow as $company) { ?>
+geocoder.addressSearch('<?= $company['me_c_sido'] ?>', function(result, status) {
+
+    // 정상적으로 검색이 완료됐으면
     if (status === daum.maps.services.Status.OK) {
-      console.log(result);
-      map.setCenter(new daum.maps.LatLng(result[0].y, result[0].x));
-      getNewMarker(map, result[0].y, result[0].x).setMap(map);
+
+        const coords = new daum.maps.LatLng(result[0].y, result[0].x);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        const marker = new daum.maps.Marker({
+            map: map,
+            position: coords
+        });
+
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new daum.maps.InfoWindow({
+            content: '<div style="width:150px;text-align:center;padding:6px 0;"><?= $company['me_c_name'] ?></div>'
+        });
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
     }
-  });
-};
-
-
+});
+<?php } ?>
 </script>
 
 <?php $this->load->view('layout/footer'); ?>
