@@ -12,7 +12,7 @@
 							<img src="<?= site_url('assets/img/top-header2.jpg') ?>"  alt="nature">
 							<div class="top-header-author">
 								<div class="author-thumb">
-									<img src="<?= "/uploads/profile/". $me_n_profile ?>"  alt="author">
+									<img src="<?= "/uploads/profile/". ($me_n_profile != null ? $me_n_profile : "default.png") ?>"  alt="author">
 								</div>
 								<div class="author-content">
 									<a href="<?= site_url('assets/#') ?>"  class="h3 author-name"><?= $me_n_name ?></a>
@@ -122,7 +122,7 @@
 								<div class="ui-block-content">
 									<!-- <div class="row"> -->
 
-									<div class="col">
+									<!-- <div class="col">
 										<div class="card career">
 											<div class="card-body">
 												<div class="row">
@@ -140,28 +140,34 @@
 												</div>
 											</div>
 										</div>
-									</div>
-									<div class="col">
-										<div class="card career">
-											<div class="card-body">
-												<div class="row">
-													<div class="col-sm-2">
-														<img src="<?= site_url('assets/img/author-main2.jpg') ?>"  class="rounded float-left" alt="...">
-													</div>
-													<div class="col">
-														<h5 class="card-title">대구소프트웨어고</h5>
-														<ul class="widget w-personal-info">
-															<li>
-																<span class="text">소개글</span>
-															</li>
-														</ul>
-													</div>
-
-
-												</div>
-											</div>
-										</div>
-									</div>
+									</div> -->
+									<?php
+									
+									foreach($career as $row){
+										if($row->ca_type == "career"){
+										$a = "<div class='col'>
+														<div class='card career'>
+															<div class='card-body'>
+																<div class='row'>
+																	<div class='col-sm-2'>
+																		<img src='<?= site_url('".$row->ca_image."') ?>'  class='rounded float-left' alt='...'>
+																		</div>
+																		<div class='col'>
+																			<h5 class='card-title'>".$row->ca_career."</h5>
+																			<ul class='widget w-personal-info'>
+																		<li>
+																		<span class='text'>".$row->ca_info."</span>
+																		</li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>";
+											echo $a;
+										}
+									}
+									?>
 									<!-- </div> -->
 								</div>
 
@@ -380,35 +386,6 @@
 					</div>
 				</div>
 
-				<div class="ui-block">
-					<div id="accordion" role="tablist" aria-multiselectable="true">
-						<div class="card">
-							<div class="card-header ui-block-title" role="tab" id="headingOne">
-								<h6 class="mb-0">
-									<div class="row">
-										<a data-toggle="collapse" data-parent="#accordion" href="<?= site_url('assets/#collapseFour') ?>"  aria-expanded="true" aria-controls="collapseOne"
-										 class="col-auto mr-auto mt-2 mb-2">
-											<span>공개 여부</span>
-											<svg class="olymp-dropdown-arrow-icon">
-												<use xlink:href="<?= site_url('assets/#olymp-dropdown-arrow-icon') ?>" ></use>
-											</svg>
-										</a>
-										<div class="col-auto">
-												<div class="togglebutton">
-													<label>
-														<input type="checkbox" checked="">
-													</label>
-												</div>
-										</div>
-									</div>
-								</h6>
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-				<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-md col" data-toggle="modal" data-target="#">저장<div class="ripple-container"></div></a>
 			</div>
 
 			<div class="col col-xl-4 order-xl-1 col-lg-4 order-lg-1 col-md-12 order-md-2 col-sm-12 col-12">
@@ -462,21 +439,22 @@
 								<span class="text"><?= $me_n_phone ?></span>
 							</li>
 							<li>
-								<span class="title">병력 이행 여부:</span>
+								<span class="title">병역 이행 여부:</span>
 								<span class="text"><?= $me_n_isMilitary ?></span>
 							</li>
-
+							<li>
+								<span class="title">공개 여부:</span>
+								<span class="text"><?= $me_n_isOpen ?></span>
+							</li>
 						</ul>
 						<br>
 
 						<!-- ... end W-Personal-Info -->
 						<!-- W-Socials -->
 
-						<div class="row mr-1 ml-1">
+						<div class="row ml-1">
 
 							<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary col mr-3" data-toggle="modal" data-target="#update-profile">프로필 수정<div class="ripple-container"></div></a>
-							<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary col" data-toggle="modal" data-target="#create-photo-album">비밀번호 변경<div class="ripple-container"></div></a>
-
 						</div>
 					</div>
 				</div>
@@ -520,6 +498,7 @@
 						</div>
 					</form>
 
+
 					<a href="<?= site_url('assets/#') ?>"  class="btn btn-secondary btn-lg btn--half-width">변경</a>
 					<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-lg btn--half-width">취소</a>
 
@@ -560,7 +539,15 @@
 
 					<div class="col">
 						<label class="control-label">이미지</label>
-						<input type="file">
+						<div class="col col-lg-3 col-md-3 col-sm-12 col-12 pl-0">
+							<div class="file-upload d-inline-block">
+								<label for="upload" class="file-upload__label">Upload Button</label>
+								<input id="upload" class="file-upload__input" type="file" name="me_n_profile">
+							</div>
+							<div id="uploaded-file" class="d-inline-block">
+								<img id="preview" src="<?= site_url()?> ">
+							</div>
+						</div>
 					</div>
 
 					<a href="<?= site_url('assets/#') ?>"  class="btn btn-secondary btn-lg btn--half-width">추가</a>
@@ -603,7 +590,15 @@
 
 					<div class="col">
 						<label class="control-label">이미지</label>
-						<input type="file">
+						<div class="col col-lg-3 col-md-3 col-sm-12 col-12 pl-0">
+							<div class="file-upload d-inline-block">
+								<label for="upload" class="file-upload__label">Upload Button</label>
+								<input id="upload" class="file-upload__input" type="file" name="me_n_profile">
+							</div>
+							<div id="uploaded-file" class="d-inline-block">
+								<img id="preview" src="<?= site_url()?> ">
+							</div>
+						</div>
 					</div>
 
 					<a href="<?= site_url('assets/#') ?>"  class="btn btn-secondary btn-lg btn--half-width">추가</a>
@@ -648,7 +643,15 @@
 
 					<div class="col">
 						<label class="control-label">이미지</label>
-						<input type="file">
+						<div class="col col-lg-3 col-md-3 col-sm-12 col-12 pl-0">
+							<div class="file-upload d-inline-block">
+								<label for="upload" class="file-upload__label">Upload Button</label>
+								<input id="upload" class="file-upload__input" type="file" name="me_n_profile">
+							</div>
+							<div id="uploaded-file" class="d-inline-block">
+								<img id="preview" src="<?= site_url()?> ">
+							</div>
+						</div>
 					</div>
 					<a href="<?= site_url('assets/#') ?>"  class="btn btn-secondary btn-lg btn--half-width">추가</a>
 					<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-lg btn--half-width">취소</a>
@@ -679,34 +682,35 @@
 
 				<div class="modal-body">
 
-					<form>
+					<form action="/member/setProfileNormal" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="me_n_idx" value="<?=$me_n_idx?>">
 						<div class="row">
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">자기소개</label>
-									<textarea class="form-control" name="" id="" cols="30" rows="5"><?= $me_n_info ?></textarea>
+									<textarea class="form-control" name="me_n_info" id="" cols="30" rows="5"><?= $me_n_info ?></textarea>
 								</div>
 							</div>
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">이름</label>
-									<input class="form-control" placeholder="" type="text" value="<?= $me_n_name ?>">
+									<input class="form-control" name="me_n_name" type="text" value="<?= $me_n_name ?>">
 								</div>
 							</div>
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">이메일</label>
-									<input class="form-control" placeholder="" type="email" value="<?= $me_n_email ?>">
+									<input class="form-control" name="me_n_email" type="email" value="<?= $me_n_email ?>">
 								</div>
 							</div>
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">전화번호</label>
-									<input class="form-control" placeholder="" type="number" value="<?= $me_n_phone ?>">
+									<input class="form-control" name="me_n_phone" type="number" value="<?= $me_n_phone ?>">
 								</div>
 							</div>
 
@@ -714,7 +718,7 @@
 								<fieldset disabled>
 									<div class="form-group label-floating has-disabled.is-empty">
 										<label class="control-label">기억에 남는 추억의 장소는 어디 입니까?</label>
-										<input class="form-control" placeholder="" type="text" >
+										<input class="form-control" type="text" >
 									</div>
 								</fieldset>
 							</div>
@@ -722,87 +726,149 @@
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">답변</label>
-									<input class="form-control" placeholder="" type="text" value="<?= $me_n_findpw ?>">
+									<input class="form-control" name="me_n_answer"  type="text" value="<?= $me_n_findpw ?>">
+								</div>
+							</div>
+
+							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+									<div class="form-group label-floating is-empty">
+									<script>
+										function getsfield(e) {
+											$.ajax({
+												type: "GET",
+												url: "/member/getSmallField",
+												data: {"rfield" : e.target.value},
+												success (data) {
+													data = JSON.parse(data);
+													$("#sfield").html("");
+													for(var i of data) {
+														var a = $("<option></option>")
+															.attr("value",i.fi_s_idx)
+															.text(i.fi_s_name);
+														$("#sfield").append(a); 
+													}
+													$("#sfield").selectpicker("refresh"); 
+												}
+											})
+										}
+										</script>
+											<select class="selectpicker form-control" tabindex="-98" onchange="getsfield(event)" name="me_rfield">
+													<?php
+														foreach($rfield as $row){
+															if($row['fi_l_name'] == $fi_l_name)
+																echo "<option name='me_rfield' value=".$row['fi_l_idx']." selected>".$row['fi_l_name']."</option>";
+															else
+																echo "<option name='me_rfield' value=".$row['fi_l_idx'].">".$row['fi_l_name']."</option>";
+														}
+													?>
+											</select>
+									</div>
+								</div>
+								<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+									<div class="form-group label-floating is-empty">
+										<select class="selectpicker form-control" tabindex="-98" id="sfield" name="me_sfield">
+											<?php
+												foreach($sfield as $row){
+													if($row['fi_s_name'] == $fi_s_name)
+														echo "<option value=".$row['fi_s_idx']." selected>".$row['fi_s_name']."</option>";
+													else
+														echo "<option value=".$row['fi_s_idx'].">".$row['fi_s_name']."</option>";
+												}
+											?>
+										</select>
+									</div>
+								</div>
+
+							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<label for="">나이</label>
+									<div class="input-group number-spinner">
+										<span class="input-group-btn data-dwn input-group-prepend mb-3">
+											<button class="btn btn-default btn-info mt-0" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+										</span>
+										<div class="form-group "><input type="text" class="form-control text-center mb-3" value="<?= $me_n_age?>" min="15" max="100" name="me_n_age"><span class="material-input"></span></div>
+										<span class="input-group-btn data-up input-group-append mb-3">
+											<button class="btn btn-default btn-info mt-0" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+										</span>
+									</div>		
+							</div>
+
+							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<div class="form-group label-floating">
+									<label class="control-label">거주지</label>
+									<input class="form-control" name="me_n_sido" type="text" value="<?= $me_n_sido ?>">
 								</div>
 							</div>
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<select class="selectpicker form-control" tabindex="-98">
-									<option value="none">분야</option>
-									<option value="computer">컴퓨터</option>
-									<option value="farmer">농업</option>
-								</select>
+								<div class="form-group label-floating">
+									<label class="control-label">연봉</label>
+									<input class="form-control" name="me_n_hopeSalary" type="number" value="<?= $me_n_hopeSalary ?>">
+								</div>
 							</div>
 
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<select class="selectpicker form-control" tabindex="-98">
-									<option value="none">나이</option>
-									<option value="one">20세 이상 25세 미만</option>
-									<option value="two">25세 이상 30세 미만</option>
-									<option value="three">30세 이상 35세 미만</option>
-									<option value="four">35세 이상 40세 미만</option>
-									<option value="five">40세 이상 45세 미만</option>
-									<option value="six">45세 이상 50세 미만</option>
-									<option value="seven">50세 이상 55세 미만</option>
-									<option value="eight">55세 이상 60세 미만</option>
-								</select>
-							</div>
-
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<select class="selectpicker form-control" tabindex="-98">
-									<option value="none">거주지</option>
-									<option value="computer">서울</option>
-									<option value="farmer">대구</option>
-								</select>
-							</div>
-
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<select class="selectpicker form-control" tabindex="-98">
-									<option value="none">희망연봉</option>
-									<option value="one">2500 미만</option>
-									<option value="two">2500 이상 3000 미만</option>
-									<option value="three">3000 이상 3500 미만</option>
-									<option value="four">3500 이상 4000 미만</option>
-									<option value="five">4000 이상 4500 미만</option>
-									<option value="six">4500 이상 5000미만</option>
-									<option value="seven">5000 이상</option>
-								</select>
-							</div>
+							
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="row">
 									<div class="radio col">
 										<label>
-											<input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+											<input type="radio" name="me_n_gender" id="man" onclick="gender('man')" <?php if($me_n_gender == "man"){ echo "checked"; }?>><span class="circle"></span><span class="check"></span>
 											남자
 										</label>
 									</div>
 									<div class="radio col">
 										<label>
-											<input type="radio" name="optionsRadios"><span class="circle"></span><span class="check"></span>
+											<input type="radio" name="me_n_gender" id="woman" onclick="gender('woman')" <?php if($me_n_gender == "woman"){ echo "checked"; }?>><span class="circle"></span><span class="check"></span>
 											여자
 										</label>
 									</div>
+									
 									<div class="checkbox col">
 										<label>
-											<input name="optionsCheckboxes" type="checkbox">
-											병력 이행 여부
+											<input name="optionsCheckboxes" type="checkbox" id="military" name="me_n_isMilitary" <?php if($me_n_isMilitary == "on"){ echo "checked"; }?>>
+											병역 이행 여부
 										</label>
 									</div>
+									
 								</div>
 							</div>
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<label class="control-label">프로필 사진</label>
-								<input type="file">
+								<div class="col col-lg-3 col-md-3 col-sm-12 col-12 pl-0">
+									<div class="file-upload d-inline-block">
+										<label for="upload" class="file-upload__label">Upload Button</label>
+										<input id="upload" class="file-upload__input" type="file" name="me_n_profile">
+									</div>
+									<div id="uploaded-file" class="d-inline-block">
+										<img id="preview" src="<?= site_url('/uploads/profile/'.$me_n_profile)?> ">
+									</div>
+								</div>
+							</div>
+
+							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-4">
+								<div class="row">
+									<div class="radio col">
+										<label>
+											<input type="radio" name="me_n_isOpen" value="공개" <?php if($me_n_isOpen == "공개"){ echo "checked"; }?>><span class="circle"></span><span class="check"></span>
+											공개
+										</label>
+									</div>
+									<div class="radio col">
+										<label>
+											<input type="radio" name="me_n_isOpen" value="비공개" <?php if($me_n_isOpen == "비공개"){ echo "checked"; }?>><span class="circle"></span><span class="check"></span>
+											비공개
+										</label>
+									</div>
+								</div>
 							</div>
 
 
 						</div>
+						<input type="submit" class="btn btn-secondary btn-lg btn--half-width" value="변경">
+						<input type="button" class="btn btn-secondary btn-lg btn--half-width" value="취소">
 					</form>
 
-					<a href="<?= site_url('assets/#') ?>"  class="btn btn-secondary btn-lg btn--half-width">변경</a>
-					<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-lg btn--half-width">취소</a>
-
+												
 				</div>
 			</div>
 		</div>
@@ -1273,6 +1339,35 @@
 		</div>
 
 	</div>
+
+	<script>
+		function gender(str) {
+		const Military = document.getElementById("military").parentElement.parentElement;
+		if (str == 'man') {
+			Military.classList.remove("d-none");
+		}
+		else if (str == 'woman'){
+			Military.classList.add("d-none");
+		} 
+	}
+		
+		
+	document.getElementById("upload").onchange = function() {
+		readImage(this);
+	};
+
+	const readImage = input => {
+		if (input.files && input.files[0]) {
+			const reader = new FileReader();
+
+			reader.onload = function(e) {
+				let image = document.getElementById("preview");
+				image.setAttribute('src', e.target.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	};
+	</script>
 
 	<!-- ... end Window-popup-CHAT for responsive min-width: 768px -->
 	<?php $this->load->view('layout/footer'); ?>
