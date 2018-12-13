@@ -28,7 +28,7 @@
 											<a href="<?= site_url('assets/12-FavouritePage.html') ?>"  class="active">정보</a>
 										</li>
 										<li>
-											<a href="<?= site_url('assets/00_portfolio.html') ?>" >포트폴리오</a>
+											<a href="<?= site_url('member/portfolio') ?>" >포트폴리오</a>
 										</li>
 										<!-- <li>
 											<a href="<?= site_url('assets/07-ProfilePage-Photos.html') ?>" >이력서 관리</a>
@@ -111,7 +111,7 @@
 										</a>
 
 										<div class="col-auto">
-											<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-sm" data-toggle="modal" data-target="#create-career">추가<div class="ripple-container"></div></a>
+											<a href="#"  class="btn btn-primary btn-sm" data-toggle="modal" data-target="#create-career" onclick="modalclear()">추가<div class="ripple-container"></div></a>
 										</div>
 									</div>
 								</h6>
@@ -120,27 +120,6 @@
 							<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" style="">
 
 								<div class="ui-block-content">
-									<!-- <div class="row"> -->
-
-									<!-- <div class="col">
-										<div class="card career">
-											<div class="card-body">
-												<div class="row">
-													<div class="col-sm-2">
-														<img src="<?= site_url('assets/img/author-main2.jpg') ?>"  class="rounded float-left" alt="...">
-													</div>
-													<div class="col">
-														<h5 class="card-title">대구소프트웨어고</h5>
-														<ul class="widget w-personal-info">
-															<li>
-																<span class="text">소개글</span>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div> -->
 									<?php
 									
 									foreach($career as $row){
@@ -150,7 +129,7 @@
 															<div class='card-body'>
 																<div class='row'>
 																	<div class='col-sm-2'>
-																		<img src='<?= site_url('".$row->ca_image."') ?>'  class='rounded float-left' alt='...'>
+																		<img src='/uploads/profile/".$row->ca_image."' class='rounded float-left' alt='...'>
 																		</div>
 																		<div class='col'>
 																			<h5 class='card-title'>".$row->ca_career."</h5>
@@ -168,7 +147,6 @@
 										}
 									}
 									?>
-									<!-- </div> -->
 								</div>
 
 							</div>
@@ -201,113 +179,38 @@
 							<div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingOne" style="">
 
 								<div class="ui-block-content">
-									<!-- <div class="row"> -->
-
-									<div class="col">
-										<div class="card career">
-											<div class="card-body">
-												<div class="row">
-													<div class="col-sm-2">
-														<img src="<?= site_url('assets/img/author-main2.jpg') ?>"  class="rounded float-left" alt="...">
-													</div>
-													<div class="col">
-														<h5 class="card-title">대구소프트웨어고</h5>
-														<ul class="widget w-personal-info">
-															<li>
-																<span class="title">소개글:</span>
-																<span class="text">ㅁㅇㅁㅇㅁ</span>
-															</li>
-														</ul>
-													</div>
-
-
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col">
-										<div class="card career">
-											<div class="card-body">
-												<div class="row">
-													<div class="col-sm-2">
-														<img src="<?= site_url('assets/img/author-main2.jpg') ?>"  class="rounded float-left" alt="...">
-													</div>
-													<div class="col">
-														<h5 class="card-title">대구소프트웨어고</h5>
-														<ul class="widget w-personal-info">
-															<li>
-																<span class="title">소개글:</span>
-																<span class="text">ㅁㅇㅁㅇㅁ</span>
-															</li>
-														</ul>
-													</div>
-
-
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- </div> -->
+								<?php
+									
+									foreach($career as $row){
+										if($row->ca_type == "educate"){
+										$a = "<div class='col'>
+														<div class='card career'>
+															<div class='card-body'>
+																<div class='row'>
+																	<div class='col-sm-2'>
+																		<img src='/uploads/profile/".$row->ca_image."'  class='rounded float-left' alt='...'>
+																		</div>
+																		<div class='col'>
+																			<h5 class='card-title'>".$row->ca_career."</h5>
+																			<ul class='widget w-personal-info'>
+																		<li>
+																		<span class='text'>".$row->ca_info."</span>
+																		</li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>";
+											echo $a;
+										}
+									}
+									?>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<!-- <div class="ui-block">
-					<div id="accordion" role="tablist" aria-multiselectable="true">
-						<div class="card">
-							<div class="card-header ui-block-title" role="tab" id="headingOne">
-								<h6 class="mb-0">
-									<div class="row">
-										<a data-toggle="collapse" data-parent="#accordion" href="<?= site_url('assets/#collapseThree') ?>"  aria-expanded="true" aria-controls="collapseOne"
-										 class="col-auto mr-auto mt-2">
-											<span>활동 분야</span>
-											<svg class="olymp-dropdown-arrow-icon">
-												<use xlink:href="<?= site_url('assets/#olymp-dropdown-arrow-icon') ?>" ></use>
-											</svg>
-										</a>
-
-										<div class="col-auto">
-											<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-sm">추가</a>
-										</div>
-									</div>
-								</h6>
-							</div>
-
-							<div id="collapseThree" class="collapse show" role="tabpanel" aria-labelledby="headingOne" style="">
-
-								<div class="ui-block-content">
-									<div class="row">
-										<div class="col">
-											<ul class="widget w-personal-info item-block">
-												<li>
-													<span class="title">Hobbies:</span>
-													<span class="text">I like to ride the bike to work, swimming, and working out. I also like
-														reading design magazines, go to museums, and binge watching a good tv show while it’s raining outside.
-													</span>
-												</li>
-												<li>
-													<span class="title">Favourite TV Shows:</span>
-													<span class="text">Breaking Good, RedDevil, People of Interest, The Running Dead, Found, American Guy.</span>
-												</li>
-												<li>
-													<span class="title">Favourite Movies:</span>
-													<span class="text">Idiocratic, The Scarred Wizard and the Fire Crown, Crime Squad, Ferrum Man. </span>
-												</li>
-												<li>
-													<span class="title">Favourite Games:</span>
-													<span class="text">The First of Us, Assassin’s Squad, Dark Assylum, NMAK16, Last Cause 4, Grand Snatch
-														Auto. </span>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-			</div> -->
 
 
 				<div class="ui-block">
@@ -335,51 +238,33 @@
 
 
 								<div class="ui-block-content">
-									<!-- <div class="row"> -->
-
-									<div class="col">
-										<div class="card career">
-											<div class="card-body">
-												<div class="row">
-													<div class="col-sm-2">
-														<img src="<?= site_url('assets/img/author-main2.jpg') ?>"  class="rounded float-left" alt="...">
-													</div>
-													<div class="col">
-														<h5 class="card-title">정보처리기능사</h5>
-														<ul class="widget w-personal-info">
-															<li>
-																<span class="title">발행처:</span>
-																<span class="text">ㅁㄴㅇㄹ</span>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col">
-										<div class="card career">
-											<div class="card-body">
-												<div class="row">
-													<div class="col-sm-2">
-														<img src="<?= site_url('assets/img/author-main2.jpg') ?>"  class="rounded float-left" alt="...">
-													</div>
-													<div class="col">
-														<h5 class="card-title">정보처리기능사</h5>
-														<ul class="widget w-personal-info">
-															<li>
-																<span class="title">발행처:</span>
-																<span class="text">ㅁㄴㅇㄹ</span>
-															</li>
-														</ul>
-													</div>
-
-
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- </div> -->
+								<?php
+									
+									foreach($career as $row){
+										if($row->ca_type == "certificate"){
+										$a = "<div class='col'>
+														<div class='card career'>
+															<div class='card-body'>
+																<div class='row'>
+																	<div class='col-sm-2'>
+																		<img src='/uploads/profile/".$row->ca_image."'  class='rounded float-left' alt='...'>
+																		</div>
+																		<div class='col'>
+																			<h5 class='card-title'>".$row->ca_career."</h5>
+																			<ul class='widget w-personal-info'>
+																		<li>
+																		<span class='text'>".$row->ca_info."</span>
+																		</li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>";
+											echo $a;
+										}
+									}
+									?>
 								</div>
 							</div>
 						</div>
@@ -522,38 +407,42 @@
 				</div>
 
 				<div class="modal-body">
-					<div class="col">
+					<form action="/member/addcareer" method="post" enctype="multipart/form-data">
+						<input type="hidden" name="ca_type" value="career">
+						<input type="hidden" name="me_n_idx" value="<?=$me_n_idx?>">
+						<div class="col">
 
-						<form class="form-group label-floating">
-							<label class="control-label">기업명</label>
-							<input class="form-control" placeholder="" type="text">
-						</form>
-					</div>
-
-					<div class="col">
-						<div class="form-group label-floating">
-							<label class="control-label">간단한 소개</label>
-							<textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
-						</div>
-					</div>
-
-					<div class="col">
-						<label class="control-label">이미지</label>
-						<div class="col col-lg-3 col-md-3 col-sm-12 col-12 pl-0">
-							<div class="file-upload d-inline-block">
-								<label for="upload" class="file-upload__label">Upload Button</label>
-								<input id="upload" class="file-upload__input" type="file" name="me_n_profile">
-							</div>
-							<div id="uploaded-file" class="d-inline-block">
-								<img id="preview" src="<?= site_url()?> ">
+							<div class="form-group label-floating">
+								<label class="control-label">기업명</label>
+								<input class="form-control" name="ca_career" type="text">
 							</div>
 						</div>
+
+						<div class="col">
+							<div class="form-group label-floating">
+								<label class="control-label">간단한 소개</label>
+								<textarea class="form-control" name="ca_info" id="" cols="30" rows="5"></textarea>
+							</div>
+						</div>
+
+						<div class="col">
+							<label class="control-label">이미지</label>
+							<div class="col col-lg-3 col-md-3 col-sm-12 col-12 pl-0">
+								<div class="file-upload d-inline-block">
+									<label for="upload-career" class="file-upload__label">Upload Button</label>
+									<input class="file-upload__input" id="upload-career" type="file" name="ca_image">
+								</div>
+								<div id="uploaded-file" class="d-inline-block">
+									<img id="preview-career" src="">
+								</div>
+							</div>
+						</div>
+
+						<input type="submit"  class="btn btn-secondary btn-lg btn--half-width" value="추가">
+						<input type="button"  class="btn btn-secondary btn-lg btn--half-width" value="취소">
+
 					</div>
-
-					<a href="<?= site_url('assets/#') ?>"  class="btn btn-secondary btn-lg btn--half-width">추가</a>
-					<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-lg btn--half-width">취소</a>
-
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -572,38 +461,39 @@
 				</div>
 
 				<div class="modal-body">
-				
-					<div class="col">
-
-						<form class="form-group label-floating">
-							<label class="control-label">학교명</label>
-							<input class="form-control" placeholder="" type="text">
-						</form>
-					</div>
-
-					<div class="col">
-						<div class="form-group label-floating">
-							<label class="control-label">간단한 소개</label>
-							<textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
-						</div>
-					</div>
-
-					<div class="col">
-						<label class="control-label">이미지</label>
-						<div class="col col-lg-3 col-md-3 col-sm-12 col-12 pl-0">
-							<div class="file-upload d-inline-block">
-								<label for="upload" class="file-upload__label">Upload Button</label>
-								<input id="upload" class="file-upload__input" type="file" name="me_n_profile">
-							</div>
-							<div id="uploaded-file" class="d-inline-block">
-								<img id="preview" src="<?= site_url()?> ">
+					<form action="/member/addcareer" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="ca_type" value="educate">
+					<input type="hidden" name="me_n_idx" value="<?=$me_n_idx?>">
+						<div class="col">
+							<div class="form-group label-floating">
+								<label class="control-label">학교명</label>
+								<input class="form-control" name="ca_career" type="text">
 							</div>
 						</div>
-					</div>
 
-					<a href="<?= site_url('assets/#') ?>"  class="btn btn-secondary btn-lg btn--half-width">추가</a>
-					<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-lg btn--half-width">취소</a>
+						<div class="col">
+							<div class="form-group label-floating">
+								<label class="control-label">간단한 소개</label>
+								<textarea class="form-control" name="ca_info" id="" cols="30" rows="5"></textarea>
+							</div>
+						</div>
 
+						<div class="col">
+							<label class="control-label">이미지</label>
+							<div class="col col-lg-3 col-md-3 col-sm-12 col-12 pl-0">
+								<div class="file-upload d-inline-block">
+									<label for="upload-educate" class="file-upload__label">Upload Button</label>
+									<input class="file-upload__input" id="upload-educate" type="file" name="ca_image">
+								</div>
+								<div id="uploaded-file" class="d-inline-block">
+									<img id="preview-educate" src="">
+								</div>
+							</div>
+						</div>
+
+							<input type="submit"  class="btn btn-secondary btn-lg btn--half-width" value="추가">
+							<input type="button"  class="btn btn-secondary btn-lg btn--half-width" value="취소">
+					</form>
 				</div>
 			</div>
 		</div>
@@ -623,19 +513,22 @@
 				</div>
 
 				<div class="modal-body">
+				<form action="/member/addcareer" method="post" enctype="multipart/form-data">
+					<input type="hidden" name="ca_type" value="certificate">
+					<input type="hidden" name="me_n_idx" value="<?=$me_n_idx?>">
 					<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 						<div class="row">
 							<div class="col">
-								<form class="form-group label-floating">
+								<div class="form-group label-floating">
 									<label class="control-label">자격증명</label>
-									<input class="form-control" placeholder="" type="text">
-								</form>
+									<input class="form-control" name="ca_career" type="text">
+								</div>
 							</div>
 							<div class="col">
-								<form class="form-group label-floating">
-									<label class="control-label">발행처</label>
-									<input class="form-control" placeholder="" type="text">
-								</form>
+								<div class="form-group label-floating">
+									<label class="control-label">취득일</label>
+									<input class="form-control" name="ca_info" type="text">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -645,17 +538,18 @@
 						<label class="control-label">이미지</label>
 						<div class="col col-lg-3 col-md-3 col-sm-12 col-12 pl-0">
 							<div class="file-upload d-inline-block">
-								<label for="upload" class="file-upload__label">Upload Button</label>
-								<input id="upload" class="file-upload__input" type="file" name="me_n_profile">
+								<label for="upload-certificate" class="file-upload__label">Upload Button</label>
+								<input class="file-upload__input" id="upload-certificate" type="file" name="ca_image">
 							</div>
 							<div id="uploaded-file" class="d-inline-block">
-								<img id="preview" src="<?= site_url()?> ">
+								<img id="preview-certificate" src="">
 							</div>
 						</div>
 					</div>
-					<a href="<?= site_url('assets/#') ?>"  class="btn btn-secondary btn-lg btn--half-width">추가</a>
-					<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-lg btn--half-width">취소</a>
+					<input type="submit"  class="btn btn-secondary btn-lg btn--half-width" value="추가">
+					<input type="button"  class="btn btn-secondary btn-lg btn--half-width" value="취소">
 
+				</div>
 				</div>
 			</div>
 		</div>
@@ -1350,23 +1244,40 @@
 			Military.classList.add("d-none");
 		} 
 	}
-		
-		
-	document.getElementById("upload").onchange = function() {
-		readImage(this);
-	};
 
-	const readImage = input => {
+	const readImage = (input, str) => {
+		console.log('called');
 		if (input.files && input.files[0]) {
 			const reader = new FileReader();
 
 			reader.onload = function(e) {
-				let image = document.getElementById("preview");
-				image.setAttribute('src', e.target.result);
+				 let image = document.getElementById(`preview-${str}`);
+				 console.log(`preview-${str}`);
+				 console.log(image);
+				 image.setAttribute('src', e.target.result);
 			}
 			reader.readAsDataURL(input.files[0]);
 		}
 	};
+
+	document.getElementById("upload-career").onchange = function() {
+		readImage(this, "career");
+	};
+	document.getElementById("upload-educate").onchange = function() {
+		readImage(this, "educate");
+	};
+	document.getElementById("upload-certificate").onchange = function() {
+		readImage(this, "certificate");
+	};
+
+	function modalclear(){
+		$("[name='ca_career']").val('');
+		$("[name='ca_info']").val('');
+		$("[name='ca_image']").val('');
+		$("#preview-career").attr('src','');
+		$("#preview-educate").attr('src','');
+		$("#preview-certificate").attr('src','');
+	}
 	</script>
 
 	<!-- ... end Window-popup-CHAT for responsive min-width: 768px -->
