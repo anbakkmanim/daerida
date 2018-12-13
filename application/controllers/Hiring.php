@@ -101,6 +101,27 @@ class Hiring extends CI_Controller
     }
 
     /**
+     * 팔로우 한 구인공고 리스트
+     * @METHOD GET
+     * @MainURL hiring/followList
+     * @Params X
+     */
+    public function followList() {
+        $me_n_idx = $this->session->me_idx;
+
+        $return = $this->RecruitModel->followRecruit($me_n_idx);
+        if ($return[0]['re_idx'] == null)
+            $return = array();
+
+        $data = array(
+            "hiringList" => $return
+        );
+        
+
+        $this->load->view("hiring/hiringList", $data);
+    }
+
+    /**
      * 구인공고 상세보기
      * @METHOD GET
      * @MainURL hiring/detail
