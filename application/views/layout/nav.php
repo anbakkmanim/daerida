@@ -128,22 +128,6 @@
 					</a>
 				</li>
 			</ul>
-
-			<div class="profile-completion">
-
-				<div class="skills-item">
-					<div class="skills-item-info">
-						<span class="skills-item-title">Profile Completion</span>
-						<span class="skills-item-count"><span class="count-animate" data-speed="1000" data-refresh-interval="50" data-to="76" data-from="0"></span><span class="units">76%</span></span>
-					</div>
-					<div class="skills-item-meter">
-						<span class="skills-item-meter-active bg-primary" style="width: 76%"></span>
-					</div>
-				</div>
-
-				<span>Complete <a href="#">your profile</a> so people can know more about you!</span>
-
-			</div>
 		</div>
 	</div>
 </div>
