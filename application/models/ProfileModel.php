@@ -204,7 +204,7 @@ Class ProfileModel extends CI_Model{
     }
 
     public function addCareer($param){
-        if(isset($param['me_n_profile'])) {
+        if(isset($param['ca_image'])) {
             $sql = "
                 INSERT INTO CAREER_TB(
                         me_n_idx,
