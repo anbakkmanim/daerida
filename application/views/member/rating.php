@@ -85,7 +85,7 @@
 
                                 <div class="more">
                                     <svg class="olymp-three-dots-icon">
-                                        <use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use>
+                                        <use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use>
                                     </svg>
                                     <ul class="more-dropdown">
                                         <li>
@@ -133,19 +133,13 @@
 
                                         <a href="<?= site_url('#') ?>" class="more">
                                             <svg class="olymp-three-dots-icon">
-                                                <use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use>
+                                                <use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use>
                                             </svg>
                                         </a>
 
                                     </div>
 
                                     <p><?=$rows['co_qna_answer']?></p>
-
-                                    <a href="<?= site_url('#') ?>" class="post-add-icon inline-items">
-                                        <svg class="olymp-heart-icon">
-                                            <use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-heart-icon') ?>"></use>
-                                        </svg>
-                                    </a>
                                 </li>
 
                             </ul>
@@ -166,7 +160,7 @@
                                                 <a href='site_url('#')' class='options-message' data-toggle='modal'
                                                    data-target='#update-header-photo'>
                                                     <svg class='olymp-camera-icon'>
-                                                        <use xlink:href='site_url('svg-icons/sprites/icons.svg#olymp-camera-icon')'></use>
+                                                        <use xlink:href='site_url('assets/svg-icons/sprites/icons.svg#olymp-camera-icon')'></use>
                                                     </svg>
                                                 </a>
                                             </div>
@@ -190,7 +184,7 @@
 				</div>
 
 			</div>
-			<a id="load-more-button" href="<?= site_url('#') ?>" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use></svg></a>
+			
 
 		</div>
 
@@ -199,7 +193,7 @@
                 <div class="ui-block-title">
                     <h6 class="title">프로필</h6>
                     <a href="<?= site_url('#') ?>"  class="more"><svg class="olymp-three-dots-icon">
-                            <use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>" ></use>
+                            <use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>" ></use>
                         </svg></a>
                 </div>
                 <div class="ui-block-content">
@@ -263,7 +257,7 @@
 	
 
 	<a href="<?= site_url('') ?>" class="icon-close js-close-popup">
-		<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+		<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 	</a>
 
 	<table class="playlist-popup-table">
@@ -311,7 +305,7 @@
 		<tr>
 			<td class="play">
 				<a href="<?= site_url('#') ?>" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
@@ -341,7 +335,7 @@
 			</td>
 			<td class="remove">
 				<a href="<?= site_url('#') ?>" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -349,7 +343,7 @@
 		<tr>
 			<td class="play">
 				<a href="<?= site_url('#') ?>" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
@@ -379,7 +373,7 @@
 			</td>
 			<td class="remove">
 				<a href="<?= site_url('#') ?>" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -387,7 +381,7 @@
 		<tr>
 			<td class="play">
 				<a href="<?= site_url('#') ?>" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
@@ -417,7 +411,7 @@
 			</td>
 			<td class="remove">
 				<a href="<?= site_url('#') ?>" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -425,7 +419,7 @@
 		<tr>
 			<td class="play">
 				<a href="<?= site_url('#') ?>" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
@@ -455,7 +449,7 @@
 			</td>
 			<td class="remove">
 				<a href="<?= site_url('#') ?>" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -463,7 +457,7 @@
 		<tr>
 			<td class="play">
 				<a href="<?= site_url('#') ?>" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
@@ -493,7 +487,7 @@
 			</td>
 			<td class="remove">
 				<a href="<?= site_url('#') ?>" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -501,7 +495,7 @@
 		<tr>
 			<td class="play">
 				<a href="<?= site_url('#') ?>" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big') ?>"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
@@ -531,7 +525,7 @@
 			</td>
 			<td class="remove">
 				<a href="<?= site_url('#') ?>" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -554,7 +548,7 @@
 	<div class="modal-dialog window-popup update-header-photo" role="document">
 		<div class="modal-content">
 			<a href="<?= site_url('#') ?>" class="close icon-close" data-dismiss="modal" aria-label="Close">
-				<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+				<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 			</a>
 
 			<div class="modal-header">
@@ -563,7 +557,7 @@
 
 			<div class="modal-body">
 				<a href="<?= site_url('#') ?>" class="upload-photo-item">
-				<svg class="olymp-computer-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-computer-icon') ?>"></use></svg>
+				<svg class="olymp-computer-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-computer-icon') ?>"></use></svg>
 
 				<h6>Upload Photo</h6>
 				<span>Browse your computer.</span>
@@ -571,7 +565,7 @@
 
 				<a href="<?= site_url('#') ?>" class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
 
-			<svg class="olymp-photos-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-photos-icon') ?>"></use></svg>
+			<svg class="olymp-photos-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-photos-icon') ?>"></use></svg>
 
 			<h6>Choose from My Photos</h6>
 			<span>Choose from your uploaded photos</span>
@@ -591,7 +585,7 @@
 
 		<div class="modal-content">
 			<a href="<?= site_url('#') ?>" class="close icon-close" data-dismiss="modal" aria-label="Close">
-				<svg class="olymp-close-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+				<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
 			</a>
 			<div class="modal-header">
 				<h6 class="title">Choose from My Photos</h6>
@@ -600,12 +594,12 @@
 				<ul class="nav nav-tabs" role="tablist">
 					<li class="nav-item">
 						<a class="nav-link active" data-toggle="tab" href="<?= site_url('#home') ?>" role="tab" aria-expanded="true">
-							<svg class="olymp-photos-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-photos-icon') ?>"></use></svg>
+							<svg class="olymp-photos-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-photos-icon') ?>"></use></svg>
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" data-toggle="tab" href="<?= site_url('#profile') ?>" role="tab" aria-expanded="false">
-							<svg class="olymp-albums-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-albums-icon') ?>"></use></svg>
+							<svg class="olymp-albums-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-albums-icon') ?>"></use></svg>
 						</a>
 					</li>
 				</ul>
@@ -769,7 +763,7 @@
 
 
 <a class="back-to-top" href="<?= site_url('#') ?>">
-	<img src="<?= site_url('svg-icons/back-to-top.svg') ?>" alt="arrow" class="back-icon">
+	<img src="<?= site_url('assets/svg-icons/back-to-top.svg') ?>" alt="arrow" class="back-icon">
 </a>
 
 
@@ -784,8 +778,8 @@
 			<span class="icon-status online"></span>
 			<h6 class="title" >Chat</h6>
 			<div class="more">
-				<svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use></svg>
-				<svg class="olymp-little-delete js-chat-open"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-little-delete') ?>"></use></svg>
+				<svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>"></use></svg>
+				<svg class="olymp-little-delete js-chat-open"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-little-delete') ?>"></use></svg>
 			</div>
 		</div>
 		<div class="modal-body">
@@ -831,11 +825,11 @@
 			<textarea class="form-control" placeholder=""></textarea>
 			<div class="add-options-message">
 				<a href="<?= site_url('#') ?>" class="options-message">
-					<svg class="olymp-computer-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-computer-icon') ?>"></use></svg>
+					<svg class="olymp-computer-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-computer-icon') ?>"></use></svg>
 				</a>
 				<div class="options-message smile-block">
 
-					<svg class="olymp-happy-sticker-icon"><use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-happy-sticker-icon') ?>"></use></svg>
+					<svg class="olymp-happy-sticker-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-happy-sticker-icon') ?>"></use></svg>
 
 					<ul class="more-dropdown more-with-triangle triangle-bottom-right">
 						<li>

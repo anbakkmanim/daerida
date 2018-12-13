@@ -28,18 +28,6 @@
 										<li>
 											<a href="/member/companyQnA?me_c_idx=<?=$me_c_idx?>" >Q&A</a>
 										</li>
-										<!-- <li>
-											<a href="<?= site_url('07-ProfilePage-Photos.html') ?>" >이력서 관리</a>
-										</li> -->
-										<!-- <li>
-										<a href="<?= site_url('09-ProfilePage-Videos.html') ?>" >Videos</a>
-									</li>
-									<li>
-										<a href="<?= site_url('14-FavouritePage-Statistics.html') ?>" >Statistics</a>
-									</li>
-									<li>
-										<a href="<?= site_url('15-FavouritePage-Events.html') ?>" >Events</a>
-									</li> -->
 									</ul>
 								</div>
 							</div>
@@ -51,43 +39,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- ... end Top Header-Profile -->
-
-	<!-- UI-Block-Title -->
-	<!-- <div class="container">
-	<div class="row">
-		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-			<div class="ui-block responsive-flex">
-				<div class="ui-block-title">
-					<div class="h6 title">James’s Photo Gallery</div>
-
-					<div class="block-btn align-right">
-						<a href="<?= site_url('#') ?>"  data-toggle="modal" data-target="#create-photo-album" class="btn btn-primary btn-md-2">Create Album  +</a>
-
-						<a href="<?= site_url('#') ?>"  data-toggle="modal" data-target="#update-header-photo" class="btn btn-md-2 btn-border-think custom-color c-grey">Add Photos</a>
-					</div>
-
-					<ul class="nav nav-tabs photo-gallery" role="tablist">
-						<li class="nav-item">
-							<a class="nav-link" data-toggle="tab" href="<?= site_url('#photo-page') ?>"  role="tab">
-								<svg class="olymp-photos-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-photos-icon') ?>" ></use></svg>
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link active" data-toggle="tab" href="<?= site_url('#album-page') ?>"  role="tab">
-								<svg class="olymp-albums-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-albums-icon') ?>" ></use></svg>
-							</a>
-						</li>
-
-					</ul>
-					<a href="<?= site_url('#') ?>"  class="more"><svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>" ></use></svg></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
 
 	<div class="container">
 		<div class="row">
@@ -102,7 +53,7 @@
 									<div class="row">
 										<a data-toggle="collapse" data-parent="#accordion" href="<?= site_url('#collapseOne') ?>"  aria-expanded="true" aria-controls="collapseOne"
 										 class="col-auto mr-auto mt-2">
-											<span>경력</span>
+											<span>연혁</span>
 											<svg class="olymp-dropdown-arrow-icon">
 												<use xlink:href="<?= site_url('#olymp-dropdown-arrow-icon') ?>" ></use>
 											</svg>
@@ -120,57 +71,29 @@
 							<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" style="">
 
 								<div class="ui-block-content">
-									<!-- <div class="row"> -->
 
-											<div class="col">
-													<div class="card career">
-														<div class="card-body">
-															<div class="row">
-																<div class="col-sm-2">
-																	<img src="<?= site_url('assets/img/author-main2.jpg') ?>"  class="rounded float-left" alt="...">
-																</div>
-																<div class="col">
-																	<h5 class="card-title">기업</h5>
-																	<ul class="widget w-personal-info">
-																		<li>
-																			<span class="title">연도:</span>
-																			<span class="text">2017</span>
-																		</li>
-																		<li>
-																			<span class="title">내용:</span>
-																			<span class="text">ㅁㄴㅇㄹ</span>
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="col">
-														<div class="card career">
-															<div class="card-body">
-																<div class="row">
-																	<div class="col-sm-2">
-																		<img src="<?= site_url('assets/img/author-main2.jpg') ?>"  class="rounded float-left" alt="...">
-																	</div>
-																	<div class="col">
-																		<h5 class="card-title">기업</h5>
-																		<ul class="widget w-personal-info">
-																			<li>
-																				<span class="title">연도:</span>
-																				<span class="text">2017</span>
-																			</li>
-																			<li>
-																				<span class="title">내용:</span>
-																				<span class="text">ㅁㄴㅇㄹ</span>
+									<?php
+									
+									foreach($history as $row){
+										$a = "<div class='col'>
+														<div class='card career'>
+															<div class='card-body p-0 pl-4 pr-4'>
+																<div class='row'>
+																	<div class='col'>
+																		<ul class='widget w-personal-info'>
+																			<li class='row'>
+																				<h5 class='text'>".$row->hi_year."</h5>
+																				<h5 class='text ml-4'>".$row->hi_content."</h5>
 																			</li>
 																		</ul>
 																	</div>
 																</div>
 															</div>
 														</div>
-													</div>
-									<!-- </div> -->
+													</div>";
+											echo $a;
+									}
+									?>
 								</div>
 
 							</div>
@@ -272,193 +195,34 @@
 				</a>
 
 				<div class="modal-header">
-					<h6 class="title">경력 추가</h6>
+					<h6 class="title">연혁 추가</h6>
 				</div>
 
 				<div class="modal-body">
+				<form action="/member/addhistory" method="post">
+				<input type="hidden" name="me_c_idx" value="<?=$me_c_idx?>">
 					<div class="col">
-
-						<form class="form-group label-floating">
-							<label class="control-label">기업명</label>
-							<input class="form-control" placeholder="" type="text">
-						</form>
-					</div>
-					<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-						<div class="row">
-							<div class="col">
-								<form class="form-group label-floating">
-									<label class="control-label">연도</label>
-									<input class="form-control" placeholder="" type="text">
-								</form>
-							</div>
-							
-
+						<div class="form-group label-floating">
+							<label class="control-label">연도</label>
+							<input class="form-control" name="hi_year" type="text">
 						</div>
 					</div>
 
-
 					<div class="col">
-
-							<div class="form-group label-floating">
-									<label class="control-label">내용</label>
-									<textarea class="form-control" name="" id="" cols="30" rows="5"></textarea>
-								</div>
+						<div class="form-group label-floating">
+							<label class="control-label">내용</label>
+							<textarea class="form-control" name="hi_content" id="" cols="30" rows="5"></textarea>
+						</div>
 					</div>
 
-					<div class="col">
-						<label class="control-label">프로필 사진</label>
-						<input type="file">
-					</div>
-					<a href="<?= site_url('#') ?>"  class="btn btn-secondary btn-lg btn--half-width">추가</a>
-					<a href="<?= site_url('#') ?>"  class="btn btn-primary btn-lg btn--half-width" data-dismiss="modal" aria-label="Close" >취소</a>
-
+					<input type="submit"  class="btn btn-secondary btn-lg btn--half-width" value="추가">
+					<input type="button"  class="btn btn-secondary btn-lg btn--half-width" data-dismiss="modal" aria-label="Close" value="취소">
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="modal fade" id="create-edu" tabindex="-1" role="dialog" aria-labelledby="create-photo-album" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered window-popup create-photo-album" role="document">
-			<div class="modal-content">
-				<a href="<?= site_url('#') ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
-					<svg class="olymp-close-icon">
-						<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>" ></use>
-					</svg>
-				</a>
-
-				<div class="modal-header">
-					<h6 class="title">학력 추가</h6>
-				</div>
-
-				<div class="modal-body">
-					<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-						<div class="row">
-							<div class="col-sm-2 text-center">
-								<label style="margin-top: 1rem;">학교구분</label>
-							</div>
-							<div class="col">
-								<select class="selectpicker form-control" tabindex="-98">
-									<option value="univer">대학교</option>
-									<option value="high-school">고등학교</option>
-									<option value="middle-school">중학교</option>
-								</select>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-2 text-center">
-								<label style="margin-top: 1rem;">전공계열</label>
-							</div>
-							<div class="col">
-								<select class="selectpicker form-control" tabindex="-98">
-									<option value="univer">문과</option>
-									<option value="high-school">고등학교</option>
-									<option value="middle-school">중학교</option>
-								</select>
-							</div>
-						</div>
-					</div>
-
-					<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-						<div class="row">
-							<div class="col">
-									<div class="form-group date-time-picker is-focused">
-											<input type="text" name="datetimepicker" placeholder="입학년도">
-											<span class="input-group-addon">
-												<svg class="olymp-month-calendar-icon icon">
-													<use xlink:href="<?= site_url('#olymp-month-calendar-icon') ?>" ></use>
-												</svg>
-											</span>
-										</div>
-							</div>
-							
-							<div class="col-sm-1 w-25 text-center">
-									<label style="margin-top: 1rem;">~</label>
-								</div>
-
-							<div class="col">
-									<div class="form-group date-time-picker is-focused">
-											<input type="text" name="datetimepicker" placeholder="졸업년도">
-											<span class="input-group-addon">
-												<svg class="olymp-month-calendar-icon icon">
-													<use xlink:href="<?= site_url('#olymp-month-calendar-icon') ?>" ></use>
-												</svg>
-											</span>
-										</div>
-							</div>
-							<div class="checkbox col">
-								<label style="margin-top: 1rem;">
-									<input name="optionsCheckboxes" type="checkbox">
-									재학중
-								</label>
-							</div>
-
-						</div>
-
-
-					</div>
-
-					<a href="<?= site_url('#') ?>"  class="btn btn-secondary btn-lg btn--half-width">추가</a>
-					<a href="<?= site_url('#') ?>"  class="btn btn-primary btn-lg btn--half-width">취소</a>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="create-card" tabindex="-1" role="dialog" aria-labelledby="create-card" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered window-popup create-photo-album" role="document">
-			<div class="modal-content">
-				<a href="<?= site_url('#') ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
-					<svg class="olymp-close-icon">
-						<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>" ></use>
-					</svg>
-				</a>
-
-				<div class="modal-header">
-					<h6 class="title">자격증 추가</h6>
-				</div>
-
-				<div class="modal-body">
-					<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-						<div class="row">
-							<div class="col">
-								<form class="form-group label-floating">
-									<label class="control-label">자격증명</label>
-									<input class="form-control" placeholder="" type="text">
-								</form>
-							</div>
-							<div class="col">
-								<form class="form-group label-floating">
-									<label class="control-label">발행처</label>
-									<input class="form-control" placeholder="" type="text">
-								</form>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col">
-									<div class="form-group date-time-picker is-focused">
-											<input type="text" name="datetimepicker" placeholder="취득일">
-											<span class="input-group-addon">
-												<svg class="olymp-month-calendar-icon icon">
-													<use xlink:href="<?= site_url('#olymp-month-calendar-icon') ?>" ></use>
-												</svg>
-											</span>
-										</div>
-							</div>
-						</div>
-					</div>
-
-					<a href="<?= site_url('#') ?>"  class="btn btn-secondary btn-lg btn--half-width">추가</a>
-					<a href="<?= site_url('#') ?>"  class="btn btn-primary btn-lg btn--half-width">취소</a>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<!-- ... end Window-popup Change Password Form -->
 
 	<!-- Window-popup Update profile Form -->
 
