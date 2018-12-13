@@ -16,7 +16,8 @@ Class ProfileModel extends CI_Model{
         $sql = "
                 SELECT *
                 FROM    CAREER_TB
-                WHERE   me_n_idx = ?;
+                WHERE   me_n_idx = ?
+                AND     ca_type != 'portfolio';
         ";
 
         $query = $this->db->query($sql, array($param['me_n_idx']));
