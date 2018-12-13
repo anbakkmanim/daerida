@@ -121,7 +121,8 @@ Class ProfileModel extends CI_Model{
     }
 
     public function setProfileCompany($param){
-        $sql = "
+        if(isset($param['me_c_profile'])) {
+            $sql = "
                   UPDATE  MEMBER_COMPANY_TB
                   SET
                   me_c_manager = ?,
@@ -136,21 +137,52 @@ Class ProfileModel extends CI_Model{
                   me_c_info = ?
                   WHERE
                   me_c_idx = ?
-        ";
+            ";
 
-        $bind = array(
-          $param['me_c_manager'],
-          $param['me_c_name'],
-          $param['me_c_email'],
-          $param['me_c_phone'],
-          $param['me_c_profile'],
-          $param['me_c_salary'],
-          $param['me_c_sido'],
-          $param['me_c_isMilitary'],
-          $param['me_c_benefit'],
-          $param['me_c_info'],
-          $param['me_c_idx']
-        );
+            $bind = array(
+                $param['me_c_manager'],
+                $param['me_c_name'],
+                $param['me_c_email'],
+                $param['me_c_phone'],
+                $param['me_c_profile'],
+                $param['me_c_salary'],
+                $param['me_c_sido'],
+                $param['me_c_isMilitary'],
+                $param['me_c_benefit'],
+                $param['me_c_info'],
+                $param['me_c_idx']
+            );
+        } else {
+            $sql = "
+                  UPDATE  MEMBER_COMPANY_TB
+                  SET
+                  me_c_manager = ?,
+                  me_c_name = ?,
+                  me_c_email = ?,
+                  me_c_phone = ?,
+                  me_c_salary = ?,
+                  me_c_sido = ?,
+                  me_c_isMilitary = ?,
+                  me_c_benefit = ?,
+                  me_c_info = ?
+                  WHERE
+                  me_c_idx = ?
+            ";
+
+            $bind = array(
+                $param['me_c_manager'],
+                $param['me_c_name'],
+                $param['me_c_email'],
+                $param['me_c_phone'],
+                $param['me_c_salary'],
+                $param['me_c_sido'],
+                $param['me_c_isMilitary'],
+                $param['me_c_benefit'],
+                $param['me_c_info'],
+                $param['me_c_idx']
+            );
+        }
+
 
         $result = $this->db->query($sql, $bind);
         return $result;
