@@ -87,7 +87,7 @@
 <!--							<p>Here’s a photo from last month’s photoshoot. We got really awesome shots for the new catalog.</p>-->
 
 							<div class="author-date">
-								<a class="h6 post__author-name fn" href="#"><?= $item['me_c_name'] ?></a>
+								<a class="h6 post__author-name fn" href="/member/Company?me_c_idx=<?= $item['me_c_idx'] ?>"><?= $item['me_c_name'] ?></a>
 								<div class="post__date">
 									<span class="published">
                                         <?php
@@ -107,7 +107,7 @@
 							<div class="post-additional-info inline-items">
 					
 								<div class="comments-shared">
-									<a href="#" class="post-add-icon inline-items">
+									<a href="/hiring/detail?re_idx=<?= $item['re_idx']?>" class="post-add-icon inline-items">
 										<svg class="olymp-speech-balloon-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
 										<span><?= $item['recruitCnt'] ?>개의 분야 모집이 있습니다.</span>
 									</a>

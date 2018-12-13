@@ -52,11 +52,41 @@ class Hiring extends CI_Controller
      * 이력서 리스트
      * @METHOD GET
      * @MainURL hiring/resumeList
-     * @Params X
      */
     public function resumeList()
     {
-        $this->load->view('hiring/resumeList');
+        if ($this->session->me_type == "me_n_") {
+            alert("잘못된 요청입니다.");
+            location_previous();
+        }
+        $re_idx = $this->input->get("re_idx");
+
+        $resumes = $this->HiringModel->listResume($re_idx);
+
+        $detail = $this->RecruitModel->detailRecruit($re_idx);
+        $result = array(
+            "resumes" => $resumes,
+            "detail" => $detail[0]
+        );
+        $this->load->view('hiring/resumeList', $result);
+    }
+
+    /**
+     * 지원 상태 변경
+     * @METHOD GET
+     * @MainURL hiring/updateResume
+     */
+    public function updateResume() {
+        if ($this->session->me_type == "me_n_") {
+            alert("잘못된 요청입니다.");
+            location_previous();
+        }
+        $re_ap_idx = $this->input->get("re_ap_idx");
+        $state = $this->input->get("state");
+        $result = $this->HiringModel->changeResumeStatus($re_ap_idx, $state);
+
+        if ($result == true)
+            location_previous();
     }
 
     /**
