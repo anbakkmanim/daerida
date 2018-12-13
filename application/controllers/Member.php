@@ -365,15 +365,19 @@ class Member extends CI_Controller
         $data['me_n_age'] = $this->input->post('me_n_age');
         $data['me_n_hopeSalary'] = $this->input->post('me_n_hopeSalary');
         $data['me_n_answer'] = $this->input->post('me_n_answer');
+        $data['me_n_gender'] = $this->input->post('me_n_gender');
         if($this->upload->do_upload('me_n_profile')){
-            $data['me_profile'] = $this->upload->data('file_name');
+            $data['me_n_profile'] = $this->upload->data('file_name');
         }
-        $data['me_n_profile'] = $this->input->post('me_n_profile');
         $data['me_n_info'] = $this->input->post('me_n_info');
         $data['me_n_isOpen'] = $this->input->post('me_n_isOpen');
+        $data['me_rfield'] = $this->input->post('me_rfield');
+        $data['me_sfield'] = $this->input->post('me_sfield');
 
         $result = $this->ProfileModel->setProfileNormal($data);
-        if($result){
+        $result2 = $this->ProfileModel->setField($data, 'MEMBER_NORMAL_TB');
+
+        if($result && $result2){
             alert('정보 수정을 완료했습니다.');
             location_href('/Member/User?me_n_idx='.$data['me_n_idx']);
         }else{
@@ -438,10 +442,13 @@ class Member extends CI_Controller
         $data['me_c_sido'] = $this->input->post('me_c_sido');
         $data['me_c_isMilitary'] = $this->input->post('me_c_isMilitary');
         $data['me_c_benefit'] = $this->input->post('me_c_benefit');
+        $data['me_rfield'] = $this->input->post('me_rfield');
+        $data['me_sfield'] = $this->input->post('me_sfield');
 
         $result = $this->ProfileModel->setProfileCompany($data);
+        $result2 = $this->ProfileModel->setField($data, 'MEMBER_COMPANY_TB');
 
-        if($result){
+        if($result && $result2){
             alert('정보 수정을 완료했습니다.');
             location_href('/Member/Company?me_c_idx='.$data['me_c_idx']);
         }else{
