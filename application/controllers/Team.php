@@ -108,6 +108,10 @@ class Team extends CI_Controller
     public function board() {
         $te_idx = $_GET['te_idx']; // 팀 인덱스
 
+        $this->session->set_userdata(array(
+            "te_idx" => $te_idx
+        ));
+
         $result = $this->TeamModel->listPost($te_idx);
         $data = [
             "boards" => $result
@@ -124,9 +128,13 @@ class Team extends CI_Controller
      */
 
      public function boardView() {
-         $te_co_idx = $_GET['te_po_idx'];
+         $te_po_idx = $_GET['te_po_idx'];
 
-         $this->load->view('team/boardView');
+         $result = $this->TeamModel->getPost($te_po_idx);
+         $data = [
+             "result" => $result
+         ];
+         $this->load->view('team/boardView', $data);
      }
 
     /**
@@ -149,8 +157,8 @@ class Team extends CI_Controller
      * @Redirect team/board
      */
     public function addPost() {
-        $te_idx = $_POST['te_idx'];
-        $me_n_idx = $_POST['me_n_idx'];
+        $te_idx = $this->session->te_idx;
+        $me_n_idx = $this->session->me_idx;
         $te_po_title = $_POST['te_po_title'];
         $te_po_content = $_POST['te_po_content'];
 
@@ -163,7 +171,7 @@ class Team extends CI_Controller
         }
 
         // Redirect
-        location_href(site_url('team/board'));
+        location_href(site_url('team/board?te_idx=1'));
     }
 
 }

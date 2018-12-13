@@ -1,4 +1,4 @@
-<?php $this->load->view('layout/header'); ?>
+hp<?php $this->load->view('layout/header'); ?>
 
 <?php $this->load->view('layout/nav'); ?>
 
@@ -44,32 +44,32 @@
 
 			<div class="ui-block">
 				<div class="ui-block-title bg-blue">
-					<h6 class="title c-white">Create a New Topic</h6>
+					<h6 class="title c-white">새로운 글을 쓰세요!</h6>
 				</div>
 				<div class="ui-block-content">
 					
-					<form>
+					<form class="content" action="/team/addPost" method="post">
 						<div class="row">
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
-									<label class="control-label">Topic Title</label>
-									<input class="form-control" type="text" placeholder="" value="New York Comix Con is having the best panels this year!">
+									<label class="control-label">제목</label>
+									<input class="form-control" type="text" name="te_po_title" placeholder="">
 								<span class="material-input"></span></div>
 							</div>
 					
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
-									<label class="control-label">Topic Title</label>
-									<textarea class="form-control" style="height: 240px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+									<label class="control-label">내용</label>
+                                    <textarea class="form-control"  name="te_po_content" style="height: 240px"></textarea>
 								<span class="material-input"></span></div>
 							</div>
 					
 							<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-								<a href="#" class="btn btn-secondary btn-lg full-width">Cancel</a>
+								<a href="/team/board?te_idx=1" class="btn btn-secondary btn-lg full-width">취소</a>
 							</div>
 					
 							<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-								<a href="#" class="btn btn-blue btn-lg full-width">Post Topic</a>
+								<input type=submit class="btn btn-blue btn-lg full-width" value="글올리기">
 							</div>
 						</div>
 					</form>
