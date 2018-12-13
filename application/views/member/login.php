@@ -78,7 +78,7 @@
 										<a href="./findid" class="forget mr-4" style="color:#888da8">Forgot my ID</a>
 										<a href="./findpassword" class="forget" style="color:#888da8">Forgot my Password</a>
 									</div>
-									<input type="submit" class="btn btn-lg btn-primary full-width" value="Login">
+									<input href="/" type="submit" class="btn btn-lg btn-primary full-width" value="Login">
 			
 									<div class="or"></div>
 			

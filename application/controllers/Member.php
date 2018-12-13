@@ -601,6 +601,7 @@ class Member extends CI_Controller
     public function companyAnswer(){
         $data['qna_idx'] = $this->input->post('qna_idx');
         $data['qna_answer'] = $this->input->post('qna_answer');
+        $data['me_c_idx'] = $this->input->post('me_c_idx');
 
         $data['result'] = $this->ProfileModel->addAnswer($data);
 
