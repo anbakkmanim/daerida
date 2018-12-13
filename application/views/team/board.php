@@ -108,7 +108,7 @@
 								<div class="author-thumb">
 									<img src="<?= "/uploads/profile/".$rows['me_n_profile'] ?>" alt="author">
 								</div>
-								<a href="#" class="h6 title"><?= $rows['me_n_name'] ?></a>
+								<a href="/member/User?me_n_idx=<?= $rows['me_n_idx']?>" class="h6 title"><?= $rows['me_n_name'] ?></a>
 <!--								<time class="entry-date updated" datetime="--><?//=$rows['te_po_date'] ?><!--">6 minutes ago</time>-->
 							</div>
 						</td>
