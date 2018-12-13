@@ -164,8 +164,8 @@
 
 	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
 		<a href="#" class="logo">
-			<div class="img-wrap">
-				<img src="<?= site_url('assets/img/logo.png') ?>" alt="Daerida">
+			<div class="img-wrap" style="width:100%">
+				<img src="<?= site_url('assets/img/logo.png') ?>" style="width:100%" alt="Daerida">
 			</div>
 			<div class="title-block">
 				<h6 class="logo-title">Daerida</h6>

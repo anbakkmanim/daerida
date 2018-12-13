@@ -13,11 +13,26 @@ class Hiring extends CI_Controller
         $this->load->model('RecruitModel');
     }
 
+    /**
+     * 이력서 신청 페이지
+     * @METHOD GET
+     * @MainURL hiring/resumeSend
+     * @Params X
+     */
     public function resumeSend()
     {
-        $this->load->view('hiring/resumeSend');
+        $re_fi_idx = $_GET['re_fi_idx'];
+
+        $result = $this->RecruitModel->getField($re_fi_idx);
+        $this->load->view('hiring/resumeSend', $result[0]);
     }
 
+    /**
+     * 이력서 정보 전송 페이지
+     * @METHOD POST
+     * @MainURL hiring/resumeInfoSend
+     * @Params re_idx, me_n_id,, re_ap_info, re_ap_date
+     */
     public function resumeInfoSend()
     {
         $data['re_idx'] = $_POST['re_idx'];
@@ -29,6 +44,12 @@ class Hiring extends CI_Controller
         $this->load->view('hiring/list');
     }
 
+    /**
+     * 이력서 리스트
+     * @METHOD GET
+     * @MainURL hiring/resumeList
+     * @Params X
+     */
     public function resumeList()
     {
         $return = $this->Hiring_m->read_resume();
@@ -156,4 +177,5 @@ class Hiring extends CI_Controller
         ];
         $this->load->view('hiring/map', $data);
     }
+    
 }
