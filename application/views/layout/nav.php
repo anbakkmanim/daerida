@@ -158,8 +158,8 @@
 <div class="fixed-sidebar fixed-sidebar-responsive">
 
 	<div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
-		<a href="#" class="logo js-sidebar-open">
-			<img src="<?= site_url('assets/img/logo.png') ?>" alt="Daerida">
+		<a href="#" class="logo js-sidebar-open" >
+			<img src="<?= site_url('assets/img/logo.png') ?>" alt="Daerida" >
 		</a>
 
 	</div>
@@ -167,7 +167,7 @@
 	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
 		<a href="#" class="logo">
 			<div class="img-wrap" style="width:100%">
-				<img src="<?= site_url('assets/img/logo.png') ?>" style="width:100%" alt="Daerida">
+				<img src="<?= site_url('assets/img/logo.png') ?>" style="height: 50px" alt="Daerida">
 			</div>
 			<div class="title-block">
 				<h6 class="logo-title">Daerida</h6>
@@ -196,7 +196,7 @@
 				</div>
 			</div>
 			<div class="ui-block-title ui-block-title-small">
-				<h6 class="title">YOUR ACCOUNT</h6>
+				<h6 class="title">계정 설정</h6>
 			</div>
 
 			<ul class="account-settings">
@@ -205,48 +205,35 @@
 
 						<svg class="olymp-menu-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-menu-icon') ?>"></use></svg>
 
-						<span>Profile Settings</span>
+						<span>프로필 설정</span>
 					</a>
 				</li>
-				<li>
-					<a href="#">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-star-icon') ?>"></use></svg>
-
-						<span>Create Fav Page</span>
-					</a>
-				</li>
-				<li>
 					<a href="/member/logout">
 						<svg class="olymp-logout-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-logout-icon') ?>"></use></svg>
 
-						<span>Log Out</span>
+						<span>로그아웃</span>
 					</a>
 				</li>
 			</ul>
 
 			<div class="ui-block-title ui-block-title-small">
-				<h6 class="title">About Daerida</h6>
+				<h6 class="title">데리다란?</h6>
 			</div>
 
 			<ul class="about-olympus">
 				<li>
-					<a href="#">
-						<span>Terms and Conditions</span>
+					<a href="/subpage/about">
+						<span>데리다 소개</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
-						<span>FAQs</span>
+					<a href="/subpage/support">
+						<span>지원</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
-						<span>Careers</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span>Contact</span>
+					<a href="/subpage/teamterview">
+						<span>팀터뷰</span>
 					</a>
 				</li>
 			</ul>

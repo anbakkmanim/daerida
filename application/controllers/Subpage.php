@@ -21,15 +21,6 @@ class Subpage extends CI_Controller
     }
 
     /**
-     * 크레딧 페이지
-     * @METHOD GET (STATIC)
-     * @MainURL subpage/credits
-     */
-    public function credits() {
-        $this->load->view('subpage/credits');
-    }
-
-    /**
      * 팀터뷰 페이지
      * @METHOD GET (STATIC)
      * @MainURL subpage/teamterview
