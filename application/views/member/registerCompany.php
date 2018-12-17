@@ -504,7 +504,7 @@
 							<div class="col">
 								<div class="form-group label-floating">
 									<label class="control-label">전화번호</label>
-									<input class="form-control" placeholder="" type="number" name="me_phone">
+									<input class="form-control" placeholder="" type="text" name="me_phone">
 								</div>
               </div>
               
