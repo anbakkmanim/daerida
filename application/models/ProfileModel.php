@@ -78,10 +78,10 @@ Class ProfileModel extends CI_Model{
         $sql = "
                 SELECT *
                 FROM   MEMBER_COMPANY_TB
-                join FIELD_TB as b on b.me_id = me_c_id 
-                join FIELD_SMALL_RF as c on b.fi_s_idx = c.fi_s_idx 
-                join FIELD_LARGE_RF as d on c.fi_l_idx = d.fi_l_idx  
-                WHERE  me_c_idx = ?;
+                left outer join FIELD_TB as b on b.me_id = me_c_id 
+                left outer join FIELD_SMALL_RF as c on b.fi_s_idx = c.fi_s_idx 
+                left outer join FIELD_LARGE_RF as d on c.fi_l_idx = d.fi_l_idx  
+                left outer WHERE  me_c_idx = ?;
         ";
 
         $query = $this->db->query($sql, array($me_c_idx));
@@ -129,9 +129,9 @@ Class ProfileModel extends CI_Model{
     public function getUserData($me_n_idx) {
         $sql = "
                 select * from MEMBER_NORMAL_TB 
-                join FIELD_TB as b on me_id = me_n_id 
-                join FIELD_SMALL_RF as c on b.fi_s_idx = c.fi_s_idx 
-                join FIELD_LARGE_RF as d on c.fi_l_idx = d.fi_l_idx  
+                left outer join FIELD_TB as b on me_id = me_n_id 
+                left outer join FIELD_SMALL_RF as c on b.fi_s_idx = c.fi_s_idx 
+                left outer join FIELD_LARGE_RF as d on c.fi_l_idx = d.fi_l_idx  
                 where me_n_idx = ?;
         ";
 
