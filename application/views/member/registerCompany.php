@@ -573,7 +573,7 @@
                 <div class="col">
 									<div class="form-group label-floating">
 										<label class="control-label">연봉</label>
-										<input class="form-control" placeholder="" type="number" name="me_salary">
+										<input class="form-control" placeholder="" type="text" name="me_salary">
 									</div>
                 </div>
 
@@ -583,7 +583,7 @@
 									<div class="checkbox col">
 										<label>
 											<input type="checkbox" name="me_military">
-											병력 특례 여부
+											병역 특례 여부
 										</label>
 									</div>
 								</div>
