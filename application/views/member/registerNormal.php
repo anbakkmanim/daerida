@@ -523,7 +523,7 @@
 												<input class="form-control" placeholder="" type="text" id="me_id" name="me_id">
 											</div>
 										</div>
-										<div class="col col-lg-4 col-md-4 col-sm-10 col-10 pl-0">
+										<div class="col col-lg-4 col-md-4 col-3 pl-0">
 											<script>
 												function checkID() {
 													$.ajax({

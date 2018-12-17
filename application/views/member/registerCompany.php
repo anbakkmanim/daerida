@@ -420,7 +420,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col">
+		<div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
 			<div class="ui-block">
 				<div class="ui-block-title">
 					<h6 class="title">회원 정보 입력</h6>
@@ -432,28 +432,28 @@
 					
 					<form action="/member/register" method="POST" enctype="multipart/form-data">
 						<input type="hidden" name="me_table" value="MEMBER_COMPANY_TB">
-						<div class="row">
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="col">
 								<div class="form-group label-floating">
 									<label class="control-label">회사 이름</label>
 									<input class="form-control" placeholder="" type="text" name="me_name">
 								</div>
 							</div>
 							
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="col">
 									<div class="form-group label-floating">
 										<label class="control-label">담당자 이름</label>
 										<input class="form-control" placeholder="" type="text" name="me_c_manager">
 									</div>
                 </div>
-				
-							<div class="col col-lg-8 col-md-6 col-sm-12 col-12">
+							<div class="col">
+							<div class="row">
+							<div class="col">
 										<div class="form-group label-floating">
 											<label class="control-label">아이디</label>
 											<input class="form-control" placeholder="" type="text" id="me_id" name="me_id">
 										</div>
 									</div>
-									<div class="col col-lg-4 col-md-6 col-sm-12 col-12">
+									<div class="col col-lg-4 col-md-4 col-3 pl-0">
 										<script>
 											function checkID() {
 												$.ajax({
@@ -473,30 +473,35 @@
 												})
 											}
 										</script>
-										<a onclick="checkID()" class="btn btn-primary btn-lg full-width">중복확인<div class="ripple-container"></div></a>
+									<a onclick="checkID()" class="btn btn-primary btn-lg" style="color:#fff">중복확인<div class="ripple-container"></div></a>
 									</div>
-					
-							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<div class="form-group label-floating is-empty">
-									<label class="control-label">비밀번호</label>
-									<input class="form-control" id="pwd" name="me_password" placeholder="" type="password">
-								</div>
-							</div>
-							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
-								<div class="form-group label-floating is-empty">
-									<label class="control-label">비밀번호 확인</label>
-									<input class="form-control" id="pwd_result" name="pwd_check" placeholder="" type="password">
-								</div>
-							</div>
+									</div>
+									</div>
+									<div class="col">
+										<div class="row">
+												<div class="col">
+														<div class="form-group label-floating is-empty">
+																<label class="control-label">비밀번호</label>
+																<input class="form-control" id="pwd" placeholder="" type="password" name="me_password">
+														</div>
+												</div>
+												<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+														<div class="form-group label-floating is-empty has-success">
+																<label class="control-label">비밀번호 확인</label>
+																<input class="form-control" id="pwd_result" placeholder="" type="password">
+														</div>
+												</div>
+											</div>
+                  	</div>
 
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="col">
 								<div class="form-group label-floating">
 									<label class="control-label">이메일</label>
 									<input class="form-control" placeholder="" type="email" name="me_email">
 								</div>
 							</div>
 
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="col">
 								<div class="form-group label-floating">
 									<label class="control-label">전화번호</label>
 									<input class="form-control" placeholder="" type="number" name="me_phone">
@@ -504,7 +509,7 @@
               </div>
               
 				
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="col">
 								<label for="">Q. 가장 기억에 남는 장소는?</label>
 								<div class="form-group label-floating">
 									<label class="control-label">답변</label>
@@ -512,6 +517,8 @@
 								</div>
 							</div>
 
+							<div class="col">
+							<div class="row">
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-empty">
 								<script>
@@ -554,8 +561,8 @@
 									</select>
 								</div>
 							</div>
-
-                <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							</div></div>
+                <div class="col">
 									<div class="form-group label-floating">
 										<label class="control-label">지역</label>
 										<input class="form-control" placeholder="" type="text" name="me_region">
@@ -563,16 +570,15 @@
                 </div>
 
                 
-                <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="col">
 									<div class="form-group label-floating">
 										<label class="control-label">연봉</label>
 										<input class="form-control" placeholder="" type="number" name="me_salary">
 									</div>
                 </div>
 
-						</div>
 					
-            <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="col">
 								<div class="row">
 									<div class="checkbox col">
 										<label>
@@ -583,14 +589,14 @@
 								</div>
 							</div>
 							
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="col">
 									<div class="form-group label-floating">
 										<label class="control-label">복리후생</label>
 										<input class="form-control" placeholder="" type="text" name="me_c_benefit">
 									</div>
                 </div>
               
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="col">
 									<label class="control-label">로고 사진</label>
 									<div class="col col-lg-3 col-md-3 col-sm-12 col-12">
 										<div class="file-upload d-inline-block">
@@ -602,18 +608,15 @@
 										</div>
 									</div>
 								</div>
-							</div>
                 
                 <div class="col col-lg-12 col-sm-12 col-sm-12 col-12">
                     <div class="remember">
                     </div>
                   </div>
 					
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+							<div class="col">
 								<button class="btn btn-primary btn-lg full-width">회원가입하기</button>
 							</div>
-					
-						</div>
 					</form>
 					
 					<!-- ... end Change Password Form -->
@@ -844,7 +847,7 @@
 
 
 <a class="back-to-top" href="#">
-	<img src="svg-icons/back-to-top.svg" alt="arrow" class="back-icon">
+<img src="<?= site_url('assets/svg-icons/back-to-top.svg') ?>" alt="arrow" class="back-icon">
 </a>
 
 
