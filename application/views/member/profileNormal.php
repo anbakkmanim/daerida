@@ -25,8 +25,12 @@
 									<img src="<?= "/uploads/profile/". ($me_n_profile != null ? $me_n_profile : "default.png") ?>"  alt="author">
 								</div>
 								<div class="author-content">
-									<a href="<?= '/assets/#' ?>"  class="h3 author-name"><?= $me_n_name ?></a>
-									<div class="country"><?= $me_n_sido . " | " . $fi_l_name . "/" . $fi_s_name ?></div>
+									<a href="/assets/#"  class="h3 author-name"><?= $me_n_name ?></a>
+									<?php if(isset($fi_l_name)){ ?>
+										<div class="country"><?= $me_n_sido . " | " . $fi_l_name . "/" . $fi_s_name ?></div>
+									<?php }else{ ?>
+										<div class="country"><?= $me_n_sido . " | 미정"?></div>
+									<?php } ?>
 								</div>
 							</div>
 						</div>
@@ -95,31 +99,33 @@
 							<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" style="">
 
 								<div class="ui-block-content">
-									<?php
-									
-									foreach($career as $row){
-										if($row->ca_type == "career"){
-										$a = "<div class='col'>
+									<?php foreach($career as $row){
+										if($row->ca_type == "career"){ ?>
+											<div class='col'>
 														<div class='card career'>
 															<div class='card-body'>
 																<div class='row'>
 																	<div class='col-sm-2'>
-																		<img src='/uploads/profile/".$row->ca_image."' class='rounded float-left' alt='...'>
-																		</div>
-																		<div class='col'>
-																			<h5 class='card-title'>".$row->ca_career."</h5>
-																			<ul class='widget w-personal-info'>
-																		<li>
-																		<span class='text'>".$row->ca_info."</span>
-																		</li>
+																		<img src='/uploads/profile/<?=$row->ca_image?>' class='rounded float-left' alt='...'>
+																	</div>
+																	<div class='col'>
+																		<h5 class='card-title'><?=$row->ca_career?>"</h5>
+																		<ul class='widget w-personal-info'>
+																			<li>
+																				<span class='text'><?=$row->ca_info?>"</span>
+																			</li>
 																		</ul>
+																	</div>
+																	<div class='col'>
+																		<button type='button' class='close mt-2' aria-label='Close'>
+																			<span aria-hidden='true'>&times;</span>
+																		</button>
 																	</div>
 																</div>
 															</div>
 														</div>
-													</div>";
-											echo $a;
-										}
+													</div>
+									<?php	}
 									}
 									?>
 								</div>
@@ -156,31 +162,33 @@
 							<div id="collapseTwo" class="collapse show" role="tabpanel" aria-labelledby="headingOne" style="">
 
 								<div class="ui-block-content">
-								<?php
-									
-									foreach($career as $row){
-										if($row->ca_type == "educate"){
-										$a = "<div class='col'>
+								<?php foreach($career as $row){
+										if($row->ca_type == "educate"){ ?>
+										<div class='col'>
 														<div class='card career'>
 															<div class='card-body'>
 																<div class='row'>
 																	<div class='col-sm-2'>
-																		<img src='/uploads/profile/".$row->ca_image."'  class='rounded float-left' alt='...'>
-																		</div>
-																		<div class='col'>
-																			<h5 class='card-title'>".$row->ca_career."</h5>
-																			<ul class='widget w-personal-info'>
-																		<li>
-																		<span class='text'>".$row->ca_info."</span>
-																		</li>
+																		<img src='/uploads/profile/<?=$row->ca_image?>'  class='rounded float-left' alt='...'>
+																	</div>
+																	<div class='col'>
+																		<h5 class='card-title'><?=$row->ca_career?></h5>
+																		<ul class='widget w-personal-info'>
+																			<li>
+																				<span class='text'><?=$row->ca_info?></span>
+																			</li>
 																		</ul>
+																	</div>
+																	<div class='col'>
+																		<button type='button' class='close mt-2' aria-label='Close'>
+																			<span aria-hidden='true'>&times;</span>
+																		</button>
 																	</div>
 																</div>
 															</div>
 														</div>
-													</div>";
-											echo $a;
-										}
+													</div>
+									<?php	}
 									}
 									?>
 								</div>
@@ -217,31 +225,36 @@
 
 
 								<div class="ui-block-content">
-								<?php
-									
-									foreach($career as $row){
-										if($row->ca_type == "certificate"){
-										$a = "<div class='col'>
-														<div class='card career'>
-															<div class='card-body'>
-																<div class='row'>
-																	<div class='col-sm-2'>
-																		<img src='/uploads/profile/".$row->ca_image."'  class='rounded float-left' alt='...'>
-																		</div>
-																		<div class='col'>
-																			<h5 class='card-title'>".$row->ca_career."</h5>
-																			<ul class='widget w-personal-info'>
-																		<li>
-																		<span class='text'>".$row->ca_info."</span>
-																		</li>
-																		</ul>
-																	</div>
-																</div>
-															</div>
+								<?php foreach($career as $row){
+										if($row->ca_type == "certificate"){ ?>
+										<div class='col'>
+											<form action="/member/delportfolio" method="post">
+											<input type="hidden" name="me_n_idx" value=<?=$me_n_idx?>>
+											<input type="hidden" name="ca_idx" value=<?=$row->ca_idx?>>
+											<input type="hidden" name="ca_type" value="certificate">
+											<div class='card career'>
+												<div class='card-body'>
+													<div class='row'>
+														<div class='col-sm-2'>
+															<img src='/uploads/profile/<?=$row->ca_image?>'  class='rounded float-left' alt='...'>
 														</div>
-													</div>";
-											echo $a;
-										}
+														<div class='col'>
+															<h5 class='card-title'><?=$row->ca_career?></h5>
+															<ul class='widget w-personal-info'>
+																<li>
+																	<span class='text'><?=$row->ca_info?></span>
+																</li>
+															</ul>
+														</div>
+														<div class='col'>
+															<input type="submit" class="close mt-2" aria-label='Close' value="X">
+														</div>
+													</div>
+												</div>
+											</div>
+											</form>
+										</div>
+									<?php	}
 									}
 									?>
 								</div>
@@ -273,7 +286,11 @@
 							</li>
 							<li>
 								<span class="title">분야:</span>
-								<span class="text"><?= $fi_l_name . "/" . $fi_s_name ?></span>
+								<?php if(isset($fi_l_name)){ ?>
+									<span class="text"><?= $fi_l_name . "/" . $fi_s_name ?></span>
+								<?php }else{ ?>
+									<span class="text">미정</span>
+								<?php } ?>
 							</li>
 							<li>
 								<span class="title">거주지:</span>
@@ -490,7 +507,6 @@
 	<!-- ... end Window-popup Change Password Form -->
 
 	<!-- Window-popup Update profile Form -->
-
 	<div class="modal fade" id="update-profile" tabindex="-1" role="dialog" aria-labelledby="create-photo-album"
 	 aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered window-popup create-photo-album" role="document">
@@ -509,8 +525,6 @@
 
 					<form action="/member/setProfileNormal" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="me_n_idx" value="<?=$me_n_idx?>">
-						<div class="row">
-
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 								<div class="form-group label-floating">
 									<label class="control-label">자기소개</label>
@@ -554,7 +568,8 @@
 									<input class="form-control" name="me_n_answer"  type="text" value="<?= $me_n_findpw ?>">
 								</div>
 							</div>
-
+							<div class="col">
+							<div class="row">
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 									<div class="form-group label-floating is-empty">
 									<script>
@@ -603,18 +618,12 @@
 										</select>
 									</div>
 								</div>
-
-							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-								<label for="">나이</label>
-									<div class="input-group number-spinner">
-										<span class="input-group-btn data-dwn input-group-prepend mb-3">
-											<button class="btn btn-default btn-info mt-0" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
-										</span>
-										<div class="form-group "><input type="text" class="form-control text-center mb-3" value="<?= $me_n_age?>" min="15" max="100" name="me_n_age"><span class="material-input"></span></div>
-										<span class="input-group-btn data-up input-group-append mb-3">
-											<button class="btn btn-default btn-info mt-0" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
-										</span>
-									</div>		
+								</div></div>
+								<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+								<div class="form-group label-floating">
+									<label class="control-label">나이</label>
+									<input class="form-control" name="me_n_age"  type="text" value="<?= $me_n_age ?>">
+								</div>
 							</div>
 
 							<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -642,14 +651,14 @@
 									</div>
 									<div class="radio col">
 										<label>
-											<input type="radio" name="me_n_gender" id="woman" value="woman" onclick="gender('woman')" <?php if($me_n_gender == "woman"){ echo "checked"; }?>><span class="circle"></span><span class="check"></span>
-											여자
+											<input type="radio" name="me_n_gender" id="woman" value="woman" onclick="gender('woman')" <?php if($me_n_gender == "woman"){ echo "checked";  }?>><span class="circle"></span><span class="check"></span>
+											여자 
 										</label>
 									</div>
 									
-									<div class="checkbox col">
+									<div class="checkbox col <?php if($me_n_gender == "woman"){ echo "d-none";} ?>" >
 										<label>
-											<input type="checkbox" id="military" name="me_n_isMilitary" <?php if($me_n_isMilitary == "on"){ echo "checked"; }?>>
+											<input type="checkbox" id="military"  name="me_n_isMilitary" <?php if($me_n_isMilitary == "O"){ echo "checked "; }?>>
 											병역 이행 여부
 										</label>
 									</div>
@@ -686,9 +695,6 @@
 									</div>
 								</div>
 							</div>
-
-
-						</div>
 						<input type="submit" class="btn btn-secondary btn-lg btn--half-width" value="변경">
 						<input type="button" class="btn btn-secondary btn-lg btn--half-width" data-dismiss="modal" aria-label="Close" value="취소">
 					</form>
@@ -1166,6 +1172,8 @@
 	</div>
 
 	<script>
+			
+
 		function gender(str) {
 		const Military = document.getElementById("military").parentElement.parentElement;
 		if (str == 'man') {
