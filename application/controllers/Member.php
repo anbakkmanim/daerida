@@ -26,7 +26,7 @@ class Member extends CI_Controller
         if($me_idx != null){
             location_href(site_url("/hiring/hiringList"));
         }else{
-            $this->load->view('Member/login');
+            $this->load->view('member/login');
         }
     }
 
@@ -96,14 +96,14 @@ class Member extends CI_Controller
         $data['rfield'] = $this->RegisterModel->getRField();
         $data['sfield'] = $this->RegisterModel->getSField(array('rfield' => '1'));
         $data['snstype'] = "default";
-        $this->load->view('Member/registerNormal', $data);
+        $this->load->view('member/registerNormal', $data);
     }
 
     // 기업회원 회원가입 페이지
     public function registerCompany(){
         $data['rfield'] = $this->RegisterModel->getRField();
         $data['sfield'] = $this->RegisterModel->getSField($param = array('rfield' => '1'));
-        $this->load->view('Member/registerCompany', $data);
+        $this->load->view('member/registerCompany', $data);
     }
 
     public function getLargeField(){
@@ -224,12 +224,12 @@ class Member extends CI_Controller
 
     // 아이디 찾기
     public function findId(){
-        $this->load->view('Member/findId');
+        $this->load->view('member/findId');
     }
 
     // 패스워드 찾기
     public function findPassword(){
-        $this->load->view('Member/findPassword');
+        $this->load->view('member/findPassword');
     }
 
 
@@ -344,9 +344,9 @@ class Member extends CI_Controller
         );
 
         if(!isset($career)){
-            $this->load->view('Member/profileNormal', $user_data);
+            $this->load->view('member/profileNormal', $user_data);
         } else {
-            $this->load->view('Member/profileNormal', $user_data, $career);
+            $this->load->view('member/profileNormal', $user_data, $career);
         }
     }
 
@@ -442,7 +442,7 @@ class Member extends CI_Controller
             'isFollowed' => $row2,
         );
 
-        $this->load->view('Member/profileCompany', $com_data);
+        $this->load->view('member/profileCompany', $com_data);
     }
 
 
@@ -524,7 +524,7 @@ class Member extends CI_Controller
         $data['userInfo'] = $this->ProfileModel->getUserData($data);
 
         $data['career'] = $this->ProfileModel->getPortfolio($data);
-        $this->load->view('Member/portfolio', $data);
+        $this->load->view('member/portfolio', $data);
     }
     /**
      * 커리어 추가
@@ -637,7 +637,7 @@ class Member extends CI_Controller
             $result->rfield = $this->RegisterModel->getRField();
             $result->sfield = $this->RegisterModel->getSField(array('rfield' => $result->fi_l_idx));
             $result->career = $career;
-            $this->load->view("Member/profileNormal", $result);
+            $this->load->view("member/profileNormal", $result);
         }
     }
 
@@ -663,7 +663,7 @@ class Member extends CI_Controller
             $result->sfield = $this->RegisterModel->getSField(array('rfield' => $result->fi_l_idx));
             $result->history = $history;
 
-            $this->load->view("Member/profileCompany", $result);
+            $this->load->view("member/profileCompany", $result);
         }
     }
 
@@ -672,7 +672,7 @@ class Member extends CI_Controller
 
         $data['QnA'] = $this->ProfileModel->getCompanyQnA($data);
         $data['CompanyInfo'] = $this->ProfileModel->getCompanyData($data['me_c_idx']);
-        $this->load->view("Member/rating", $data);
+        $this->load->view("member/rating", $data);
     }
 
     public function companyQuestion(){
