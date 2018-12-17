@@ -25,7 +25,7 @@
 
 <div class="container">
 	<div class="row display-flex">
-		<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mr-5">
+		<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-10 col-10 mr-5 ml-4">
 			<div class="landing-content">
 				<h1>Welcome to the DAERIDA</h1>
 				<p>데리다는 전국 스타트업 네트워크 서비스입니다. <br>
@@ -33,8 +33,8 @@
 				사람을 데리다 모집하고, 공유하고, 팀을 만들어 보세요! 
 				</p>
 				<div class="row">
-					<a href="./registerNormal" class="btn mr-4 btn-md btn-border col c-white">개인 회원가입</a>
-					<a href="./registerCompany" class="btn btn-md btn-border col c-white">기업 회원가입</a>
+					<a href="./registerNormal" class="btn mr-4 btn-md btn-border col c-white col-xl-4">개인 회원가입</a>
+					<a href="./registerCompany" class="btn btn-md btn-border col c-white col-xl-4">기업 회원가입</a>
 				</div>
 			</div>
 		</div>
@@ -53,7 +53,7 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" data-toggle="tab" href="#profile" role="tab">
-							<svg class="happy-faces-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon') ?>"></use></svg>
+						<svg class="happy-face-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-computer-icon') ?>"></use></svg>
 						</a>
 					</li>
 				</ul>
@@ -75,19 +75,19 @@
 									</div>
 			
 									<div class="remember">
-										<a href="./findid" class="forget mr-4" style="color:#888da8">Forgot my ID</a>
-										<a href="./findpassword" class="forget" style="color:#888da8">Forgot my Password</a>
+										<a href="./findid" class="forget mr-4" style="color:#888da8">아이디 찾기</a>
+										<a href="./findpassword" class="forget" style="color:#888da8">비밀번호 찾기</a>
 									</div>
-									<input href="/" type="submit" class="btn btn-lg btn-primary full-width" value="Login">
+									<input type="submit" class="btn btn-lg btn-primary full-width" value="로그인">
 			
 									<div class="or"></div>
 			
-									<a href="#" class="btn btn-lg bg-yellow full-width btn-icon-left"><i class="fab fa-kakao" aria-hidden="true"></i>카카오로 로그인하기</a>
+									<a href="#" class="btn btn-lg bg-yellow full-width btn-icon-left"><img src="/assets/SVG/Kakaoicon.svg" width="18" alt="">&nbsp; 카카오로 로그인하기</a>
 			
 									<a href="#" class="btn btn-lg bg-google full-width btn-icon-left"><i class="fab fa-google" aria-hidden="true"></i>구글로 로그인하기</a>
 			
 			
-									<p>Don’t you have an account? <a href="#">Register Now!</a> it’s really simple and you can start enjoing all the benefits!</p>
+									<p>데리다 계정이 없나요?<a href="#"> 지금 바로 가입하세요!</a> 쉽고 간편하게 데리다를 이용하실 수 있습니다!</p>
 								</div>
 							</div>
 						</form>
@@ -108,11 +108,11 @@
 									</div>
 			
 									<div class="remember">
-										<a href="#" class="forget mr-4" style="color:#888da8">Forgot my ID</a>
-										<a href="#" class="forget" style="color:#888da8">Forgot my Password</a>
+										<a href="#" class="forget mr-4" style="color:#888da8">아이디 찾기</a>
+										<a href="#" class="forget" style="color:#888da8">비밀번호 찾기</a>
 									</div>
-									<input type="submit" class="btn btn-lg btn-primary full-width" value="Login">
-									<p>Don’t you have an account? <a href="#">Register Now!</a> it’s really simple and you can start enjoing all the benefits!</p>
+									<input type="submit" class="btn btn-lg btn-primary full-width" value="로그인">
+									<p>데리다 계정이 없나요?<a href="#"> 지금 바로 가입하세요!</a> 쉽고 간편하게 데리다를 이용하실 수 있습니다!</p>
 								</div>
 							</div>
 						</form>
@@ -129,3 +129,4 @@
 </script>
 
 <?php $this->load->view('layout/footer'); ?>
+>>>>>>> 8706e103689f9da4b6f33d68060abeb95568b9c2
