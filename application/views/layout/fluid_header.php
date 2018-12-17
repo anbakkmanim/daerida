@@ -23,9 +23,6 @@
 								<a href="/subpage/about">소개</a>
 							</li>
 							<li class="nav-item" style="opacity: 1; visibility: visible;">
-								<a href="/subpage/credits">제작자</a>
-							</li>
-							<li class="nav-item" style="opacity: 1; visibility: visible;">
 								<a href="/subpage/teamterview">팀터뷰</a>
 							</li>
 							<li class="nav-item" style="opacity: 1; visibility: visible;">
