@@ -40,7 +40,7 @@ class Team extends CI_Controller
             alert('팀 생성 실패');
         }
 
-        location_href(site_url('team/teamList'));
+        location_href('/team/teamList');
     }
 
     /**
@@ -64,7 +64,7 @@ class Team extends CI_Controller
             alert('초대 실패');
         }
 
-        location_href(site_url('team/teamList'));
+        location_href('/team/teamList');
     }
 
     /**
@@ -96,7 +96,7 @@ class Team extends CI_Controller
             alert('팀 가입 신청 실패');
         }
 
-        location_href(site_url('team/hiringTeam'));
+        location_href('/team/hiringTeam');
     }
 
     /**
@@ -171,7 +171,7 @@ class Team extends CI_Controller
         }
 
         // Redirect
-        location_href(site_url('team/board?te_idx=1'));
+        location_href('/team/board?te_idx=1');
     }
 
 }

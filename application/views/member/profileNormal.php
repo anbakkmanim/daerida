@@ -25,7 +25,7 @@
 									<img src="<?= "/uploads/profile/". ($me_n_profile != null ? $me_n_profile : "default.png") ?>"  alt="author">
 								</div>
 								<div class="author-content">
-									<a href="<?= site_url('assets/#') ?>"  class="h3 author-name"><?= $me_n_name ?></a>
+									<a href="/assets/#"  class="h3 author-name"><?= $me_n_name ?></a>
 									<?php if(isset($fi_l_name)){ ?>
 										<div class="country"><?= $me_n_sido . " | " . $fi_l_name . "/" . $fi_s_name ?></div>
 									<?php }else{ ?>
@@ -39,22 +39,22 @@
 								<div class="col col-xl-8 m-auto col-lg-8 col-md-12">
 									<ul class="profile-menu">
 										<li>
-											<a href="<?= site_url('member/User?me_n_idx='.$me_n_idx.'') ?>"  class="active">정보</a>
+											<a href="<?= '/member/User?me_n_idx='.$me_n_idx.'' ?>"  class="active">정보</a>
 										</li>
 										<li>
-											<a href="<?= site_url('member/portfolio?me_n_idx='.$me_n_idx.'') ?>" >포트폴리오</a>
+											<a href="<?= '/member/portfolio?me_n_idx='.$me_n_idx.'' ?>" >포트폴리오</a>
 										</li>
 										<!-- <li>
-											<a href="<?= site_url('assets/07-ProfilePage-Photos.html') ?>" >이력서 관리</a>
+											<a href="<?= '/assets/07-ProfilePage-Photos.html' ?>" >이력서 관리</a>
 										</li> -->
 										<!-- <li>
-										<a href="<?= site_url('assets/09-ProfilePage-Videos.html') ?>" >Videos</a>
+										<a href="<?= '/assets/09-ProfilePage-Videos.html' ?>" >Videos</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/14-FavouritePage-Statistics.html') ?>" >Statistics</a>
+										<a href="<?= '/assets/14-FavouritePage-Statistics.html' ?>" >Statistics</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/15-FavouritePage-Events.html') ?>" >Events</a>
+										<a href="<?= '/assets/15-FavouritePage-Events.html' ?>" >Events</a>
 									</li> -->
 									</ul>
 								</div>
@@ -80,11 +80,11 @@
 							<div class="card-header ui-block-title" role="tab" id="headingOne">
 								<h6 class="mb-0">
 									<div class="row">
-										<a data-toggle="collapse" data-parent="#accordion" href="<?= site_url('assets/#collapseOne') ?>"  aria-expanded="true" aria-controls="collapseOne"
+										<a data-toggle="collapse" data-parent="#accordion" href="<?= '/assets/#collapseOne' ?>"  aria-expanded="true" aria-controls="collapseOne"
 										 class="col-auto mr-auto mt-2">
 											<span>경력</span>
 											<svg class="olymp-dropdown-arrow-icon">
-												<use xlink:href="<?= site_url('assets/#olymp-dropdown-arrow-icon') ?>" ></use>
+												<use xlink:href="<?= '/assets/#olymp-dropdown-arrow-icon' ?>" ></use>
 											</svg>
 										</a>
 										<?php if ($me_n_id == $this->session->me_id) {?>
@@ -142,17 +142,17 @@
 							<div class="card-header ui-block-title" role="tab" id="headingOne">
 								<h6 class="mb-0">
 									<div class="row">
-										<a data-toggle="collapse" data-parent="#accordion" href="<?= site_url('assets/#collapseTwo') ?>"  aria-expanded="true" aria-controls="collapseOne"
+										<a data-toggle="collapse" data-parent="#accordion" href="<?= '/assets/#collapseTwo' ?>"  aria-expanded="true" aria-controls="collapseOne"
 										 class="col-auto mr-auto mt-2">
 											<span>학력</span>
 											<svg class="olymp-dropdown-arrow-icon">
-												<use xlink:href="<?= site_url('assets/#olymp-dropdown-arrow-icon') ?>" ></use>
+												<use xlink:href="<?= '/assets/#olymp-dropdown-arrow-icon' ?>" ></use>
 											</svg>
 										</a>
 
 										<?php if ($me_n_id == $this->session->me_id) {?>
 										<div class="col-auto">
-											<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-edu">추가<div class="ripple-container"></div></a>
+											<a href="<?= '/assets/#' ?>"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-edu">추가<div class="ripple-container"></div></a>
 										</div>
 										<?php } ?>
 									</div>
@@ -204,17 +204,17 @@
 							<div class="card-header ui-block-title" role="tab" id="headingOne">
 								<h6 class="mb-0">
 									<div class="row">
-										<a data-toggle="collapse" data-parent="#accordion" href="<?= site_url('assets/#collapseThree') ?>"  aria-expanded="true" aria-controls="collapseOne"
+										<a data-toggle="collapse" data-parent="#accordion" href="<?= '/assets/#collapseThree' ?>"  aria-expanded="true" aria-controls="collapseOne"
 										 class="col-auto mr-auto mt-2">
 											<span>자격증</span>
 											<svg class="olymp-dropdown-arrow-icon">
-												<use xlink:href="<?= site_url('assets/#olymp-dropdown-arrow-icon') ?>" ></use>
+												<use xlink:href="<?= '/assets/#olymp-dropdown-arrow-icon' ?>" ></use>
 											</svg>
 										</a>
 
 										<?php if ($me_n_id == $this->session->me_id) {?>
 										<div class="col-auto">
-											<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-card">추가<div class="ripple-container"></div></a>
+											<a href="<?= '/assets/#' ?>"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-card">추가<div class="ripple-container"></div></a>
 										</div>
 										<?php } ?>
 									</div>
@@ -331,7 +331,7 @@
 						<!-- W-Socials -->
 
 						<?php if ($me_n_id == $this->session->me_id) {?>
-						<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary mb-0 d-block" data-toggle="modal" data-target="#update-profile" >프로필 수정</a>
+						<a href="<?= '/assets/#' ?>"  class="btn btn-primary mb-0 d-block" data-toggle="modal" data-target="#update-profile">프로필 수정</a>
 						<?php } ?>
 					</div>
 				</div>
@@ -344,9 +344,9 @@
 	 aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered window-popup create-photo-album" role="document">
 			<div class="modal-content">
-				<a href="<?= site_url('assets/#') ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<a href="<?= '/assets/#' ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
 					<svg class="olymp-close-icon">
-						<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>" ></use>
+						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>" ></use>
 					</svg>
 				</a>
 
@@ -398,9 +398,9 @@
 	<div class="modal fade" id="create-edu" tabindex="-1" role="dialog" aria-labelledby="create-photo-album" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered window-popup create-photo-album" role="document">
 			<div class="modal-content">
-				<a href="<?= site_url('assets/#') ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<a href="<?= '/assets/#' ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
 					<svg class="olymp-close-icon">
-						<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>" ></use>
+						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>" ></use>
 					</svg>
 				</a>
 
@@ -450,9 +450,9 @@
 	<div class="modal fade" id="create-card" tabindex="-1" role="dialog" aria-labelledby="create-card" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered window-popup create-photo-album" role="document">
 			<div class="modal-content">
-				<a href="<?= site_url('assets/#') ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<a href="<?= '/assets/#' ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
 					<svg class="olymp-close-icon">
-						<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>" ></use>
+						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>" ></use>
 					</svg>
 				</a>
 
@@ -511,9 +511,9 @@
 	 aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered window-popup create-photo-album" role="document">
 			<div class="modal-content">
-				<a href="<?= site_url('assets/#') ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<a href="<?= '/assets/#' ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
 					<svg class="olymp-close-icon">
-						<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>" ></use>
+						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>" ></use>
 					</svg>
 				</a>
 
@@ -674,7 +674,7 @@
 										<input id="upload-profile" class="file-upload__input" type="file" name="me_n_profile">
 									</div>
 									<div id="uploaded-file" class="d-inline-block">
-										<img id="preview-profile" src="<?= site_url('/uploads/profile/'.$me_n_profile)?> ">
+										<img id="preview-profile" src="<?= '/uploads/profile/'.$me_n_profile ?>">
 									</div>
 								</div>
 							</div>
@@ -713,9 +713,9 @@
 	 aria-hidden="true">
 		<div class="modal-dialog window-popup update-header-photo" role="document">
 			<div class="modal-content">
-				<a href="<?= site_url('assets/#') ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<a href="<?= '/assets/#' ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
 					<svg class="olymp-close-icon">
-						<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>" ></use>
+						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>" ></use>
 					</svg>
 				</a>
 
@@ -724,19 +724,19 @@
 				</div>
 
 				<div class="modal-body">
-					<a href="<?= site_url('assets/#') ?>"  class="upload-photo-item">
+					<a href="<?= '/assets/#' ?>"  class="upload-photo-item">
 						<svg class="olymp-computer-icon">
-							<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-computer-icon') ?>" ></use>
+							<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-computer-icon' ?>" ></use>
 						</svg>
 
 						<h6>Upload Photo</h6>
 						<span>Browse your computer.</span>
 					</a>
 
-					<a href="<?= site_url('assets/#') ?>"  class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
+					<a href="<?= '/assets/#' ?>"  class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
 
 						<svg class="olymp-photos-icon">
-							<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-photos-icon') ?>" ></use>
+							<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-photos-icon' ?>" ></use>
 						</svg>
 
 						<h6>Choose from My Photos</h6>
@@ -757,9 +757,9 @@
 		<div class="modal-dialog window-popup choose-from-my-photo" role="document">
 
 			<div class="modal-content">
-				<a href="<?= site_url('assets/#') ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<a href="<?= '/assets/#' ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
 					<svg class="olymp-close-icon">
-						<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>" ></use>
+						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>" ></use>
 					</svg>
 				</a>
 				<div class="modal-header">
@@ -768,16 +768,16 @@
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link active" data-toggle="tab" href="<?= site_url('assets/#home') ?>"  role="tab" aria-expanded="true">
+							<a class="nav-link active" data-toggle="tab" href="<?= '/assets/#home' ?>"  role="tab" aria-expanded="true">
 								<svg class="olymp-photos-icon">
-									<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-photos-icon') ?>" ></use>
+									<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-photos-icon' ?>" ></use>
 								</svg>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="tab" href="<?= site_url('assets/#profile') ?>"  role="tab" aria-expanded="false">
+							<a class="nav-link" data-toggle="tab" href="<?= '/assets/#profile' ?>"  role="tab" aria-expanded="false">
 								<svg class="olymp-albums-icon">
-									<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-albums-icon') ?>" ></use>
+									<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-albums-icon' ?>" ></use>
 								</svg>
 							</a>
 						</li>
@@ -792,7 +792,7 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= site_url('assets/img/choose-photo1.jpg') ?>"  alt="photo">
+										<img src="<?= '/assets/img/choose-photo1.jpg' ?>"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -800,7 +800,7 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= site_url('assets/img/choose-photo2.jpg') ?>"  alt="photo">
+										<img src="<?= '/assets/img/choose-photo2.jpg' ?>"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -808,7 +808,7 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= site_url('assets/img/choose-photo3.jpg') ?>"  alt="photo">
+										<img src="<?= '/assets/img/choose-photo3.jpg' ?>"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -817,7 +817,7 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= site_url('assets/img/choose-photo4.jpg') ?>"  alt="photo">
+										<img src="<?= '/assets/img/choose-photo4.jpg' ?>"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -825,7 +825,7 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= site_url('assets/img/choose-photo5.jpg') ?>"  alt="photo">
+										<img src="<?= '/assets/img/choose-photo5.jpg' ?>"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -833,7 +833,7 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= site_url('assets/img/choose-photo6.jpg') ?>"  alt="photo">
+										<img src="<?= '/assets/img/choose-photo6.jpg' ?>"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -842,7 +842,7 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= site_url('assets/img/choose-photo7.jpg') ?>"  alt="photo">
+										<img src="<?= '/assets/img/choose-photo7.jpg' ?>"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -850,7 +850,7 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= site_url('assets/img/choose-photo8.jpg') ?>"  alt="photo">
+										<img src="<?= '/assets/img/choose-photo8.jpg' ?>"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -858,42 +858,42 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= site_url('assets/img/choose-photo9.jpg') ?>"  alt="photo">
+										<img src="<?= '/assets/img/choose-photo9.jpg' ?>"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
 							</div>
 
 
-							<a href="<?= site_url('assets/#') ?>"  class="btn btn-secondary btn-lg btn--half-width">Cancel</a>
-							<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-lg btn--half-width">Confirm Photo</a>
+							<a href="<?= '/assets/#' ?>"  class="btn btn-secondary btn-lg btn--half-width">Cancel</a>
+							<a href="<?= '/assets/#' ?>"  class="btn btn-primary btn-lg btn--half-width">Confirm Photo</a>
 
 						</div>
 						<div class="tab-pane" id="profile" role="tabpanel" aria-expanded="false">
 
 							<div class="choose-photo-item" data-mh="choose-item">
 								<figure>
-									<img src="<?= site_url('assets/img/choose-photo10.jpg') ?>"  alt="photo">
+									<img src="<?= '/assets/img/choose-photo10.jpg' ?>"  alt="photo">
 									<figcaption>
-										<a href="<?= site_url('assets/#') ?>" >South America Vacations</a>
+										<a href="<?= '/assets/#' ?>" >South America Vacations</a>
 										<span>Last Added: 2 hours ago</span>
 									</figcaption>
 								</figure>
 							</div>
 							<div class="choose-photo-item" data-mh="choose-item">
 								<figure>
-									<img src="<?= site_url('assets/img/choose-photo11.jpg') ?>"  alt="photo">
+									<img src="<?= '/assets/img/choose-photo11.jpg' ?>"  alt="photo">
 									<figcaption>
-										<a href="<?= site_url('assets/#') ?>" >Photoshoot Summer 2016</a>
+										<a href="<?= '/assets/#' ?>" >Photoshoot Summer 2016</a>
 										<span>Last Added: 5 weeks ago</span>
 									</figcaption>
 								</figure>
 							</div>
 							<div class="choose-photo-item" data-mh="choose-item">
 								<figure>
-									<img src="<?= site_url('assets/img/choose-photo12.jpg') ?>"  alt="photo">
+									<img src="<?= '/assets/img/choose-photo12.jpg' ?>"  alt="photo">
 									<figcaption>
-										<a href="<?= site_url('assets/#') ?>" >Amazing Street Food</a>
+										<a href="<?= '/assets/#' ?>" >Amazing Street Food</a>
 										<span>Last Added: 6 mins ago</span>
 									</figcaption>
 								</figure>
@@ -901,35 +901,35 @@
 
 							<div class="choose-photo-item" data-mh="choose-item">
 								<figure>
-									<img src="<?= site_url('assets/img/choose-photo13.jpg') ?>"  alt="photo">
+									<img src="<?= '/assets/img/choose-photo13.jpg' ?>"  alt="photo">
 									<figcaption>
-										<a href="<?= site_url('assets/#') ?>" >Graffity & Street Art</a>
+										<a href="<?= '/assets/#' ?>" >Graffity & Street Art</a>
 										<span>Last Added: 16 hours ago</span>
 									</figcaption>
 								</figure>
 							</div>
 							<div class="choose-photo-item" data-mh="choose-item">
 								<figure>
-									<img src="<?= site_url('assets/img/choose-photo14.jpg') ?>"  alt="photo">
+									<img src="<?= '/assets/img/choose-photo14.jpg' ?>"  alt="photo">
 									<figcaption>
-										<a href="<?= site_url('assets/#') ?>" >Amazing Landscapes</a>
+										<a href="<?= '/assets/#' ?>" >Amazing Landscapes</a>
 										<span>Last Added: 13 mins ago</span>
 									</figcaption>
 								</figure>
 							</div>
 							<div class="choose-photo-item" data-mh="choose-item">
 								<figure>
-									<img src="<?= site_url('assets/img/choose-photo15.jpg') ?>"  alt="photo">
+									<img src="<?= '/assets/img/choose-photo15.jpg' ?>"  alt="photo">
 									<figcaption>
-										<a href="<?= site_url('assets/#') ?>" >The Majestic Canyon</a>
+										<a href="<?= '/assets/#' ?>" >The Majestic Canyon</a>
 										<span>Last Added: 57 mins ago</span>
 									</figcaption>
 								</figure>
 							</div>
 
 
-							<a href="<?= site_url('assets/#') ?>"  class="btn btn-secondary btn-lg btn--half-width">Cancel</a>
-							<a href="<?= site_url('assets/#') ?>"  class="btn btn-primary btn-lg disabled btn--half-width">Confirm Photo</a>
+							<a href="<?= '/assets/#' ?>"  class="btn btn-secondary btn-lg btn--half-width">Cancel</a>
+							<a href="<?= '/assets/#' ?>"  class="btn btn-primary btn-lg disabled btn--half-width">Confirm Photo</a>
 						</div>
 					</div>
 				</div>
@@ -941,8 +941,8 @@
 	<!-- ... end Window-popup Choose from my Photo -->
 
 
-	<a class="back-to-top" href="<?= site_url('assets/#') ?>" >
-		<img src="<?= site_url('assets/svg-icons/back-to-top.svg') ?>"  alt="arrow" class="back-icon">
+	<a class="back-to-top" href="<?= '/assets/#' ?>" >
+		<img src="<?= '/assets/svg-icons/back-to-top.svg' ?>"  alt="arrow" class="back-icon">
 	</a>
 
 
@@ -959,10 +959,10 @@
 				<h6 class="title">Chat</h6>
 				<div class="more">
 					<svg class="olymp-three-dots-icon">
-						<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>" ></use>
+						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon' ?>" ></use>
 					</svg>
 					<svg class="olymp-little-delete js-chat-open">
-						<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-little-delete') ?>" ></use>
+						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-little-delete' ?>" ></use>
 					</svg>
 				</div>
 			</div>
@@ -971,7 +971,7 @@
 					<ul class="notification-list chat-message chat-message-field">
 						<li>
 							<div class="author-thumb">
-								<img src="<?= site_url('assets/img/avatar14-sm.jpg') ?>"  alt="author" class="mCS_img_loaded">
+								<img src="<?= '/assets/img/avatar14-sm.jpg' ?>"  alt="author" class="mCS_img_loaded">
 							</div>
 							<div class="notification-event">
 								<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling
@@ -983,7 +983,7 @@
 
 						<li>
 							<div class="author-thumb">
-								<img src="<?= site_url('assets/img/author-page.jpg') ?>"  alt="author" class="mCS_img_loaded">
+								<img src="<?= '/assets/img/author-page.jpg' ?>"  alt="author" class="mCS_img_loaded">
 							</div>
 							<div class="notification-event">
 								<span class="chat-message-item">Don’t worry Mathilda!</span>
@@ -995,7 +995,7 @@
 
 						<li>
 							<div class="author-thumb">
-								<img src="<?= site_url('assets/img/avatar14-sm.jpg') ?>"  alt="author" class="mCS_img_loaded">
+								<img src="<?= '/assets/img/avatar14-sm.jpg' ?>"  alt="author" class="mCS_img_loaded">
 							</div>
 							<div class="notification-event">
 								<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling
@@ -1013,151 +1013,151 @@
 						<label class="control-label">Press enter to post...</label>
 						<textarea class="form-control" placeholder=""></textarea>
 						<div class="add-options-message">
-							<a href="<?= site_url('assets/#') ?>"  class="options-message">
+							<a href="<?= '/assets/#' ?>"  class="options-message">
 								<svg class="olymp-computer-icon">
-									<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-computer-icon') ?>" ></use>
+									<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-computer-icon' ?>" ></use>
 								</svg>
 							</a>
 							<div class="options-message smile-block">
 
 								<svg class="olymp-happy-sticker-icon">
-									<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-happy-sticker-icon') ?>" ></use>
+									<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-sticker-icon' ?>" ></use>
 								</svg>
 
 								<ul class="more-dropdown more-with-triangle triangle-bottom-right">
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat1.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat1.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat2.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat2.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat3.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat3.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat4.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat4.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat5.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat5.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat6.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat6.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat7.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat7.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat8.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat8.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat9.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat9.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat10.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat10.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat11.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat11.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat12.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat12.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat13.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat13.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat14.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat14.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat15.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat15.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat16.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat16.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat17.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat17.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat18.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat18.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat19.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat19.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat20.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat20.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat21.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat21.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat22.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat22.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat23.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat23.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat24.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat24.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat25.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat25.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat26.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat26.png' ?>"  alt="icon">
 										</a>
 									</li>
 									<li>
-										<a href="<?= site_url('assets/#') ?>" >
-											<img src="<?= site_url('assets/img/icon-chat27.png') ?>"  alt="icon">
+										<a href="<?= '/assets/#' ?>" >
+											<img src="<?= '/assets/img/icon-chat27.png' ?>"  alt="icon">
 										</a>
 									</li>
 								</ul>

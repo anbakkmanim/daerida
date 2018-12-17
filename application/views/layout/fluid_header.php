@@ -7,8 +7,8 @@
 	
 				<a href="/" class="logo">
 					<div class="img-wrap">
-						<img src="<?= site_url('assets/img/데리다57_흰.png') ?>" alt="Olympus">
-						<img src="<?= site_url('assets/img/데리다57_주.png') ?>" alt="Olympus" class="logo-colored">
+						<img src="<?= '/assets/img/데리다57_흰.png' ?>" alt="Olympus">
+						<img src="<?= '/assets/img/데리다57_주.png' ?>" alt="Olympus" class="logo-colored">
 					</div>
 					<div class="title-block">
 						<h6 class="logo-title">DAERIDA</h6>
@@ -21,9 +21,6 @@
 						<ul>
 							<li class="nav-item" style="opacity: 1; visibility: visible;">
 								<a href="/subpage/about">소개</a>
-							</li>
-							<li class="nav-item" style="opacity: 1; visibility: visible;">
-								<a href="/subpage/credits">제작자</a>
 							</li>
 							<li class="nav-item" style="opacity: 1; visibility: visible;">
 								<a href="/subpage/teamterview">팀터뷰</a>

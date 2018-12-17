@@ -16,7 +16,7 @@ class Member extends CI_Controller
 
     // url 이 /member 까지만 적었을시 /member/login 으로 리다이렉트
     public function index(){
-        location_href(site_url('/member/login'));
+        location_href('/member/login');
     }
 
     // 세션에 자신의 인덱스가 존재하면 메인페이지 아니면 로그인 페이지로 리다이렉트
@@ -24,9 +24,9 @@ class Member extends CI_Controller
         $me_idx = $this->session->me_idx;
 
         if($me_idx != null){
-            location_href(site_url("/hiring/hiringList"));
+            location_href("/hiring/hiringList");
         }else{
-            $this->load->view('Member/login');
+            $this->load->view('member/login');
         }
     }
 
@@ -47,7 +47,7 @@ class Member extends CI_Controller
 
         if ($auth == false){
             alert("아이디 또는 비밀번호가 맞지 않습니다.");
-            location_href(site_url("/member/login"));
+            location_href("/member/login");
             return;
         } else if ($auth == "MEMBER_NORMAL_TB") {
             $type = "me_n_";
@@ -82,13 +82,13 @@ class Member extends CI_Controller
         }
 
         $this->session->set_userdata($user_data);
-        location_href(site_url("/hiring/hiringList"));
+        location_href("/hiring/hiringList");
     }
 
     // 로그아웃
     public function logout(){
         $this->session->sess_destroy();
-        alert('로그아웃 되었습니다.', site_url('/member/login'));
+        alert('로그아웃 되었습니다.', '/member/login');
     }
 
     // 일반회원 회원가입 페이지
@@ -96,14 +96,14 @@ class Member extends CI_Controller
         $data['rfield'] = $this->RegisterModel->getRField();
         $data['sfield'] = $this->RegisterModel->getSField(array('rfield' => '1'));
         $data['snstype'] = "default";
-        $this->load->view('Member/registerNormal', $data);
+        $this->load->view('member/registerNormal', $data);
     }
 
     // 기업회원 회원가입 페이지
     public function registerCompany(){
         $data['rfield'] = $this->RegisterModel->getRField();
         $data['sfield'] = $this->RegisterModel->getSField($param = array('rfield' => '1'));
-        $this->load->view('Member/registerCompany', $data);
+        $this->load->view('member/registerCompany', $data);
     }
 
     public function getLargeField(){
@@ -214,22 +214,22 @@ class Member extends CI_Controller
 
         if($result && $result2){
             alert('회원가입에 성공하였습니다.');
-            location_href(site_url('/member/login'));
+            location_href('/member/login');
         }else{
             alert("회원가입에 실패했습니다. 다시 시도해주세요");
-            location_href(site_url('/member/login'));
+            location_href('/member/login');
         }
     }
 
 
     // 아이디 찾기
     public function findId(){
-        $this->load->view('Member/findId');
+        $this->load->view('member/findId');
     }
 
     // 패스워드 찾기
     public function findPassword(){
-        $this->load->view('Member/findPassword');
+        $this->load->view('member/findPassword');
     }
 
 
@@ -344,9 +344,9 @@ class Member extends CI_Controller
         );
 
         if(!isset($career)){
-            $this->load->view('Member/profileNormal', $user_data);
+            $this->load->view('member/profileNormal', $user_data);
         } else {
-            $this->load->view('Member/profileNormal', $user_data, $career);
+            $this->load->view('member/profileNormal', $user_data, $career);
         }
     }
 
@@ -442,7 +442,7 @@ class Member extends CI_Controller
             'isFollowed' => $row2,
         );
 
-        $this->load->view('Member/profileCompany', $com_data);
+        $this->load->view('member/profileCompany', $com_data);
     }
 
 
@@ -524,7 +524,7 @@ class Member extends CI_Controller
         $data['userInfo'] = $this->ProfileModel->getUserData($data);
 
         $data['career'] = $this->ProfileModel->getPortfolio($data);
-        $this->load->view('Member/portfolio', $data);
+        $this->load->view('member/portfolio', $data);
     }
     /**
      * 커리어 추가
@@ -602,13 +602,24 @@ class Member extends CI_Controller
     public function delPortfolio(){
         $data['me_n_idx'] = $this->input->post('me_n_idx');
         $data['ca_idx'] = $this->input->post('ca_idx');
+        $data['ca_type'] = $this->input->post('ca_type');
         $result = $this->ProfileModel->delCareer($data);
         if($result){
-            alert('포트폴리오 삭제를 완료했습니다.');
-            location_href('/Member/portfolio?me_n_idx='.$data['me_n_idx']);
+            if($data['ca_type'] == "portfolio") {
+                alert('포트폴리오 삭제를 완료했습니다.');
+                location_href('/Member/portfolio?me_n_idx=' . $data['me_n_idx']);
+            }else{
+                alert('커리어 삭제를 완료했습니다.');
+                location_href('/Member/User?me_n_idx='.$data['me_n_idx']);
+            }
         }else{
-            alert('포트폴리오를 삭제하지 못했습니다');
-            location_href('/Member/portfolio?me_n_idx='.$data['me_n_idx']);
+            if($data['ca_type'] == "portfolio") {
+                alert('포트폴리오를 삭제하지 못했습니다');
+                location_href('/Member/portfolio?me_n_idx=' . $data['me_n_idx']);
+            }else{
+                alert('커리어를 삭제하지 못했습니다.');
+                location_href('/Member/User?me_n_idx='.$data['me_n_idx']);
+            }
         }
     }
 
@@ -627,7 +638,7 @@ class Member extends CI_Controller
 
         if ($result == null) {
             alert("해당 사용자가 존재하지 않습니다.");
-            location_href(site_url("/"));
+            location_href("/");
         } else {
             if(!isset($result->fi_l_idx)){
                 $result->fi_l_idx = 1;
@@ -637,7 +648,7 @@ class Member extends CI_Controller
             $result->rfield = $this->RegisterModel->getRField();
             $result->sfield = $this->RegisterModel->getSField(array('rfield' => $result->fi_l_idx));
             $result->career = $career;
-            $this->load->view("Member/profileNormal", $result);
+            $this->load->view("member/profileNormal", $result);
         }
     }
 
@@ -652,7 +663,7 @@ class Member extends CI_Controller
 
         if ($result == null) {
             alert("해당 기업이 존재하지 않습니다.");
-            location_href(site_url("/"));
+            location_href("/");
         } else {
             if(!isset($result->fi_l_idx)){
                 $result->fi_l_idx = 1;
@@ -663,7 +674,7 @@ class Member extends CI_Controller
             $result->sfield = $this->RegisterModel->getSField(array('rfield' => $result->fi_l_idx));
             $result->history = $history;
 
-            $this->load->view("Member/profileCompany", $result);
+            $this->load->view("member/profileCompany", $result);
         }
     }
 
@@ -672,7 +683,7 @@ class Member extends CI_Controller
 
         $data['QnA'] = $this->ProfileModel->getCompanyQnA($data);
         $data['CompanyInfo'] = $this->ProfileModel->getCompanyData($data['me_c_idx']);
-        $this->load->view("Member/rating", $data);
+        $this->load->view("member/rating", $data);
     }
 
     public function companyQuestion(){
