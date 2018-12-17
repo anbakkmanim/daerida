@@ -201,7 +201,12 @@
 
 			<ul class="account-settings">
 				<li>
-					<a href="#">
+					<a href="<?php
+				if ($this->session->me_type == "me_n_")
+					echo "/member/User?me_n_idx=". $this->session->me_idx;
+				else
+					echo "/member/Company?me_c_idx=". $this->session->me_idx;
+				?>">
 
 						<svg class="olymp-menu-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-menu-icon' ?>"></use></svg>
 
@@ -261,7 +266,12 @@
 
 							<ul class="account-settings">
 								<li>
-									<a href="#">
+									<a href="<?php
+				if ($this->session->me_type == "me_n_")
+					echo "/member/User?me_n_idx=". $this->session->me_idx;
+				else
+					echo "/member/Company?me_c_idx=". $this->session->me_idx;
+				?>">
                                             <svg class="olymp-menu-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-menu-icon' ?>"></use></svg>
 
 										<span>프로필 설정</span>
