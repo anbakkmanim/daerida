@@ -77,6 +77,7 @@ class Member extends CI_Controller
                 'me_password' => $row->me_c_password,
                 'me_table' => $data['me_table'],
                 'me_type' => $type
+                //왠만하면 membertable 정보 다 가져와서 세션 저장하기
             );
         }
 
@@ -94,6 +95,7 @@ class Member extends CI_Controller
     public function registerNormal(){
         $data['rfield'] = $this->RegisterModel->getRField();
         $data['sfield'] = $this->RegisterModel->getSField(array('rfield' => '1'));
+        $data['snstype'] = "default";
         $this->load->view('Member/registerNormal', $data);
     }
 
@@ -182,6 +184,11 @@ class Member extends CI_Controller
         $data['me_region'] = $this->input->post('me_region');
         $data['me_salary'] = $this->input->post('me_salary');
         $data['me_military'] = $this->input->post('me_military');
+        if($data['me_military'] == "on"){
+            $data['me_military'] = "O";
+        }else{
+            $data['me_military'] = "X";
+        }
         $data['me_info'] = $this->input->post('me_info');
 
         if($data['me_table'] == "MEMBER_NORMAL_TB") {
@@ -195,7 +202,7 @@ class Member extends CI_Controller
         }
 
         $result = $this->RegisterModel->registerUser($data);
-        
+
         $userInfo = $this->AuthModel->getCust($data);
         if($data['me_table'] == "MEMBER_NORMAL_TB"){
             $data['me_idx'] = $userInfo->me_n_idx;
@@ -296,7 +303,7 @@ class Member extends CI_Controller
         }
     }
 
-    
+
 
     /**
      * 일반 프로필 보기
@@ -362,6 +369,11 @@ class Member extends CI_Controller
         $data['me_n_phone'] = $this->input->post('me_n_phone');
         $data['me_n_sido'] = $this->input->post('me_n_sido');
         $data['me_n_isMilitary'] = $this->input->post('me_n_isMilitary');
+        if($data['me_n_isMilitary'] == "on"){
+            $data['me_n_isMilitary'] = "O";
+        }else{
+            $data['me_n_isMilitary'] = "X";
+        }
         $data['me_n_age'] = $this->input->post('me_n_age');
         $data['me_n_hopeSalary'] = $this->input->post('me_n_hopeSalary');
         $data['me_n_answer'] = $this->input->post('me_n_answer');
@@ -379,6 +391,24 @@ class Member extends CI_Controller
 
         if($result && $result2){
             alert('정보 수정을 완료했습니다.');
+            $param = array(
+                "me_table" => "MEMBER_NORMAL_TB",
+                "me_type" => $this->session->me_type,
+                "me_id" => $this->session->me_id,
+                "me_password" => $this->session->me_password
+            );
+
+            $row = $this->AuthModel->getCustAfterLogin($param);
+            $user_data = array(
+                'me_idx' => $row->me_n_idx,
+                'me_name' => $row->me_n_name,
+                'me_profile' => $row->me_n_profile,
+                'me_id' => $row->me_n_id,
+                'me_password' => $row->me_n_password,
+                "me_table" => $this->session->me_table,
+                "me_type" => $this->session->me_type
+            );
+            $this->session->set_userdata($user_data);
             location_href('/Member/User?me_n_idx='.$data['me_n_idx']);
         }else{
             alert('정보를 수정하지 못했습니다');
@@ -441,6 +471,11 @@ class Member extends CI_Controller
         $data['me_c_salary'] = $this->input->post('me_c_salary');
         $data['me_c_sido'] = $this->input->post('me_c_sido');
         $data['me_c_isMilitary'] = $this->input->post('me_c_isMilitary');
+        if($data['me_c_isMilitary'] == "on"){
+            $data['me_c_isMilitary'] = "O";
+        }else{
+            $data['me_c_isMilitary'] = "X";
+        }
         $data['me_c_benefit'] = $this->input->post('me_c_benefit');
         $data['me_rfield'] = $this->input->post('me_rfield');
         $data['me_sfield'] = $this->input->post('me_sfield');
@@ -450,6 +485,25 @@ class Member extends CI_Controller
 
         if($result && $result2){
             alert('정보 수정을 완료했습니다.');
+            echo $this->session->me_table;
+            $param = array(
+                "me_table" => "MEMBER_COMPANY_TB",
+                "me_type" => $this->session->me_type,
+                "me_id" => $this->session->me_id,
+                "me_password" => $this->session->me_password
+            );
+
+            $row = $this->AuthModel->getCustAfterLogin($param);
+            $user_data = array(
+                'me_idx' => $row->me_c_idx,
+                'me_name' => $row->me_c_name,
+                'me_profile' => $row->me_c_profile,
+                'me_id' => $row->me_c_id,
+                'me_password' => $row->me_c_password,
+                "me_table" => $this->session->me_table,
+                "me_type" => $this->session->me_type
+            );
+            $this->session->set_userdata($user_data);
             location_href('/Member/Company?me_c_idx='.$data['me_c_idx']);
         }else{
             alert('정보를 수정하지 못했습니다');
@@ -569,13 +623,20 @@ class Member extends CI_Controller
         $me_n_idx = $this->input->get('me_n_idx');
 
         $result = $this->ProfileModel->getUserData($me_n_idx);
-        $result->career = $this->ProfileModel->getCareer(array('me_n_idx' => $me_n_idx));
+        $career = $this->ProfileModel->getCareer(array('me_n_idx' => $me_n_idx));
+
         if ($result == null) {
             alert("해당 사용자가 존재하지 않습니다.");
             location_href(site_url("/"));
         } else {
+            if(!isset($result->fi_l_idx)){
+                $result->fi_l_idx = 1;
+                $result->fi_s_idx = 1;
+            }
+
             $result->rfield = $this->RegisterModel->getRField();
             $result->sfield = $this->RegisterModel->getSField(array('rfield' => $result->fi_l_idx));
+            $result->career = $career;
             $this->load->view("Member/profileNormal", $result);
         }
     }
@@ -587,13 +648,21 @@ class Member extends CI_Controller
         $me_c_idx = $this->input->get("me_c_idx");
 
         $result = $this->ProfileModel->getCompanyData($me_c_idx);
-        $result->history = $this->ProfileModel->getHistory(array('me_c_idx' => $me_c_idx));
+        $history = $this->ProfileModel->getHistory(array('me_c_idx' => $me_c_idx));
+
         if ($result == null) {
             alert("해당 기업이 존재하지 않습니다.");
             location_href(site_url("/"));
         } else {
+            if(!isset($result->fi_l_idx)){
+                $result->fi_l_idx = 1;
+                $result->fi_s_idx = 1;
+            }
+
             $result->rfield = $this->RegisterModel->getRField();
             $result->sfield = $this->RegisterModel->getSField(array('rfield' => $result->fi_l_idx));
+            $result->history = $history;
+
             $this->load->view("Member/profileCompany", $result);
         }
     }
