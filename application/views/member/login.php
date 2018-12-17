@@ -87,7 +87,7 @@
 									<a href="#" class="btn btn-lg bg-google full-width btn-icon-left"><i class="fab fa-google" aria-hidden="true"></i>구글로 로그인하기</a>
 			
 			
-									<p>데리다 계정이 없나요?<a href="#"> 지금 바로 가입하세요!</a> 쉽고 간편하게 데리다를 이용하실 수 있습니다!</p>
+									<p>데리다 계정이 없나요?<a href="./registerNormal"> 지금 바로 가입하세요!</a> 쉽고 간편하게 데리다를 이용하실 수 있습니다!</p>
 								</div>
 							</div>
 						</form>
@@ -112,7 +112,7 @@
 										<a href="#" class="forget" style="color:#888da8">비밀번호 찾기</a>
 									</div>
 									<input type="submit" class="btn btn-lg btn-primary full-width" value="로그인">
-									<p>데리다 계정이 없나요?<a href="#"> 지금 바로 가입하세요!</a> 쉽고 간편하게 데리다를 이용하실 수 있습니다!</p>
+									<p>데리다 계정이 없나요?<a href="./registerCompany"> 지금 바로 가입하세요!</a> 쉽고 간편하게 데리다를 이용하실 수 있습니다!</p>
 								</div>
 							</div>
 						</form>
