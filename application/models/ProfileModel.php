@@ -115,11 +115,34 @@ Class ProfileModel extends CI_Model{
         } else {
             $me_id = $me_id['me_c_id'];
         }
+
         $sql = "
-                UPDATE FIELD_TB
-                SET fi_s_idx = ?
+                SELECT *
+                FROM FIELD_TB
                 WHERE  me_id = ?
         ";
+
+        $result = $this->db->query($sql, array($me_id));
+        $result = $result->row();
+        if($result == null) {
+            $sql = "
+                    INSERT INTO FIELD_TB(
+                                          fi_s_idx,
+                                          me_id
+                                          )
+                                          VALUES
+                                          (
+                                          ?,
+                                          ?
+                                          )
+            ";
+        }else{
+            $sql = "
+                    UPDATE FIELD_TB
+                    SET fi_s_idx = ?
+                    WHERE me_id = ?
+            ";
+        }
 
         $result = $this->db->query($sql, array($param['me_sfield'], $me_id));
 
