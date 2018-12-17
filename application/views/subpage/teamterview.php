@@ -13,7 +13,7 @@
 					<article class="hentry blog-post">
 					
 						<div class="post-thumb">
-							<img src="<?= site_url('assets/img/post1.jpg') ?>" alt="photo">
+							<img src="<?= site_url('assets/img/억장이무너진다.jpg') ?>" alt="photo">
 						</div>
 					
 						<div class="post-content">
@@ -48,7 +48,7 @@
 					<article class="hentry blog-post">
 					
 						<div class="post-thumb">
-							<img src="<?= site_url('assets/img/post2.jpg') ?>" alt="photo">
+							<img src="<?= site_url('assets/img/스마트심마니.jpg') ?>" alt="photo">
 						</div>
 					
 						<div class="post-content">
@@ -83,7 +83,7 @@
 					<article class="hentry blog-post">
 					
 						<div class="post-thumb">
-							<img src="<?= site_url('assets/img/post3.jpg') ?>" alt="photo">
+							<img src="<?= site_url('assets/img/NOA.jpg') ?>" alt="photo">
 						</div>
 					
 						<div class="post-content">
@@ -118,7 +118,7 @@
 					<article class="hentry blog-post">
 					
 						<div class="post-thumb">
-							<img src="<?= site_url('assets/img/post4.jpg') ?>" alt="photo">
+							<img src="<?= site_url('assets/img/자치차량.jpg') ?>" alt="photo">
 						</div>
 					
 						<div class="post-content">
@@ -153,12 +153,12 @@
 					<article class="hentry blog-post">
 					
 						<div class="post-thumb">
-							<img src="<?= site_url('assets/img/post5.jpg') ?>" alt="photo">
+							<img src="<?= site_url('assets/img/2U.jpg') ?>" alt="photo">
 						</div>
 					
 						<div class="post-content">
 							<a href="<?= site_url('#') ?>" class="post-category bg-blue-light">Interview</a>
-							<a href="<?= site_url('#') ?>" class="h4 post-title">피해자들의 모임</a>
+							<a href="<?= site_url('#') ?>" class="h4 post-title">2U</a>
 							<p>데이터 수집 및 자료 전송 App 개발</p>
 					
 							<div class="author-date">
@@ -188,7 +188,7 @@
 					<article class="hentry blog-post">
 					
 						<div class="post-thumb">
-							<img src="<?= site_url('assets/img/post6.jpg') ?>" alt="ph	oto">
+							<img src="<?= site_url('assets/img/도지삽니다.jpg') ?>" alt="ph	oto">
 						</div>
 					
 						<div class="post-content">
@@ -225,7 +225,7 @@
 					<article class="hentry blog-post">
 					
 						<div class="post-thumb">
-							<img src="<?= site_url('assets/img/post7.jpg') ?>" alt="photo">
+							<img src="<?= site_url('assets/img/얄리얄리.jpg') ?>" alt="photo">
 						</div>
 					
 						<div class="post-content">
@@ -260,7 +260,7 @@
 					<article class="hentry blog-post">
 					
 						<div class="post-thumb">
-							<img src="<?= site_url('assets/img/post8.jpg') ?>" alt="photo">
+							<img src="<?= site_url('assets/img/쿠키요미.jpg') ?>" alt="photo">
 						</div>
 					
 						<div class="post-content">
@@ -295,7 +295,7 @@
 					<article class="hentry blog-post">
 					
 						<div class="post-thumb">
-							<img src="<?= site_url('assets/img/post9.jpg') ?>" alt="photo">
+							<img src="<?= site_url('assets/img/떡잎마을 두부방범대.jpg') ?>" alt="photo">
 						</div>
 					
 						<div class="post-content">
