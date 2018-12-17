@@ -62,7 +62,7 @@
 							<div class="col col-lg-12 col-sm-12 col-sm-12 col-12">
 								<div class="remember">
 
-									<a href="<?= site_url('/member/findid') ?>"  class="forgot">아이디가 기억나지 않는다면?</a>
+									<a href="<?= '/member/findid' ?>"  class="forgot">아이디가 기억나지 않는다면?</a>
 								</div>
 							</div>
 					
@@ -103,9 +103,9 @@
 	 aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered window-popup create-photo-album" role="document">
 			<div class="modal-content">
-				<a href="<?= site_url('#') ?>"  class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<a href="#"  class="close icon-close" data-dismiss="modal" aria-label="Close">
 					<svg class="olymp-close-icon">
-						<use xlink:href="<?= site_url('svg-icons/sprites/icons.svg#olymp-close-icon') ?>" ></use>
+						<use xlink:href="<?= '/svg-icons/sprites/icons.svg#olymp-close-icon' ?>" ></use>
 					</svg>
 				</a>
 

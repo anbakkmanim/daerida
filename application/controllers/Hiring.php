@@ -124,10 +124,10 @@ class Hiring extends CI_Controller
 
         if ($return) {
             alert('채용 공고 작성을 성공하였습니다');
-            location_href(site_url('hiring/hiringList'));
+            location_href('/hiring/hiringList');
         } else {
             alert('채용 공고 작성 실패');
-            location_href(site_url('hiring/hiringList'));
+            location_href('/hiring/hiringList');
         }
     }
 

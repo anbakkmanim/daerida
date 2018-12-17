@@ -50,7 +50,7 @@ class Snslogin extends CI_Controller
 
                 $this->session->set_userdata($user_data);
 
-                location_href(site_url('main/login'));
+                location_href('/main/login');
             }
             else
             {
@@ -77,7 +77,7 @@ class Snslogin extends CI_Controller
 
                 $this->session->set_userdata($user_data);
 
-                alert('회원가입 처리되었습니다!\n프로필 정보에 이메일을 기입해주세요.', site_url('main/login'));
+                alert('회원가입 처리되었습니다!\n프로필 정보에 이메일을 기입해주세요.', '/main/login');
             }
     }
 
@@ -123,7 +123,7 @@ class Snslogin extends CI_Controller
             $this->session->set_userdata($user_data);
 //            print_r($row);
 //            print_r($this->session->custEmail);
-                location_href(site_url('main/login'));
+                location_href('/main/login');
         }
         else
         {
@@ -150,7 +150,7 @@ class Snslogin extends CI_Controller
 
             $this->session->set_userdata($user_data);
 
-            alert('회원가입 처리되었습니다!', site_url('main/login'));
+            alert('회원가입 처리되었습니다!', '/main/login');
         }
     }
 }

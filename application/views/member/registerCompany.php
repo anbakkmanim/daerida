@@ -847,7 +847,7 @@
 
 
 <a class="back-to-top" href="#">
-<img src="<?= site_url('assets/svg-icons/back-to-top.svg') ?>" alt="arrow" class="back-icon">
+<img src="<?= '/assets/svg-icons/back-to-top.svg' ?>" alt="arrow" class="back-icon">
 </a>
 
 

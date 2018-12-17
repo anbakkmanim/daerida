@@ -13,8 +13,8 @@
 	
 				<a href="#" class="logo">
 					<div class="img-wrap">
-						<img src="<?= site_url('assets/img/데리다57_흰.png') ?>" alt="Olympus">
-						<img src="<?= site_url('assets/img/데리다57_주.png') ?>" alt="Olympus" class="logo-colored">
+						<img src="<?= '/assets/img/데리다57_흰.png' ?>" alt="Olympus">
+						<img src="<?= '/assets/img/데리다57_주.png' ?>" alt="Olympus" class="logo-colored">
 					</div>
 					<div class="title-block">
 						<h6 class="logo-title">DAERIDA</h6>
@@ -23,7 +23,7 @@
 				</a>
 	
 				<a href="#" class="open-responsive-menu js-open-responsive-menu">
-					<svg class="olymp-menu-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-menu-icon') ?>"></use></svg>
+					<svg class="olymp-menu-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-menu-icon' ?>"></use></svg>
 				</a>
 	
 				<div class="nav nav-pills nav1 header-menu">
@@ -93,12 +93,12 @@
 								<a href="#" class="nav-link">Privacy Policy</a>
 							</li>
 							<li class="close-responsive-menu js-close-responsive-menu">
-								<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+								<svg class="olymp-close-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>"></use></svg>
 							</li>
 							<li class="nav-item js-expanded-menu">
 								<a href="#" class="nav-link">
-									<svg class="olymp-menu-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-menu-icon') ?>"></use></svg>
-									<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+									<svg class="olymp-menu-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-menu-icon' ?>"></use></svg>
+									<svg class="olymp-close-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>"></use></svg>
 								</a>
 							</li>
 						</ul>
@@ -135,7 +135,7 @@
 		<div class="row">
 			<div class="col col-xl-6 m-auto col-lg-6 col-md-12 col-sm-12 col-12">
 				<div class="page-404-content">
-					<img src="<?= site_url('assets/img/404.png') ?>" alt="photo">
+					<img src="<?= '/assets/img/404.png' ?>" alt="photo">
 					<div class="crumina-module crumina-heading align-center">
 						<h2 class="h1 heading-title">A <span class="c-primary">wild ghost</span> appears! Sadly, not what you were looking for...</h2>
 						<p class="heading-text">Sorry! The page you were looking for has been moved or doesn’t exist.
@@ -163,8 +163,8 @@
 			</div>
 		</div>
 	</div>
-	<img class="first-img" alt="guy" src ="<?=site_url('assets/img/guy.png">' )?>
-	<img class="second-img" alt="rocket" src ="<?=site_url('assets/img/rocket1.png">' )?>
+	<img class="first-img" alt="guy" src ="/assets/img/guy.png">
+	<img class="second-img" alt="rocket" src ="/assets/img/rocket1.png" >
 	<div class="content-bg-wrap bg-section1"></div>
 </section>
 
@@ -175,7 +175,7 @@
 	<div class="modal-dialog window-popup registration-login-form-popup" role="document">
 		<div class="modal-content">
 			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
-				<svg class="olymp-close-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-close-icon') ?>"></use></svg>
+				<svg class="olymp-close-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>"></use></svg>
 			</a>
 			<div class="modal-body">
 				<div class="registration-login-form">
@@ -184,14 +184,14 @@
 						<li class="nav-item">
 							<a class="nav-link active" data-toggle="tab" href="#home1" role="tab">
 								<svg class="olymp-login-icon">
-									<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-login-icon') ?>"></use>
+									<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-login-icon' ?>"></use>
 								</svg>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" data-toggle="tab" href="#profile1" role="tab">
 								<svg class="olymp-register-icon">
-									<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-register-icon') ?>"></use>
+									<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-register-icon' ?>"></use>
 								</svg>
 							</a>
 						</li>
@@ -229,7 +229,7 @@
 											<label class="control-label">Your Birthday</label>
 											<input name="datetimepicker" value="10/24/1984" />
 											<span class="input-group-addon">
-											<svg class="olymp-calendar-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-calendar-icon') ?>"></use></svg>
+											<svg class="olymp-calendar-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
 										</span>
 										</div>
 
@@ -319,7 +319,7 @@
 				
 					<a href="02-ProfilePage.html" class="logo">
 						<div class="img-wrap">
-							<img src="<?= site_url('assets/img/데리다57_주.png') ?>" alt="Olympus">
+							<img src="<?= '/assets/img/데리다57_주.png' ?>" alt="Olympus">
 						</div>
 						<div class="title-block">
 							<h6 class="logo-title">DAERIDA</h6>
@@ -484,8 +484,8 @@
 			<span class="icon-status online"></span>
 			<h6 class="title" >Chat</h6>
 			<div class="more">
-				<svg class="olymp-three-dots-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots') ?>-icon"></use></svg>
-				<svg class="olymp-little-delete js-chat-open"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-little-delete') ?>"></use></svg>
+				<svg class="olymp-three-dots-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-three-dots' ?>-icon"></use></svg>
+				<svg class="olymp-little-delete js-chat-open"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-little-delete' ?>"></use></svg>
 			</div>
 		</div>
 		<div class="modal-body">
@@ -493,7 +493,7 @@
 				<ul class="notification-list chat-message chat-message-field">
 					<li>
 						<div class="author-thumb">
-							<img src="<?= site_url('assets/img/avatar14-sm.jpg') ?>" alt="author" class="mCS_img_loaded">
+							<img src="<?= '/assets/img/avatar14-sm.jpg' ?>" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks</span>
@@ -503,7 +503,7 @@
 
 					<li>
 						<div class="author-thumb">
-							<img src="<?= site_url('assets/img/author-page.jpg') ?>" alt="author" class="mCS_img_loaded">
+							<img src="<?= '/assets/img/author-page.jpg' ?>" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Don’t worry Mathilda!</span>
@@ -514,7 +514,7 @@
 
 					<li>
 						<div class="author-thumb">
-							<img src="<?= site_url('assets/img/avatar14-sm.jpg') ?>" alt="author" class="mCS_img_loaded">
+							<img src="<?= '/assets/img/avatar14-sm.jpg' ?>" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks</span>
@@ -531,146 +531,146 @@
 			<textarea class="form-control" placeholder=""></textarea>
 			<div class="add-options-message">
 				<a href="#" class="options-message">
-					<svg class="olymp-computer-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-computer-icon') ?>"></use></svg>
+					<svg class="olymp-computer-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-computer-icon' ?>"></use></svg>
 				</a>
 				<div class="options-message smile-block">
 
-					<svg class="olymp-happy-sticker-icon"><use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-happy-sticker') ?>-icon"></use></svg>
+					<svg class="olymp-happy-sticker-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-sticker' ?>-icon"></use></svg>
 
 					<ul class="more-dropdown more-with-triangle triangle-bottom-right">
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat1.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat1.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat2.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat2.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat3.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat3.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat4.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat4.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat5.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat5.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat6.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat6.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat7.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat7.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat8.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat8.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat9.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat9.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat10.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat10.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat11.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat11.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat12.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat12.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat13.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat13.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat14.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat14.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat15.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat15.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat16.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat16.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat17.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat17.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat18.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat18.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat19.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat19.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat20.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat20.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat21.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat21.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat22.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat22.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat23.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat23.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat24.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat24.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat25.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat25.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat26.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat26.png' ?>" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="<?= site_url('assets/img/icon-chat27.png') ?>" alt="icon">
+								<img src="<?= '/assets/img/icon-chat27.png' ?>" alt="icon">
 							</a>
 						</li>
 					</ul>
@@ -689,7 +689,7 @@
 
 
 <a class="back-to-top" href="#">
-	<img src="<?= site_url('assets/svg-icons/back-to-top.svg') ?>" alt="arrow" class="back-icon">
+	<img src="<?= '/assets/svg-icons/back-to-top.svg' ?>" alt="arrow" class="back-icon">
 </a>
 
 <?php $this->load->view('layout/footer'); ?>

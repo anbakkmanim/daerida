@@ -16,7 +16,7 @@ class Member extends CI_Controller
 
     // url 이 /member 까지만 적었을시 /member/login 으로 리다이렉트
     public function index(){
-        location_href(site_url('/member/login'));
+        location_href('/member/login');
     }
 
     // 세션에 자신의 인덱스가 존재하면 메인페이지 아니면 로그인 페이지로 리다이렉트
@@ -24,7 +24,7 @@ class Member extends CI_Controller
         $me_idx = $this->session->me_idx;
 
         if($me_idx != null){
-            location_href(site_url("/hiring/hiringList"));
+            location_href("/hiring/hiringList");
         }else{
             $this->load->view('member/login');
         }
@@ -47,7 +47,7 @@ class Member extends CI_Controller
 
         if ($auth == false){
             alert("아이디 또는 비밀번호가 맞지 않습니다.");
-            location_href(site_url("/member/login"));
+            location_href("/member/login");
             return;
         } else if ($auth == "MEMBER_NORMAL_TB") {
             $type = "me_n_";
@@ -82,13 +82,13 @@ class Member extends CI_Controller
         }
 
         $this->session->set_userdata($user_data);
-        location_href(site_url("/hiring/hiringList"));
+        location_href("/hiring/hiringList");
     }
 
     // 로그아웃
     public function logout(){
         $this->session->sess_destroy();
-        alert('로그아웃 되었습니다.', site_url('/member/login'));
+        alert('로그아웃 되었습니다.', '/member/login');
     }
 
     // 일반회원 회원가입 페이지
@@ -214,10 +214,10 @@ class Member extends CI_Controller
 
         if($result && $result2){
             alert('회원가입에 성공하였습니다.');
-            location_href(site_url('/member/login'));
+            location_href('/member/login');
         }else{
             alert("회원가입에 실패했습니다. 다시 시도해주세요");
-            location_href(site_url('/member/login'));
+            location_href('/member/login');
         }
     }
 
@@ -627,7 +627,7 @@ class Member extends CI_Controller
 
         if ($result == null) {
             alert("해당 사용자가 존재하지 않습니다.");
-            location_href(site_url("/"));
+            location_href("/");
         } else {
             if(!isset($result->fi_l_idx)){
                 $result->fi_l_idx = 1;
@@ -652,7 +652,7 @@ class Member extends CI_Controller
 
         if ($result == null) {
             alert("해당 기업이 존재하지 않습니다.");
-            location_href(site_url("/"));
+            location_href("/");
         } else {
             if(!isset($result->fi_l_idx)){
                 $result->fi_l_idx = 1;
