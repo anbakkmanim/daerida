@@ -129,4 +129,3 @@
 </script>
 
 <?php $this->load->view('layout/footer'); ?>
->>>>>>> 8706e103689f9da4b6f33d68060abeb95568b9c2
