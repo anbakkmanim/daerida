@@ -602,13 +602,24 @@ class Member extends CI_Controller
     public function delPortfolio(){
         $data['me_n_idx'] = $this->input->post('me_n_idx');
         $data['ca_idx'] = $this->input->post('ca_idx');
+        $data['ca_type'] = $this->input->post('ca_type');
         $result = $this->ProfileModel->delCareer($data);
         if($result){
-            alert('포트폴리오 삭제를 완료했습니다.');
-            location_href('/Member/portfolio?me_n_idx='.$data['me_n_idx']);
+            if($data['ca_type'] == "portfolio") {
+                alert('포트폴리오 삭제를 완료했습니다.');
+                location_href('/Member/portfolio?me_n_idx=' . $data['me_n_idx']);
+            }else{
+                alert('커리어 삭제를 완료했습니다.');
+                location_href('/Member/User?me_n_idx='.$data['me_n_idx']);
+            }
         }else{
-            alert('포트폴리오를 삭제하지 못했습니다');
-            location_href('/Member/portfolio?me_n_idx='.$data['me_n_idx']);
+            if($data['ca_type'] == "portfolio") {
+                alert('포트폴리오를 삭제하지 못했습니다');
+                location_href('/Member/portfolio?me_n_idx=' . $data['me_n_idx']);
+            }else{
+                alert('커리어를 삭제하지 못했습니다.');
+                location_href('/Member/User?me_n_idx='.$data['me_n_idx']);
+            }
         }
     }
 
