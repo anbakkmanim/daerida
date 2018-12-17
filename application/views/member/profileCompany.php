@@ -71,17 +71,16 @@
 							<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" style="">
 
 								<div class="ui-block-content">
-
-									<?php foreach($history as $row){ ?>
-										<div class='col'>
+                                    <?php foreach($history as $row) { ?>
+                                        <div class='col'>
                                             <div class='card career'>
                                                 <div class='card-body p-0 pl-4 pr-4'>
                                                     <div class='row'>
                                                         <div class='col'>
                                                             <ul class='widget w-personal-info'>
                                                                 <li class='row'>
-                                                                    <h5 class='text'>".$row->hi_year."</h5>
-                                                                    <h5 class='text ml-4'>".$row->hi_content."</h5>
+                                                                    <h5 class='text'><?=$row->hi_year?></h5>
+                                                                    <h5 class='text ml-4'><?=$row->hi_content?></h5>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -89,7 +88,7 @@
                                                 </div>
                                             </div>
                                         </div>
-									<?php} ?>
+                                    <?php } ?>
 								</div>
 
 							</div>
@@ -135,12 +134,12 @@
 							</li>
 							<li>
 								<span class="title">분야:</span>
-                                <?php if(isset($fi_l_name)){?>
-                                    <div class="country"><?=$fi_l_name.'/'.$fi_s_name?></div>
-                                <?php }else{ ?>
-                                    <div class="country">미정</div>
+                                <?php if(isset($fi_l_name)){ ?>
+								    <span class="text"><?= $fi_l_name . "/" . $fi_s_name ?></span>
+							    <?php }else{ ?>
+                                    <span class="text">미정</span>
                                 <?php } ?>
-							</li>
+                            </li>
 							<li>
 								<span class="title">지역:</span>
 								<span class="text"><?= $me_c_sido ?></span>
