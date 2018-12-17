@@ -102,9 +102,6 @@
 				<div class="ui-block">
 					<div class="ui-block-title">
 						<h6 class="title">프로필</h6>
-						<a href="<?= site_url('#') ?>"  class="more"><svg class="olymp-three-dots-icon">
-								<use xlink:href="<?= site_url('assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon') ?>" ></use>
-							</svg></a>
 					</div>
 					<div class="ui-block-content">
 
