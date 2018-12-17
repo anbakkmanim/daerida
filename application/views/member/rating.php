@@ -53,20 +53,17 @@
 	<div class="row">
 		<div class="col col-xl-8 order-xl-2 col-lg-12 order-lg-1 col-sm-12 col-12">
 			<div id="newsfeed-items-grid">
-                <?php
-                    if($this->session->me_idx != $CompanyInfo->me_c_idx && $this->session->me_type == "me_n_") {
-                        echo "<div class='ui-block' >
+                <?php if($this->session->me_idx != $CompanyInfo->me_c_idx && $this->session->me_type == "me_n_") { ?>
+                        <div class='ui-block' >
                             <form action = '/member/companyQuestion' class='comment-form inline-items' method = 'POST' >
-                                <input type = 'hidden' name = 'me_c_idx' value = '$CompanyInfo->me_c_idx'' >
+                                <input type = 'hidden' name = 'me_c_idx' value = '<?=$CompanyInfo->me_c_idx?>' >
                                 <div class='post__author author vcard inline-items' >
                                         <textarea class='form-control' name = 'qna_question' ></textarea >
-        
                                 </div >
                                 <input type = 'submit' class='btn btn-md-2 btn-primary' value = '질문하기' >
                             </form >
-                        </div >";
-				    }
-				?>
+                        </div >
+                <?php   } ?>
 				<div class="ui-block">
 					<!-- Post -->
                     <?php
@@ -147,17 +144,14 @@
 
                             <?php
                         }else{?>
-                            <?php
-                            if($this->session->me_idx == $CompanyInfo->me_c_idx && $this->session->me_type == "me_c_"){
-                                echo "<form class='comment-form inline-items' action= '/member/companyAnswer' method='POST'>
-    
+                            <?php if($this->session->me_idx == $CompanyInfo->me_c_idx && $this->session->me_type == "me_c_"){ ?>
+                                <form class='comment-form inline-items' action= '/member/companyAnswer' method='POST'>
                                     <div class='post__author author vcard inline-items'>
-                                        <img src='site_url('img/author-page.jpg')' alt='author'>
-    
+                                        <img src='<?=site_url('img/author-page.jpg')?>' alt='author'>
                                         <div class='form-group with-icon-right'>
                                             <textarea class='form-control' name='qna_answer'></textarea>
                                             <div class='add-options-message'>
-                                                <a href='site_url('#')' class='options-message' data-toggle='modal'
+                                                <a href='<?=site_url('#')?>' class='options-message' data-toggle='modal'
                                                    data-target='#update-header-photo'>
                                                     <svg class='olymp-camera-icon'>
                                                         <use xlink:href='site_url('assets/svg-icons/sprites/icons.svg#olymp-camera-icon')'></use>
@@ -166,15 +160,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input type='hidden' name='me_c_idx' value='".$CompanyInfo->me_c_idx."'>
-                                    <input type='hidden' name='qna_idx' value='".$rows['co_qna_idx']."'>
+                                    <input type='hidden' name='me_c_idx' value='<?=$CompanyInfo->me_c_idx?>'>
+                                    <input type='hidden' name='qna_idx' value='<?=$rows['co_qna_idx']?>'>
                                     <input type='submit' class='btn btn-md-2 btn-primary' value='답변달기'>
 
                                     <button class='btn btn-md-2 btn-border-think c-grey btn-transparent custom-color'>취소하기
                                     </button>
-                                </form>";
-                            }
-                            ?>
+                                </form>
+                            <?php } ?>
 
                     <?php
                         }

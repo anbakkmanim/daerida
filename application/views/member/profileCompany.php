@@ -72,28 +72,24 @@
 
 								<div class="ui-block-content">
 
-									<?php
-									
-									foreach($history as $row){
-										$a = "<div class='col'>
-														<div class='card career'>
-															<div class='card-body p-0 pl-4 pr-4'>
-																<div class='row'>
-																	<div class='col'>
-																		<ul class='widget w-personal-info'>
-																			<li class='row'>
-																				<h5 class='text'>".$row->hi_year."</h5>
-																				<h5 class='text ml-4'>".$row->hi_content."</h5>
-																			</li>
-																		</ul>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>";
-											echo $a;
-									}
-									?>
+									<?php foreach($history as $row){ ?>
+										<div class='col'>
+                                            <div class='card career'>
+                                                <div class='card-body p-0 pl-4 pr-4'>
+                                                    <div class='row'>
+                                                        <div class='col'>
+                                                            <ul class='widget w-personal-info'>
+                                                                <li class='row'>
+                                                                    <h5 class='text'>".$row->hi_year."</h5>
+                                                                    <h5 class='text ml-4'>".$row->hi_content."</h5>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+									<?php} ?>
 								</div>
 
 							</div>
@@ -139,7 +135,11 @@
 							</li>
 							<li>
 								<span class="title">분야:</span>
-								<span class="text"><?= $fi_l_name . "/" . $fi_s_name ?></span>
+                                <?php if(isset($fi_l_name)){?>
+                                    <div class="country"><?=$fi_l_name.'/'.$fi_s_name?></div>
+                                <?php }else{ ?>
+                                    <div class="country">미정</div>
+                                <?php } ?>
 							</li>
 							<li>
 								<span class="title">지역:</span>

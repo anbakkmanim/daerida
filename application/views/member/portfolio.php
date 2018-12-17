@@ -19,8 +19,12 @@
 							</div>
 							<div class="author-content">
 								<a href="<?= site_url('#') ?>" value="" class="h3 author-name"><?=$userInfo->me_n_name?></a>
-								<div class="country"><?=$userInfo->me_n_sido?>  |  <?=$userInfo->fi_l_name.'/'.$userInfo->fi_s_name?></div>
-							</div>
+                                <?php if(isset($userInfo->fi_l_name)){?>
+								    <div class="country"><?=$userInfo->me_n_sido?>  |  <?=$userInfo->fi_l_name.'/'.$userInfo->fi_s_name?></div>
+							    <?php }else{ ?>
+                                    <div class="country"><?=$userInfo->me_n_sido?>  |  미정</div>
+                                <?php } ?>
+                            </div>
 						</div>
 					</div>
 					<div class="profile-section">
@@ -276,29 +280,25 @@
 								})
 							}
 						</script>
-						<?php
-							foreach($career as $row){
-								$a = "<div class='photo-album-item-wrap col-4-width'>
-												<div class='photo-album-item' data-mh='album-item'>
-													<div class='photo-item'>
-														<img src='/assets/img/photo-item2.jpg' alt='photo'>
-														<div class='overlay overlay-dark'></div>
-														<a href='#' data-toggle='modal' data-target='#open-photo-popup-v2' onclick='getinfo(".$row->ca_idx.")' class='full-block'></a>
-													</div>
-												
-													<div class='content'>
-														<a href='#'  class='title h5'>".$row->ca_career."</a>
-														<span class='sub-title'>".$row->ca_info."</span>
-												
-														<div class='swiper-container'>
-															<div class='swiper-wrapper'></div>
-															<div class='swiper-pagination'></div>
-														</div>
-													</div>
-												</div>
-											</div>";
-											echo $a;
-							}
+						<?php foreach($career as $row){ ?>
+								<div class='photo-album-item-wrap col-4-width'>
+                                    <div class='photo-album-item' data-mh='album-item'>
+                                        <div class='photo-item'>
+                                            <img src='/assets/img/photo-item2.jpg' alt='photo'>
+                                            <div class='overlay overlay-dark'></div>
+                                            <a href='#' data-toggle='modal' data-target='#open-photo-popup-v2' onclick='getinfo(<?=$row->ca_idx?>)' class='full-block'></a>
+                                        </div>
+                                        <div class='content'>
+                                            <a href='#'  class='title h5'><?=$row->ca_career?></a>
+                                            <span class='sub-title'><?=$row->ca_info?></span>
+                                            <div class='swiper-container'>
+                                                <div class='swiper-wrapper'></div>
+                                                <div class='swiper-pagination'></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+						<?php	}
 						?>
 						
 					</div>
