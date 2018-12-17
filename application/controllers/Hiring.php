@@ -66,7 +66,7 @@ class Hiring extends CI_Controller
         $detail = $this->RecruitModel->detailRecruit($re_idx);
         $result = array(
             "resumes" => $resumes,
-            "detail" => $detail[0]
+            "detail" => isset($detail[0]) ? $detail[0] : null
         );
         $this->load->view('hiring/resumeList', $result);
     }
