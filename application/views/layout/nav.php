@@ -13,9 +13,9 @@
 			<ul class="left-menu">
 				<li>
 					<a href="#" class="js-sidebar-open">
-						<svg class="olymp-menu-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="메뉴 열기"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-menu-icon' ?>"></use></svg>
-					</a>
-				</li>
+                            <svg class="olymp-menu-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="메뉴 열기"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-menu-icon' ?>"></use></svg>
+                        </a>
+                    </li>
 				<li>
 					<a href="/hiring/hiringList">
 						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="최근 구인 공고들"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon' ?>"></use></svg>
@@ -189,12 +189,12 @@
 			<div class="control-block">
 				<div class="author-page author vcard inline-items">
 					<div class="author-thumb">
-						<img alt="author" src="<?= '/assets/img/author-page.jpg' ?>" class="avatar">
+						<img alt="author" src="<?= '/assets/img/'.$this->session->me_profile.'' ?>" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
-					<a href="/" class="author-name fn">
+					<a href="/member/User?me_n_idx=<?=$this->session->me_idx?>" class="author-name fn">
 						<div class="author-title">
-							<?= $this->session->me_name ?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= $this->session->me_profile ?>"></use></svg>
+                                <?= $this->session->me_name ?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= $this->session->me_profile ?>"></use></svg>
 						</div>
 						<span class="author-subtitle"><?php 
 							if ($this->session->me_type == "me_n_") 
@@ -307,7 +307,7 @@
 				else
 					echo "/member/Company?me_c_idx=". $this->session->me_idx;
 				?>
-				" class="author-name fn">
+				"  >
 					<div class="author-title">
 						<?= $this->session->me_name?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon' ?>"></use></svg>
 					</div>
