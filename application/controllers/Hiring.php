@@ -131,6 +131,29 @@ class Hiring extends CI_Controller
     }
 
     /**
+     * 채용공고 분야 추가
+     * @METHOD POST
+     * @MainURL hiring/fieldAdd
+     * @Params re_idx, re_fi_explain, fi_s_idx, re_fi_personal
+     */
+    public function fieldAdd() {
+        // Get Params - POST
+        $re_idx = $this->session->me_idx;
+        $re_fi_explain = $_POST['re_fi_explain'];
+        $fi_s_idx = $_POST['fi_s_idx'];
+        $re_fi_personal = $_POST['re_fi_personal'];
+
+        $return = $this->RecruitModel->addField($re_idx, $re_fi_explain, $fi_s_idx, $re_fi_personal);
+
+        if ($return) {
+            alert('분야 추가 성공');
+            location_href("/hiring/detail?re_idx=" + $re_idx);
+        } else {
+            alert('분야 추가 실패');
+        }
+    }
+
+    /**
      * 구인공고 리스트
      * @METHOD GET
      * @MainURL hiring/hiringList

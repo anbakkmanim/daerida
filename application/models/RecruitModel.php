@@ -132,6 +132,23 @@ class RecruitModel extends CI_Model
         return $this->db->query($sql, $bind)->result_array();
     }
 
+    /**
+     * @param $re_idx 채용 필드 번호
+     * @param $re_fi_explain 채용 필드 설명
+     * @param $fi_s_idx 채용 필드 소분야
+     * @param $re_fi_personal 채용 인원
+     * @return mixed SQL Value (Boolean)
+     */
+    public function addField($re_idx, $re_fi_explain, $fi_s_idx, $re_fi_personal) {
+        $sql = "insert into RECRUIT_FIELD_TB (re_idx, re_fi_explain, fi_s_idx, re_fi_explain) values (?, ?, ?, ?)";
+        $bind = array(
+            $re_idx,
+            $re_fi_explain,
+            $fi_s_idx,
+            $re_fi_personal
+        );
+        return $this->db->query($sql, $bind)->result_array();
+    }
 
     /**
      * 팔로우 한 회사의 채용 공고의 리스트를 띄웁니다.
