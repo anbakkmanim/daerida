@@ -13,7 +13,7 @@
 				<div class="top-header top-header-favorit">
 					<div class="top-header-thumb">
 						<img src="<?= '/assets/img/top-header2.jpg' ?>"  alt="nature">
-						<div class="top-header-author">
+						<div class="top-header-author mt-5">
 							<div class="author-thumb">
 								<img src= "/uploads/profile/<?= $userInfo->me_n_profile?>"  alt="author">
 							</div>
@@ -29,8 +29,8 @@
 					</div>
 					<div class="profile-section">
 						<div class="row">
-							<div class="col col-xl-8 m-auto col-lg-8 col-md-12">
-								<ul class="profile-menu">
+						<div class="col col-xl-8 m-auto">
+								<ul class="profile-menu mb-0">
 									<li>
 										<a href="<?= '/member/User?me_n_idx='.$userInfo->me_n_idx.'' ?>" >정보</a>
 									</li>
@@ -593,13 +593,13 @@
 					<h6 class="title" id="port_title">포트폴리오 제목</h6>
 				</div>
 	
-				<div class="modal-body pr-0">
+				<div class="modal-body">
 				<form action="/member/delportfolio" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="ca_idx" id ="ca_idx">
 					<input type="hidden" name="me_n_idx" value="<?=$me_n_idx?>">
 						<div class="col">
 							<fieldset disabled="">
-									<div class="form-group has-disabled is-empty mr-3">
+									<div class="form-group has-disabled is-empty">
 										<input type="text" class="form-control" id="port_info" placeholder="간단한 소개">
 									<span class="material-input"></span></div>
 								</fieldset>
@@ -607,15 +607,14 @@
 
 						<div class="col">
 							<fieldset disabled="">
-									<div class="form-group has-disabled is-empty mr-3">
+									<div class="form-group has-disabled is-empty">
 										<a id="port_file" href="#" class="form-control">포트폴리오 파일</a>
 									<span class="material-input"></span></div>
 								</fieldset>
 						</div>
 					<div class="col">
-					
-					<input type="button"  class="btn btn-primary btn-lg btn--half-width  m-0 mb-2" value="확인">
-					<input type="submit"  class="btn btn-primary btn-lg btn--half-width  m-0 ml-2 mb-2" value="삭제">
+						<input type="button"  class="btn btn-primary btn-lg btn--half-width m-0 mb-2 mr-4" value="확인">
+						<input type="submit"  class="btn btn-primary btn-lg btn--half-width m-0 mb-2" value="삭제">
 					</div>
 				</form>
 				</div>
@@ -664,7 +663,7 @@
 					</div>
 
 					<div class="col">
-						<input type="submit"  class="btn btn-primary btn-lg btn--half-width  m-0  ml-4 mb-2" value="등록">
+						<input type="submit"  class="btn btn-primary btn-lg btn--half-width  m-0 mb-2 mr-4" value="등록">
 						<input type="button"  class="btn btn-primary btn-lg btn--half-width  m-0 mb-2" value="취소">
 					</div>
 				</form>

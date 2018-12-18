@@ -2,7 +2,7 @@
 <?php $this->load->view('layout/nav'); ?>
 
 <?php
-	if ($me_n_isOpen == "비공개" && $me_n_id != $this->session->me_id)
+	if ($me_n_isOpen == "비공개" && $me_n_id != $this->session->me_id && $this->session->me_type == "me_n_")
 	{
 		alert("비공개 계정입니다.");
 		location_previous();
@@ -14,13 +14,13 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
 				<div class="ui-block">
 					<div class="top-header top-header-favorit">
 						<div class="top-header-thumb">
 							<!-- dummy img -->
 							<img src="https://loremflickr.com/1368/472"  alt="nature">
-							<div class="top-header-author">
+							<div class="top-header-author mt-5">
 								<div class="author-thumb">
 									<img src="<?= "/uploads/profile/". ($me_n_profile != null ? $me_n_profile : "default.png") ?>"  alt="author">
 								</div>
@@ -36,26 +36,14 @@
 						</div>
 						<div class="profile-section">
 							<div class="row">
-								<div class="col col-xl-8 m-auto col-lg-8 col-md-12">
-									<ul class="profile-menu">
+								<div class="col col-xl-8 m-auto">
+									<ul class="profile-menu mb-0	">
 										<li>
 											<a href="<?= '/member/User?me_n_idx='.$me_n_idx.'' ?>"  class="active">정보</a>
 										</li>
 										<li>
 											<a href="<?= '/member/portfolio?me_n_idx='.$me_n_idx.'' ?>" >포트폴리오</a>
 										</li>
-										<!-- <li>
-											<a href="<?= '/assets/07-ProfilePage-Photos.html' ?>" >이력서 관리</a>
-										</li> -->
-										<!-- <li>
-										<a href="<?= '/assets/09-ProfilePage-Videos.html' ?>" >Videos</a>
-									</li>
-									<li>
-										<a href="<?= '/assets/14-FavouritePage-Statistics.html' ?>" >Statistics</a>
-									</li>
-									<li>
-										<a href="<?= '/assets/15-FavouritePage-Events.html' ?>" >Events</a>
-									</li> -->
 									</ul>
 								</div>
 							</div>
@@ -102,10 +90,14 @@
 									<?php foreach($career as $row){
 										if($row->ca_type == "career"){ ?>
 											<div class='col'>
+											<form action="/member/delportfolio" method="post">
+											<input type="hidden" name="me_n_idx" value=<?=$me_n_idx?>>
+											<input type="hidden" name="ca_idx" value=<?=$row->ca_idx?>>
+											<input type="hidden" name="ca_type" value="career">
 														<div class='card career'>
 															<div class='card-body'>
 																<div class='row'>
-																	<div class='col-sm-2'>
+																	<div class='col-sm-12 col-lg-3 col-6'>
 																		<img src='/uploads/profile/<?=$row->ca_image?>' class='rounded float-left' alt='...'>
 																	</div>
 																	<div class='col'>
@@ -116,14 +108,13 @@
 																			</li>
 																		</ul>
 																	</div>
-																	<div class='col'>
-																		<button type='button' class='close mt-2' aria-label='Close'>
-																			<span aria-hidden='true'>&times;</span>
-																		</button>
+																	<div class='col col-sm-2 mt-2'>
+																		<input type="submit" value="삭제">
 																	</div>
 																</div>
 															</div>
 														</div>
+														</form>
 													</div>
 									<?php	}
 									}
@@ -165,10 +156,14 @@
 								<?php foreach($career as $row){
 										if($row->ca_type == "educate"){ ?>
 										<div class='col'>
+										<form action="/member/delportfolio" method="post">
+											<input type="hidden" name="me_n_idx" value=<?=$me_n_idx?>>
+											<input type="hidden" name="ca_idx" value=<?=$row->ca_idx?>>
+											<input type="hidden" name="ca_type" value="educate">
 														<div class='card career'>
 															<div class='card-body'>
 																<div class='row'>
-																	<div class='col-sm-2'>
+																	<div class='col-sm-12 col-lg-3 col-6'>
 																		<img src='/uploads/profile/<?=$row->ca_image?>'  class='rounded float-left' alt='...'>
 																	</div>
 																	<div class='col'>
@@ -179,14 +174,13 @@
 																			</li>
 																		</ul>
 																	</div>
-																	<div class='col'>
-																		<button type='button' class='close mt-2' aria-label='Close'>
-																			<span aria-hidden='true'>&times;</span>
-																		</button>
+																	<div class='col col-sm-2 mt-2'>
+																		<input type="submit" value="삭제">
 																	</div>
 																</div>
 															</div>
 														</div>
+														</FORM>
 													</div>
 									<?php	}
 									}
@@ -235,7 +229,7 @@
 											<div class='card career'>
 												<div class='card-body'>
 													<div class='row'>
-														<div class='col-sm-2'>
+														<div class='col-sm-12 col-lg-3 col-6'>
 															<img src='/uploads/profile/<?=$row->ca_image?>'  class='rounded float-left' alt='...'>
 														</div>
 														<div class='col'>
@@ -246,8 +240,8 @@
 																</li>
 															</ul>
 														</div>
-														<div class='col'>
-															<input type="submit" class="close mt-2" aria-label='Close' value="X">
+														<div class='col col-sm-2 mt-2'>
+															<input type="submit" value="삭제">
 														</div>
 													</div>
 												</div>
