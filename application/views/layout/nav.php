@@ -13,9 +13,9 @@
 			<ul class="left-menu">
 				<li>
 					<a href="#" class="js-sidebar-open">
-						<svg class="olymp-menu-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="메뉴 열기"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-menu-icon' ?>"></use></svg>
-					</a>
-				</li>
+                            <svg class="olymp-menu-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="메뉴 열기"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-menu-icon' ?>"></use></svg>
+                        </a>
+                    </li>
 				<li>
 					<a href="/hiring/hiringList">
 						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="최근 구인 공고들"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon' ?>"></use></svg>
@@ -189,12 +189,12 @@
 			<div class="control-block">
 				<div class="author-page author vcard inline-items">
 					<div class="author-thumb">
-						<img alt="author" src="<?= '/assets/img/author-page.jpg' ?>" class="avatar">
+						<img alt="author" src="<?= '/assets/img/'.$this->session->me_profile.'' ?>" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
-					<a href="/" class="author-name fn">
+					<a href="/member/User?me_n_idx=<?=$this->session->me_idx?>" class="author-name fn">
 						<div class="author-title">
-							<?= $this->session->me_name ?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= $this->session->me_profile ?>"></use></svg>
+                                <?= $this->session->me_name ?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= $this->session->me_profile ?>"></use></svg>
 						</div>
 						<span class="author-subtitle"><?php 
 							if ($this->session->me_type == "me_n_") 
@@ -307,7 +307,7 @@
 				else
 					echo "/member/Company?me_c_idx=". $this->session->me_idx;
 				?>
-				" class="author-name fn">
+				"  >
 					<div class="author-title">
 						<?= $this->session->me_name?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon' ?>"></use></svg>
 					</div>
@@ -322,6 +322,34 @@
             <?php } ?>
 		</div>
 	</div>
+
+</header>
+
+<header class="header header-responsive" id="site-header-responsive">
+
+	<!-- Tab panes -->
+	<div class="tab-content tab-content-responsive">
+
+		<div class="tab-pane " id="request" role="tabpanel">
+			<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+		</div>
+		<div class="tab-pane " id="chat" role="tabpanel">
+			<div class="mCustomScrollbar ps ps--theme_default" data-mcs-theme="dark" data-ps-id="5ebd7de9-0ca4-27c4-c7f5-a0669b21419b">
+			<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+		</div>
+
+		<div class="tab-pane" id="notification" role="tabpanel">
+			<div class="mCustomScrollbar ps ps--theme_default" data-mcs-theme="dark" data-ps-id="a59acd80-488e-fffd-6c4b-0084eb667cd6">
+			<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+				<div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+			</div>
+			<div class="ps__scrollbar-y-rail" style="top: 0px; right: 0px;">
+				<div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+			</div>
+		</div>
+
+	</div>
+	<!-- ... end  Tab panes -->
 
 </header>
 
@@ -342,7 +370,7 @@
 
 <div class="fixed-sidebar right fixed-sidebar-responsive">
 
-	<div class="fixed-sidebar-right sidebar--small" id="sidebar-right-responsive">
+	<div class="fixed-sidebar-right sidebar--small bg-info" id="sidebar-right-responsive" style="background-color: #3f4257;">
 
 	</div>
 
