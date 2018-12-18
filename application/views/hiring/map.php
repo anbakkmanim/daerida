@@ -9,12 +9,16 @@
     <div class="card d-inline-block">
       <div class="card-body">
         <div class="form-group label-floating">
-            팔로우한 회사들
-            <div class="list-group mt-3 mb-0">
-                <?php foreach ($follow as $company) { ?>
-                    <a href="/member/Company?me_c_idx=<?=$company['me_c_idx']?>"><div class="list-group-item list-group-item-action"><?=$company['me_c_name']?></div></a>
-                <?php } ?>
-            </div>
+            <?php if($this->session->me_idx == null){ ?>
+                <div class="text">로그인 이후 사용 하실 수 있습니다.</div>
+            <?php }else{ ?>
+                팔로우한 회사들
+                <div class="list-group mt-3 mb-0">
+                    <?php foreach ($follow as $company) { ?>
+                        <a href="/member/Company?me_c_idx=<?=$company['me_c_idx']?>"><div class="list-group-item list-group-item-action"><?=$company['me_c_name']?></div></a>
+                    <?php } ?>
+                </div>
+            <?php } ?>
       </div>
     </div>
   </div>
@@ -23,7 +27,7 @@
 <script src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=<?= $this->config->item('daum_map_token', 'token'); ?>&libraries=drawing,clusterer,services"></script>
 <script>
 const map = new daum.maps.Map(document.getElementById('map'), {
-	center: new daum.maps.LatLng(38.663185, 124.413770),
+	center: new daum.maps.LatLng(36.463185, 128.413770),
 	level: 12
 });
 
