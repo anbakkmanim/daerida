@@ -115,16 +115,16 @@
 
 <section class="medium-padding180 bg-body">
 	<div class="container">
-		<div class="row">
+		<!-- <div class="row">
 			<div class="col col-xl-5 col-lg-5 col-md-12 col-sm-12  m-auto">
 				<div class="crumina-module crumina-heading">
 					<div class="heading-sup-title">DAERIDA</div>
 					<h2 class="heading-title"> <span class="c-primary">데리다</span> 사용 설명서</h2>
 					<p class="heading-text">
-            데리다는 일반 로그인뿐만 아니라 구글과 카카오 계정 로그인도 지원하고 있습니다. <br>
-            포트폴리오를 나만의 체계적인 방식으로 관리할 수 있습니다.<br>
-            내가 작성한 이력서를 원하는 회사에 보낼 수 있습니다. <br>
-            만들고 싶은 프로젝트는 있는 같이 할 팀원이 부족하다면, <br>
+            데리다는 일반 로그인뿐만 아니라 구글과 카카오 계정 로그인도 지원하고 있습니다.
+            포트폴리오를 나만의 체계적인 방식으로 관리할 수 있습니다.
+            내가 작성한 이력서를 원하는 회사에 보낼 수 있습니다.
+            만들고 싶은 프로젝트는 있는 같이 할 팀원이 부족하다면,
             대회에 같이 나갈 팀원이 부족하다면 팀빌딩을 할 수 있습니다. <br><br>
             <span class="c-primary">데리다</span>는 여러분을 기다리고 있습니다.
 					</p>
@@ -133,6 +133,28 @@
 
 			<div class="col col-xl-6 col-lg-6 ml-auto col-md-12 col-sm-12  align-right">
 				<img src="/assets/img/screen_.png" alt="screen" class="negative-margin-right150">
+			</div>
+		</div> -->
+
+		<div class="col">
+			<div class="row">
+				<div class="col">
+					<div class="crumina-module crumina-heading">
+						<div class="heading-sup-title">DAERIDA</div>
+						<h2 class="heading-title"> <span class="c-primary">데리다</span> 사용 설명서</h2>
+						<p class="heading-text">
+							데리다는 일반 로그인뿐만 아니라 구글과 카카오 계정 로그인도 지원하고 있습니다.
+							포트폴리오를 나만의 체계적인 방식으로 관리할 수 있습니다.
+							내가 작성한 이력서를 원하는 회사에 보낼 수 있습니다.
+							만들고 싶은 프로젝트는 있는 같이 할 팀원이 부족하다면,
+							대회에 같이 나갈 팀원이 부족하다면 팀빌딩을 할 수 있습니다. <br><br>
+							<span class="c-primary">데리다</span>는 여러분을 기다리고 있습니다.
+						</p>
+					</div>
+				</div>
+				<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+					<img src="/assets/img/screen_.png" alt="screen" class="negative-margin-right150">
+				</div>
 			</div>
 		</div>
 
@@ -144,10 +166,10 @@
 		<div class="row mb60">
 			<div class="col col-xl-5 col-lg-5 col-md-12 col-sm-12  m-auto">
 				<div class="crumina-module crumina-heading align-center">
-					<div class="heading-sup-title">DAERIDA</div>
+					<div class="heading-sup-title">ANBAKKMANIM</div>
 					<h2 class="heading-title">안밖마님</h2>
-					<p class="heading-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore
+					<p class="heading-text">
+						소프트웨어와 하드웨어, 안과 밖을 어우르는 사람들에게 서비스를 제공하겠습니다.
 					</p>
 				</div>
 			</div>
