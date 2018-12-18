@@ -170,14 +170,14 @@
 <div class="fixed-sidebar fixed-sidebar-responsive">
 
 	<div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
-		<a href="#" class="logo js-sidebar-open" >
+		<a href="/" class="logo js-sidebar-open" >
 			<img src="<?= '/assets/img/logo.png' ?>" alt="Daerida" >
 		</a>
 
 	</div>
 
 	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
-		<a href="#" class="logo">
+		<a href="/" class="logo">
 			<div class="img-wrap" style="width:100%">
 				<img src="<?= '/assets/img/logo.png' ?>" style="height: 50px" alt="Daerida">
 			</div>
