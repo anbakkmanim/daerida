@@ -717,4 +717,28 @@ class Member extends CI_Controller
             location_href("/Member/companyQnA?me_c_idx=".$data['me_c_idx']);
         }
     }
+
+    public function follow(){
+        $data['me_n_idx'] = $this->input->post('me_n_idx');
+        $data['me_c_idx'] = $this->input->post('me_c_idx');
+
+        $result = $this->ProfileModel->follow($data);
+        $result = array(
+            "status" => $result
+        );
+
+        echo json_encode($result);
+    }
+
+    public function unFollow(){
+        $data['me_n_idx'] = $this->input->post('me_n_idx');
+        $data['me_c_idx'] = $this->input->post('me_c_idx');
+
+        $result = $this->ProfileModel->unFollow($data);
+        $result = array(
+            "status" => $result
+        );
+
+        echo json_encode($result);
+    }
 }
