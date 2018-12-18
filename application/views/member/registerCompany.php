@@ -52,10 +52,8 @@
 														console.log(data)
 														if (data == 1) {
 															alert("사용 가능한 아이디입니다.");
-															$("#submit")[0].disabled = false;
-															$("#me_id")[0].disabled = true;
-															$("#checkid")[0].disabled = true;
-
+															$("#submit").attr("disabled", false);
+															$("#me_id").attr("readonly", true);
 														} else {
 															alert("중북된 아이디입니다.");
 														}
