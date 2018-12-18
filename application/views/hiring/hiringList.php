@@ -12,26 +12,33 @@
 	<div class="row">
 		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
 			<div class="ui-block responsive-flex">
-				<div class="ui-block-title">
+				<form class="ui-block-title" action="/hiring/hiringList" method="GET">
+                    <?php if ($co_idx != null) {?>
+                        <input type="hidden" name="co_idx" value="<?= $co_idx ?>">
+                    <?php } ?>
 						<div class="w-select">
 							<fieldset class="form-group">
 								<div class="btn-group bootstrap-select form-control">
-								<select class="selectpicker form-control" tabindex="-98">
-									<option value="NU">상희바보</option>
-									<option value="NU">Favourite</option>
-									<option value="NU">Likes</option>
+								<select class="selectpicker form-control" tabindex="-98" id="typepicker" name="type">
+									<option value="me_c_name">기업 이름</option>
+									<option value="re_content">공고 제목</option>
 								</select>
 							<span class="material-input"></span></fieldset>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    $("#typepicker").val("<?= $type ?>");
+                                });
+                            </script>
 						</div>
-						<form class="w-search">
+						<div class="w-search">
 							<div class="form-group with-button is-empty">
-								<input class="form-control" type="text" placeholder="기업 검색">
+								<input class="form-control" type="text" name="keyword" placeholder="기업 검색" value="<?= $keyword ?>">
 								<button>
 									<svg class="olymp-magnifying-glass-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
 								</button>
 							<span class="material-input"></span></div>
-						</form>
-					</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
