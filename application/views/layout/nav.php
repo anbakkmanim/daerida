@@ -183,28 +183,34 @@
 				<h6 class="logo-title">Daerida</h6>
 			</div>
 		</a>
-        <?php if ($this->session->me_idx != null) { ?>
 		<div class="mCustomScrollbar" data-mcs-theme="dark">
 
 			<div class="control-block">
 				<div class="author-page author vcard inline-items">
 					<div class="author-thumb">
-						<img alt="author" src="<?= '/assets/img/'.$this->session->me_profile.'' ?>" class="avatar">
+						<img alt="author" src="/uploads/profile/<?=$this->session->me_idx != null ? ($this->session->me_profile != null ? $this->session->me_profile : "default.png") : "default.png" ?>" class="avatar" width="40px">
 						<span class="icon-status online"></span>
 					</div>
-					<a href="/member/User?me_n_idx=<?=$this->session->me_idx?>" class="author-name fn">
+					<a href="<?php if($this->session->me_idx != null){ ?>
+					            /member/User?me_n_idx=<?=$this->session->me_idx?>
+                             <?php } else { ?>
+                                #
+                             <?php } ?>"     class="author-name fn">
 						<div class="author-title">
-                                <?= $this->session->me_name ?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= $this->session->me_profile ?>"></use></svg>
+                                <?= $this->session->me_idx != null ? $this->session->me_name : "게스트"  ?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= $this->session->me_profile ?>"></use></svg>
 						</div>
-						<span class="author-subtitle"><?php 
-							if ($this->session->me_type == "me_n_") 
-								echo "일반회원";
-							else
-								echo "기업회원";
+						<span class="author-subtitle"><?php
+                            if($this->session->me_idx != null) {
+                                if ($this->session->me_type == "me_n_")
+                                    echo "일반회원";
+                                else
+                                    echo "기업회원";
+                            }
 						?></span>
 					</a>
 				</div>
 			</div>
+            <?php if($this->session->me_idx != null) { ?>
 			<div class="ui-block-title ui-block-title-small">
 				<h6 class="title">계정 설정</h6>
 			</div>
@@ -230,6 +236,7 @@
 					</a>
 				</li>
 			</ul>
+            <?php } ?>
 
 			<div class="ui-block-title ui-block-title-small">
 				<h6 class="title">데리다란?</h6>
@@ -254,7 +261,6 @@
 			</ul>
 
 		</div>
-	    <?php } ?>
     </div>
 </div>
 
