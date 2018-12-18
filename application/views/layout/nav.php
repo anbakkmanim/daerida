@@ -40,11 +40,13 @@
                             <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀 빌딩 공고"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="내 팀"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon' ?>"></use></svg>
-                        </a>
-                    </li>
+                    <?php if ($this->session->me_idx != null){ ?>
+                        <li>
+                            <a href="#">
+                                <svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="내 팀"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon' ?>"></use></svg>
+                            </a>
+                        </li>
+                    <?php } ?>
 				<?php } ?>
                     <li>
 					    <a href="#">
@@ -125,12 +127,14 @@
                             <span class="left-menu-title">팀 빌딩 공고</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY TEAM"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon' ?>"></use></svg>
-                            <span class="left-menu-title">내 팀</span>
-                        </a>
-                    </li>
+                    <?php if ($this->session->me_idx != null){ ?>
+                        <li>
+                            <a href="#">
+                                <svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY TEAM"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon' ?>"></use></svg>
+                                <span class="left-menu-title">내 팀</span>
+                            </a>
+                        </li>
+                    <?php } ?>
 				<?php } ?>
 				<li>
 					<a href="#">
