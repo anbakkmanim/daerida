@@ -325,6 +325,34 @@
 
 </header>
 
+<header class="header header-responsive" id="site-header-responsive">
+
+	<!-- Tab panes -->
+	<div class="tab-content tab-content-responsive">
+
+		<div class="tab-pane " id="request" role="tabpanel">
+			<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+		</div>
+		<div class="tab-pane " id="chat" role="tabpanel">
+			<div class="mCustomScrollbar ps ps--theme_default" data-mcs-theme="dark" data-ps-id="5ebd7de9-0ca4-27c4-c7f5-a0669b21419b">
+			<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__scrollbar-y-rail" style="top: 0px; right: 0px;"><div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+		</div>
+
+		<div class="tab-pane" id="notification" role="tabpanel">
+			<div class="mCustomScrollbar ps ps--theme_default" data-mcs-theme="dark" data-ps-id="a59acd80-488e-fffd-6c4b-0084eb667cd6">
+			<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+				<div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+			</div>
+			<div class="ps__scrollbar-y-rail" style="top: 0px; right: 0px;">
+				<div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+			</div>
+		</div>
+
+	</div>
+	<!-- ... end  Tab panes -->
+
+</header>
+
 <div class="fixed-sidebar right">
 	<div class="fixed-sidebar-right sidebar--small" id="sidebar-right">
 		<div class="mCustomScrollbar ps ps--theme_default" data-mcs-theme="dark" data-ps-id="4b473b17-ee6e-a505-e9ef-7a62401be867">
@@ -342,7 +370,7 @@
 
 <div class="fixed-sidebar right fixed-sidebar-responsive">
 
-	<div class="fixed-sidebar-right sidebar--small" id="sidebar-right-responsive">
+	<div class="fixed-sidebar-right sidebar--small bg-info" id="sidebar-right-responsive" style="background-color: #3f4257;">
 
 	</div>
 
