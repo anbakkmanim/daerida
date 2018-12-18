@@ -402,6 +402,7 @@ Class ProfileModel extends CI_Model{
                 JOIN MEMBER_NORMAL_TB as b on a.me_n_idx = b.me_n_idx
                 JOIN MEMBER_COMPANY_TB as c on a.me_c_idx = c.me_c_idx
                 WHERE a.me_c_idx = ?
+                ORDER BY a.co_qna_idx DESC
         ";
 
         $result = $this->db->query($sql, array($param['me_c_idx']));

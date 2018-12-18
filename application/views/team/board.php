@@ -2,22 +2,6 @@
 
 <?php $this->load->view('layout/nav'); ?>
 
-<div class="main-header">
-	<div class="content-bg-wrap bg-group"></div>
-	<div class="container">
-		<div class="row">
-			<div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
-				<div class="main-header-content">
-					<h1>Welcome to the Forums!</h1>
-					<p>Here in the forums you’ll be able to easily create and manage categories and topics to share with the
-	 community! We included some of the most used topics, like music, comics, movies, and community, each one with a cool
-	  and customizable illustration so you can have fun with them! </p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
 <div class="container">
 	<div class="row">
 		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -154,33 +138,33 @@
 				</div>
 				<div class="ui-block-content">
 
-					
+
 					<!-- Widget Featured Topics -->
-					
+
 					<ul class="widget w-featured-topics">
 						<li>
-							
+
 							<div class="content">
 								<a href="#" class="h6 title">The new Goddess of War trailer was launched at E3!</a>
 								<time class="entry-date updated" datetime="2017-06-24T18:18">2 hours, 16 minutes ago</time>
 							</div>
 						</li>
 						<li>
-							
+
 							<div class="content">
 								<a href="#" class="h6 title">This year’s ComixCon will have the best presentations</a>
 								<time class="entry-date updated" datetime="2017-06-24T18:18">14 hours, 36 minutes ago</time>
 							</div>
 						</li>
 						<li>
-							
+
 							<div class="content">
 								<a href="#" class="h6 title">Here are the behind-the-scenes photos of “Vilords”</a>
 								<time class="entry-date updated" datetime="2017-06-24T18:18">9 hours, 8 minutes ago</time>
 							</div>
 						</li>
 					</ul>
-					
+
 					<!-- ... end Widget Featured Topics -->
 				</div>
 			</div>
@@ -191,9 +175,9 @@
 				</div>
 				<div class="ui-block-content">
 
-					
+
 					<!-- Widget Recent Topics -->
-					
+
 					<ul class="widget w-featured-topics">
 						<li>
 							<div class="content">
@@ -224,7 +208,7 @@
 							</div>
 						</li>
 					</ul>
-					
+
 					<!-- ... end Widget Recent Topics -->
 				</div>
 			</div>

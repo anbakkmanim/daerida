@@ -18,7 +18,15 @@ class Team extends CI_Controller
      * @Params X
      */
     public function teamList() {
-        $this->load->view('team/list');
+        $data['te_idx'] = $this->input->post('te_idx');
+        $data['me_n_idx'] = $this->input->post('me_n_idx');
+        $result = $this->TeamModel->teamList($data);
+        
+        $this->load->view('team/list', $result);
+    }
+
+    public function teamWrite(){
+        $this->load->view('team/teamWrite');
     }
 
     /**

@@ -25,7 +25,7 @@
                   <ul class="widget w-personal-info item-block mt-2">
                     <li>
                       <span class="title">기업</span>
-                      <span class="text mt-1"><a href="#"><?= $recruit['me_c_name'] ?></a></span>
+                      <span class="text mt-1"><a href="<?='/member/Company?me_c_idx='.$recruit['me_c_idx']?>"><?= $recruit['me_c_name'] ?></a></span>
                     </li>
                     <li>
                       <span class="title">포트폴리오</span>
