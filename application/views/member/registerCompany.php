@@ -53,6 +53,8 @@
 														if (data == 1) {
 															alert("사용 가능한 아이디입니다.");
 															$("#submit")[0].disabled = false;
+															$("#me_id")[0].disabled = true;
+															$("#checkid")[0].disabled = true;
 
 														} else {
 															alert("중북된 아이디입니다.");
@@ -61,7 +63,7 @@
 												})
 											}
 										</script>
-									<a onclick="checkID()" class="btn btn-primary btn-lg" style="color:#fff">중복확인<div class="ripple-container"></div></a>
+									<a onclick="checkID()" class="btn btn-primary btn-lg" style="color:#fff" id="checkid">중복확인<div class="ripple-container"></div></a>
 									</div>
 									</div>
 									</div>
@@ -203,7 +205,7 @@
                   </div>
 					
 							<div class="col">
-								<button class="btn btn-primary btn-lg full-width">회원가입하기</button>
+								<button class="btn btn-primary btn-lg full-width" id="submit" disabled>회원가입하기</button>
 							</div>
 					</form>
 					
