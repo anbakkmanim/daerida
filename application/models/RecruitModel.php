@@ -76,7 +76,7 @@ class RecruitModel extends CI_Model
      * @return mixed SQL Value (Array)
      */
     public function listRecruit($co_idx) {
-        $sql = "select * from RECRUIT_TB as a join MEMBER_COMPANY_TB as b on a.co_idx = b.me_c_idx where co_idx = ?";
+        $sql = "select a.*, b.*, COUNT(c.re_fi_idx) recruitCnt from RECRUIT_TB as a join MEMBER_COMPANY_TB as b on a.co_idx = b.me_c_idx join RECRUIT_FIELD_TB as c on a.re_idx = c.re_idx where a.co_idx = ? order by re_idx desc";
         $bind = array(
             $co_idx
         );
@@ -88,7 +88,7 @@ class RecruitModel extends CI_Model
      * @return mixed SQL Value (Array)
      */
     public function allRecruit() {
-        $sql = "select a.*, b.*, COUNT(c.re_fi_idx) recruitCnt from RECRUIT_TB as a join MEMBER_COMPANY_TB as b on a.co_idx = b.me_c_idx join RECRUIT_FIELD_TB as c on a.re_idx = c.re_idx order by re_idx desc";
+        $sql = "select a.*, b.*, COUNT(c.re_fi_idx) recruitCnt from RECRUIT_TB as a join MEMBER_COMPANY_TB as b on a.co_idx = b.me_c_idx join RECRUIT_FIELD_TB as c on a.re_idx = c.re_idx group by c.re_idx order by re_idx desc";
 
         return $this->db->query($sql)->result_array();
     }

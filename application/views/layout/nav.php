@@ -30,7 +30,7 @@
 				<?php } ?>
 				<?php if ($this->session->me_type == "me_c_") {?>
                     <li>
-                        <a href="#">
+                        <a href="/hiring/broadcastWrite">
                             <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="구인 공고 작성"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
                         </a>
                     </li>
@@ -114,12 +114,12 @@
 				    </li>
                 <?php } ?>
 				<?php if ($this->session->me_type == "me_c_") { ?>
-                    <li>
-                        <a href="#">
-                            <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WRITE APPLY"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
-                            <span class="left-menu-title">구인 공고 작성</span>
-                        </a>
-                    </li>
+					<li>
+					<a href="/hiring/broadcastWrite">
+						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WRITE APPLY"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
+						<span class="left-menu-title">구인 공고 작성</span>
+					</a>
+					</li>
 				<?php } else { ?>
                     <li>
                         <a href="#">
