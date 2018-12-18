@@ -10,17 +10,28 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="margin-top: 1rem">
-			<div class="ui-block responsive-flex1200">
+		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
+			<div class="ui-block responsive-flex">
 				<div class="ui-block-title">
-					<form class="w-search">
-						<div class="form-group with-button is-empty">
-							<input class="form-control" type="text" placeholder="기업 검색">
-							<button>
-								<svg class="olymp-magnifying-glass-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
-							</button>
-						<span class="material-input"></span></div>
-					</form>
+						<div class="w-select">
+							<fieldset class="form-group">
+								<div class="btn-group bootstrap-select form-control">
+								<select class="selectpicker form-control" tabindex="-98">
+									<option value="NU">상희바보</option>
+									<option value="NU">Favourite</option>
+									<option value="NU">Likes</option>
+								</select>
+							<span class="material-input"></span></fieldset>
+						</div>
+						<form class="w-search">
+							<div class="form-group with-button is-empty">
+								<input class="form-control" type="text" placeholder="기업 검색">
+								<button>
+									<svg class="olymp-magnifying-glass-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+								</button>
+							<span class="material-input"></span></div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
