@@ -71,6 +71,22 @@ class Hiring extends CI_Controller
         $this->load->view('hiring/resumeList', $result);
     }
 
+    public function resume() {
+        if ($this->session->me_type == "me_n_") {
+            alert("잘못된 요청입니다.");
+            location_previous();
+        }
+
+        $co_idx = $this->session->me_idx;
+        $return = $this->RecruitModel->listRecruit($co_idx, null, null);
+
+        $return = array(
+          "hiringList" => $return
+        );
+        $this->load->view("hiring/resume", $return);
+
+    }
+
     /**
      * 지원 상태 변경
      * @METHOD GET
@@ -180,7 +196,8 @@ class Hiring extends CI_Controller
             "hiringList" => $return,
             "keyword" => $keyword,
             "co_idx" => $co_idx,
-            "type" => $type
+            "type" => $type,
+            "mode" => "all"
         );
         // load View
         $this->load->view('hiring/hiringList', $data);
@@ -200,7 +217,11 @@ class Hiring extends CI_Controller
             $return = array();
 
         $data = array(
-            "hiringList" => $return
+            "hiringList" => $return,
+            "keyword" => null,
+            "co_idx" => null,
+            "type" => null,
+            "mode" => "follow"
         );
 
         $this->load->view("hiring/hiringList", $data);

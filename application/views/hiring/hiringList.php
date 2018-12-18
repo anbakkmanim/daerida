@@ -7,7 +7,7 @@
 	'content' => '구인 공고들을 확인할 수 있습니다.',
 	'color' => 1
 ]); ?>
-
+<?php if($mode == "all") { ?>
 <div class="container">
 	<div class="row">
 		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
@@ -44,7 +44,7 @@
 		</div>
 	</div>
 </div>
-
+    <?php } ?>
 <section class="blog-post-wrap medium-padding80" style="padding-top: 20px; padding-bottom: 0;">
 	<div class="container">
 		<div class="row">

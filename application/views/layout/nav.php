@@ -21,13 +21,6 @@
 						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="최근 구인 공고들"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon' ?>"></use></svg>
 					</a>
 				</li>
-                <?php if ($this->session->me_idx != null){ ?>
-				<li>
-					<a href="/hiring/followList">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팔로우 한 회사의 구인"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-star-icon' ?>"></use></svg>
-					</a>
-				</li>
-				<?php } ?>
 				<?php if ($this->session->me_type == "me_c_") {?>
                     <li>
                         <a href="/hiring/broadcastWrite">
@@ -36,11 +29,19 @@
                     </li>
 
                     <li>
-                        <a href="/hiring/resumeList">
+                        <a href="/hiring/resume">
                             <svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="지원자"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
                         </a>
                     </li>
 				<?php } else { ?>
+
+                    <?php if ($this->session->me_idx != null){ ?>
+                        <li>
+                            <a href="/hiring/followList">
+                                <svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팔로우 한 회사의 구인"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-star-icon' ?>"></use></svg>
+                            </a>
+                        </li>
+                    <?php } ?>
                     <li>
                         <a href="#">
                             <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀 빌딩 공고"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
@@ -98,14 +99,6 @@
 						<span class="left-menu-title">최근 구인 공고들</span>
 					</a>
 				</li>
-                <?php if($this->session->me_idx != null){ ?>
-				    <li>
-				    	<a href="/hiring/followList">
-					    <svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Follow Job Offer"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-star-icon' ?>"></use></svg>
-				    	<span class="left-menu-title">팔로우 한 회사의 구인</span>
-				    	</a>
-				    </li>
-                <?php } ?>
 				<?php if ($this->session->me_type == "me_c_") { ?>
 					<li>
 					<a href="/hiring/broadcastWrite">
@@ -115,12 +108,21 @@
 					</li>
 
                     <li>
-                        <a href="/hiring/resumeList">
+                        <a href="/hiring/resume">
                             <svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY JOB OFFER"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
                             <span class="left-menu-title">지원자</span>
                         </a>
                     </li>
 				<?php } else { ?>
+
+                    <?php if($this->session->me_idx != null){ ?>
+                        <li>
+                            <a href="/hiring/followList">
+                                <svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Follow Job Offer"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-star-icon' ?>"></use></svg>
+                                <span class="left-menu-title">팔로우 한 회사의 구인</span>
+                            </a>
+                        </li>
+                    <?php } ?>
                     <li>
                         <a href="#">
                             <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="TEAM BUILD"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
