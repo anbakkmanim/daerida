@@ -21,6 +21,9 @@
 			<div class="nav nav-pills nav1 header-menu">
 				<div class="mCustomScrollbar ps ps--theme_default ps--active-y" data-ps-id="fb9077b8-3b61-5ba7-d178-f024b0b54a3c">
 					<ul>
+                        <li class="nav-item" style="opacity: 1; visibility: visible;">
+                            <a href="/hiring/hiringList">채용</a>
+                        </li>
 						<li class="nav-item" style="opacity: 1; visibility: visible;">
 							<a href="/subpage/about">소개</a>
 						</li>

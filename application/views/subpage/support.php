@@ -1,5 +1,5 @@
 <?php $this->load->view('layout/header'); ?>
-<?php $this->load->view('layout/fluid_header', ['title' => 'Frequently Asked Questions']); ?>
+<?php $this->load->view('layout/fluid_header', ['title' => '자주 묻는 질문들', 'intro' => '지원']); ?>
 
 
 <section class="mb60" >
