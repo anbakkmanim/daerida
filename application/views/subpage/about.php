@@ -1,6 +1,6 @@
 <?php $this->load->view('layout/header'); ?>
 
-<?php $this->load->view('layout/fluid_header', ['title' => '소개']); ?>
+<?php $this->load->view('layout/fluid_header', ['title' => '소개', 'intro' => '소개']); ?>
 
 <section class="pt120">
 	<div class="container">
