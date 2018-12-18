@@ -161,16 +161,26 @@ class Hiring extends CI_Controller
      */
     public function hiringList() {
         // Get Params - POST
+        $keyword = null;
+        $type = null;
+        $co_idx = null;
+        if (isset($_GET['type']) && ($_GET['type'] == "re_content" || $_GET['type'] == "me_c_name")) {
+            $keyword = $_GET['keyword'];
+            $type = $_GET['type'];
+        }
         if (isset($_GET['co_idx'])) {
             $co_idx = $_GET['co_idx']; // 회사 번호
             // 특정 회사에 대한 구인공고들
-            $return = $this->RecruitModel->listRecruit($co_idx);
+            $return = $this->RecruitModel->listRecruit($co_idx, $keyword, $type);
         } else {
             // 모든 회사에 대한 구인 공고들
-            $return = $this->RecruitModel->allRecruit();
+            $return = $this->RecruitModel->allRecruit($keyword, $type);
         }
         $data = array(
-            "hiringList" => $return
+            "hiringList" => $return,
+            "keyword" => $keyword,
+            "co_idx" => $co_idx,
+            "type" => $type
         );
         // load View
         $this->load->view('hiring/hiringList', $data);
