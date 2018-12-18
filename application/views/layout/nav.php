@@ -21,46 +21,44 @@
 						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="최근 구인 공고들"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon' ?>"></use></svg>
 					</a>
 				</li>
+                <?php if ($this->session->me_idx != null){ ?>
 				<li>
 					<a href="/hiring/followList">
 						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팔로우 한 회사의 구인"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-star-icon' ?>"></use></svg>
 					</a>
 				</li>
-				<?php if ($this->session->me_type == "me_n_") {?>
-				<li>
-					<a href="#">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀 빌딩 공고"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="내 팀"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon' ?>"></use></svg>
-					</a>
-				</li>
-				<li>
-				<?php } else { ?>
-				<li>
-					<a href="#">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="구인 공고 작성"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
-					</a>
-				</li>
 				<?php } ?>
-					<a href="#">
-						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="기업 구인 공고"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-weather-icon' ?>"></use></svg>
-					</a>
-				</li>
-				<?php if ($this->session->me_type == "me_n_") { ?>
-				<li>
-					<a href="/hiring/appliedList">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="구직 신청 한 공고"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
-					</a>
-				</li>
+				<?php if ($this->session->me_type == "me_c_") {?>
+									<li>
+											<a href="/hiring/broadcastWrite">
+													<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="구인 공고 작성"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
+											</a>
+									</li>
+									
+									<li>
+											<a href="/hiring/resumeList">
+													<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="지원자"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
+											</a>
+									</li>
 				<?php } else { ?>
-				<li>
-					<a href="/hiring/resumeList">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="지원자"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
-					</a>
-				</li>
+									<li>
+											<a href="#">
+													<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀 빌딩 공고"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
+											</a>
+									</li>
+									<?php if ($this->session->me_idx != null){ ?>
+                        <li>
+                            <a href="#">
+                                <svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="내 팀"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon' ?>"></use></svg>
+                            </a>
+                        </li>
+                    <?php } ?>
+									
+									<li>
+											<a href="/hiring/appliedList">
+													<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="구직 신청 한 공고"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
+											</a>
+									</li>
 				<?php } ?>
 				<li>
 					<a href="/hiring/map">
@@ -101,54 +99,50 @@
 						<span class="left-menu-title">최근 구인 공고들</span>
 					</a>
 				</li>
-				<li>
-					<a href="/hiring/followList">
-					<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Follow Job Offer"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-star-icon' ?>"></use></svg>
-					<span class="left-menu-title">팔로우 한 회사의 구인</span>
-					</a>
-				</li>
-				<?php if ($this->session->me_type == "me_n_") { ?>
+                <?php if($this->session->me_idx != null){ ?>
+				    <li>
+				    	<a href="/hiring/followList">
+					    <svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Follow Job Offer"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-star-icon' ?>"></use></svg>
+				    	<span class="left-menu-title">팔로우 한 회사의 구인</span>
+				    	</a>
+				    </li>
+                <?php } ?>
+				<?php if ($this->session->me_type == "me_c_") { ?>
 					<li>
-					<a href="#">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="TEAM BUILD"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
-						<span class="left-menu-title">팀 빌딩 공고</span>
-					</a>
-					</li>
-					<li>
-						<a href="#">
-							<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY TEAM"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon' ?>"></use></svg>
-							<span class="left-menu-title">내 팀</span>
-						</a>
-					</li>
-				<?php } else { ?>
-					<li>
-					<a href="#">
+					<a href="/hiring/broadcastWrite">
 						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WRITE APPLY"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
 						<span class="left-menu-title">구인 공고 작성</span>
 					</a>
 					</li>
-				<?php } ?>
-				
-				<li>
-					<a href="#">
-						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="JOB OFFER"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-weather-icon' ?>"></use></svg>
-						<span class="left-menu-title">기업 구인 공고</span>
-					</a>
-				</li>
-				<?php if ($this->session->me_type == "me_n_") { ?>
-				<li>
-					<a href="/hiring/appliedList">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY JOB OFFER"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
-						<span class="left-menu-title">구직 신청 한 공고</span>
-					</a>
-				</li>
+					
+					<li>
+                        <a href="/hiring/appliedList">
+                            <svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY JOB OFFER"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
+                            <span class="left-menu-title">구직 신청 한 공고</span>
+                        </a>
+                    </li>
 				<?php } else { ?>
-				<li>
-					<a href="/hiring/resumeList">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY JOB OFFER"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
-						<span class="left-menu-title">지원자</span>
-					</a>
-				</li>
+                    <li>
+                        <a href="#">
+                            <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="TEAM BUILD"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
+                            <span class="left-menu-title">팀 빌딩 공고</span>
+                        </a>
+                    </li>
+                    <?php if ($this->session->me_idx != null){ ?>
+                        <li>
+                            <a href="#">
+                                <svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY TEAM"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon' ?>"></use></svg>
+                                <span class="left-menu-title">내 팀</span>
+                            </a>
+                        </li>
+                    <?php } ?>
+										
+                    <li>
+                        <a href="/hiring/resumeList">
+                            <svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY JOB OFFER"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
+                            <span class="left-menu-title">지원자</span>
+                        </a>
+                    </li>
 				<?php } ?>
 				<li>
 					<a href="/hiring/map">
@@ -191,7 +185,7 @@
 				<h6 class="logo-title">Daerida</h6>
 			</div>
 		</a>
-        <?php if (isset($this->session->me_idx)) { ?>
+        <?php if ($this->session->me_idx != null) { ?>
 		<div class="mCustomScrollbar" data-mcs-theme="dark">
 
 			<div class="control-block">
@@ -276,8 +270,9 @@
 		<div class="control-block">
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
+                    <?php if($this->session->me_idx != null){ ?>
 					<img alt="author" src="<?= "/uploads/profile/".($this->session->me_profile != null ? $this->session->me_profile : "default.png") ?>" style="width:40px" class="avatar">
-					<div class="more-dropdown more-with-triangle">
+                    <div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar ps ps--theme_default" data-mcs-theme="dark" data-ps-id="709ba5dd-e3ff-23ee-d8ab-52f0da53e507">
 							<div class="ui-block-title ui-block-title-small">
 								<h4 class="title">내 계정</h4>
@@ -326,7 +321,7 @@
 					 ?></span>
 				</a>
 			</div>
-
+            <?php } ?>
 		</div>
 	</div>
 
