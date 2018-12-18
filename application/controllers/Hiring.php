@@ -163,7 +163,8 @@ class Hiring extends CI_Controller
         // Get Params - POST
         $keyword = null;
         $type = null;
-        if (isset($_GET['type'])) {
+        $co_idx = null;
+        if (isset($_GET['type']) && ($_GET['type'] == "re_content" || $_GET['type'] == "me_c_name")) {
             $keyword = $_GET['keyword'];
             $type = $_GET['type'];
         }
@@ -177,7 +178,9 @@ class Hiring extends CI_Controller
         }
         $data = array(
             "hiringList" => $return,
-            $keyword
+            "keyword" => $keyword,
+            "co_idx" => $co_idx,
+            "type" => $type
         );
         // load View
         $this->load->view('hiring/hiringList', $data);
