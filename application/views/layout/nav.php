@@ -26,6 +26,7 @@
 						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팔로우 한 회사의 구인"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-star-icon' ?>"></use></svg>
 					</a>
 				</li>
+				<?php if ($this->session->me_type == "me_n_") {?>
 				<li>
 					<a href="#">
 						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀 빌딩 공고"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
@@ -37,6 +38,13 @@
 					</a>
 				</li>
 				<li>
+				<?php } else { ?>
+				<li>
+					<a href="#">
+						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="구인 공고 작성"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
+					</a>
+				</li>
+				<?php } ?>
 					<a href="#">
 						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="기업 구인 공고"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-weather-icon' ?>"></use></svg>
 					</a>
@@ -99,18 +107,28 @@
 					<span class="left-menu-title">팔로우 한 회사의 구인</span>
 					</a>
 				</li>
-				<li>
+				<?php if ($this->session->me_type == "me_n_") { ?>
+					<li>
 					<a href="#">
 						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="TEAM BUILD"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
 						<span class="left-menu-title">팀 빌딩 공고</span>
 					</a>
-				</li>
-				<li>
+					</li>
+					<li>
+						<a href="#">
+							<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY TEAM"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon' ?>"></use></svg>
+							<span class="left-menu-title">내 팀</span>
+						</a>
+					</li>
+				<?php } else { ?>
+					<li>
 					<a href="#">
-						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY TEAM"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon' ?>"></use></svg>
-						<span class="left-menu-title">내 팀</span>
+						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WRITE APPLY"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
+						<span class="left-menu-title">구인 공고 작성</span>
 					</a>
-				</li>
+					</li>
+				<?php } ?>
+				
 				<li>
 					<a href="#">
 						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="JOB OFFER"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-weather-icon' ?>"></use></svg>
@@ -173,7 +191,7 @@
 				<h6 class="logo-title">Daerida</h6>
 			</div>
 		</a>
-
+        <?php if (isset($this->session->me_idx)) { ?>
 		<div class="mCustomScrollbar" data-mcs-theme="dark">
 
 			<div class="control-block">
@@ -244,7 +262,8 @@
 			</ul>
 
 		</div>
-	</div>
+	    <?php } ?>
+    </div>
 </div>
 
 <!-- ... end Fixed Sidebar Left -->
