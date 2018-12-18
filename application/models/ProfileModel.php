@@ -467,5 +467,32 @@ Class ProfileModel extends CI_Model{
         $result = $this->db->query($sql, $bind);
         return $result;
     }
+    
+    public function follow($param){
+        $sql = "INSERT INTO MEMBER_FOLLOW_TB
+                (
+                me_n_idx,
+                me_c_idx
+                )
+                VALUES
+                (
+                ?,
+                ?
+                )
+        ";
+
+        $result = $this->db->query($sql, array($param['me_n_idx'], $param['me_c_idx']));
+        return $result;
+    }
+
+    public function unFollow($param){
+        $sql = "DELETE FROM MEMBER_FOLLOW_TB
+                WHERE me_n_idx = ?
+                AND   me_c_idx = ?
+        ";
+
+        $result = $this->db->query($sql, array($param['me_n_idx'], $param['me_c_idx']));
+        return $result;
+    }
 }
 ?>

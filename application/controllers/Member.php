@@ -717,4 +717,32 @@ class Member extends CI_Controller
             location_href("/Member/companyQnA?me_c_idx=".$data['me_c_idx']);
         }
     }
+
+    public function follow(){
+        $data['me_n_idx'] = $this->input->post('me_n_idx');
+        $data['me_c_idx'] = $this->input->post('me_c_idx');
+
+        $result = $this->ProfileModel->follow($data);
+        if($result){
+            alert("즐겨찾기가 등록되었습니다.");
+            location_href("/Member/Company?me_c_idx=".$data['me_c_idx']);
+        }else{
+            alert("즐겨찾기를 등록하지 못하였습니다.");
+            location_href("/Member/Company?me_c_idx=".$data['me_c_idx']);
+        }
+    }
+
+    public function unFollow(){
+        $data['me_n_idx'] = $this->input->post('me_n_idx');
+        $data['me_c_idx'] = $this->input->post('me_c_idx');
+
+        $result = $this->ProfileModel->unFollow($data);
+        if($result){
+            alert("즐겨찾기가 해지되었습니다.");
+            location_href("/Member/Company?me_c_idx=".$data['me_c_idx']);
+        }else{
+            alert("즐겨찾기를 해지하지 못하였습니다.");
+            location_href("/Member/Company?me_c_idx=".$data['me_c_idx']);
+        }
+    }
 }
