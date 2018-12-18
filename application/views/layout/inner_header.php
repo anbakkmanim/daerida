@@ -25,7 +25,7 @@ if (!isset($color) || $color == null) {
   else if ($color == 4) echo "bg-users";
   ?>
   "></div>
-	<div class="container mb-5">
+	<div class="container">
 		<div class="row">
 			<div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
 				<div class="main-header-content">

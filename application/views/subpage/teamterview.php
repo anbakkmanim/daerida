@@ -1,5 +1,5 @@
 <?php $this->load->view('layout/header'); ?>
-<?php $this->load->view('layout/fluid_header', ['title' => 'Teamterview']); ?>
+<?php $this->load->view('layout/fluid_header', ['title' => '팀터뷰', 'intro' => '팀터뷰']); ?>
 
 <section class="blog-post-wrap medium-padding80">
 	<div class="container">
