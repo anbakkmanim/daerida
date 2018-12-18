@@ -2,40 +2,20 @@
 
 <?php $this->load->view('layout/nav'); ?>
 
+<?php $this->load->view('layout/inner_header', [
+	'title' => '구인 공고 리스트',
+	'content' => '구인 공고들을 확인할 수 있습니다.',
+	'color' => 1
+]); ?>
+
 <div class="container">
 	<div class="row">
 		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12" style="margin-top: 1rem">
 			<div class="ui-block responsive-flex1200">
 				<div class="ui-block-title">
-					<div class="w-select">
-						<div class="title">Filter By:</div>
-						<fieldset class="form-group">
-							<select class="selectpicker form-control" tabindex="-98">
-								<option value="NU">All Categories</option>
-								<option value="NU">Favourite</option>
-								<option value="NU">Likes</option>
-							</select>
-							<span class="material-input"></span>
-						</fieldset>
-					</div>
-
-					<div class="w-select">
-						<div class="title">Filter By:</div>
-						<fieldset class="form-group">
-							<select class="selectpicker form-control" tabindex="-98">
-								<option value="NU">All Categories</option>
-								<option value="NU">Favourite</option>
-								<option value="NU">Likes</option>
-							</select>
-							<span class="material-input"></span>
-						</fieldset>
-					</div>
-
-					<a href="#" data-toggle="modal" data-target="#create-photo-album" class="btn btn-primary btn-md-2">Filter</a>
-
 					<form class="w-search">
 						<div class="form-group with-button is-empty">
-							<input class="form-control" type="text" placeholder="Search Blog Posts......">
+							<input class="form-control" type="text" placeholder="기업 검색">
 							<button>
 								<svg class="olymp-magnifying-glass-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
 							</button>
@@ -68,7 +48,7 @@
                         </div>
 
                         <div class="post-content">
-                            <a href="#" class="post-category bg-purple" id="fromnow-<?= $item['re_idx']?>">
+                            <div href="#" class="post-category <?= ($item['re_endDate'] != null) ? "badge-primary" : "badge-success" ?>" id="fromnow-<?= $item['re_idx']?>">
                                 <?php
                                 if ($item['re_endDate'] != null) {
                                     ?>
@@ -82,7 +62,7 @@
                                         echo "상시모집";
                                     }
                                     ?>
-                            </a>
+                            </div>
 							<a href="/hiring/detail?re_idx=<?= $item['re_idx']?>" class="h4 post-title"><?=  $item['re_content'] ?></a>
 <!--							<p>Here’s a photo from last month’s photoshoot. We got really awesome shots for the new catalog.</p>-->
 
