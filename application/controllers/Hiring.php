@@ -107,16 +107,15 @@ class Hiring extends CI_Controller
      */
     public function recruitAdd() {
         // Get Params - POST
-        $co_idx = $_POST['co_idx']; // 회사 아이디
-        if (isset($_POST['re_startDate'])) {
+        $co_idx = $this->session->me_idx; // 회사 아이디
+        $re_startDate = null;
+        $re_endDate = null;
+        if (isset($_POST['re_startDate']) && $_POST['re_startDate'] != "")
             $re_startDate = $_POST['re_startDate']; // 구인공고 시작일
-        } else {
-            $re_startDate = null;
-        }
-        if (isset($_POST['re_endDate']))
+
+        if (isset($_POST['re_endDate']) && $_POST['re_endDate'] != "")
             $re_endDate = $_POST['re_endDate']; // 구인공고 종료일
-        else
-            $re_endDate = null;
+
         $re_content = $_POST['re_content']; // 구인공고 내용
 
         // insert 문 성공 여부
