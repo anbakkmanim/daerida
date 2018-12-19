@@ -1,4 +1,6 @@
-<?= $_SERVER['REQUEST_URI'] ?>
+<?= $_SERVER['REQUEST_URI'] != '/member/login' ? "false" : "true" ?>
+<?= $_SERVER['REQUEST_URI'] != '/hiring/map' ? "false" : "true" ?>
+<?= $_SERVER['REQUEST_URI'] != '/hiring/resumeSend' ? "false" : "true" ?>
 
 <?php if (
 	$_SERVER['REQUEST_URI'] != '/member/login' &&
