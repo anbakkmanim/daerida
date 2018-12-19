@@ -190,7 +190,7 @@ class Snslogin extends CI_Controller
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $google['token_url']);
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "client_id=" . $google['client_id'] . "&client_secret=" . $google['client_secret'] . "&grant_type=authorization_code&redirect_uri=" . site_url('/snslogin/google') . "&code" + $_GET["code"]);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "client_id=" . $google['client_id'] . "&client_secret=" . $google['client_secret'] . "&grant_type=authorization_code&redirect_uri=" . site_url('/snslogin/google') . "&code" . $_GET["code"]);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
         $response = curl_exec($ch);
