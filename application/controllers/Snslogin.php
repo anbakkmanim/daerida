@@ -185,6 +185,20 @@ class Snslogin extends CI_Controller
     }
 
     public function google() {
-        print_r($_GET);
+        $google = $this->config->item('google_login', 'token');
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $google['token_url']);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "client_id=" . $google['client_id'] . "&client_secret=" . $google['client_secret'] . "&grant_type=authorization_code&redirect_uri=" . site_url('/snslogin/google') . "&code" + $_GET["code"]);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $response = curl_exec($ch);
+        $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        // $accessToken = get_object_vars(json_decode($response));
+        // $accessToken = $accessToken['access_token'];
+
+        print_r(get_object_vars(json_decode($response)));
     }
 }
