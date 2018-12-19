@@ -7,7 +7,7 @@
 				<div class="ui-block">
 					<div class="top-header top-header-favorit">
 						<div class="top-header-thumb">
-                            <img src="<?= '/assets/img/top-header2.jpg' ?>"  alt="nature">
+                            <img src="/assets/img/top-header2.jpg"  alt="nature">
 							<div class="top-header-author mt-5">
 								<div class="author-thumb">
 									<img src="<?= "/uploads/profile/" . $me_c_profile ?>"  alt="author">
@@ -95,11 +95,11 @@
 							<div class="card-header ui-block-title" role="tab" id="headingOne">
 								<h6 class="mb-0">
 									<div class="row">
-										<a data-toggle="collapse" data-parent="#accordion" href="<?= '/#collapseOne' ?>"  aria-expanded="true" aria-controls="collapseOne"
+										<a data-toggle="collapse" data-parent="#accordion" href="/#collapseOne"  aria-expanded="true" aria-controls="collapseOne"
 										 class="col-auto mr-auto mt-2">
 											<span>연혁</span>
 											<svg class="olymp-dropdown-arrow-icon">
-												<use xlink:href="<?= '/#olymp-dropdown-arrow-icon' ?>" ></use>
+												<use xlink:href="/#olymp-dropdown-arrow-icon" ></use>
 											</svg>
 										</a>
 									
@@ -200,7 +200,7 @@
 						<!-- W-Socials -->
 					
 						<?php if ($me_c_id == $this->session->me_id) {?>
-						<a href="<?= '/assets/#' ?>"  class="btn btn-primary mb-0 d-block" data-toggle="modal" data-target="#update-profile">프로필 수정</a>
+						<a href="/assets/#"  class="btn btn-primary mb-0 d-block" data-toggle="modal" data-target="#update-profile">프로필 수정</a>
 						<?php } ?>
 					</div>
 				</div>
@@ -217,7 +217,7 @@
 			<div class="modal-content">
 				<a href="#"  class="close icon-close" data-dismiss="modal" aria-label="Close">
 					<svg class="olymp-close-icon">
-						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>" ></use>
+						<use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-close-icon" ></use>
 					</svg>
 				</a>
 			</div>
@@ -230,7 +230,7 @@
 			<div class="modal-content">
 				<a href="#"  class="close icon-close" data-dismiss="modal" aria-label="Close">
 					<svg class="olymp-close-icon">
-						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>" ></use>
+						<use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-close-icon" ></use>
 					</svg>
 				</a>
 
@@ -274,7 +274,7 @@
 			<div class="modal-content">
 				<a href="#"  class="close icon-close" data-dismiss="modal" aria-label="Close">
 					<svg class="olymp-close-icon">
-						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>" ></use>
+						<use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-close-icon" ></use>
 					</svg>
 				</a>
 
@@ -437,7 +437,7 @@
 			<div class="modal-content">
 				<a href="#"  class="close icon-close" data-dismiss="modal" aria-label="Close">
 					<svg class="olymp-close-icon">
-						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>" ></use>
+						<use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-close-icon" ></use>
 					</svg>
 				</a>
 
@@ -448,7 +448,7 @@
 				<div class="modal-body">
 					<a href="#"  class="upload-photo-item">
 						<svg class="olymp-computer-icon">
-							<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-computer-icon' ?>" ></use>
+							<use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-computer-icon" ></use>
 						</svg>
 
 						<h6>Upload Photo</h6>
@@ -458,7 +458,7 @@
 					<a href="#"  class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
 
 						<svg class="olymp-photos-icon">
-							<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-photos-icon' ?>" ></use>
+							<use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-photos-icon" ></use>
 						</svg>
 
 						<h6>Choose from My Photos</h6>
@@ -481,7 +481,7 @@
 			<div class="modal-content">
 				<a href="#"  class="close icon-close" data-dismiss="modal" aria-label="Close">
 					<svg class="olymp-close-icon">
-						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>" ></use>
+						<use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-close-icon" ></use>
 					</svg>
 				</a>
 				<div class="modal-header">
@@ -490,16 +490,16 @@
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link active" data-toggle="tab" href="<?= '/#home' ?>"  role="tab" aria-expanded="true">
+							<a class="nav-link active" data-toggle="tab" href="/#home"  role="tab" aria-expanded="true">
 								<svg class="olymp-photos-icon">
-									<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-photos-icon' ?>" ></use>
+									<use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-photos-icon" ></use>
 								</svg>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-toggle="tab" href="<?= '/#profile' ?>"  role="tab" aria-expanded="false">
+							<a class="nav-link" data-toggle="tab" href="/#profile"  role="tab" aria-expanded="false">
 								<svg class="olymp-albums-icon">
-									<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-albums-icon' ?>" ></use>
+									<use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-albums-icon" ></use>
 								</svg>
 							</a>
 						</li>
@@ -514,7 +514,7 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= '/assets/img/choose-photo1.jpg' ?>"  alt="photo">
+										<img src="/assets/img/choose-photo1.jpg"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -522,7 +522,7 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= '/assets/img/choose-photo2.jpg' ?>"  alt="photo">
+										<img src="/assets/img/choose-photo2.jpg"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -530,32 +530,7 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= '/assets/img/choose-photo3.jpg' ?>"  alt="photo">
-										<input type="radio" name="optionsRadios">
-									</label>
-								</div>
-							</div>
-
-							<div class="choose-photo-item" data-mh="choose-item">
-								<div class="radio">
-									<label class="custom-radio">
-										<img src="<?= '/assets/img/choose-photo4.jpg' ?>"  alt="photo">
-										<input type="radio" name="optionsRadios">
-									</label>
-								</div>
-							</div>
-							<div class="choose-photo-item" data-mh="choose-item">
-								<div class="radio">
-									<label class="custom-radio">
-										<img src="<?= '/assets/img/choose-photo5.jpg' ?>"  alt="photo">
-										<input type="radio" name="optionsRadios">
-									</label>
-								</div>
-							</div>
-							<div class="choose-photo-item" data-mh="choose-item">
-								<div class="radio">
-									<label class="custom-radio">
-										<img src="<?= '/assets/img/choose-photo6.jpg' ?>"  alt="photo">
+										<img src="/assets/img/choose-photo3.jpg"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -564,7 +539,7 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= '/assets/img/choose-photo7.jpg' ?>"  alt="photo">
+										<img src="/assets/img/choose-photo4.jpg"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -572,7 +547,7 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= '/assets/img/choose-photo8.jpg' ?>"  alt="photo">
+										<img src="/assets/img/choose-photo5.jpg"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -580,7 +555,32 @@
 							<div class="choose-photo-item" data-mh="choose-item">
 								<div class="radio">
 									<label class="custom-radio">
-										<img src="<?= '/assets/img/choose-photo9.jpg' ?>"  alt="photo">
+										<img src="/assets/img/choose-photo6.jpg"  alt="photo">
+										<input type="radio" name="optionsRadios">
+									</label>
+								</div>
+							</div>
+
+							<div class="choose-photo-item" data-mh="choose-item">
+								<div class="radio">
+									<label class="custom-radio">
+										<img src="/assets/img/choose-photo7.jpg"  alt="photo">
+										<input type="radio" name="optionsRadios">
+									</label>
+								</div>
+							</div>
+							<div class="choose-photo-item" data-mh="choose-item">
+								<div class="radio">
+									<label class="custom-radio">
+										<img src="/assets/img/choose-photo8.jpg"  alt="photo">
+										<input type="radio" name="optionsRadios">
+									</label>
+								</div>
+							</div>
+							<div class="choose-photo-item" data-mh="choose-item">
+								<div class="radio">
+									<label class="custom-radio">
+										<img src="/assets/img/choose-photo9.jpg"  alt="photo">
 										<input type="radio" name="optionsRadios">
 									</label>
 								</div>
@@ -595,7 +595,7 @@
 
 							<div class="choose-photo-item" data-mh="choose-item">
 								<figure>
-									<img src="<?= '/assets/img/choose-photo10.jpg' ?>"  alt="photo">
+									<img src="/assets/img/choose-photo10.jpg"  alt="photo">
 									<figcaption>
 										<a href="#" >South America Vacations</a>
 										<span>Last Added: 2 hours ago</span>
@@ -604,7 +604,7 @@
 							</div>
 							<div class="choose-photo-item" data-mh="choose-item">
 								<figure>
-									<img src="<?= '/assets/img/choose-photo11.jpg' ?>"  alt="photo">
+									<img src="/assets/img/choose-photo11.jpg"  alt="photo">
 									<figcaption>
 										<a href="#" >Photoshoot Summer 2016</a>
 										<span>Last Added: 5 weeks ago</span>
@@ -613,7 +613,7 @@
 							</div>
 							<div class="choose-photo-item" data-mh="choose-item">
 								<figure>
-									<img src="<?= '/assets/img/choose-photo12.jpg' ?>"  alt="photo">
+									<img src="/assets/img/choose-photo12.jpg"  alt="photo">
 									<figcaption>
 										<a href="#" >Amazing Street Food</a>
 										<span>Last Added: 6 mins ago</span>
@@ -623,7 +623,7 @@
 
 							<div class="choose-photo-item" data-mh="choose-item">
 								<figure>
-									<img src="<?= '/assets/img/choose-photo13.jpg' ?>"  alt="photo">
+									<img src="/assets/img/choose-photo13.jpg"  alt="photo">
 									<figcaption>
 										<a href="#" >Graffity & Street Art</a>
 										<span>Last Added: 16 hours ago</span>
@@ -632,7 +632,7 @@
 							</div>
 							<div class="choose-photo-item" data-mh="choose-item">
 								<figure>
-									<img src="<?= '/assets/img/choose-photo14.jpg' ?>"  alt="photo">
+									<img src="/assets/img/choose-photo14.jpg"  alt="photo">
 									<figcaption>
 										<a href="#" >Amazing Landscapes</a>
 										<span>Last Added: 13 mins ago</span>
@@ -641,7 +641,7 @@
 							</div>
 							<div class="choose-photo-item" data-mh="choose-item">
 								<figure>
-									<img src="<?= '/assets/img/choose-photo15.jpg' ?>"  alt="photo">
+									<img src="/assets/img/choose-photo15.jpg"  alt="photo">
 									<figcaption>
 										<a href="#" >The Majestic Canyon</a>
 										<span>Last Added: 57 mins ago</span>
@@ -664,7 +664,7 @@
 
 
 	<a class="back-to-top" href="#" >
-		<img src="<?= '/assets/svg-icons/back-to-top.svg' ?>"  alt="arrow" class="back-icon">
+		<img src="/assets/svg-icons/back-to-top.svg"  alt="arrow" class="back-icon">
 	</a>
 
 
@@ -681,10 +681,10 @@
 				<h6 class="title">Chat</h6>
 				<div class="more">
 					<svg class="olymp-three-dots-icon">
-						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon' ?>" ></use>
+						<use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon" ></use>
 					</svg>
 					<svg class="olymp-little-delete js-chat-open">
-						<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-little-delete' ?>" ></use>
+						<use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-little-delete" ></use>
 					</svg>
 				</div>
 			</div>
@@ -693,7 +693,7 @@
 					<ul class="notification-list chat-message chat-message-field">
 						<li>
 							<div class="author-thumb">
-								<img src="<?= '/assets/img/avatar14-sm.jpg' ?>"  alt="author" class="mCS_img_loaded">
+								<img src="/assets/img/avatar14-sm.jpg"  alt="author" class="mCS_img_loaded">
 							</div>
 							<div class="notification-event">
 								<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling
@@ -705,7 +705,7 @@
 
 						<li>
 							<div class="author-thumb">
-								<img src="<?= '/assets/img/author-page.jpg' ?>"  alt="author" class="mCS_img_loaded">
+								<img src="/assets/img/author-page.jpg"  alt="author" class="mCS_img_loaded">
 							</div>
 							<div class="notification-event">
 								<span class="chat-message-item">Don’t worry Mathilda!</span>
@@ -717,7 +717,7 @@
 
 						<li>
 							<div class="author-thumb">
-								<img src="<?= '/assets/img/avatar14-sm.jpg' ?>"  alt="author" class="mCS_img_loaded">
+								<img src="/assets/img/avatar14-sm.jpg"  alt="author" class="mCS_img_loaded">
 							</div>
 							<div class="notification-event">
 								<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling
@@ -737,149 +737,149 @@
 						<div class="add-options-message">
 							<a href="#"  class="options-message">
 								<svg class="olymp-computer-icon">
-									<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-computer-icon' ?>" ></use>
+									<use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-computer-icon" ></use>
 								</svg>
 							</a>
 							<div class="options-message smile-block">
 
 								<svg class="olymp-happy-sticker-icon">
-									<use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-sticker-icon' ?>" ></use>
+									<use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-sticker-icon" ></use>
 								</svg>
 
 								<ul class="more-dropdown more-with-triangle triangle-bottom-right">
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat1.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat1.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat2.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat2.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat3.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat3.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat4.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat4.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat5.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat5.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat6.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat6.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat7.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat7.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat8.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat8.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat9.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat9.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat10.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat10.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat11.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat11.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat12.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat12.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat13.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat13.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat14.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat14.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat15.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat15.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat16.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat16.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat17.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat17.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat18.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat18.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat19.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat19.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat20.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat20.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat21.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat21.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat22.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat22.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat23.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat23.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat24.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat24.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat25.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat25.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat26.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat26.png"  alt="icon">
 										</a>
 									</li>
 									<li>
 										<a href="#" >
-											<img src="<?= '/assets/img/icon-chat27.png' ?>"  alt="icon">
+											<img src="/assets/img/icon-chat27.png"  alt="icon">
 										</a>
 									</li>
 								</ul>

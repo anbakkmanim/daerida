@@ -7,8 +7,8 @@
 	
 				<a href="/" class="logo">
 					<div class="img-wrap">
-						<img src="<?= '/assets/img/데리다57_흰.png' ?>" alt="Olympus">
-						<img src="<?= '/assets/img/데리다57_주.png' ?>" alt="Olympus" class="logo-colored">
+						<img src="/assets/img/데리다57_흰.png" alt="Olympus">
+						<img src="/assets/img/데리다57_주.png" alt="Olympus" class="logo-colored">
 					</div>
 					<div class="title-block">
 						<h6 class="logo-title">DAERIDA</h6>

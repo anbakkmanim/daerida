@@ -9,8 +9,8 @@
 		<div class="header--standard-wrap">
 			<a href="/" class="logo">
 				<div class="img-wrap">
-					<img src="<?= '/assets/img/데리다57_흰.png' ?>" alt="Olympus">
-					<img src="<?= '/assets/img/데리다57_주.png' ?>" alt="Olympus" class="logo-colored">
+					<img src="/assets/img/데리다57_흰.png" alt="Olympus">
+					<img src="/assets/img/데리다57_주.png" alt="Olympus" class="logo-colored">
 				</div>
 				<div class="title-block">
 					<h6 class="logo-title">DAERIDA</h6>
@@ -70,12 +70,12 @@
 				<ul class="nav nav-tabs" role="tablist">
 					<li class="nav-item">
 						<a class="nav-link active" data-toggle="tab" href="#home" role="tab">
-							<svg class="happy-face-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-face-icon' ?>"></use></svg>
+							<svg class="happy-face-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" data-toggle="tab" href="#profile" role="tab">
-						<svg class="happy-face-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-computer-icon' ?>"></use></svg>
+						<svg class="happy-face-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
 						</a>
 					</li>
 				</ul>
