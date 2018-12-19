@@ -128,6 +128,15 @@ class Team extends CI_Controller
         $this->load->view('team/invite',$result);
     }
 
+    public function searchUser(){
+        $data['te_idx'] = $this->input->post('te_id');
+        $data['me_n_name'] = $this->input->post('me_n_name');
+
+        $result = $this->TeamModel->searchUser($data);
+
+        echo json_encode($result);
+    }
+
     /**
      * 팀 가입 신청
      * @METHOD : POST

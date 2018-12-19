@@ -170,4 +170,18 @@ class TeamModel extends CI_Model
         $query = $this->db->query($sql, array($param['te_idx']));
         return $query->result_array();
     }
+
+    public function searchUser($param){
+        $sql = "SELECT * 
+                FROM MEMBER_NORMAL_TB
+                left outer join FIELD_TB as b on me_id = me_n_id 
+                left outer join FIELD_SMALL_RF as c on b.fi_s_idx = c.fi_s_idx 
+                left outer join FIELD_LARGE_RF as d on c.fi_l_idx = d.fi_l_idx  
+                WHERE me_n_name LIKE '%".$param['me_n_name']."%'
+                AND me_n_idx NOT IN (SELECT me_n_idx FROM TEAM_JOIN_TB WHERE te_idx = ?);
+        ";
+
+        $query = $this->db->query($sql, array($param['te_idx']));
+        return $query->result_array();
+    }
 }
