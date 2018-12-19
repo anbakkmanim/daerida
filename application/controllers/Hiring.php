@@ -12,6 +12,7 @@ class Hiring extends CI_Controller
         $this->load->model('HiringModel');
         $this->load->model('RecruitModel');
         $this->load->model('RegisterModel');
+        $this->load->model('AuthModel');
     }
 
     /**
@@ -25,7 +26,12 @@ class Hiring extends CI_Controller
         $re_fi_idx = $_GET['re_fi_idx'];
 
         $result = $this->RecruitModel->getField($re_fi_idx);
-        $this->load->view('hiring/resumeSend', $result[0]);
+        $mydata = $this->AuthModel->getCustAfterLogin($_SESSION);
+        $return = array (
+            "fields" => $result[0],
+            "user" => $mydata
+        );
+        $this->load->view('hiring/resumeSend', $return);
     }
 
     /**
