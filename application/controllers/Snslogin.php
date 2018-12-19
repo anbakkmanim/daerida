@@ -207,7 +207,6 @@ class Snslogin extends CI_Controller
         $headers = [];
         array_push($headers, $header);
 
-        $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_POST, false);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -217,6 +216,6 @@ class Snslogin extends CI_Controller
 
         curl_close($ch);
         print_r(get_object_vars(json_decode($response)));
-        echo $response;
+        print_r(json_decode($response));
     }
 }
