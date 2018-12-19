@@ -199,6 +199,8 @@ class Snslogin extends CI_Controller
         $accessToken = get_object_vars(json_decode($response));
         $accessToken = $accessToken['access_token'];
 
+        print_r($accessToken);
+
         $url = $google['info_url'];
         $header = "Authorization: Bearer " . $accessToken;
 
