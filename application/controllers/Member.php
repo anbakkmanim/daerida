@@ -497,7 +497,6 @@ class Member extends CI_Controller
 
         if($result && $result2){
             alert('정보 수정을 완료했습니다.');
-            echo $this->session->me_table;
             $param = array(
                 "me_table" => "MEMBER_COMPANY_TB",
                 "me_type" => $this->session->me_type,
