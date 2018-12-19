@@ -2,19 +2,9 @@
 
 <?php $this->load->view('layout/nav'); ?>
 
-<div id="map" style="
-width: 100vw;
-height: 100vh;
-position: fixed;
-@media (min-width: 992px) {
-    width: calc(100vw - 140px);
-    height: calc(100vh - 70px);
-    margin-left: 70px;
-    margin-right: 70px;
-}
-"></div>
+<div id="map" style="width: 100vw; height: 100vh; position: fixed;"></div>
 
-<div style="position: fixed; @media (min-width: 992px) { margin-left: 70px; }">
+<div id="content" style="position: fixed;">
   <div class="mt-2 ml-2">
     <div class="card d-inline-block">
       <div class="card-body">
@@ -36,6 +26,16 @@ position: fixed;
 
 <script src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=<?= $this->config->item('daum_map_token', 'token'); ?>&libraries=drawing,clusterer,services"></script>
 <script>
+    function moveContent() {
+        if (window.matchMedia("(min-width: 768px)").matches) {
+            document.getElementById("content").style.marginLeft = "70px";
+        }
+        else {
+            document.getElementById("content").style.marginLeft = "0px";
+        }
+    }
+    document.body.onresize = moveContent;
+    document.addEventListener("DOMContentLoaded", moveContent);
     const mapLevel = 12;
 const map = new daum.maps.Map(document.getElementById('map'), {
 	center: new daum.maps.LatLng(36.463185, 128.413770),
