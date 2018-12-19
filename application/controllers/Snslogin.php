@@ -118,8 +118,8 @@ class Snslogin extends CI_Controller
         if ($this->session->authMode == "auth") {
             $result = $this->AuthModel->authSNS('naver', $token);
             if (count($result) == 0) {
-                alert("해당 네이버 계정이 연결되어있지 않습니다. 회원가입 뒤에 연결해 주세요");
-                location_href("/member/registerNormal");
+                alert("해당 네이버 계정이 연결되어있지 않습니다. 회원가입을 하면 자동으로 연결이 됩니다.");
+                location_href("/member/registerNormal?tokenType=naver&token=" . $token);
                 return;
             } else {
                 $this->auth($result[0]);
@@ -173,8 +173,8 @@ class Snslogin extends CI_Controller
         if ($this->session->authMode == "auth") {
             $result = $this->AuthModel->authSNS('kakao', $token);
             if (count($result) == 0) {
-                alert("해당 카카오 계정이 연결되어있지 않습니다. 회원가입 뒤에 연결해 주세요");
-                location_href("/member/registerNormal");
+                alert("해당 카카오 계정이 연결되어있지 않습니다. 회원가입을 하면 자동으로 연결이 됩니다.");
+                location_href("/member/registerNormal?tokenType=kakao&token=" . $token);
                 return;
             } else {
                 $this->auth($result[0]);
@@ -227,8 +227,8 @@ class Snslogin extends CI_Controller
         if ($this->session->authMode == "auth") {
             $result = $this->AuthModel->authSNS('google', $token);
             if (count($result) == 0) {
-                alert("해당 구글 계정이 연결되어있지 않습니다. 회원가입 뒤에 연결해 주세요");
-                location_href("/member/registerNormal");
+                alert("해당 구글 계정이 연결되어있지 않습니다. 회원가입을 하면 자동으로 연결이 됩니다.");
+                location_href("/member/registerNormal?tokenType=google&token=" . $token);
                 return;
             } else {
                 $this->auth($result[0]);

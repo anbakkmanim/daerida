@@ -206,6 +206,10 @@ class Member extends CI_Controller
             $data['me_n_age'] = $this->input->post('me_n_age');
             $data['me_n_gender'] = $this->input->post('me_n_gender');
             $data['me_n_isOpen'] = $this->input->post('me_n_isOpen');
+            $data['me_n_kakaoToken'] = $this->input->post("me_n_kakaoToken");
+            $data['me_n_googleToken'] = $this->input->post("me_n_googleToken");
+            $data['me_n_naverToken'] = $this->input->post("me_n_naverToken");
+
         } else if($data['me_table'] == "MEMBER_COMPANY_TB") {
             $data['me_c_manager'] = $this->input->post('me_c_manager');
             $data['me_c_benefit'] = $this->input->post('me_c_benefit');

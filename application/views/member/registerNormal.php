@@ -176,6 +176,29 @@
 									</div>
 								</div>
 
+                                <?php if (isset($_GET['tokenType'])) { ?>
+                                <div class="col">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">
+                                            <?php
+                                                switch($_GET['tokenType']) {
+                                                    case "kakao":
+                                                        echo "카카오 토큰";
+                                                        break;
+                                                    case "naver":
+                                                        echo "네이버 토큰";
+                                                        break;
+                                                    case "google":
+                                                        echo "구글 토큰";
+                                                        break;
+                                                }
+                                            ?>
+                                        </label>
+                                        <input name="me_<?= $_GET['tokenType'] ?>Token" type="text" class="form-control" value="<?= $_GET['token'] ?>" readonly>
+                                    </div>
+                                </div>
+                                <?php } ?>
+
 								<div class="col">
 									<label class="control-label mb-3">성별</label>
 									<div class="row">
