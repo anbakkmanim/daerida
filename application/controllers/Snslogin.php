@@ -6,6 +6,7 @@ class Snslogin extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->config->load('token', true);
     }
 
 //     public function kakao()
@@ -154,8 +155,24 @@ class Snslogin extends CI_Controller
 //     }
 
     public function naver() {
-        $this->config->load('token', true);
-        $token = $this->config->item('naver_login', 'token');
-        print_r($token['client_id']);
+        $naver = $this->config->item('naver_login', 'token');
+        $url =
+        $naver['token_url'] . "?grant_type=authorization_code"
+        . "&client_id=" . $naver['client_id']
+        . "&client_secret=" . $naver['client_secret']
+        . "&redirect_uri=" . site_url('/snslogin/naver')
+        . "&code=" . $_GET["code"]
+        . "&state=" . $_GET["state"];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $headers = [];
+        $response = curl_exec($ch);
+        $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        print_r($status_code);
+        print_r($response);
     }
 }
