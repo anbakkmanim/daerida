@@ -8,10 +8,8 @@
 		<div class="row">
 			<div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
 				<div class="main-header-content">
-					<h1>Welcome to the Forums!</h1>
-					<p>Here in the forums you’ll be able to easily create and manage categories and topics to share with the
-	 community! We included some of the most used topics, like music, comics, movies, and community, each one with a cool
-	  and customizable illustration so you can have fun with them! </p>
+					<h1>팀 초대하기</h1>
+					<p>나만의 팀에 사람들을 초대해보세요!</p>
 				</div>
 			</div>
 		</div>
@@ -23,18 +21,71 @@
 		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 			<div class="ui-block responsive-flex">
 				<div class="ui-block-title">
-					<div class="h6 title">Olympus Forums</div>
-					<div class="align-right">
-						<form class="w-search">
-							<div class="form-group with-button is-empty">
-								<input class="form-control" type="text" placeholder="Search the forums...">
-								<button>
-									<svg class="olymp-magnifying-glass-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
-								</button>
-							<span class="material-input"></span></div>
-						</form>
-						<a href="/team/boardWrite" class="btn btn-blue btn-md">글쓰기</a>
+
+					<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+						<div class="row mt-3">
+							<div class="col-xl-6 mt-3">
+								<div class="h6 title">사람 검색</div>
+							</div>
+							<div class="col col-xl-4 col-12">
+								<div class="form-group label-floating">
+									<label class="control-label">이름 검색</label>
+									<input class="form-control" name="me_name" type="text" id="me_name">
+								</div>
+							</div>
+							<div class='col col-xl-2 col-12 mt-1'>
+								<script>
+									function searchUser(){
+											$.ajax({
+											type:"POST",
+											url:"/team/searchUser",
+											data:{"me_n_name":$("#me_name").val() , "te_idx" : <?= $te_idx ?>},
+											success (data) {
+												data = JSON.parse(data).result;
+												$("#usertable tbody tr").empty();
+												for(var i in data){
+													addUser(data[i]);
+												}
+											}
+										});
+									}
+
+									function addUser(user){
+										$("#userdata").append(`<tr class="bg-smoke-light">
+											<td class="posts" style="width:10%;">
+												<form action="/team/joinTeam" method="post">
+													<input type="hidden" name="te_idx" value="${user.te_idx}">
+													<input type="hidden" name="me_n_idx" value="${user.me_n_idxx}">
+													<input type="hidden" name="fi_s_idx" value="${user.fi_s_idx}">
+													<div class='col col-xl-12 col-sm-4 full-width'>
+														<input type="submit" value="초대">
+													</div>
+												</form>
+											</td>
+
+											<td class="posts"> 
+												${user.me_n_name}
+											</td>
+											
+											<td class="posts"> 
+												${user.me_n_age}
+											</td>
+
+											<td class="posts"> 
+												${user.fi_l_name} / ${user.fi_s_name}
+											</td>
+
+											<td class="posts"> 
+												${user.me_n_email}
+											</td>
+										</tr>`)
+									}
+								</script>
+								<a href="#" class="btn btn-blue btn-md full-width" onclick="searchUser()">검색하기</a>
+							</div>
+						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -43,80 +94,57 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+		<div class="col">
 
 			<div class="ui-block">
 
 				
 				<!-- Forums Table -->
 				
-				<table class="forums-table">
+				<table class="forums-table" id="usertable">
 				
 					<thead>
-				
-					<tr>
-
-						<th>
-							순번
-						</th>
-				
-						<th>
-							제목
-						</th>
-
-						<th>
-                            작성 일자
-						</th>
-				
-						<th>
-							글쓴이
-						</th>
-				
-					</tr>
-				
+						<tr >
+							<th></th>
+							<th>이름</th>
+							<th>나이</th>
+							<th>분야</th>
+							<th>이메일</th>				
+						</tr>
 					</thead>
 				
-					<tbody>
-                    <?php
-                        foreach ($boards as $rows) {
-                    ?>
-					<tr class="bg-smoke-light">
-                        <td class="topics">
-                            <a href="#" class="h6 count"><?= $rows['te_po_idx']?></a>
-                        </td>
-						<td class="forum">
-							<div class="forum-item">
-								
-								<div class="content">
-									<a href="/team/boardView?te_po_idx=<?= $rows['te_po_idx'] ?>" class="h6 title"><?= $rows['te_po_title'] ?></a>
-								</div>
-<!--								<div class="author-started">-->
-<!--									<span>Started by:</span>-->
-<!--									<div class="author-thumb">-->
-<!--										<img src="--><?//= "/uploads/profile/".$rows['me_n_profile'] ?><!--" alt="author">-->
-<!--									</div>-->
-<!--									<a href="#" class="h6 title">--><?//= $rows['me_n_name'] ?><!-- </a>-->
-<!--								</div>-->
-							</div>
-						</td>
+					<tbody id="userdata">
 
-						<td class="posts">
-							<a href="#" class="h6 count"><?=explode( " ", $rows['te_po_date'])[0] ?></a>
-						</td>
-						<td class="freshness">
-							<div class="author-freshness">
-								<div class="author-thumb">
-									<img src="<?= "/uploads/profile/".$rows['me_n_profile'] ?>" alt="author">
-								</div>
-								<a href="/member/User?me_n_idx=<?= $rows['me_n_idx']?>" class="h6 title"><?= $rows['me_n_name'] ?></a>
-<!--								<time class="entry-date updated" datetime="--><?//=$rows['te_po_date'] ?><!--">6 minutes ago</time>-->
-							</div>
-						</td>
-					</tr>
+						<?php foreach($user as $row) { ?>
+										<tr class="bg-smoke-light">
+											<td class="posts" style="width:10%;">
+												<form action="/team/joinTeam" method="post">
+													<input type="hidden" name="te_idx" value="<?= $te_idx ?>">
+													<input type="hidden" name="me_n_idx" value="<?= $row['me_n_idx'] ?>">
+													<input type="hidden" name="fi_s_idx" value="<?= $row['fi_s_idx'] ?>">
+													<div class='col col-xl-12 col-sm-4 full-width'>
+														<input type="submit" value="초대">
+													</div>
+												</form>
+											</td>
 
-                    <?php
-                        }
-                    ?>
+											<td class="posts"> 
+												<?=$row['me_n_name']?>
+											</td>
+											
+											<td class="posts"> 
+												<?=$row['me_n_age']?>
+											</td>
+
+											<td class="posts"> 
+												<?=$row['fi_l_name'] ." / ". $row['fi_s_name']?>
+											</td>
+
+											<td class="posts"> 
+												<?=$row['me_n_email']?>
+											</td>
+										</tr>
+						<?php } ?> 
 					</tbody>
 				</table>
 				
@@ -124,112 +152,8 @@
 
 			</div>
 
-			
-			<!-- Pagination -->
-			
-			<nav aria-label="Page navigation">
-				<ul class="pagination justify-content-center">
-					<li class="page-item disabled">
-						<a class="page-link" href="#" tabindex="-1">Previous</a>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">1<div class="ripple-container"><div class="ripple ripple-on ripple-out" style="left: -10.3833px; top: -16.8333px; background-color: rgb(255, 255, 255); transform: scale(16.7857);"></div></div></a></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item"><a class="page-link" href="#">...</a></li>
-					<li class="page-item"><a class="page-link" href="#">12</a></li>
-					<li class="page-item">
-						<a class="page-link" href="#">Next</a>
-					</li>
-				</ul>
-			</nav>
-			
-			<!-- ... end Pagination -->
-
 		</div>
 
-		<div class="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Featured Topics</h6>
-				</div>
-				<div class="ui-block-content">
-
-					
-					<!-- Widget Featured Topics -->
-					
-					<ul class="widget w-featured-topics">
-						<li>
-							
-							<div class="content">
-								<a href="#" class="h6 title">The new Goddess of War trailer was launched at E3!</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">2 hours, 16 minutes ago</time>
-							</div>
-						</li>
-						<li>
-							
-							<div class="content">
-								<a href="#" class="h6 title">This year’s ComixCon will have the best presentations</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">14 hours, 36 minutes ago</time>
-							</div>
-						</li>
-						<li>
-							
-							<div class="content">
-								<a href="#" class="h6 title">Here are the behind-the-scenes photos of “Vilords”</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">9 hours, 8 minutes ago</time>
-							</div>
-						</li>
-					</ul>
-					
-					<!-- ... end Widget Featured Topics -->
-				</div>
-			</div>
-
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Recent Topics</h6>
-				</div>
-				<div class="ui-block-content">
-
-					
-					<!-- Widget Recent Topics -->
-					
-					<ul class="widget w-featured-topics">
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">Summer is Coming! Picnic in the east boulevard park</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">26 minutes ago</time>
-								<div class="forums">The Community</div>
-							</div>
-						</li>
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">Kung Fighters released a new video, check it out here!</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">44 minutes ago</time>
-								<div class="forums">The Boombox</div>
-							</div>
-						</li>
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">What’s your favourite season?</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">59 minutes ago</time>
-								<div class="forums">The Community</div>
-							</div>
-						</li>
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">Who had the best presentation at this year’s E3? Rate them!</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">1 hour, 3 minutes ago</time>
-								<div class="forums">Arcade Planet</div>
-							</div>
-						</li>
-					</ul>
-					
-					<!-- ... end Widget Recent Topics -->
-				</div>
-			</div>
-
-		</div>
 
 	</div>
 </div>
