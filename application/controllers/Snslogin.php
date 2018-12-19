@@ -286,28 +286,26 @@ class Snslogin extends CI_Controller
         $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
         curl_close($ch);
-        print_r($response);
-        $token = get_object_vars(get_object_vars(json_decode($response))['response'])['id'];
-        echo $token;
-//        if ($this->session->authMode == "auth") {
-//            $result = $this->AuthModel->authSNS('kakao', $token);
-//            if (count($result) == 0) {
-//                alert("해당 카카오 계정이 연결되어있지 않습니다. 회원가입 뒤에 연결해 주세요");
-//                location_href("/member/registerNormal");
-//                return;
-//            } else {
-//                $this->auth($result[0]);
-//            }
-//        } else {
-//            $success = $this->AuthModel->addSNS($this->session->me_idx, 'kakao', $token);
-//            if ($success) {
-//                alert("추가 성공");
-//                location_previous();
-//            } else {
-//                alert("추가 실패");
-//                location_previous();
-//            }
-//        }
+        $token = get_object_vars(json_decode($response))['id'];
+        if ($this->session->authMode == "auth") {
+            $result = $this->AuthModel->authSNS('kakao', $token);
+            if (count($result) == 0) {
+                alert("해당 카카오 계정이 연결되어있지 않습니다. 회원가입 뒤에 연결해 주세요");
+                location_href("/member/registerNormal");
+                return;
+            } else {
+                $this->auth($result[0]);
+            }
+        } else {
+            $success = $this->AuthModel->addSNS($this->session->me_idx, 'kakao', $token);
+            if ($success) {
+                alert("추가 성공");
+                location_previous();
+            } else {
+                alert("추가 실패");
+                location_previous();
+            }
+        }
 
     }
 }
