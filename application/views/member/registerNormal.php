@@ -194,7 +194,7 @@
                                                 }
                                             ?>
                                         </label>
-                                        <input name="me_<?= $_GET['tokenType'] ?>Token" type="text" class="form-control" value="<?= $_GET['token'] ?>" readonly>
+                                        <input name="me_n_<?= $_GET['tokenType'] ?>Token" type="text" class="form-control" value="<?= $_GET['token'] ?>" readonly>
                                     </div>
                                 </div>
                                 <?php } ?>
