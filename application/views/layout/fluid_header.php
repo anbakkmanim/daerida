@@ -18,12 +18,12 @@
 					</a>
 				</div>
 
-				<div class="row d-flex d-lg-none d-xl-none float-right ml-auto align-content-end">
-					<nav class="nav d-block list-group mr-3">
+				<div class="row d-flex d-lg-none d-xl-none mx-auto align-content-center">
+					<nav class="nav d-block list-group">
 						<u><a class="nav-item text-white mr-5" href="/hiring/hiringList">채용</a></u>
 						<u><a class="nav-item text-white mr-5" href="/subpage/about">소개</a></u>
 						<u><a class="nav-item text-white mr-5" href="/subpage/teamterview">팀터뷰</a></u>
-						<u><a class="nav-item text-white mr-3" href="/subpage/support">지원</a></u>
+						<u><a class="nav-item text-white" href="/subpage/support">지원</a></u>
 					</nav>
 				</div>
 	
