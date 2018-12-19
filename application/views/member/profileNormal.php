@@ -19,7 +19,7 @@
 					<div class="top-header top-header-favorit">
 						<div class="top-header-thumb">
 							<!-- dummy img -->
-							<img src="https://loremflickr.com/1368/472"  alt="nature">
+							<img src="/assets/img/Back.jpg"  alt="nature">
 							<div class="top-header-author mt-5">
 								<div class="author-thumb">
 									<img src="<?= "/uploads/profile/". ($me_n_profile != null ? $me_n_profile : "default.png") ?>"  alt="author">
