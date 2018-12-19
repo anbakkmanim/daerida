@@ -1,3 +1,5 @@
+<?= $_SERVER['REQUEST_URI'] ?>
+
 <?php if (
 	strpos($_SERVER['REQUEST_URI'], '/member/login') == false &&
 	strpos($_SERVER['REQUEST_URI'], '/hiring/map') == false &&
