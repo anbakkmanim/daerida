@@ -173,6 +173,7 @@ class Team extends CI_Controller
 
         $result = $this->TeamModel->listPost($te_idx);
         $data = [
+            "te_idx" => $te_idx,
             "boards" => $result
         ];
         // 뷰 로딩
