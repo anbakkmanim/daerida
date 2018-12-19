@@ -1,5 +1,9 @@
+<?php if (
+	strpos($_SERVER['PHP_SELF'], '/member/login') != 10 &&
+	strpos($_SERVER['PHP_SELF'], '/hiring/map') != 10 &&
+	strpos($_SERVER['PHP_SELF'], '/hiring/resumeSend') != 10
+	) { ?>
 <div class="footer pt-0" id="footer" style="width: 100vw;">
-
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col col-lg-12 col-md-12 col-sm-12 col-12">
@@ -12,6 +16,7 @@
 		</div>
 	</div>
 </div>
+<?php } ?>
 
 <script src="/assets/js/jquery-3.2.1.js"></script>
 <script src="/assets/js/jquery.appear.js"></script>
