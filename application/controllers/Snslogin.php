@@ -231,7 +231,7 @@ class Snslogin extends CI_Controller
                 $this->auth($result[0]);
             }
         } else {
-            $success = $this->AuthModel->addSNS('naver', $token, $this->session->me_idx);
+            $success = $this->AuthModel->addSNS($this->session->me_idx, 'naver', $token);
             if ($success) {
                 alert("추가 성공");
                 location_previous();
