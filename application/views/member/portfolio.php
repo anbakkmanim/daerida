@@ -12,7 +12,7 @@
 			<div class="ui-block">
 				<div class="top-header top-header-favorit">
 					<div class="top-header-thumb">
-						<img src="/assets/img/top-header2.jpg"  alt="nature">
+						<img src="/assets/img/Back.jpg"  alt="nature">
 						<div class="top-header-author mt-5">
 							<div class="author-thumb">
 								<img src= "/uploads/profile/<?= $userInfo->me_n_profile?>"  alt="author">
