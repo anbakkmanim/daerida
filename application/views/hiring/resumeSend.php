@@ -16,7 +16,7 @@
           내 프로필
         </div>
         <div class="ui-block-content align-center align-content-center">
-            <img alt="author" src="/uploads/profile/<?= $user->me_n_profile ?>" style="width:144px; height:60px" class="avatar">
+            <img alt="author" src="/uploads/profile/<?= $user->me_n_profile ?>" style="width:288px; height:120px" class="avatar">
             <h3 class="mt-2"><?= $user->me_n_name ?></h3>
             <h4 class="mt-2"><?= $user->me_n_email ?> / <?= $user->me_n_phone ?></h4>
             <h5 class="mt-2">희망연봉 : <?= $user->me_n_hopeSalary ?></h5>
