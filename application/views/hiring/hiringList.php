@@ -166,4 +166,6 @@ if ($mode == "all") {
 
 </section>
 
-<?php $this->load->view('layout/footer'); ?>
+<?php if(count($hiringList) > 4) {
+            $this->load->view('layout/footer');
+        }?>
