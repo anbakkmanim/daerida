@@ -4,7 +4,7 @@
 
 <?php $this->load->view('layout/inner_header', [
 	'title' => '팀 목록',
-	'content' => '가입을 원하는 팀을 선택해 주세요.',
+	'content' => '공개로 설정된 팀들을 확인!.',
 	'color' => 2
 ]); ?>
 
