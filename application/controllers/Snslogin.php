@@ -66,7 +66,7 @@ class Snslogin extends CI_Controller
     public function authGoogle() {
         $this->session->set_userdata("authMode", "auth");
         $google = $this->config->item("google_login", "token");
-        location_href($google['authorize_url']."?scope=profile,email,openid&access_type=offline&include_granted_scopes=true&state=state_parameter_passthrough_value&response_type=code&client_id=" . $google['client_id'] ."&redirect_uri=" . site_url('/snslogin/google'));
+        location_href($google['authorize_url']."?scope=profile&access_type=offline&include_granted_scopes=true&state=state_parameter_passthrough_value&response_type=code&client_id=" . $google['client_id'] ."&redirect_uri=" . site_url('/snslogin/google'));
     }
 
     public function addGoogle() {
