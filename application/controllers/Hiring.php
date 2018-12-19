@@ -220,7 +220,7 @@ class Hiring extends CI_Controller
         $me_n_idx = $this->session->me_idx;
 
         $return = $this->RecruitModel->followRecruit($me_n_idx);
-        if ($return[0]['re_idx'] == null)
+        if (count($return) == 0)
             $return = array();
 
         $data = array(
