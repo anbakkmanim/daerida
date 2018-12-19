@@ -15,15 +15,16 @@
 			<div class="ui-block responsive-flex">
 				<div class="ui-block-title">
 					<div class="align-right">
-						<form class="w-search">
-							<div class="form-group with-button is-empty">
-								<input class="form-control" type="text" placeholder="Search the forums...">
-								<button>
-									<svg class="olymp-magnifying-glass-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
-								</button>
-							<span class="material-input"></span></div>
-						</form>
+<!--						<form class="w-search">-->
+<!--							<div class="form-group with-button is-empty">-->
+<!--								<input class="form-control" type="text" placeholder="Search the forums...">-->
+<!--								<button>-->
+<!--									<svg class="olymp-magnifying-glass-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>-->
+<!--								</button>-->
+<!--							<span class="material-input"></span></div>-->
+<!--						</form>-->
 						<a href="/team/boardWrite" class="btn btn-blue btn-md">글쓰기</a>
+						<a href="/team/invite?te_idx=<?=$te_idx?>" class="btn btn-blue btn-md">팀 초대하기</a>
 					</div>
 				</div>
 			</div>
