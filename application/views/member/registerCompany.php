@@ -2,7 +2,11 @@
 
 <?php $this->load->view('layout/nav'); ?>
 
-
+<?php $this->load->view('layout/inner_header', [
+    'title' => '기업 회원가입',
+    'content' => '기업 회원으로 데리다에 회원가입 합니다.',
+    'color' => 2
+]); ?>
 
 <!-- Your Account Personal Information -->
 
@@ -61,7 +65,7 @@
 												})
 											}
 										</script>
-									<a onclick="checkID()" class="btn btn-primary btn-lg" style="color:#fff" id="checkid">중복확인<div class="ripple-container"></div></a>
+									<a onclick="checkID()" class="btn btn-purple btn-lg" style="color:#fff" id="checkid">중복확인<div class="ripple-container"></div></a>
 									</div>
 									</div>
 									</div>
@@ -203,7 +207,7 @@
                   </div>
 					
 							<div class="col">
-								<button class="btn btn-primary btn-lg full-width" id="submit" disabled>회원가입하기</button>
+								<button class="btn btn-purple btn-lg full-width" id="submit" disabled>회원가입하기</button>
 							</div>
 					</form>
 					
