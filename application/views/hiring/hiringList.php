@@ -29,10 +29,24 @@ if ($mode == "all") {
 						<div class="w-select">
 							<fieldset class="form-group">
 								<div class="btn-group bootstrap-select form-control">
-								<select class="selectpicker form-control" tabindex="-98" id="typepicker" name="type">
-									<option value="me_c_name">기업 이름</option>
-									<option value="re_content">공고 제목</option>
-								</select>
+                                    <div class="col">
+                                        <label class="control-label mb-3">검색 종류</label>
+                                        <div class="row">
+                                            <div class="radio col">
+                                                <label>
+                                                    <input type="radio" name="type" value="me_c_name" checked><span class="circle"></span><span class="check"></span>
+                                                    기업 제목
+                                                </label>
+                                            </div>
+                                            <div class="radio col">
+                                                <label>
+                                                    <input type="radio" name="type" value="re_content"><span class="circle"></span><span class="check"></span>
+                                                    공고 제목
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
 							<span class="material-input"></span></fieldset>
                             <script>
                                 document.addEventListener("DOMContentLoaded", function () {
