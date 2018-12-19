@@ -2,19 +2,11 @@
 
 <?php $this->load->view('layout/nav'); ?>
 
-<div class="main-header">
-	<div class="content-bg-wrap bg-account"></div>
-	<div class="container">
-		<div class="row">
-			<div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
-				<div class="main-header-content">
-					<h1>팀 만들기</h1>
-					<p>나만의 팀을 만들어 많은 사람들과 더 크고 더 창의적인 프로젝트를 진행해봐요!</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<?php $this->load->view('layout/inner_header', [
+    'title' => '팀 만들기',
+    'content' => '나만의 팀을 만들어 많은 사람들과 더 크고 더 창의적인 프로젝트를 진행해봐요!.',
+    'color' => 2
+]); ?>
 
 <div class="container">
 	<div class="row">
