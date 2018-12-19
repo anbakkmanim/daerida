@@ -189,7 +189,6 @@ class Snslogin extends CI_Controller
 
         curl_close($ch);
 
-        // print_r($accessToken);
-        print_r(json_decode($response));
+        print_r(get_object_vars(json_decode($response)));
     }
 }
