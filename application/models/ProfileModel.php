@@ -489,5 +489,26 @@ Class ProfileModel extends CI_Model{
         $result = $this->db->query($sql, array($param['me_n_idx'], $param['me_c_idx']));
         return $result;
     }
+
+    public function mySField($me_n_idx){
+        $sql = "
+                SELECT *
+                FROM MEMBER_NORMAL_TB
+                WHERE me_n_idx = ?
+            ";
+
+        $result = $this->db->query($sql, array($me_n_idx));
+
+        $me_id = $result->result_array()[0]['me_n_id'];
+
+        $sql = "
+                SELECT *
+                FROM FIELD_TB
+                WHERE me_id = ?
+        ";
+
+        $result = $this->db->query($sql, array($me_id));
+        return $result->result_array()[0]['fi_s_idx'];
+    }
 }
 ?>

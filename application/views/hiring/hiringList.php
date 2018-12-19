@@ -65,14 +65,11 @@ if ($mode == "all") {
             ?>
             <div class="col col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                 <div class="ui-block">
+					<!-- Post -->
+                    <article class="hentry blog-post border">
 
-
-                    <!-- Post -->
-
-                    <article class="hentry blog-post">
-
-                        <div class="post-thumb">
-                            <img src="<?= '/uploads/profile/' . $item['me_c_profile'] ?>" alt="photo">
+                        <div class="post-thumb d-inline-flex justify-content-center align-items-center" style="max-height: 80px; text-align: center;">
+                            <div class="text-center mx-auto d-inline"><img src="<?= '/uploads/profile/' . $item['me_c_profile'] ?>" alt="photo" style="max-width: 100%; max-height: 100%;" class="d-inline-block p-3 m-auto"></div>
                         </div>
 
                         <div class="post-content">
@@ -92,7 +89,6 @@ if ($mode == "all") {
                                     ?>
                             </div>
 							<a href="/hiring/detail?re_idx=<?= $item['re_idx']?>" class="h4 post-title"><?=  $item['re_content'] ?></a>
-<!--							<p>Here’s a photo from last month’s photoshoot. We got really awesome shots for the new catalog.</p>-->
 
 							<div class="author-date">
 								<a class="h6 post__author-name fn" href="/member/Company?me_c_idx=<?= $item['me_c_idx'] ?>"><?= $item['me_c_name'] ?></a>
@@ -125,7 +121,6 @@ if ($mode == "all") {
 						</div>
 					
 					</article>
-					
 					<!-- ... end Post -->
 				</div>
 			</div>
