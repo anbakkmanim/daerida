@@ -27,7 +27,7 @@ class TeamModel extends CI_Model
           $te_isOpen
         );
         // bool로 반환
-        return $this->db->insert_id($sql, $bind);
+        return $this->db->query($sql, $bind);
     }
     /**
      * 팀 목록
