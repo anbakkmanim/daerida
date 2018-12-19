@@ -221,6 +221,7 @@ class Snslogin extends CI_Controller
         curl_close($ch);
 
         $token = get_object_vars(get_object_vars(json_decode($response))['response'])['id'];
+        echo $token;
         if ($this->session->authMode == "auth") {
             $result = $this->AuthModel->authSNS('naver', $token);
             if (count($result) == 0) {
