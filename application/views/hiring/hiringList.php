@@ -166,6 +166,10 @@ if ($mode == "all") {
 
 </section>
 
-<?php if(count($hiringList) > 4) {
-            $this->load->view('layout/footer');
-        }?>
+<?php $this->load->view('layout/footer'); ?>
+
+<?php if(count($hiringList) <= 4) { ?>
+<script>
+    document.getElementById("footer").classList.add("d-none");
+</script>
+<?php } ?>
