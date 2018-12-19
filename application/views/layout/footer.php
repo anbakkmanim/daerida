@@ -1,7 +1,7 @@
 <?php if (
-	strpos($_SERVER['PHP_SELF'], '/member/login') != 10 &&
-	strpos($_SERVER['PHP_SELF'], '/hiring/map') != 10 &&
-	strpos($_SERVER['PHP_SELF'], '/hiring/resumeSend') != 10
+	strpos($_SERVER['PHP_SELF'], '/member/login') == false &&
+	strpos($_SERVER['PHP_SELF'], '/hiring/map') == false &&
+	strpos($_SERVER['PHP_SELF'], '/hiring/resumeSend') == false
 	) { ?>
 <div class="footer pt-0" id="footer" style="width: 100vw;">
 	<div class="container-fluid">
