@@ -660,6 +660,7 @@ class Member extends CI_Controller
 
         $result = $this->ProfileModel->getCompanyData($me_c_idx);
         $history = $this->ProfileModel->getHistory(array('me_c_idx' => $me_c_idx));
+        $followList = $this->ProfileModel->getFollowList(array('me_c_idx' => $me_c_idx));
 
         if ($result == null) {
             alert("해당 기업이 존재하지 않습니다.");
@@ -673,6 +674,7 @@ class Member extends CI_Controller
             $result->rfield = $this->RegisterModel->getRField();
             $result->sfield = $this->RegisterModel->getSField(array('rfield' => $result->fi_l_idx));
             $result->history = $history;
+            $result->followList = $followList;
 
             $this->load->view("member/profileCompany", $result);
         }

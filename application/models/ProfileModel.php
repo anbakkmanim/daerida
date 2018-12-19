@@ -163,21 +163,17 @@ Class ProfileModel extends CI_Model{
         return $query->row();
     }
 
-    public function getFollowData($param){
+    public function getFollowList($param)
+    {
         $sql = "
                 SELECT *
                 FROM   MEMBER_FOLLOW_TB
-                WHERE  me_n_idx = ?
                 AND    me_c_idx = ?;
         ";
 
-        $query = $this->db->query($sql, array($param['me_n_idx'], $param['me_c_idx']));
+        $query = $this->db->query($sql, array($param['me_c_idx']));
 
-        if($query->row() == null){
-            return false;
-        }else{
-            return true;
-        }
+        return $query->result_array();
     }
 
     public function setProfileCompany($param){

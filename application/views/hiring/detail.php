@@ -4,7 +4,75 @@
 
 <div class="container mt-3">
 	<div class="row">
+        <!-- Administration Tool -->
 		<div class="col col-xl-8 order-xl-2 col-lg-8 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+            <div class="ui-block">
+                <div class="ui-block-content">
+                    <div class="col">
+                        <div class="form-group label-floating">
+                            <label class="control-label">모집 공고 제목</label>
+                            <input class="form-control" placeholder="" type="text" name="">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="">분야</label>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="form-group label-floating is-empty">
+                                <script>
+                                    function getsfield(e) {
+                                        $.ajax({
+                                            type: "GET",
+                                            url: "/member/getSmallField",
+                                            data: {"rfield" : e.target.value},
+                                            success (data) {
+                                                data = JSON.parse(data);
+                                                $("#sfield").html("");
+                                                for(var i of data) {
+                                                    var a = $("<option></option>")
+                                                        .attr("value",i.fi_s_idx)
+                                                        .text(i.fi_s_name);
+                                                    $("#sfield").append(a); 
+                                                }
+                                                $("#sfield").selectpicker("refresh"); 
+                                            }
+                                        })
+                                    }
+                                    </script>
+                                        <select class="selectpicker form-control" tabindex="-98" onchange="getsfield(event)" name="me_rfield">
+                                                <?php
+                                                    foreach($rfield as $row){
+                                                        echo "<option name='me_rfield' value=".$row['fi_l_idx'].">".$row['fi_l_name']."</option>";
+                                                    }
+                                                ?>
+                                            </select>
+                                </div>
+                            </div>
+                            <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="form-group label-floating is-empty">
+                                    <select class="selectpicker form-control" tabindex="-98" id="sfield" name="me_sfield">
+                                                <?php
+                                                    foreach($sfield as $row){
+                                                        echo "<option value=".$row['fi_s_idx'].">".$row['fi_s_name']."</option>";
+                                                    }
+                                                ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group label-floating">
+                            <label class="control-label">모집 인원</label>
+                            <input class="form-control" placeholder="" type="text" name="">
+                        </div>
+                    </div>
+                    <a class="btn btn-primary mt-3 mb-0 d-block text-white">지원하기</a>
+                </div>
+            </div>
+            <!-- End Administration Tool -->
             <?php
             foreach ($fields as $field) {
                 ?>
