@@ -25,7 +25,7 @@
 					<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 						<div class="row mt-3">
 							<div class="col-xl-6 mt-3">
-								<div class="h6 title">사람 검색</div>
+								<div class="h4 title bold">사람 검색</div>
 							</div>
 							<div class="col col-xl-4 col-12">
 								<div class="form-group label-floating">
@@ -81,7 +81,7 @@
 										</tr>`)
 									}
 								</script>
-								<a href="#" class="btn btn-blue btn-md full-width" onclick="searchUser()">검색하기</a>
+								<a href="#" class="btn btn-blue btn-md full-width" style="font-size:17px;" onclick="searchUser()">검색하기</a>
 							</div>
 						</div>
 					</div>
@@ -106,10 +106,10 @@
 					<thead>
 						<tr >
 							<th></th>
-							<th>이름</th>
-							<th>나이</th>
-							<th>분야</th>
-							<th>이메일</th>				
+							<th><h5 class="mt-1 text-white">이름</h5></th>
+							<th><h5 class="mt-1 text-white">나이</h5></th>
+							<th><h5 class="mt-1 text-white">분야</h5></th>
+							<th><h5 class="mt-1 text-white">이메일</h5></th>				
 						</tr>
 					</thead>
 				
@@ -129,18 +129,18 @@
 											</td>
 
 											<td class="posts"> 
-												<a href="/member/User?me_n_idx=<?= $row['me_n_idx'] ?>"><?= $row['me_n_name'] ?></a> 
+												<a href="/member/User?me_n_idx=<?= $row['me_n_idx'] ?>" style="font-size:1rem;"><?= $row['me_n_name'] ?></a> 
 											</td>
 											
-											<td class="posts"> 
+											<td class="posts" style="font-size:1rem;"> 
 												<?=$row['me_n_age']?>
 											</td>
 
-											<td class="posts"> 
+											<td class="posts" style="font-size:1rem;"> 
 												<?=$row['fi_l_name'] ." / ". $row['fi_s_name']?>
 											</td>
 
-											<td class="posts"> 
+											<td class="posts" style="font-size:1rem;"> 
 												<?=$row['me_n_email']?>
 											</td>
 										</tr>
