@@ -235,10 +235,10 @@ class Snslogin extends CI_Controller
             $success = $this->AuthModel->addSNS($this->session->me_idx, 'google', $token);
             if ($success) {
                 alert("추가 성공");
-                location_previous();
+                location_href("/");
             } else {
                 alert("추가 실패");
-                location_previous();
+                location_href("/");
             }
         }
     }
