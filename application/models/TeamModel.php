@@ -35,7 +35,7 @@ class TeamModel extends CI_Model
      */
     public function listTeam() {
         // SQL 문 생성
-        $sql = "select a.*, COUNT(b.te_po_idx) post_Count from TEAM_TB as a join TEAM_POST_TB as b on a.te_idx = b.te_idx group by b.te_idx";
+        $sql = "select a.*, COUNT(b.te_po_idx) post_Count, c.* from TEAM_TB as a join TEAM_POST_TB as b on a.te_idx = b.te_idx join FIELD_LARGE_RF as c on a.fi_l_idx = c.fi_l_idx where a.te_isOpen = '공개' group by b.te_idx";
 
         // array로 반환
         return $this->db->query($sql)->result_array();
