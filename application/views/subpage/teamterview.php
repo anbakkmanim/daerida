@@ -194,7 +194,7 @@
 						<div class="post-content">
 							<a href="#" class="post-category bg-purple">Interview</a>
 							<a href="#" class="h4 post-title">쿠키요미</a>
-							<p>Kraken unleashed VR Roller Coaster</p>
+							<p>Rythm of Legend</p>
 
 							
 						</div>
@@ -647,7 +647,7 @@
 						<img src="/assets/img/쿠키요미_L.jpg" alt="photo">
 					</div>
 					<div class="col text-center">
-						<label class="h3 mt-4 bold"> Kraken unleashed VR Roller Coaster </label>
+						<label class="h3 mt-4 bold"> Rythm of Legend </label>
 					</div>
 					<div class="col">
 						<!-- <label class="h4 m-2"> 심마니가 누구죠? </label>
