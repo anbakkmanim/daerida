@@ -251,7 +251,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col col-xl-10 m-auto col-lg-10 col-md-12 col-sm-12 col-12">
-				<a href="#"  class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registration-login-form-popup">소중한 사람들을 데리다!</a>
+				<a href="/member/login"  class="btn btn-primary btn-lg">소중한 사람들을 데리다!</a>
 			</div>
 		</div>
 	</div>
