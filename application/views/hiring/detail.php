@@ -14,6 +14,7 @@
             <?php if ($details['me_c_id'] == $this->session->me_id) { ?>
 
             <form class="ui-block" action="/hiring/fieldAdd" method="POST">
+                <input type="hidden" name="re_idx" value="<?= $_GET['re_idx'] ?>">
                 <div class="ui-block-content">
                     <div class="col">
                         <div class="form-group label-floating">

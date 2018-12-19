@@ -139,8 +139,8 @@ class Hiring extends CI_Controller
         $return = $this->RecruitModel->insertRecruit($co_idx, $re_startDate, $re_endDate, $re_content);
 
         if ($return) {
-            alert('채용 공고 작성을 성공하였습니다');
-            location_href('/hiring/hiringList');
+            alert('채용 분야를 작성해 주세요');
+            location_href('/hiring/detail?re_idx='.$this->db->insert_id());
         } else {
             alert('채용 공고 작성 실패');
             location_href('/hiring/hiringList');
@@ -155,7 +155,7 @@ class Hiring extends CI_Controller
      */
     public function fieldAdd() {
         // Get Params - POST
-        $re_idx = $this->session->me_idx;
+        $re_idx = $_POST['re_idx'];
         $re_fi_explain = $_POST['re_fi_explain'];
         $fi_s_idx = $_POST['fi_s_idx'];
         $re_fi_personal = $_POST['re_fi_personal'];
