@@ -2,6 +2,13 @@
 
 <?php $this->load->view('layout/nav'); ?>
 
+<?php $this->load->view('layout/inner_header', [
+    'title' => '지원자 목록',
+    'content' => '합격, 불합격 여부를 설정해 주세요.',
+    'color' => 1
+]); ?>
+
+
 <div class="container mt-3">
   <div class="row">
     <div class="col col-xl-8 order-xl-1 col-lg-8 order-lg-1 col-md-12 order-md-1 col-sm-12 col-12">
