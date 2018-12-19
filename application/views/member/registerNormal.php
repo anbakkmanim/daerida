@@ -146,7 +146,7 @@
 								<div class="col">
 									<div class="form-group label-floating">
 											<label class="control-label">나이</label>
-											<input class="form-control" placeholder="" type="number" name="me_age">
+											<input class="form-control" placeholder="" type="number" name="me_n_age">
 									</div>
 								</div>
 								

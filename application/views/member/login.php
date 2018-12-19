@@ -103,7 +103,7 @@
 									<input type="submit" class="btn btn-lg btn-primary full-width" value="로그인">
 			
 									<div class="or"></div>
-									<div id="btn-login-google" class="btn btn-lg bg-google full-width btn-icon-left"><i class="fab fa-google" aria-hidden="true"></i>구글로 로그인하기</div>
+									<a href="/snslogin/authGoogle" class="btn btn-lg bg-google full-width btn-icon-left"><i class="fab fa-google" aria-hidden="true"></i>구글로 로그인하기</a>
 									<a href="/snslogin/authKakao" class="btn btn-lg bg-yellow full-width btn-icon-left"><img src="/assets/SVG/Kakaoicon.svg" width="18" alt="">&nbsp; 카카오로 로그인하기</a>
 									<a href="/snslogin/authNaver" class="btn btn-lg bg-green full-width btn-icon-left"><img src="/assets/SVG/naver.svg" width="18" alt="">&nbsp; 네이버로 로그인하기</a>
 			
@@ -145,25 +145,8 @@
 	</div>
 </div>
 
-<script src="https://apis.google.com/js/api:client.js"></script>
 <script>
-	let googleUser = {};
-	document.addEventListener("DOMContentLoaded", () => {
-  	document.body.classList.add("landing-page");
-		gapi.load('auth2', () => {
-			auth2 = gapi.auth2.init({
-				client_id: "<?= $google['client_id'] ?>",
-				cookiepolicy: 'single_host_origin'
-			});
-			attachSignin(document.getElementById("btn-login-google"));
-		});
-	});
-
-	const attachSignin = element => {
-		auth2.attachClickHandler(element, {}, googleUser => {
-			console.log(googleUser.getBasicProfile());
-		});
-	};
+	document.body.classList.add('landing-page');
 </script>
 
 <?php $this->load->view('layout/footer'); ?>

@@ -96,7 +96,7 @@ class Team extends CI_Controller
             alert('초대 실패');
         }
 
-        location_href('/team/teamList');
+        location_href('/team/invite?te_idx='.$te_idx);
     }
 
     public function inviteTeam(){
@@ -124,17 +124,17 @@ class Team extends CI_Controller
 
     public function invite() {
         $data['te_idx'] = $this->input->get('te_idx');
-        $result['user'] = $this->TeamModel->getAllUser();
-        $this->load->view('team/invite',$result);
+        $data['user'] = $this->TeamModel->getAllUser($data);
+        $this->load->view('team/invite',$data);
     }
 
     public function searchUser(){
-        $data['te_idx'] = $this->input->post('te_id');
-        $data['me_n_name'] = $this->input->post('me_n_name');
+        $data['te_idx'] = $this->input->post('te_idx');
+        $data['me_name'] = $this->input->post('me_n_name');
+ 
+        $data['result'] = $this->TeamModel->searchUser($data);
 
-        $result = $this->TeamModel->searchUser($data);
-
-        echo json_encode($result);
+        echo json_encode($data);
     }
 
     /**

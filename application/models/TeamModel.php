@@ -61,23 +61,23 @@ class TeamModel extends CI_Model
 
     /**
      * @param $te_idx 팀 인덱스
-     * @param $me_n_id 사용자 인덱스
+     * @param $me_n_idx 사용자 인덱스
      * @param $fi_s_idx 소분야 아이디
      * @return bool SQL_Value 성공 여부 (Boolean)
      */
-    public function joinTeam($te_idx, $me_n_id, $fi_s_idx) {
+    public function joinTeam($te_idx, $me_n_idx, $fi_s_idx) {
         // SQL 문 생성
-        $sql = "insert into TEAM_JOIN_TB (te_idx, me_n_id, fi_s_idx) values (?, ?, ?)";
+        $sql = "insert into TEAM_JOIN_TB (te_idx, me_n_idx, fi_s_idx) values (?, ?, ?)";
 
         // bind
         $bind = array(
             $te_idx,
-            $me_n_id,
+            $me_n_idx,
             $fi_s_idx
         );
 
         // bool 로 반환
-        return $this->db->query($sql, $bind)->result_array();
+        return $this->db->query($sql, $bind);
     }
 
     /**
@@ -99,7 +99,7 @@ class TeamModel extends CI_Model
         );
         
         // bool 로 반환
-        return $this->db->query($sql, $bind)->result_array();
+        return $this->db->query($sql, $bind);
     }
 
     /**
@@ -177,7 +177,7 @@ class TeamModel extends CI_Model
                 left outer join FIELD_TB as b on me_id = me_n_id 
                 left outer join FIELD_SMALL_RF as c on b.fi_s_idx = c.fi_s_idx 
                 left outer join FIELD_LARGE_RF as d on c.fi_l_idx = d.fi_l_idx  
-                WHERE me_n_name LIKE '%".$param['me_n_name']."%'
+                WHERE me_n_name LIKE '%".$param['me_name']."%'
                 AND me_n_idx NOT IN (SELECT me_n_idx FROM TEAM_JOIN_TB WHERE te_idx = ?);
         ";
 
