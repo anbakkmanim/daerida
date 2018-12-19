@@ -43,16 +43,16 @@ class TeamModel extends CI_Model
 
     /**
      * 내 팀 목록
-     * @param $me_n_id
+     * @param $me_n_idx 일반 사용자 인덱스
      * @return array SQL Value 내 팀 array 값
      */
-    public function myTeam($me_n_id) {
+    public function myTeam($me_n_idx) {
         // SQL 문 생성
         $sql = "select a.*, b.*, d.*, e.*, COUNT(c.te_po_idx) post_Count from TEAM_JOIN_TB as a join TEAM_TB as b on a.te_idx = b.te_idx join TEAM_POST_TB as c on b.te_idx = c.te_idx 
-                join FIELD_SMALL_RF as d on a.fi_s_idx = d.fi_s_idx join FIELD_LARGE_RF as e on d.fi_l_idx = e.fi_l_idx where a.me_n_id = ? group by b.te_idx";
+                join FIELD_SMALL_RF as d on a.fi_s_idx = d.fi_s_idx join FIELD_LARGE_RF as e on d.fi_l_idx = e.fi_l_idx where a.me_n_idx = ? group by b.te_idx";
 
         $bind = array(
-            $me_n_id
+            $me_n_idx
         );
         
         // array로 반환

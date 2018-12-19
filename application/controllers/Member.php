@@ -313,6 +313,7 @@ class Member extends CI_Controller
      * @RESPONSE (Array)career, name, email, phone, sido, isMilitary, age, hopeSalary, profile, info, isOpen
      */
     public function profileNormal(){
+
         $data['me_idx'] = $this->session->me_idx;
         $data['me_id'] = $this->session->me_id;
         $data['me_password'] = $this->session->me_password;
@@ -631,6 +632,12 @@ class Member extends CI_Controller
      * @RESPONSE X
      */
     public function User() {
+        
+        if (!isset($this->session->me_idx) || $this->session->me_idx == null) {
+            alert("로그인 한 뒤에 볼 수 있습니다.");
+            location_href("/");
+            return;
+        }
         $me_n_idx = $this->input->get('me_n_idx');
 
         $result = $this->ProfileModel->getUserData($me_n_idx);
@@ -656,6 +663,12 @@ class Member extends CI_Controller
      * 기업 정보 보기
      */
     public function Company() {
+        
+        if (!isset($this->session->me_idx) || $this->session->me_idx == null) {
+            alert("로그인 한 뒤에 볼 수 있습니다.");
+            location_href("/");
+            return;
+        }
         $me_c_idx = $this->input->get("me_c_idx");
 
         $result = $this->ProfileModel->getCompanyData($me_c_idx);
