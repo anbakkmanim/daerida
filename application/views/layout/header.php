@@ -31,4 +31,4 @@
   
   <title>데리다</title>
 </head>
-<body>
+<body class="mobile-app">
