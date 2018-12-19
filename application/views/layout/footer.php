@@ -9,7 +9,7 @@
 			<div class="col col-lg-12 col-md-12 col-sm-12 col-12">
 				<div class="sub-footer-copyright border-0 mt-0">
 					<span>
-						Copyright <a href="index.html">Olympus Buddypress + WP</a> All Rights Reserved 2017
+						Copyright <a href="/subpage/about">안밖마님</a> + <a href="http://gryard.com/">푸른들 소프트</a> All Rights Reserved 2018
 					</span>
 				</div>
 			</div>

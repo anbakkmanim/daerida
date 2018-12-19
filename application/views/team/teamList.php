@@ -4,7 +4,7 @@
 
 <?php $this->load->view('layout/inner_header', [
 	'title' => '팀 목록',
-	'content' => '가입을 원하는 팀을 선택해 주세요.',
+	'content' => '공개로 설정된 팀들을 확인!.',
 	'color' => 2
 ]); ?>
 
@@ -18,15 +18,17 @@ if ($this->session->me_type != "me_n_") {
 
 <script>
     function joinTeam(e, idx) {
-        if (confirm("확인을 누르면 " + e.target.innerText + " 기업에 가입 신청이 됩니다.")) {
-
-        }
+        // if (confirm("확인을 누르면 " + e.target.innerText + " 기업에 가입 신청이 됩니다.")) {
+        //
+        // }
     }
 </script>
 
 <section class="blog-post-wrap medium-padding80" style="padding-top: 20px; padding-bottom: 0;">
 	<div class="container">
-        <a href="/team/teamWrite" class="btn btn-purple btn-md">팀 만들기</a>
+        <a href="/team/teamWrite" class="btn btn-purple btn-md">
+            <span style="font-size: 1.1rem; font-weight: normal;">팀 만들기</span>
+        </a>
 		<div class="row">
 
             <?php
