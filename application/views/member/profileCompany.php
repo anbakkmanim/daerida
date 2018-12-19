@@ -21,7 +21,7 @@
 										function starcheck(){
 											$a = $("#star").attr('name');
 											if($a == "blank"){
-												$("#star").attr('src','/assets/img/찬별.png/');
+												$("#star").attr('src','/assets/img/찬별.png');
 												$("#star").attr('name','fill');
 												$.ajax({
 													type:"post",
@@ -32,7 +32,7 @@
 													}
 												})
 											}else{
-												$("#star").attr('src','/assets/img/빈별.png/');
+												$("#star").attr('src','/assets/img/빈별.png');
 												$("#star").attr('name','blank');
 												$.ajax({
 													type:"post",
@@ -48,11 +48,11 @@
 									<?php if($this->session->me_idx != null && $this->session->me_type == "me_n_"){
 													if(is_int(array_search($this->session->me_idx,array_column($followList, 'me_n_idx')))){ ?>
 															<a href="#" class="star-close" onclick="starcheck()">
-																<img id="star" src="/assets/img/찬별.png/" name="fill">
+																<img id="star" src="/assets/img/찬별.png" name="fill">
 															</a>
 										<?php } else { ?>
 															<a href="#" class="star-close" onclick="starcheck()">
-																<img id="star" src="/assets/img/빈별.png/" name="blank">
+																<img id="star" src="/assets/img/빈별.png" name="blank">
 															</a>
 										<?php } ?>
 									<?php } ?>
