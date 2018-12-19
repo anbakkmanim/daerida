@@ -150,4 +150,13 @@ class AuthModel extends CI_Model
             return $query;
         }
     }
+
+    function authSNS($type, $id) {
+        $sql = "select * from MEMBER_NORMAL_TB where me_n_".$type."Token = ?";
+        $bind = array (
+            $id
+        );
+
+        return $this->db->query($sql, $bind)->result_array();
+    }
 }

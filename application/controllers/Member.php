@@ -38,6 +38,7 @@ class Member extends CI_Controller
         }
     }
 
+
     /**
      * 로그인
      * @METHOD POST

@@ -105,7 +105,7 @@
 									<div class="or"></div>
 									<a href="#" class="btn btn-lg bg-google full-width btn-icon-left"><i class="fab fa-google" aria-hidden="true"></i>구글로 로그인하기</a>
 									<a href="#" class="btn btn-lg bg-yellow full-width btn-icon-left"><img src="/assets/SVG/Kakaoicon.svg" width="18" alt="">&nbsp; 카카오로 로그인하기</a>
-									<a href="<?= $naver['authorize_url'] ?>?response_type=code&client_id=<?= $naver['client_id'] ?>&redirect_uri=<?= site_url('/snslogin/naver') ?>&state=RANDOM_STATE" class="btn btn-lg bg-green full-width btn-icon-left"><img src="/assets/SVG/naver.svg" width="18" alt="">&nbsp; 네이버로 로그인하기</a>
+									<a href="/snslogin/authNaver" class="btn btn-lg bg-green full-width btn-icon-left"><img src="/assets/SVG/naver.svg" width="18" alt="">&nbsp; 네이버로 로그인하기</a>
 			
 			
 									<p>데리다 계정이 없나요?<a href="./registerNormal"> 지금 바로 가입하세요!</a> 쉽고 간편하게 데리다를 이용하실 수 있습니다!</p>
