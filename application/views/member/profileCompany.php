@@ -255,9 +255,9 @@
 						</div>
 					</div>
 
-					<div class="col">
-						<input type="submit"  class="btn btn-secondary btn-lg btn--half-width" value="추가">
-						<input type="button"  class="btn btn-secondary btn-lg btn--half-width" data-dismiss="modal" aria-label="Close" value="취소">
+					<div class="col mt-2">
+						<input type="submit"  class="btn btn-secondary btn-lg btn--half-width  m-0 mb-2 mr-4" value="추가">
+						<input type="button"  class="btn btn-secondary btn-lg btn--half-width  m-0 mb-2" data-dismiss="modal" aria-label="Close" value="취소">
 					</div>
 					</form>
 				</div>
@@ -417,9 +417,9 @@
 									</div>
 								</div>
 							</div>
-							<div class="col">
-								<input type="submit" class="btn btn-secondary btn-lg btn--half-width" value="변경">
-								<input type="button" class="btn btn-secondary btn-lg btn--half-width"  data-dismiss="modal" aria-label="Close" value="취소">
+							<div class="col mt-2">
+								<input type="submit" class="btn btn-secondary btn-lg btn--half-width  m-0 mb-2 mr-4" value="변경">
+								<input type="button" class="btn btn-secondary btn-lg btn--half-width  m-0 mb-2"  data-dismiss="modal" aria-label="Close" value="취소">
 							</div>
 				</form>
 				</div>
