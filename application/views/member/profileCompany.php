@@ -64,13 +64,13 @@
 								<div class="col col-xl-8 m-auto">
 									<ul class="profile-menu mb-0	">
 										<li>
-											<a href="<?= '/member/company?me_c_idx='.$me_c_idx.'' ?>"  class="active">기업정보</a>
+											<a href="<?= '/member/company?me_c_idx='.$me_c_idx.'' ?>"  class="active" style="font-size:1.25rem;">기업정보</a>
 										</li>
 										<li>
-											<a href="/member/companyQnA?me_c_idx=<?=$me_c_idx?>" >Q&A</a>
+											<a href="/member/companyQnA?me_c_idx=<?=$me_c_idx?>" style="font-size:1.25rem;">Q&A</a>
 										</li>
 										<li>
-												<a href="/hiring/hiringList?co_idx=<?= $me_c_idx ?>">채용 공고</a>
+												<a href="/hiring/hiringList?co_idx=<?= $me_c_idx ?>" style="font-size:1.25rem;">채용 공고</a>
 										</li>
 									</ul>
 								</div>
@@ -96,8 +96,8 @@
 								<h6 class="mb-0">
 									<div class="row">
 										<a data-toggle="collapse" data-parent="#accordion" href="/#collapseOne"  aria-expanded="true" aria-controls="collapseOne"
-										 class="col-auto mr-auto mt-2">
-											<span>연혁</span>
+										 class="col-auto mr-auto mt-1">
+											<span class="h4 bold">연혁</span>
 											<svg class="olymp-dropdown-arrow-icon">
 												<use xlink:href="/#olymp-dropdown-arrow-icon" ></use>
 											</svg>
@@ -105,7 +105,7 @@
 									
 										<?php if ($me_c_id == $this->session->me_id) {?>
 										<div class="col-auto">
-											<a href="#"  class="btn btn-primary btn-sm" data-toggle="modal" data-target="#create-career">추가<div class="ripple-container"></div></a>
+											<a href="#"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-career" style="font-size:1rem;" >추가<div class="ripple-container"></div></a>
 										</div>
 										<?php } ?>
 									</div>
@@ -145,7 +145,7 @@
 			<div class="col col-xl-4 order-xl-1 col-lg-4 order-lg-1 col-md-12 order-md-2 col-sm-12 col-12">
 				<div class="ui-block">
 					<div class="ui-block-title">
-						<h6 class="title">프로필</h6>
+						<h4 class="title bold">프로필</h4>
 					</div>
 					<div class="ui-block-content">
 
@@ -154,44 +154,44 @@
 
 						<ul class="widget w-personal-info">
 							<li>
-								<span class="title">기업소개:</span>
-								<span class="text"><?= $me_c_info?></span>
+								<h5 class="title">기업소개:</h5>
+								<h5 class="text"  style="font-weight:500;"><?= $me_c_info?></h5>
 							</li> 
 							<li>
-								<span class="title">기업명:</span>
-								<span class="text"><?= $me_c_name ?></span>
+								<h5 class="title">기업명:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_c_name ?></h5>
 							</li>
 							<li>
-								<span class="title">기업담당자:</span>
-								<span class="text"><?= $me_c_manager ?></span>
+								<h5 class="title">기업담당자:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_c_manager ?></h5>
 							</li>
 							<li>
-								<span class="title">이메일:</span>
-								<a href="mailto:<?= $me_c_email ?>" class="text"><?= $me_c_email ?></a>
+								<h5 class="title">이메일:</h5>
+									<a href="mailto:<?= $me_c_email ?>" class="text h5" style="font-weight:500;"><?= $me_c_email ?></a>
 							</li>
 							<li>
-								<span class="title">초봉:</span>
-								<span class="text"><?= $me_c_salary ?></span>
+								<h5 class="title">초봉:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_c_salary ?></h5>
 							</li>
 							<li>
-								<span class="title">분야:</span>
+								<h5 class="title">분야:</h5>
                                 <?php if(isset($fi_l_name)){ ?>
-								    <span class="text"><?= $fi_l_name . "/" . $fi_s_name ?></span>
+								    <h5 class="text" style="font-weight:500;"><?= $fi_l_name . "/" . $fi_s_name ?></h5>
 							    <?php }else{ ?>
-                                    <span class="text">미정</span>
+                                    <h5 class="text" style="font-weight:500;">미정</h5>
                                 <?php } ?>
                             </li>
 							<li>
-								<span class="title">지역:</span>
-								<span class="text"><?= $me_c_sido ?></span>
+								<h5 class="title">지역:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_c_sido ?></h5>
 							</li>
 							<li>
-								<span class="title">복리후생:</span>
-								<span class="text"><?= $me_c_benefit ?></span>
+								<h5 class="title">복리후생:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_c_benefit ?></h5>
 							</li>
 							<li>
-								<span class="title">병역 여부:</span>
-								<span class="text"><?= $me_c_isMilitary ?></span>
+								<h5 class="title">병역 여부:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_c_isMilitary ?></h5>
 							</li>
 
 						</ul>
@@ -200,7 +200,7 @@
 						<!-- W-Socials -->
 					
 						<?php if ($me_c_id == $this->session->me_id) {?>
-						<a href="/assets/#"  class="btn btn-primary mb-0 d-block" data-toggle="modal" data-target="#update-profile">프로필 수정</a>
+						<a href="/assets/#"  class="btn btn-primary btn-md full-width " style="font-size:17px;" data-toggle="modal" data-target="#update-profile">프로필 수정</a>
 						<?php } ?>
 					</div>
 				</div>
