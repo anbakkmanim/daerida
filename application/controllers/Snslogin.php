@@ -7,6 +7,7 @@ class Snslogin extends CI_Controller
     {
         parent::__construct();
         $this->config->load('token', true);
+        $this->load->model('AuthModel');
     }
 
 //     public function kakao()
@@ -154,10 +155,62 @@ class Snslogin extends CI_Controller
 //         }
 //     }
 
+
+    /**
+     * private 메소드.
+     * @param $auth 인증 데이터
+     */
+    private function auth($row) {
+        $user_data = array(
+            'me_idx' => $row['me_n_idx'],
+            'me_name' => $row['me_n_name'],
+            'me_profile' => $row['me_n_profile'],
+            'me_id' => $row['me_n_id'],
+            'me_password' => $row['me_n_password'],
+            'me_table' => $row,
+            'me_type' => "me_n_"
+        );
+        $this->session->set_userdata($user_data);
+        location_href("/hiring/hiringList");
+    }
+
+    public function authNaver() {
+        $this->session->set_userdata("authMode", "auth");
+        $naver = $this->config->item("naver_login", "token");
+        location_href($naver['authorize_url'] . "?response_type=code&client_id=".$naver['client_id']."&redirect_uri=".site_url('/snslogin/naver')."&state=RANDOM_STATE");
+    }
+
+    public function addNaver() {
+        if ($this->session->me_idx == null) {
+            alert("로그인 해주세요");
+            location_previous();
+            return;
+        }
+        $this->session->set_userdata("authMode", "add");
+        $naver = $this->config->item("naver_login", "token");
+        location_href($naver['authorize_url'] . "?response_type=code&client_id=".$naver['client_id']."&redirect_uri=".site_url('/snslogin/naver')."&state=RANDOM_STATE");
+    }
+
+    public function authKakao() {
+        $this->session->set_userdata("authMode", "auth");
+        $kakao = $this->config->item("kakao_login", "token");
+        location_href($kakao['authorize_url']."?response_type=code&client_id=" . $kakao['client_id'] ."&redirect_uri=" . site_url('/snslogin/kakao'));
+    }
+
+    public function addKakao() {
+        if ($this->session->me_idx == null) {
+            alert("로그인 해주세요");
+            location_previous();
+            return;
+        }
+        $this->session->set_userdata("authMode", "add");
+        $kakao = $this->config->item("kakao_login", "token");
+        location_href($kakao['authorize_url']."?response_type=code&client_id=" . $kakao['client_id'] ."&redirect_uri=" . site_url('/snslogin/kakao'));
+    }
+
     public function naver() {
         $naver = $this->config->item('naver_login', 'token');
-        $url =
-        $naver['token_url'] . "?grant_type=authorization_code"
+        $url = $naver['token_url'] . "?grant_type=authorization_code"
         . "&client_id=" . $naver['client_id']
         . "&client_secret=" . $naver['client_secret']
         . "&redirect_uri=" . site_url('/snslogin/naver')
@@ -189,7 +242,26 @@ class Snslogin extends CI_Controller
 
         curl_close($ch);
 
-        print_r(get_object_vars(json_decode($response)));
+        $token = get_object_vars(get_object_vars(json_decode($response))['response'])['id'];
+        if ($this->session->authMode == "auth") {
+            $result = $this->AuthModel->authSNS('naver', $token);
+            if (count($result) == 0) {
+                alert("해당 네이버 계정이 연결되어있지 않습니다. 회원가입 뒤에 연결해 주세요");
+                location_href("/member/registerNormal");
+                return;
+            } else {
+                $this->auth($result[0]);
+            }
+        } else {
+            $success = $this->AuthModel->addSNS($this->session->me_idx, 'naver', $token);
+            if ($success) {
+                alert("추가 성공");
+                location_previous();
+            } else {
+                alert("추가 실패");
+                location_previous();
+            }
+        }
     }
 
     public function kakao() {
@@ -224,7 +296,26 @@ class Snslogin extends CI_Controller
         $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
         curl_close($ch);
+        $token = get_object_vars(json_decode($response))['id'];
+        if ($this->session->authMode == "auth") {
+            $result = $this->AuthModel->authSNS('kakao', $token);
+            if (count($result) == 0) {
+                alert("해당 카카오 계정이 연결되어있지 않습니다. 회원가입 뒤에 연결해 주세요");
+                location_href("/member/registerNormal");
+                return;
+            } else {
+                $this->auth($result[0]);
+            }
+        } else {
+            $success = $this->AuthModel->addSNS($this->session->me_idx, 'kakao', $token);
+            if ($success) {
+                alert("추가 성공");
+                location_previous();
+            } else {
+                alert("추가 실패");
+                location_previous();
+            }
+        }
 
-        print_r(get_object_vars(json_decode($response)));
     }
 }

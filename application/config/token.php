@@ -19,7 +19,7 @@ $config['kakao_login'] = [
   'client_id' => 'd69287aa5bb7a680f63116e28c78e72c',
   'authorize_url' => 'https://kauth.kakao.com/oauth/authorize',
   'token_url' => 'https://kauth.kakao.com/oauth/token',
-  'info_url' => 'https://kapi.kakao.com/v1/user/me'
+  'info_url' => 'https://kapi.kakao.com/v2/user/me'
 ];
 
 // Google Login (관리자: 남현욱, h*0**am)

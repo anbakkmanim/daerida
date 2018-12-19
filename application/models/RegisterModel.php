@@ -184,4 +184,5 @@ class RegisterModel extends CI_Model
         $query = $this->db->query($sql, array($param['rfield']));
         return $query->result_array();
     }
+
 }
