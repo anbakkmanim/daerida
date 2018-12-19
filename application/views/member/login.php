@@ -57,13 +57,13 @@
 		<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-10 col-10 mr-5 ml-4">
 			<div class="landing-content">
 				<h1>Welcome to the DAERIDA</h1>
-				<p>데리다는 전국 스타트업 네트워크 서비스입니다. <br>
+				<p style="font-size: 1rem">데리다는 전국 스타트업 네트워크 서비스입니다. <br>
 				이력서, 팀빌딩, 포트폴리오, 구인구직 다양한 기능을 만나보세요! <br>
 				사람을 데리다 모집하고, 공유하고, 팀을 만들어 보세요! 
 				</p>
 				<div class="row">
-					<a href="./registerNormal" class="btn mr-4 btn-md btn-border col c-white col-xl-4">개인 회원가입</a>
-					<a href="./registerCompany" class="btn btn-md btn-border col c-white col-xl-4">기업 회원가입</a>
+					<a href="./registerNormal" class="btn mr-4 btn-md btn-border col c-white col-xl-4" style="font-size: .85rem">개인 회원가입</a>
+					<a href="./registerCompany" class="btn btn-md btn-border col c-white col-xl-4" style="font-size: .85rem">기업 회원가입</a>
 				</div>
 			</div>
 		</div>
@@ -110,12 +110,12 @@
 									<input type="submit" class="btn btn-lg btn-primary full-width" value="로그인">
 			
 									<div class="or"></div>
-									<a href="/snslogin/authGoogle" class="btn btn-lg bg-google full-width btn-icon-left"><i class="fab fa-google" aria-hidden="true"></i>구글로 로그인하기</a>
+									<a href="/snslogin/authGoogle" class="btn btn-lg bg-google full-width btn-icon-left"><img src="/assets/SVG/Googleicon.svg" width="15" alt="">&nbsp; 구글로 로그인하기</a>
 									<a href="/snslogin/authKakao" class="btn btn-lg bg-yellow full-width btn-icon-left"><img src="/assets/SVG/Kakaoicon.svg" width="18" alt="">&nbsp; 카카오로 로그인하기</a>
-									<a href="/snslogin/authNaver" class="btn btn-lg bg-green full-width btn-icon-left"><img src="/assets/SVG/naver.svg" width="18" alt="">&nbsp; 네이버로 로그인하기</a>
+									<a href="/snslogin/authNaver" class="btn btn-lg bg-green full-width btn-icon-left"><img src="/assets/SVG/Navericon.svg" width="15" alt="">&nbsp; 네이버로 로그인하기</a>
 			
 			
-									<p>데리다 계정이 없나요?<a href="./registerNormal"> 지금 바로 가입하세요!</a> 쉽고 간편하게 데리다를 이용하실 수 있습니다!</p>
+									<p>데리다 계정이 없나요?<a href="./registerNormal"> 지금 바로 가입하세요!</a> <br>쉽고 간편하게 데리다를 이용하실 수 있습니다!</p>
 								</div>
 							</div>
 						</form>
