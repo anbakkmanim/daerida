@@ -184,6 +184,8 @@ class Member extends CI_Controller
         $data['me_profile'] = null;
         if($this->upload->do_upload('me_profile')){
             $data['me_profile'] = $this->upload->data('file_name');
+        } else {
+            alert($this->upload->display_errors());
         }
 
         $data['me_answer'] = $this->input->post('me_answer');
