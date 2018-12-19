@@ -1,7 +1,11 @@
+<?= $_SERVER['REQUEST_URI'] != '/member/login' ? "false" : "true" ?>
+<?= $_SERVER['REQUEST_URI'] != '/hiring/map' ? "false" : "true" ?>
+<?= $_SERVER['REQUEST_URI'] != '/hiring/resumeSend' ? "false" : "true" ?>
+
 <?php if (
-	strpos($_SERVER['PHP_SELF'], '/member/login') == false &&
-	strpos($_SERVER['PHP_SELF'], '/hiring/map') == false &&
-	strpos($_SERVER['PHP_SELF'], '/hiring/resumeSend') == false
+	$_SERVER['REQUEST_URI'] != '/member/login' &&
+	$_SERVER['REQUEST_URI'] != '/hiring/map' &&
+	$_SERVER['REQUEST_URI'] != '/hiring/resumeSend'
 	) { ?>
 <div class="footer pt-0" id="footer" style="width: 100vw;">
 	<div class="container-fluid">
