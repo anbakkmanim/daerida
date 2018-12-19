@@ -12,7 +12,7 @@
 				<div class="top-header top-header-favorit">
 					<div class="top-header-thumb">
                         <img src="/assets/img/Back.jpg"  alt="nature">
-						<div class="top-header-author">
+						<div class="top-header-author mt-5">
 							<div class="author-thumb">
 								<img src="<?= '/uploads/profile/'.$CompanyInfo->me_c_profile.'' ?>" alt="author">
 							</div>
@@ -25,15 +25,15 @@
 					<div class="profile-section">
 						<div class="row">
 							<div class="col col-xl-8 m-auto col-lg-8 col-md-12">
-								<ul class="profile-menu">
+								<ul class="profile-menu mb-0">
 									<li>
-										<a href="<?= '/member/Company?me_c_idx='.$CompanyInfo->me_c_idx.'' ?>">기업정보</a>
+										<a href="<?= '/member/Company?me_c_idx='.$CompanyInfo->me_c_idx.'' ?>" style="font-size:1.25rem;">기업정보</a>
 									</li>
 									<li>
-										<a href="<?= '/member/companyQnA?me_c_idx='.$CompanyInfo->me_c_idx.'' ?>" class="active">Q&A</a>
+										<a href="<?= '/member/companyQnA?me_c_idx='.$CompanyInfo->me_c_idx.'' ?>" class="active" style="font-size:1.25rem;">Q&A</a>
 									</li>
                                     <li>
-                                        <a href="/hiring/hiringList?co_idx=<?= $me_c_idx ?>">채용 공고</a>
+                                        <a href="/hiring/hiringList?co_idx=<?= $me_c_idx ?>" style="font-size:1.25rem;">채용 공고</a>
                                     </li>
 								</ul>
 							</div>
@@ -56,12 +56,16 @@
 	<div class="row">
 		<div class="col col-xl-8 order-xl-2 col-lg-12 order-lg-1 col-sm-12 col-12">
 			<div id="newsfeed-items-grid">
-                <?php if($this->session->me_idx != $CompanyInfo->me_c_idx && $this->session->me_type == "me_n_") { ?>
+                <?php if($this->session->me_type == "me_n_") { ?>
                         <div class='ui-block' >
                             <form action = '/member/companyQuestion' class='comment-form inline-items' method = 'POST' >
                                 <input type = 'hidden' name = 'me_c_idx' value = '<?=$CompanyInfo->me_c_idx?>' >
                                 <div class='post__author author vcard inline-items' >
-                                        <textarea class='form-control' name = 'qna_question' ></textarea >
+
+																	<div class="form-group is-empty col p-0 m-0 mb-4">
+																		<textarea class='form-control' name = 'qna_question' ></textarea ><span class="material-input"></span>
+																	</div>
+                                  
                                 </div >
                                 <input type = 'submit' class='btn btn-md-2 btn-primary' value = '질문하기' >
                             </form >
@@ -80,7 +84,7 @@
 
                                 <div class="author-date">
                                     <a class="h6 post__author-name fn"
-                                       href="#"><?= $rows['me_n_name'] ?></a>
+                                       href="#"><h5><?= $rows['me_n_name'] ?></h5></a>
                                 </div>
 
                                 <div class="more">
@@ -105,7 +109,7 @@
 
                             </div>
 
-                            <p><?= $rows['co_qna_content'] ?>
+                            <p style="font-size:1.1rem;"><?= $rows['co_qna_content'] ?>
                             </p>
 
                         </article>
@@ -139,7 +143,7 @@
 
                                     </div>
 
-                                    <p><?=$rows['co_qna_answer']?></p>
+                                    <p style="font-size:1.1rem;"><?=$rows['co_qna_answer']?></p>
                                 </li>
 
                             </ul>
@@ -183,63 +187,67 @@
 			
 
 		</div>
-
-        <div class="col col-xl-4 order-xl-1 col-lg-4 order-lg-1 col-md-12 order-md-2 col-sm-12 col-12">
-            <div class="ui-block">
-                <div class="ui-block-title">
-                    <h6 class="title">프로필</h6>
-                    <a href="#"  class="more"><svg class="olymp-three-dots-icon">
-                            <use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon" ></use>
-                        </svg></a>
-                </div>
-                <div class="ui-block-content">
+		<div class="col col-xl-4 order-xl-1 col-lg-4 order-lg-1 col-md-12 order-md-2 col-sm-12 col-12">
+				<div class="ui-block">
+					<div class="ui-block-title">
+						<h4 class="title bold">프로필</h4>
+					</div>
+					<div class="ui-block-content">
 
 
-                    <!-- W-Personal-Info -->
+						<!-- W-Personal-Info -->
 
-                    <ul class="widget w-personal-info">
-                        <!--							<li>-->
-                        <!--								<span class="title">정보:</span>-->
-                        <!--								<span class="text">--><?//= $me_c_info ?><!--</span>-->
-                        <!--							</li>-->
-                        <li>
-                            <span class="title">기업명:</span>
-                            <span class="text"><?= $CompanyInfo->me_c_name ?></span>
-                        </li>
-                        <li>
-                            <span class="title">기업담당자:</span>
-                            <span class="text"><?= $CompanyInfo->me_c_manager ?></span>
-                        </li>
-                        <li>
-                            <span class="title">이메일:</span>
-                            <a href="mailto:<?= $CompanyInfo->me_c_email ?>" class="text"><?= $CompanyInfo->me_c_email ?></a>
-                        </li>
-                        <li>
-                            <span class="title">초봉:</span>
-                            <span class="text"><?= $CompanyInfo->me_c_salary ?></span>
-                        </li>
-                        <li>
-                            <span class="title">분야:</span>
-                            <span class="text"><?= $CompanyInfo->fi_l_name . "/" . $CompanyInfo->fi_s_name ?></span>
-                        </li>
-                        <li>
-                            <span class="title">지역:</span>
-                            <span class="text"><?= $CompanyInfo->me_c_sido ?></span>
-                        </li>
-                        <li>
-                            <span class="title">복리후생:</span>
-                            <span class="text"><?= $CompanyInfo->me_c_benefit ?></span>
-                        </li>
-                        <li>
-                            <span class="title">병역 여부:</span>
-                            <span class="text"><?= $CompanyInfo->me_c_isMilitary ?></span>
-                        </li>
+						<ul class="widget w-personal-info">
+							<li>
+								<h5 class="title">기업소개:</h5>
+								<h5 class="text"  style="font-weight:500;"><?= $CompanyInfo->me_c_info?></h5>
+							</li> 
+							<li>
+								<h5 class="title">기업명:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $CompanyInfo->me_c_name ?></h5>
+							</li>
+							<li>
+								<h5 class="title">기업담당자:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $CompanyInfo->me_c_manager ?></h5>
+							</li>
+							<li>
+								<h5 class="title">이메일:</h5>
+									<a href="mailto:<?= $CompanyInfo->me_c_email ?>" class="text h5" style="font-weight:500;"><?= $CompanyInfo->me_c_email ?></a>
+							</li>
+							<li>
+								<h5 class="title">초봉:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $CompanyInfo->me_c_salary ?></h5>
+							</li>
+							<li>
+								<h5 class="title">분야:</h5>
+                                <?php if(isset($fi_l_name)){ ?>
+								    <h5 class="text" style="font-weight:500;"><?= $CompanyInfo->fi_l_name . "/" . $CompanyInfo->fi_s_name ?></h5>
+							    <?php }else{ ?>
+                                    <h5 class="text" style="font-weight:500;">미정</h5>
+                                <?php } ?>
+                            </li>
+							<li>
+								<h5 class="title">지역:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $CompanyInfo->me_c_sido ?></h5>
+							</li>
+							<li>
+								<h5 class="title">복리후생:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $CompanyInfo->me_c_benefit ?></h5>
+							</li>
+							<li>
+								<h5 class="title">병역 여부:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $CompanyInfo->me_c_isMilitary ?></h5>
+							</li>
 
-                    </ul>
-                    <br>
-                </div>
-            </div>
-        </div>
+						</ul>
+                        <br>
+						<!-- ... end W-Personal-Info -->
+						<!-- W-Socials -->
+					
+					
+					</div>
+				</div>
+			</div>
 
 
 	</div>
