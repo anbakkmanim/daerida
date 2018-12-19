@@ -79,7 +79,7 @@ class RecruitModel extends CI_Model
      */
     public function listRecruit($co_idx, $keyword, $type) {
         $sql = "select a.*, b.*, COUNT(c.re_fi_idx) recruitCnt from RECRUIT_TB as a join MEMBER_COMPANY_TB as b on a.co_idx = b.me_c_idx left join RECRUIT_FIELD_TB as c on a.re_idx = c.re_idx where a.co_idx = ? ".
-                ($type != null ? "and where ".$type." like '%".$keyword."%'" : "").
+                ($type != null ? "and ".$type." like '%".$keyword."%'" : "").
                 " group by a.re_idx order by a.re_idx desc;";
         $bind = array(
             $co_idx
