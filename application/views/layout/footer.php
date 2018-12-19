@@ -1,11 +1,12 @@
-<?= $_SERVER['PHP_SELF'] != '/member/login' ? "false" : "true" ?>
-<?= $_SERVER['PHP_SELF'] != '/hiring/map' ? "false" : "true" ?>
-<?= $_SERVER['PHP_SELF'] != '/hiring/resumeSend' ? "false" : "true" ?>
+<?= $_SERVER['PHP_SELF'] != '/index.php/member/login' ? "false" : "true" ?>
+<?= $_SERVER['PHP_SELF'] != '/index.php/hiring/map' ? "false" : "true" ?>
+<?= $_SERVER['PHP_SELF'] != '/index.php/hiring/resumeSend' ? "false" : "true" ?>
+<?= $_SERVER['PHP_SELF'] ?>
 
 <?php if (
-	$_SERVER['PHP_SELF'] != '/member/login' &&
-	$_SERVER['PHP_SELF'] != '/hiring/map' &&
-	$_SERVER['PHP_SELF'] != '/hiring/resumeSend'
+	$_SERVER['PHP_SELF'] != '/index.php/member/login' &&
+	$_SERVER['PHP_SELF'] != '/index.php/hiring/map' &&
+	$_SERVER['PHP_SELF'] != '/index.php/hiring/resumeSend'
 	) { ?>
 <div class="footer pt-0" id="footer" style="width: 100vw;">
 	<div class="container-fluid">
