@@ -41,12 +41,12 @@
                                 <svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팔로우 한 회사의 구인"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
                             </a>
                         </li>
+                        <li>
+                            <a href="/team/teamList">
+                                <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀 목록"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
+                            </a>
+                        </li>
                     <?php } ?>
-                    <li>
-                        <a href="/team/teamList">
-                            <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀 목록"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
-                        </a>
-                    </li>
                     <?php if ($this->session->me_idx != null){ ?>
                         <li>
                             <a href="/team/myTeamList">
@@ -58,13 +58,14 @@
                                 <svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="구직 신청 한 공고"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
                             </a>
                         </li>
+                        <li>
+                            <a href="/hiring/map">
+                                <svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="지도"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
+                            </a>
+                        </li>
                     <?php } ?>
 				<?php } ?>
-				<li>
-					<a href="/hiring/map">
-						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="지도"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
-					</a>
-				</li>
+
 				<li>
 					<a href="/subpage/teamterview">
 						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀터뷰"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use></svg>
@@ -122,13 +123,13 @@
                                 <span class="left-menu-title">팔로우 한 회사의 구인</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="/team/teamList">
+                                <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="TEAM BUILD"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
+                                <span class="left-menu-title">팀 목록</span>
+                            </a>
+                        </li>
                     <?php } ?>
-                    <li>
-                        <a href="/team/teamList">
-                            <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="TEAM BUILD"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
-                            <span class="left-menu-title">팀 목록</span>
-                        </a>
-                    </li>
                     <?php if ($this->session->me_idx != null){ ?>
                         <li>
                             <a href="/team/myTeamList">
@@ -142,14 +143,14 @@
                                 <span class="left-menu-title">구직 신청 한 공고</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="/hiring/map">
+                                <svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MAP"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
+                                <span class="left-menu-title">지도</span>
+                            </a>
+                        </li>
                     <?php } ?>
 				<?php } ?>
-				<li>
-					<a href="/hiring/map">
-						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MAP"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
-						<span class="left-menu-title">지도</span>
-					</a>
-				</li>
 				<li>
 					<a href="/subpage/teamterview">
 						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="TEAMTERVIEW"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use></svg>
@@ -213,30 +214,92 @@
 				</div>
 			</div>
             <?php if($this->session->me_idx != null) { ?>
-			<div class="ui-block-title ui-block-title-small">
-				<h6 class="title">계정 설정</h6>
-			</div>
+                <div class="ui-block-title ui-block-title-small">
+                    <h6 class="title">계정 설정</h6>
+                </div>
+            <?php } ?>
+                <ul class="account-settings">
+                    <?php if($this->session->me_idx != null) { ?>
+                    <li>
+                        <a href="<?php
+                    if ($this->session->me_type == "me_n_")
+                        echo "/member/User?me_n_idx=". $this->session->me_idx;
+                    else
+                        echo "/member/Company?me_c_idx=". $this->session->me_idx;
+                    ?>">
+                            <svg class="olymp-menu-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
+                            <span>프로필 설정</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/member/logout">
+                            <svg class="olymp-logout-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
-			<ul class="account-settings">
-				<li>
-					<a href="<?php
-				if ($this->session->me_type == "me_n_")
-					echo "/member/User?me_n_idx=". $this->session->me_idx;
-				else
-					echo "/member/Company?me_c_idx=". $this->session->me_idx;
-				?>">
+                            <span>로그아웃</span>
+                        </a>
+                    </li>
+                    <?php } ?>
+                <li>
+                <a href="/hiring/hiringList">
+                    <svg class="olymp-logout-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
 
-						<svg class="olymp-menu-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
+                    <span>최근 구인 공고들</span>
+                </a>
+                </li>
+                <?php if ($this->session->me_type == "me_c_") { ?>
+                    <li>
+                        <a href="/hiring/broadcastWrite">
+                            <svg class="olymp-logout-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
 
-						<span>프로필 설정</span>
-					</a>
-				</li>
-					<a href="/member/logout">
-						<svg class="olymp-logout-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
+                            <span>구인 공고 작성</span>
+                        </a>
+                    </li>
 
-						<span>로그아웃</span>
-					</a>
-				</li>
+                    <li>
+                        <a href="/hiring/resume">
+                            <svg class="olymp-logout-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+
+                            <span>지원서</span>
+                        </a>
+                    </li>
+                <?php } else { ?>
+                <?php if($this->session->me_idx != null){ ?>
+                    <li>
+                        <a href="/hiring/followList">
+                            <svg class="olymp-logout-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
+
+                            <span>팔로우한 회사의 구인공고</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/team/teamList">
+                            <svg class="olymp-logout-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
+
+                            <span>팀 목록</span>
+                        </a>
+                    </li>
+                <?php } ?>
+                <?php if ($this->session->me_idx != null){ ?>
+                    <li>
+                        <a href="/team/myTeamList">
+                            <svg class="olymp-logout-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon"></use></svg>
+                            <span>내 팀</span>
+                        </a>
+                    </li>
+                    <li>
+                    <a href="/hiring/appliedList">
+                        <svg class="olymp-logout-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+
+                        <span>구직 신청한 공고</span>
+                    </a>
+                    </li>
+                    <li>
+                        <a href="/hiring/map">
+                            <svg class="olymp-logout-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
+                            <span>지도</span>
+                        </a>
+                    </li>
+                <?php } ?>
 			</ul>
             <?php } ?>
 
