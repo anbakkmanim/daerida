@@ -169,9 +169,25 @@ class Snslogin extends CI_Controller
         curl_setopt($ch, CURLOPT_POST, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-        $headers = [];
         $response = curl_exec($ch);
         $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        $accessToken = json_decode($response);
+        $accessToken = $accessToken['access_token'];
+
+        $url = "https://openapi.naver.com/v1/nid/me";
+        $header = "Authorization: Bearer " . $accessToken;
+
+        $headers = [];
+        array_push($headers, $header);
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $response = curl_exec($ch);
+        $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        curl_close($ch);
 
         print_r(json_decode($response));
     }
