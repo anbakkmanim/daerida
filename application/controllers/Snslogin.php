@@ -181,6 +181,11 @@ class Snslogin extends CI_Controller
     }
 
     public function addNaver() {
+        if ($this->session->me_idx == null) {
+            alert("로그인 해주세요");
+            location_previous();
+            return;
+        }
         $this->session->set_userdata("authMode", "add");
         $naver = $this->config->item("naver_login", "token");
         location_href($naver['authorize_url'] . "?response_type=code&client_id=".$naver['client_id']."&redirect_uri=".site_url('/snslogin/naver')."&state=RANDOM_STATE");
@@ -193,6 +198,11 @@ class Snslogin extends CI_Controller
     }
 
     public function addKakao() {
+        if ($this->session->me_idx == null) {
+            alert("로그인 해주세요");
+            location_previous();
+            return;
+        }
         $this->session->set_userdata("authMode", "add");
         $kakao = $this->config->item("kakao_login", "token");
         location_href($kakao['authorize_url']."?response_type=code&client_id=" . $kakao['client_id'] ."&redirect_uri=" . site_url('/snslogin/kakao'));
