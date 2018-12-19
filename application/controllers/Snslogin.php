@@ -128,6 +128,7 @@ class Snslogin extends CI_Controller
             $success = $this->AuthModel->addSNS($this->session->me_idx, 'naver', $token);
             if ($success) {
                 alert("추가 성공");
+                $this->session->me_n_naverToken = $token;
                 location_previous();
             } else {
                 alert("추가 실패");
@@ -182,6 +183,7 @@ class Snslogin extends CI_Controller
             $success = $this->AuthModel->addSNS($this->session->me_idx, 'kakao', $token);
             if ($success) {
                 alert("추가 성공");
+                $this->session->me_n_kakaoToken = $token;
                 location_previous();
             } else {
                 alert("추가 실패");
@@ -235,6 +237,7 @@ class Snslogin extends CI_Controller
             $success = $this->AuthModel->addSNS($this->session->me_idx, 'google', $token);
             if ($success) {
                 alert("추가 성공");
+                $this->session->me_n_googleToken = $token;
                 location_href("/");
             } else {
                 alert("추가 실패");

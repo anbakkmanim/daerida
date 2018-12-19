@@ -328,15 +328,22 @@
 						<a href="/assets/#"  class="btn btn-primary mb-0 d-block" data-toggle="modal" data-target="#update-profile">프로필 수정</a>
 						<?php } ?>
 						<div class="row mt-2">
+                            <?php if($me_n_googleToken == null) {?>
 							<div class="col">
-								<a href="" id="btn-login-google" class="btn bg-google full-width btn-6"><img src="/assets/SVG/Googleicon.svg" width="26" alt=""></a>
+								<a href="/snslogin/addGoogle" id="btn-login-google" class="btn bg-google full-width btn-6"><img src="/assets/SVG/Googleicon.svg" width="26" alt=""></a>
 							</div>
+                            <?php }
+                            if ($me_n_kakaoToken == null) {?>
 							<div class="col">
-								<a href="" class="btn bg-yellow full-width btn-6"><img src="/assets/SVG/Kakaoicon.svg" width="26" alt=""></a>
+								<a href="/snslogin/addKakao" class="btn bg-yellow full-width btn-6"><img src="/assets/SVG/Kakaoicon.svg" width="26" alt=""></a>
 							</div>
+                            <?php }
+                            if ($me_n_naverToken == null) {
+                            ?>
 							<div class="col">
-								<a href="" class="btn bg-green full-width btn-6"><img src="/assets/SVG/Navericon.svg" width="26" alt=""></a>
+								<a href="/snslogin/addNaver" class="btn bg-green full-width btn-6"><img src="/assets/SVG/Navericon.svg" width="26" alt=""></a>
 							</div>
+                            <?php } ?>
 						</div>
 					</div>
 				</div>
