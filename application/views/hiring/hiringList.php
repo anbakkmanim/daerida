@@ -29,10 +29,24 @@ if ($mode == "all") {
 						<div class="w-select">
 							<fieldset class="form-group">
 								<div class="btn-group bootstrap-select form-control">
-								<select class="selectpicker form-control" tabindex="-98" id="typepicker" name="type">
-									<option value="me_c_name">기업 이름</option>
-									<option value="re_content">공고 제목</option>
-								</select>
+                                    <div class="col">
+                                        <label class="control-label mb-3">검색 종류</label>
+                                        <div class="row">
+                                            <div class="radio col">
+                                                <label>
+                                                    <input type="radio" name="type" value="me_c_name" checked><span class="circle"></span><span class="check"></span>
+                                                    기업 제목
+                                                </label>
+                                            </div>
+                                            <div class="radio col">
+                                                <label>
+                                                    <input type="radio" name="type" value="re_content"><span class="circle"></span><span class="check"></span>
+                                                    공고 제목
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
 							<span class="material-input"></span></fieldset>
                             <script>
                                 document.addEventListener("DOMContentLoaded", function () {
@@ -73,7 +87,7 @@ if ($mode == "all") {
                         </div>
 
                         <div class="post-content">
-                            <div href="#" class="post-category <?= ($item['re_endDate'] != null) ? "badge-primary" : "badge-success" ?>" id="fromnow-<?= $item['re_idx']?>">
+                            <div href="#" class="post-category <?= ($item['re_endDate'] != null) ? "badge-primary" : "badge-success" ?>" id="fromnow-<?= $item['re_idx']?>" style="font-size: 12px">
                                 <?php
                                 if ($item['re_endDate'] != null) {
                                     ?>
@@ -91,8 +105,8 @@ if ($mode == "all") {
 							<a href="/hiring/detail?re_idx=<?= $item['re_idx']?>" class="h4 post-title"><?=  $item['re_content'] ?></a>
 
 							<div class="author-date">
-								<a class="h6 post__author-name fn" href="/member/Company?me_c_idx=<?= $item['me_c_idx'] ?>"><?= $item['me_c_name'] ?></a>
-								<div class="post__date">
+								<a class="h5 text-t-none fn font-weight-normal" href="/member/Company?me_c_idx=<?= $item['me_c_idx'] ?>"><?= $item['me_c_name'] ?></a>
+								<div class="h6 font-weight-normal">
 									<span class="published">
                                         <?php
                                             if ($item['re_startDate'] != null) {
