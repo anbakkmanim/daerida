@@ -35,9 +35,14 @@ class Team extends CI_Controller
      * @Param X
      */
     public function myTeamList() {
-        $me_n_id = $this->session->me_id;
+        if ($this->session->me_type != "me_n_") {
+            alert("일반 사용자만 팀을 사용할 수 있습니다.");
+            location_previous();
+            return;
+        }
+        $me_n_idx = $this->session->me_idx;
 
-        $result = $this->TeamModel->myTeam($me_n_id);
+        $result = $this->TeamModel->myTeam($me_n_idx);
 
         $return = array(
             "teamList" => $result
