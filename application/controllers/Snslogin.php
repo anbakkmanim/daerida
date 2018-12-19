@@ -173,7 +173,7 @@ class Snslogin extends CI_Controller
         $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
         $accessToken = json_decode($response);
-        $accessToken = $accessToken['access_token'];
+        $accessToken = $accessToken->access_token;
 
         $url = "https://openapi.naver.com/v1/nid/me";
         $header = "Authorization: Bearer " . $accessToken;
