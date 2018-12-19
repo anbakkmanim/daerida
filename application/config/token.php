@@ -26,7 +26,7 @@ $config['kakao_login'] = [
 $config['google_login'] = [
   'client_id' => '1008786008947-j8b6aqhlllks6rg54j536f6i1uj1s6sd.apps.googleusercontent.com',
   'client_secret' => 'I0N2MbQMVxLAwS1xSXgMDoTG',
-  'authorize_url' => 'https://accounts.google.com/o/oauth2/auth',
+  'authorize_url' => 'https://accounts.google.com/o/oauth2/v2/auth',
   'token_url' => 'https://www.googleapis.com/oauth2/v4/token',
   'info_url' => 'https://www.googleapis.com/plus/v1/people/me'
 ];

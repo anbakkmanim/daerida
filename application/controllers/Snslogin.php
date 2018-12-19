@@ -208,6 +208,16 @@ class Snslogin extends CI_Controller
         location_href($kakao['authorize_url']."?response_type=code&client_id=" . $kakao['client_id'] ."&redirect_uri=" . site_url('/snslogin/kakao'));
     }
 
+    public function authGoogle() {
+        $this->session->set_userdata("authMode", "auth");
+        $google = $this->config->item("google_login", "token");
+        location_href($google['authorize_url']."?scope=https://www.googleapis.com/auth/drive.metadata.readonly&access_type=offline&include_granted_scopes=true&state=state_parameter_passthrough_value&response_type=code&client_id=" . $google['client_id'] ."&redirect_uri=" . site_url('/snslogin/google'));
+    }
+
+    public function addGoogle() {
+
+    }
+
     public function naver() {
         $naver = $this->config->item('naver_login', 'token');
         $url = $naver['token_url'] . "?grant_type=authorization_code"
@@ -317,5 +327,9 @@ class Snslogin extends CI_Controller
             }
         }
 
+    }
+
+    public function google() {
+        print_r($_GET);
     }
 }
