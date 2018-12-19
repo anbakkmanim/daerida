@@ -98,13 +98,13 @@
 															<div class='card-body'>
 																<div class='row'>
 																	<div class='col-sm-12 col-lg-3 col-6'>
-																		<img src='/uploads/profile/<?=$row->ca_image?>' class='rounded float-left' alt='...'>
+																		<img src='/uploads/profile/<?=$row->ca_image != null ? $row->ca_image : '경력.png' ?>' class='rounded float-left' alt='...'>
 																	</div>
 																	<div class='col'>
-																		<h5 class='card-title'><?=$row->ca_career?>"</h5>
+																		<h5 class='card-title'><?=$row->ca_career?></h5>
 																		<ul class='widget w-personal-info'>
 																			<li>
-																				<span class='text'><?=$row->ca_info?>"</span>
+																				<span class='text'><?=$row->ca_info?></span>
 																			</li>
 																		</ul>
 																	</div>
@@ -164,7 +164,7 @@
 															<div class='card-body'>
 																<div class='row'>
 																	<div class='col-sm-12 col-lg-3 col-6'>
-																		<img src='/uploads/profile/<?=$row->ca_image?>'  class='rounded float-left' alt='...'>
+																		<img src='/uploads/profile/<?=$row->ca_image != null ? $row->ca_image : '학력.png' ?>' class='rounded float-left' alt='...'>
 																	</div>
 																	<div class='col'>
 																		<h5 class='card-title'><?=$row->ca_career?></h5>
@@ -230,7 +230,7 @@
 												<div class='card-body'>
 													<div class='row'>
 														<div class='col-sm-12 col-lg-3 col-6'>
-															<img src='/uploads/profile/<?=$row->ca_image?>'  class='rounded float-left' alt='...'>
+															<img src='/uploads/profile/<?=$row->ca_image != null ? $row->ca_image : '자격증.png' ?>' class='rounded float-left' alt='...'>
 														</div>
 														<div class='col'>
 															<h5 class='card-title'><?=$row->ca_career?></h5>

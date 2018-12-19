@@ -3,12 +3,12 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
 				<div class="ui-block">
 					<div class="top-header top-header-favorit">
 						<div class="top-header-thumb">
                             <img src="<?= '/assets/img/top-header2.jpg' ?>"  alt="nature">
-							<div class="top-header-author">
+							<div class="top-header-author mt-5">
 								<div class="author-thumb">
 									<img src="<?= "/uploads/profile/" . $me_c_profile ?>"  alt="author">
 								</div>
@@ -16,21 +16,62 @@
 									<a href="#"  class="h3 author-name"><?= $me_c_name ?></a>
 									<div class="country"><?= $me_c_sido ?></div>
 								</div>
+								<div class="col-2-width float-right ml-5">
+									<script>
+										function starcheck(){
+											$a = $("#star").attr('name');
+											if($a == "blank"){
+												$("#star").attr('src','/assets/img/찬별.png/');
+												$("#star").attr('name','fill');
+												$.ajax({
+													type:"post",
+													url:"/member/follow",
+													data:{"me_c_idx":<?=$me_c_idx?>, "me_n_idx":<?=$this->session->me_idx?>},
+													success(data){
+
+													}
+												})
+											}else{
+												$("#star").attr('src','/assets/img/빈별.png/');
+												$("#star").attr('name','blank');
+												$.ajax({
+													type:"post",
+													url:"/member/unfollow",
+													data:{"me_c_idx":<?=$me_c_idx?>, "me_n_idx":<?=$this->session->me_idx?>},
+													success(data){
+														
+													}
+												})
+											}
+										}
+									</script>
+									<?php if($this->session->me_idx != null && $this->session->me_type == "me_n_"){
+													if(is_int(array_search($this->session->me_idx,array_column($followList, 'me_n_idx')))){ ?>
+															<a href="#" class="star-close" onclick="starcheck()">
+																<img id="star" src="/assets/img/찬별.png/" name="fill">
+															</a>
+										<?php } else { ?>
+															<a href="#" class="star-close" onclick="starcheck()">
+																<img id="star" src="/assets/img/빈별.png/" name="blank">
+															</a>
+										<?php } ?>
+									<?php } ?>
+								</div>
 							</div>
 						</div>
 						<div class="profile-section">
 							<div class="row">
-								<div class="col col-xl-8 m-auto col-lg-8 col-md-12">
-									<ul class="profile-menu">
+								<div class="col col-xl-8 m-auto">
+									<ul class="profile-menu mb-0	">
 										<li>
 											<a href="<?= '/member/company?me_c_idx='.$me_c_idx.'' ?>"  class="active">기업정보</a>
 										</li>
 										<li>
 											<a href="/member/companyQnA?me_c_idx=<?=$me_c_idx?>" >Q&A</a>
 										</li>
-                                        <li>
-                                            <a href="/hiring/hiringList?co_idx=<?= $me_c_idx ?>">채용 공고</a>
-                                        </li>
+										<li>
+												<a href="/hiring/hiringList?co_idx=<?= $me_c_idx ?>">채용 공고</a>
+										</li>
 									</ul>
 								</div>
 							</div>

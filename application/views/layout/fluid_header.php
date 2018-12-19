@@ -47,12 +47,9 @@
 		<h1 class="stunning-header-title"><?= $title ?></h1>
 		<ul class="breadcrumbs">
 			<li class="breadcrumbs-item">
-				<a href="#">메인</a>
-				<span class="icon breadcrumbs-custom">/</span>
+                <?= $intro ?>
 			</li>
-			<li class="breadcrumbs-item active">
-				<span><?= $intro ?></span>
-			</li>
+
 		</ul>
 	</div>
 
