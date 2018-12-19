@@ -64,13 +64,18 @@ geocoder.addressSearch('<?= $company['me_c_sido'] ?>', function(result, status) 
         });
 
         // 인포윈도우로 장소에 대한 설명을 표시합니다
-        var infowindow = new daum.maps.InfoWindow({
+        const infowindow = new daum.maps.InfoWindow({
             content: '<div style="width:150px;text-align:center;padding:6px 0;"><?= $company['me_c_name'] ?></div>'
         });
         infowindow.open(map, marker);
 
-        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-        map.setCenter(coords);
+        daum.maps.event.addListener(marker, 'click', function() {
+            const moveLatLon = coords;
+            map.setCenter(moveLatLon);
+
+            const level = map.getLevel();
+            map.setLevel(level - 8);
+        });
     }
 });
 <?php } ?>
