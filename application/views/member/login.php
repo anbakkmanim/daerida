@@ -145,4 +145,8 @@
 	</div>
 </div>
 
+<script>
+	document.body.classList.add('landing-page');
+</script>
+
 <?php $this->load->view('layout/footer'); ?>
