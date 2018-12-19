@@ -63,8 +63,8 @@
 												</form>
 											</td>
 
-											<td class="posts"> 
-												${user.me_n_name}
+											<td class="posts">
+												<a href="/member/User?me_n_idx=${user.me_n_idx}">${user.me_n_name}</a> 
 											</td>
 											
 											<td class="posts"> 
@@ -129,7 +129,7 @@
 											</td>
 
 											<td class="posts"> 
-												<?=$row['me_n_name']?>
+												<a href="/member/User?me_n_idx=<?= $row['me_n_idx'] ?>"><?= $row['me_n_name'] ?></a> 
 											</td>
 											
 											<td class="posts"> 
