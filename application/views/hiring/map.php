@@ -71,6 +71,11 @@ geocoder.addressSearch('<?= $company['me_c_sido'] ?>', function(result, status) 
 
         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
         map.setCenter(coords);
+
+        daum.maps.event.addListener(marker, 'click', function() {
+            // 마커 위에 인포윈도우를 표시합니다
+            map.setCenter(marker.coords);
+        });
     }
 });
 <?php } ?>
