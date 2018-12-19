@@ -106,7 +106,7 @@
 		<div class="col col-xl-4 order-xl-1 col-lg-4 order-lg-1 col-md-12 order-md-2 col-sm-12 col-12">
 			<div class="ui-block">
 				<div class="ui-block-title">
-					<h6 class="title">회사 정보</h6>
+					<h4 class="title">회사 정보</h4>
 					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
 				<div class="ui-block-content">
@@ -116,32 +116,32 @@
 					
 					<ul class="widget w-personal-info">
                         <li>
-                            <span class="title">기업명:</span>
-                            <a href="/member/Company?me_c_idx=<?= $details['me_c_idx'] ?>" class="text"><?= $details['me_c_name']?></a>
+                            <h5 class="title">기업명:</h5>
+                            <a href="/member/Company?me_c_idx=<?= $details['me_c_idx'] ?>" class="h5 text font-weight-normal"><?= $details['me_c_name']?></a>
                         </li>
                         <li>
-                            <span class="title">기업담당자:</span>
-                            <span class="text"><?= $details['me_c_manager'] ?></span>
+                            <h5 class="title">기업담당자:</h5>
+                            <span class="text h5 font-weight-normal"><?= $details['me_c_manager'] ?></span>
                         </li>
                         <li>
-                            <span class="title">이메일:</span>
-                            <a href="mailto:<?= $details['me_c_email'] ?>" class="text"><?= $details['me_c_email'] ?></a>
+                            <h5 class="title">이메일:</h5>
+                            <a href="mailto:<?= $details['me_c_email'] ?>" class="text h5 font-weight-normal" ><?= $details['me_c_email'] ?></a>
                         </li>
                         <li>
-                            <span class="title">초봉:</span>
-                            <span class="text"><?= $details['me_c_salary'] ?></span>
+                            <h5 class="title">초봉:</h5>
+                            <span class="text h5 font-weight-normal"><?= $details['me_c_salary'] ?></span>
                         </li>
                         <li>
-                            <span class="title">지역:</span>
-                            <span class="text"><?= $details['me_c_sido'] ?></span>
+                            <h5 class="title">지역:</h5>
+                            <span class="text h5 font-weight-normal"><?= $details['me_c_sido'] ?></span>
                         </li>
                         <li>
-                            <span class="title">복리후생:</span>
-                            <span class="text"><?= $details['me_c_benefit'] ?></span>
+                            <h5 class="title">복리후생:</h5>
+                            <span class="text h5 font-weight-normal"><?= $details['me_c_benefit'] ?></span>
                         </li>
                         <li>
-                            <span class="title">병역 여부:</span>
-                            <span class="text"><?= $details['me_c_isMilitary'] ?></span>
+                            <h5 class="title">병역 여부:</h5>
+                            <span class="text h5 font-weight-normal"><?= $details['me_c_isMilitary'] ?></span>
                         </li>
 					</ul>
 					
