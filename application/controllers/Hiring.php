@@ -11,6 +11,7 @@ class Hiring extends CI_Controller
         parent::__construct();
         $this->load->model('HiringModel');
         $this->load->model('RecruitModel');
+        $this->load->model('RegisterModel');
     }
 
     /**
@@ -163,7 +164,7 @@ class Hiring extends CI_Controller
 
         if ($return) {
             alert('분야 추가 성공');
-            location_href("/hiring/detail?re_idx=" + $re_idx);
+            location_href("/hiring/detail?re_idx=".$re_idx);
         } else {
             alert('분야 추가 실패');
         }
@@ -241,9 +242,14 @@ class Hiring extends CI_Controller
         $details = $this->RecruitModel->detailRecruit($re_idx);
         $fields = $this->RecruitModel->detailField($re_idx);
 
+        $lfields = $this->RegisterModel->getRfield($re_idx);
+        $sfields = $this->RegisterModel->getSField(array('rfield' => 1));
+
         $return = array(
             "details" => $details[0],
-            "fields" => $fields
+            "fields" => $fields,
+            "lfields" => $lfields,
+            "sfields" => $sfields
         );
 
         // load View
