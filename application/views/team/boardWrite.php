@@ -36,7 +36,7 @@
 							</div>
 					
 							<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-								<a href="/team/board?te_idx=1" class="btn btn-secondary btn-lg full-width">취소</a>
+								<a href="/team/board?te_idx=<?=$te_idx?>" class="btn btn-secondary btn-lg full-width">취소</a>
 							</div>
 					
 							<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">

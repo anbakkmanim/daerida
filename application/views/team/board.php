@@ -23,7 +23,7 @@
 <!--								</button>-->
 <!--							<span class="material-input"></span></div>-->
 <!--						</form>-->
-						<a href="/team/boardWrite" class="btn btn-blue btn-md">글쓰기</a>
+						<a href="/team/boardWrite?te_idx=<?=$te_idx?>" class="btn btn-blue btn-md">글쓰기</a>
 						<a href="/team/invite?te_idx=<?=$te_idx?>" class="btn btn-blue btn-md">팀 초대하기</a>
 					</div>
 				</div>

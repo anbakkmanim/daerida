@@ -216,7 +216,10 @@ class Team extends CI_Controller
      */
 
     public function boardWrite() {
-        $this->load->view('team/boardWrite');
+        $return = array(
+            "te_idx" => $_GET['te_idx']
+        );
+        $this->load->view('team/boardWrite', $return);
     }
 
     /**
@@ -242,7 +245,7 @@ class Team extends CI_Controller
         }
 
         // Redirect
-        location_href('/team/board?te_idx=1');
+        location_href('/team/board?te_idx='.$te_idx);
     }
 
 }
