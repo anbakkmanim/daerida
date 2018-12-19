@@ -29,7 +29,8 @@ Class ProfileModel extends CI_Model{
         $sql = "
                 SELECT *
                 FROM HISTORY_TB
-                WHERE me_c_idx = ?
+                WHERE me_c_idx = ? 
+                ORDER BY hi_year desc
         ";
 
         $query = $this->db->query($sql, array($param['me_c_idx']));
