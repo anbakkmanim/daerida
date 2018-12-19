@@ -77,7 +77,7 @@ class TeamModel extends CI_Model
         );
 
         // bool 로 반환
-        return $this->db->query($sql, $bind)->result_array();
+        return $this->db->query($sql, $bind);
     }
 
     /**
@@ -99,7 +99,7 @@ class TeamModel extends CI_Model
         );
         
         // bool 로 반환
-        return $this->db->query($sql, $bind)->result_array();
+        return $this->db->query($sql, $bind);
     }
 
     /**
