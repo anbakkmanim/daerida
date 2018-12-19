@@ -1,12 +1,7 @@
-<?= $_SERVER['PHP_SELF'] != '/index.php/member/login' ? "false" : "true" ?>
-<?= $_SERVER['PHP_SELF'] != '/index.php/hiring/map' ? "false" : "true" ?>
-<?= $_SERVER['PHP_SELF'] != '/index.php/hiring/resumeSend' ? "false" : "true" ?>
-<?= $_SERVER['PHP_SELF'] ?>
-
 <?php if (
-	$_SERVER['PHP_SELF'] != '/index.php/member/login' &&
-	$_SERVER['PHP_SELF'] != '/index.php/hiring/map' &&
-	$_SERVER['PHP_SELF'] != '/index.php/hiring/resumeSend'
+	explode('?', $_SERVER['REQUEST_URI'])[0] != '/member/login' &&
+	explode('?', $_SERVER['REQUEST_URI'])[0] != '/hiring/map' &&
+	explode('?', $_SERVER['REQUEST_URI'])[0] != '/hiring/resumeSend'
 	) { ?>
 <div class="footer pt-0" id="footer" style="width: 100vw;">
 	<div class="container-fluid">
