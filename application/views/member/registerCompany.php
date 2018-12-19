@@ -27,14 +27,14 @@
 							<div class="col">
 								<div class="form-group label-floating">
 									<label class="control-label">회사 이름</label>
-									<input class="form-control" placeholder="" type="text" name="me_name">
+									<input class="form-control" placeholder="" type="text" name="me_name" required>
 								</div>
 							</div>
 							
 							<div class="col">
 									<div class="form-group label-floating">
 										<label class="control-label">담당자 이름</label>
-										<input class="form-control" placeholder="" type="text" name="me_c_manager">
+										<input class="form-control" placeholder="" type="text" name="me_c_manager" required>
 									</div>
                 </div>
 							<div class="col">
@@ -42,7 +42,7 @@
 							<div class="col">
 										<div class="form-group label-floating">
 											<label class="control-label">아이디</label>
-											<input class="form-control" placeholder="" type="text" id="me_id" name="me_id">
+											<input class="form-control" placeholder="" type="text" id="me_id" name="me_id" required>
 										</div>
 									</div>
 									<div class="col col-lg-4 col-md-4 col-3 pl-0">
@@ -78,13 +78,13 @@
 												<div class="col">
 														<div class="form-group label-floating is-empty">
 																<label class="control-label">비밀번호</label>
-																<input class="form-control" id="pwd" placeholder="" type="password" name="me_password">
+																<input class="form-control" id="pwd" placeholder="" type="password" name="me_password" required>
 														</div>
 												</div>
 												<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 														<div class="form-group label-floating is-empty has-success">
 																<label class="control-label">비밀번호 확인</label>
-																<input class="form-control" id="pwd_result" placeholder="" type="password">
+																<input class="form-control" id="pwd_result" placeholder="" type="password" required>
 														</div>
 												</div>
 											</div>
@@ -93,23 +93,23 @@
 							<div class="col">
 								<div class="form-group label-floating">
 									<label class="control-label">이메일</label>
-									<input class="form-control" placeholder="" type="email" name="me_email">
+									<input class="form-control" placeholder="" type="email" name="me_email" required>
 								</div>
 							</div>
 
 							<div class="col">
 								<div class="form-group label-floating">
 									<label class="control-label">전화번호</label>
-									<input class="form-control" placeholder="" type="text" name="me_phone">
+									<input class="form-control" placeholder="" type="text" name="me_phone" required>
 								</div>
               </div>
               
 				
 							<div class="col">
-								<label for="">Q. 가장 기억에 남는 장소는?</label>
+								<label for="">Q. 회사에 화장실이 몇 개 있나요?</label>
 								<div class="form-group label-floating">
 									<label class="control-label">답변</label>
-									<input class="form-control" placeholder="" type="text" name="me_answer">
+									<input class="form-control" placeholder="" type="text" name="me_answer" required>
 								</div>
 							</div>
 
@@ -137,7 +137,7 @@
 											})
 										}
 										</script>
-										<select class="selectpicker form-control" id="selectPart"tabindex="-98" onchange="getsfield(event)" name="me_rfield">
+										<select class="selectpicker form-control" id="selectPart"tabindex="-98" onchange="getsfield(event)" name="me_rfield" required>
 											<?php
 												foreach($rfield as $row){
 													echo "<option name='me_rfield' value=".$row['fi_l_idx'].">".$row['fi_l_name']."</option>";
@@ -148,7 +148,7 @@
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 								<div class="form-group label-floating is-empty">
-									<select class="selectpicker form-control" id="sfield" name="me_sfield">
+									<select class="selectpicker form-control" id="sfield" name="me_sfield" required>
 										<?php
 											foreach($sfield as $row){
 												echo "<option value=".$row['fi_s_idx'].">".$row['fi_s_name']."</option>";
@@ -161,7 +161,7 @@
                 <div class="col">
 									<div class="form-group label-floating">
 										<label class="control-label">지역</label>
-										<input class="form-control" placeholder="" type="text" name="me_region">
+										<input class="form-control" placeholder="" type="text" name="me_region" required>
 									</div>
                 </div>
 
@@ -188,7 +188,7 @@
 							<div class="col">
 									<div class="form-group label-floating">
 										<label class="control-label">복리후생</label>
-										<input class="form-control" placeholder="" type="text" name="me_c_benefit">
+										<input class="form-control" placeholder="" type="text" name="me_c_benefit" required>
 									</div>
                 </div>
               

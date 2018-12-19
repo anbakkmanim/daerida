@@ -27,7 +27,7 @@
 								<div class="col">
 									<div class="form-group label-floating">
 										<label class="control-label">이름</label>
-										<input class="form-control" placeholder="" type="text" name="me_name">
+										<input class="form-control" placeholder="" type="text" name="me_name" required>
 									</div>
 								</div>
 
@@ -36,7 +36,7 @@
 										<div class="col">
 											<div class="form-group label-floating">
 												<label class="control-label">아이디</label>
-												<input class="form-control" placeholder="" type="text" id="me_id" name="me_id">
+												<input class="form-control" placeholder="" type="text" id="me_id" name="me_id" required>
 											</div>
 										</div>
 										<div class="col col-lg-4 col-md-4 col-3 pl-0">
@@ -73,13 +73,13 @@
 										<div class="col">
 											<div class="form-group label-floating is-empty">
 												<label class="control-label">비밀번호</label>
-												<input class="form-control" id="pwd" placeholder="" type="password" name="me_password">
+												<input class="form-control" id="pwd" placeholder="" type="password" name="me_password" required>
 											</div>
 										</div>
 										<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 											<div class="form-group label-floating is-empty has-success">
 												<label class="control-label">비밀번호 확인</label>
-												<input class="form-control" id="pwd_result" placeholder="" type="password">
+												<input class="form-control" id="pwd_result" placeholder="" type="password" required>
 											</div>
 										</div>
 									</div>
@@ -88,14 +88,14 @@
 								<div class="col">
 									<div class="form-group label-floating">
 										<label class="control-label">이메일</label>
-										<input class="form-control" placeholder="" type="email" name="me_email">
+										<input class="form-control" placeholder="" type="email" name="me_email" required>
 									</div>
 								</div>
 
 								<div class="col">
 									<div class="form-group label-floating">
 										<label class="control-label">전화번호</label>
-										<input class="form-control" placeholder="" type="text" name="me_phone">
+										<input class="form-control" placeholder="" type="text" name="me_phone" required>
 									</div>
 								</div>
 
@@ -103,13 +103,14 @@
 									<label for="">Q. 가장 기억에 남는 추억의 장소는?</label>
 									<div class="form-group label-floating">
 										<label class="control-label">답변</label>
-										<input class="form-control" placeholder="" type="text" name="me_answer">
+										<input class="form-control" placeholder="" type="text" name="me_answer" required>
 									</div>
 								</div>
 								<div class="col">
 									<div class="row">
 										<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 											<div class="form-group label-floating is-empty">
+											
 											<script>
 												function getsfield(e) {
 													$.ajax({
@@ -130,7 +131,7 @@
 													})
 												}
 												</script>
-													<select class="selectpicker form-control" tabindex="-98" onchange="getsfield(event)" name="me_rfield">
+													<select class="selectpicker form-control" tabindex="-98" onchange="getsfield(event)" name="me_rfield" required>
 															<?php
 																foreach($rfield as $row){
 																	echo "<option name='me_rfield' value=".$row['fi_l_idx'].">".$row['fi_l_name']."</option>";
@@ -141,7 +142,7 @@
 										</div>
 										<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 											<div class="form-group label-floating is-empty">
-												<select class="selectpicker form-control" tabindex="-98" id="sfield" name="me_sfield">
+												<select class="selectpicker form-control" tabindex="-98" id="sfield" name="me_sfield" required>
 															<?php
 																foreach($sfield as $row){
 																	echo "<option value=".$row['fi_s_idx'].">".$row['fi_s_name']."</option>";
@@ -164,7 +165,7 @@
 								<div class="col">
 									<div class="form-group label-floating">
 										<label class="control-label">거주지</label>
-										<input class="form-control" placeholder="" type="text" name="me_region">
+										<input class="form-control" placeholder="" type="text" name="me_region" required>
 									</div>
 								</div>
 
@@ -239,7 +240,7 @@
 								<div class="col col-lg-12 col-sm-12 col-sm-12 col-12">
 									<div class="checkbox">
 										<label>
-											<input type="checkbox" name="optionsCheckboxes" required=""><span class="checkbox-material"></span>
+											<input type="checkbox" name="optionsCheckboxes" required><span class="checkbox-material"></span>
 											개인정보 수집 이용에 동의합니다.
 										</label>
 									</div>
@@ -253,15 +254,10 @@
 					</div>
 				</div>
 			</div>
-
-			
 		</div>
 	</div>
 
 	<!-- ... end Your Account Personal Information -->
-
-
-
 
 	<a class="back-to-top" href="#">
 		<img src="/assets/svg-icons/back-to-top.svg" alt="arrow" class="back-icon">
