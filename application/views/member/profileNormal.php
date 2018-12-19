@@ -39,10 +39,10 @@
 								<div class="col col-xl-8 m-auto">
 									<ul class="profile-menu mb-0	">
 										<li>
-											<a href="<?= '/member/User?me_n_idx='.$me_n_idx.'' ?>"  class="active">정보</a>
+											<a href="<?= '/member/User?me_n_idx='.$me_n_idx.'' ?>"  class="active"  style="font-size:1.25rem;">정보</a>
 										</li>
 										<li>
-											<a href="<?= '/member/portfolio?me_n_idx='.$me_n_idx.'' ?>" >포트폴리오</a>
+											<a href="<?= '/member/portfolio?me_n_idx='.$me_n_idx.'' ?>"  style="font-size:1.25rem;" >포트폴리오</a>
 										</li>
 									</ul>
 								</div>
@@ -69,15 +69,15 @@
 								<h6 class="mb-0">
 									<div class="row">
 										<a data-toggle="collapse" data-parent="#accordion" href="/assets/#collapseOne"  aria-expanded="true" aria-controls="collapseOne"
-										 class="col-auto mr-auto mt-2">
-											<span>경력</span>
+										 class="col-auto mr-auto">
+											<span class="h4 bold">경력</span>
 											<svg class="olymp-dropdown-arrow-icon">
 												<use xlink:href="/assets/#olymp-dropdown-arrow-icon" ></use>
 											</svg>
 										</a>
 										<?php if ($me_n_id == $this->session->me_id) {?>
 											<div class="col-auto">
-												<a href="#"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-career" onclick="modalclear()">추가<div class="ripple-container"></div></a>
+												<a href="#"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-career" onclick="modalclear()" style="font-size:1rem;" >추가<div class="ripple-container"></div></a>
 											</div>
 										<?php } ?>
 									</div>
@@ -101,10 +101,10 @@
 																		<img src='/uploads/profile/<?=$row->ca_image != null ? $row->ca_image : '경력.png' ?>' class='rounded float-left' alt='...'>
 																	</div>
 																	<div class='col'>
-																		<h5 class='card-title'><?=$row->ca_career?></h5>
+																		<h5 class='card-title mt-2 mb-0' style="font-size:1.25rem;"><?=$row->ca_career?></h5>
 																		<ul class='widget w-personal-info'>
 																			<li>
-																				<span class='text'><?=$row->ca_info?></span>
+																				<span class='text'  style="font-size:1rem;"><?=$row->ca_info?></span>
 																			</li>
 																		</ul>
 																	</div>
@@ -134,8 +134,8 @@
 								<h6 class="mb-0">
 									<div class="row">
 										<a data-toggle="collapse" data-parent="#accordion" href="/assets/#collapseTwo"  aria-expanded="true" aria-controls="collapseOne"
-										 class="col-auto mr-auto mt-2">
-											<span>학력</span>
+										 class="col-auto mr-auto">
+											<span class="h4 bold">학력</span>
 											<svg class="olymp-dropdown-arrow-icon">
 												<use xlink:href="/assets/#olymp-dropdown-arrow-icon" ></use>
 											</svg>
@@ -143,7 +143,7 @@
 
 										<?php if ($me_n_id == $this->session->me_id) {?>
 										<div class="col-auto">
-											<a href="/assets/#"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-edu">추가<div class="ripple-container"></div></a>
+											<a href="/assets/#"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-edu" style="font-size:1rem;">추가<div class="ripple-container"></div></a>
 										</div>
 										<?php } ?>
 									</div>
@@ -167,10 +167,10 @@
 																		<img src='/uploads/profile/<?=$row->ca_image != null ? $row->ca_image : '학력.png' ?>' class='rounded float-left' alt='...'>
 																	</div>
 																	<div class='col'>
-																		<h5 class='card-title'><?=$row->ca_career?></h5>
+																	<h5 class='card-title mt-2 mb-0' style="font-size:1.25rem;"><?=$row->ca_career?></h5>
 																		<ul class='widget w-personal-info'>
 																			<li>
-																				<span class='text'><?=$row->ca_info?></span>
+																				<span class='text'  style="font-size:1rem;"><?=$row->ca_info?></span>
 																			</li>
 																		</ul>
 																	</div>
@@ -199,8 +199,8 @@
 								<h6 class="mb-0">
 									<div class="row">
 										<a data-toggle="collapse" data-parent="#accordion" href="/assets/#collapseThree"  aria-expanded="true" aria-controls="collapseOne"
-										 class="col-auto mr-auto mt-2">
-											<span>자격증</span>
+										 class="col-auto mr-auto">
+											<span class="h4 bold">자격증</span>
 											<svg class="olymp-dropdown-arrow-icon">
 												<use xlink:href="/assets/#olymp-dropdown-arrow-icon" ></use>
 											</svg>
@@ -208,7 +208,7 @@
 
 										<?php if ($me_n_id == $this->session->me_id) {?>
 										<div class="col-auto">
-											<a href="/assets/#"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-card">추가<div class="ripple-container"></div></a>
+											<a href="/assets/#"  class="btn btn-primary btn-sm text-white" data-toggle="modal" data-target="#create-card" style="font-size:1rem;">추가<div class="ripple-container"></div></a>
 										</div>
 										<?php } ?>
 									</div>
@@ -233,12 +233,12 @@
 															<img src='/uploads/profile/<?=$row->ca_image != null ? $row->ca_image : '자격증.png' ?>' class='rounded float-left' alt='...'>
 														</div>
 														<div class='col'>
-															<h5 class='card-title'><?=$row->ca_career?></h5>
-															<ul class='widget w-personal-info'>
-																<li>
-																	<span class='text'><?=$row->ca_info?></span>
-																</li>
-															</ul>
+														<h5 class='card-title mt-2 mb-0' style="font-size:1.25rem;"><?=$row->ca_career?></h5>
+																		<ul class='widget w-personal-info'>
+																			<li>
+																				<span class='text'  style="font-size:1rem;"><?=$row->ca_info?></span>
+																			</li>
+																		</ul>
 														</div>
 														<div class='col col-sm-2 mt-2'>
 															<input type="submit" value="삭제">
@@ -262,7 +262,7 @@
 			<div class="col col-xl-4 order-xl-1 col-lg-4 order-lg-1 col-md-12 order-md-2 col-sm-12 col-12">
 				<div class="ui-block">
 					<div class="ui-block-title">
-						<h6 class="title">프로필</h6>
+						<h4 class="title bold">프로필</h4>
 					</div>
 					<div class="ui-block-content">
 
@@ -271,52 +271,52 @@
 
 						<ul class="widget w-personal-info">
 							<li>
-								<span class="title">자기소개:</span>
-              	<span class="text"><?= $me_n_info ?> </span>
+								<h5 class="title">자기소개:</h5>
+              	<h5 class="text" style="font-weight:500;"><?= $me_n_info ?> </h5>
 							</li>
 							<li>
-								<span class="title">이름:</span>
-								<span class="text"><?= $me_n_name ?></span>
+								<h5 class="title">이름:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_n_name ?></h5>
 							</li>
 							<li>
-								<span class="title">분야:</span>
+								<h5 class="title">분야:</h5>
 								<?php if(isset($fi_l_name)){ ?>
-									<span class="text"><?= $fi_l_name . "/" . $fi_s_name ?></span>
+									<h5 class="text" style="font-weight:500;"><?= $fi_l_name . "/" . $fi_s_name ?></h5>
 								<?php }else{ ?>
-									<span class="text">미정</span>
+									<h5 class="text" style="font-weight:500;">미정</h5>
 								<?php } ?>
 							</li>
 							<li>
-								<span class="title">거주지:</span>
-								<span class="text"><?= $me_n_sido ?></span>
+								<h5 class="title">거주지:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_n_sido ?></h5>
 							</li>
 							<li>
-								<span class="title">희망연봉:</span>
-								<span class="text"><?= $me_n_hopeSalary ?></span>
+								<h5 class="title">희망연봉:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_n_hopeSalary ?></h5>
 							</li>
 							<li>
-								<span class="title">나이:</span>
-								<span class="text"><?= $me_n_age ?></span>
+								<h5 class="title">나이:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_n_age ?></h5>
 							</li>
 							<li>
-								<span class="title">성별:</span>
-								<span class="text"><?= $me_n_gender ?></span>
+								<h5 class="title">성별:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_n_gender ?></h5>
 							</li>
                             <li>
-								<span class="title">이메일:</span>
-								<a href="mailto:<?= $me_n_email ?>" class="text"><?= $me_n_email ?></a>
+								<h5 class="title">이메일:</h5>
+								<a href="mailto:<?= $me_n_email ?>" class="text" style="font-weight:500;"><?= $me_n_email ?></a>
 							</li>
 							<li>
-								<span class="title">전화번호:</span>
-								<span class="text"><?= $me_n_phone ?></span>
+								<h5 class="title">전화번호:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_n_phone ?></h5>
 							</li>
 							<li>
-								<span class="title">병역 이행 여부:</span>
-								<span class="text"><?= $me_n_isMilitary ?></span>
+								<h5 class="title">병역 이행 여부:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_n_isMilitary ?></h5>
 							</li>
 							<li>
-								<span class="title">공개 여부:</span>
-								<span class="text"><?= $me_n_isOpen ?></span>
+								<h5 class="title">공개 여부:</h5>
+								<h5 class="text" style="font-weight:500;"><?= $me_n_isOpen ?></h5>
 							</li>
 						</ul>
 						<br>
@@ -325,7 +325,7 @@
 						<!-- W-Socials -->
 
 						<?php if ($me_n_id == $this->session->me_id) {?>
-						<a href="/assets/#"  class="btn btn-primary mb-0 d-block" data-toggle="modal" data-target="#update-profile">프로필 수정</a>
+						<a href="/assets/#"  class="btn btn-primary btn-md full-width " style="font-size:17px;" data-toggle="modal" data-target="#update-profile">프로필 수정</a>
 						<?php } ?>
 						<div class="row mt-2">
                             <?php if($me_n_googleToken == null) {?>
