@@ -1,3 +1,18 @@
+<div class="footer pt-0" id="footer" style="width: 100vw;">
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="sub-footer-copyright border-0 mt-0">
+					<span>
+						Copyright <a href="index.html">Olympus Buddypress + WP</a> All Rights Reserved 2017
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <script src="/assets/js/jquery-3.2.1.js"></script>
 <script src="/assets/js/jquery.appear.js"></script>
 <script src="/assets/js/jquery.mousewheel.js"></script>
