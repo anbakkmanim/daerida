@@ -30,12 +30,18 @@ class RegisterModel extends CI_Model
                                 me_n_profile,
                                 me_n_info,
                                 me_n_gender,
-                                me_n_isOpen
+                                me_n_isOpen,
+                                me_n_kakaoToken,
+                                me_n_naverToken,
+                                me_n_googleToken
                                 )
                                 VALUES
                                 (
                                 ?,
                                 PASSWORD(?),
+                                ?,
+                                ?,
+                                ?,
                                 ?,
                                 ?,
                                 ?,
@@ -65,7 +71,10 @@ class RegisterModel extends CI_Model
                 $param['me_profile'],
                 $param['me_info'],
                 $param['me_n_gender'],
-                $param['me_n_isOpen']
+                $param['me_n_isOpen'],
+                $param['me_n_kakaoToken'],
+                $param['me_n_naverToken'],
+                $param['me_n_googleToken'],
             );
         } else if ($param['me_table'] == "MEMBER_COMPANY_TB") {
             $sql = "
