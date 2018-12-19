@@ -327,6 +327,17 @@
 						<?php if ($me_n_id == $this->session->me_id) {?>
 						<a href="/assets/#"  class="btn btn-primary mb-0 d-block" data-toggle="modal" data-target="#update-profile">프로필 수정</a>
 						<?php } ?>
+						<div class="row mt-2">
+							<div class="col">
+								<a href="" id="btn-login-google" class="btn bg-google full-width btn-6"><img src="/assets/SVG/Googleicon.svg" width="26" alt=""></a>
+							</div>
+							<div class="col">
+								<a href="" class="btn bg-yellow full-width btn-6"><img src="/assets/SVG/Kakaoicon.svg" width="26" alt=""></a>
+							</div>
+							<div class="col">
+								<a href="" class="btn bg-green full-width btn-6"><img src="/assets/SVG/Navericon.svg" width="26" alt=""></a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
