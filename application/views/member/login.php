@@ -17,12 +17,12 @@
 					<div class="sub-title">전국 잡 매칭 서비스</div>
 				</div>
 			</a>
-			<div class="row d-flex d-lg-none d-xl-none float-right ml-auto align-content-end">
+			<div class="row d-flex d-lg-none d-xl-none float-right mx-auto align-content-center">
 				<nav class="nav d-block list-group mr-3">
 					<u><a class="nav-item text-white mr-5" href="/hiring/hiringList">채용</a></u>
 					<u><a class="nav-item text-white mr-5" href="/subpage/about">소개</a></u>
 					<u><a class="nav-item text-white mr-5" href="/subpage/teamterview">팀터뷰</a></u>
-					<u><a class="nav-item text-white mr-3" href="/subpage/support">지원</a></u>
+					<u><a class="nav-item text-white" href="/subpage/support">지원</a></u>
 				</nav>
 			</div>
 			<div class="nav nav-pills nav1 header-menu d-none d-lg-inline-block">

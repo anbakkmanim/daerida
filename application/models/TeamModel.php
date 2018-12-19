@@ -35,7 +35,7 @@ class TeamModel extends CI_Model
      */
     public function listTeam() {
         // SQL 문 생성
-        $sql = "select a.*, COUNT(b.te_po_idx) post_Count, c.* from TEAM_TB as a join TEAM_POST_TB as b on a.te_idx = b.te_idx join FIELD_LARGE_RF as c on a.fi_l_idx = c.fi_l_idx where a.te_isOpen = '공개' group by b.te_idx";
+        $sql = "select a.*, COUNT(b.te_po_idx) post_Count, c.* from TEAM_TB as a left join TEAM_POST_TB as b on a.te_idx = b.te_idx join FIELD_LARGE_RF as c on a.fi_l_idx = c.fi_l_idx where a.te_isOpen = '공개' group by a.te_idx;";
 
         // array로 반환
         return $this->db->query($sql)->result_array();
@@ -48,7 +48,7 @@ class TeamModel extends CI_Model
      */
     public function myTeam($me_n_idx) {
         // SQL 문 생성
-        $sql = "select a.*, b.*, d.*, e.*, COUNT(c.te_po_idx) post_Count from TEAM_JOIN_TB as a join TEAM_TB as b on a.te_idx = b.te_idx join TEAM_POST_TB as c on b.te_idx = c.te_idx 
+        $sql = "select a.*, b.*, d.*, e.*, COUNT(c.te_po_idx) post_Count from TEAM_JOIN_TB as a join TEAM_TB as b on a.te_idx = b.te_idx left join TEAM_POST_TB as c on b.te_idx = c.te_idx 
                 join FIELD_SMALL_RF as d on a.fi_s_idx = d.fi_s_idx join FIELD_LARGE_RF as e on d.fi_l_idx = e.fi_l_idx where a.me_n_idx = ? group by b.te_idx";
 
         $bind = array(
