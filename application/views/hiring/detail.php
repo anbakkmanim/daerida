@@ -1,11 +1,18 @@
 <?php $this->load->view('layout/header'); ?>
 <?php $this->load->view('layout/nav'); ?>
 
+<?php $this->load->view('layout/inner_header', [
+    'title' => '기업 구인 공고',
+    'content' => $details['me_c_name']." 기업의 기업 구인 공고들입니다.",
+    'color' => 1
+]); ?>
 
 <div class="container mt-3">
 	<div class="row">
-        <!-- Administration Tool -->
 		<div class="col col-xl-8 order-xl-2 col-lg-8 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+            <!-- Administration Tool -->
+            <?php if ($details['me_c_id'] == $this->session->me_id) { ?>
+
             <div class="ui-block">
                 <div class="ui-block-content">
                     <div class="col">
@@ -69,9 +76,11 @@
                             <input class="form-control" placeholder="" type="text" name="">
                         </div>
                     </div>
-                    <a class="btn btn-primary mt-3 mb-0 d-block text-white">지원하기</a>
+                    <a class="btn btn-primary mt-3 mb-0 d-block text-white">공고 추가</a>
                 </div>
             </div>
+            <?php } ?>
+
             <!-- End Administration Tool -->
             <?php
             foreach ($fields as $field) {
@@ -93,7 +102,6 @@
             }
             ?>
 		</div>
-
 		<div class="col col-xl-4 order-xl-1 col-lg-4 order-lg-1 col-md-12 order-md-2 col-sm-12 col-12">
 			<div class="ui-block">
 				<div class="ui-block-title">
