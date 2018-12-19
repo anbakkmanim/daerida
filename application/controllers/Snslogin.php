@@ -188,8 +188,7 @@ class Snslogin extends CI_Controller
 
     public function naver() {
         $naver = $this->config->item('naver_login', 'token');
-        $url =
-        $naver['token_url'] . "?grant_type=authorization_code"
+        $url = $naver['token_url'] . "?grant_type=authorization_code"
         . "&client_id=" . $naver['client_id']
         . "&client_secret=" . $naver['client_secret']
         . "&redirect_uri=" . site_url('/snslogin/naver')
@@ -221,7 +220,19 @@ class Snslogin extends CI_Controller
 
         curl_close($ch);
 
-        print_r(get_object_vars(json_decode($response)));
+        $token = get_object_vars(get_object_vars(json_decode($response))['response'])['id'];
+        if ($this->session->authMode == "auth") {
+            $result = $this->AuthModel->authSNS('naver', $token);
+            if (count($result) == 0) {
+                alert("해당 네이버 계정이 연결되어있지 않습니다. 회원가입 뒤에 연결해 주세요");
+                location_href("/member/registerNormal");
+                return;
+            } else {
+                $this->auth($result[0]);
+            }
+        } else {
+
+        }
     }
 
     public function kakao() {
@@ -259,17 +270,6 @@ class Snslogin extends CI_Controller
 
         $token = get_object_vars(get_object_vars(json_decode($response))['response'])['id'];
 
-        if ($this->session->authMode == "auth") {
-            $result = $this->AuthModel->authSNS('naver', $token);
-            if (count($result) == 0) {
-                alert("해당 네이버 계정이 연결되어있지 않습니다. 회원가입 뒤에 연결해 주세요");
-                location_href("/member/registerNormal");
-                return;
-            } else {
-                $this->auth($result[0]);
-            }
-        } else {
 
-        }
     }
 }
