@@ -2,30 +2,18 @@
 
 <?php $this->load->view('layout/nav'); ?>
 
-<div class="container">
-	<div class="row">
-		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-			<div class="ui-block responsive-flex">
-				<div class="ui-block-title">
-<!--					<form class="w-search">-->
-<!--						<div class="form-group with-button is-empty">-->
-<!--							<input class="form-control" type="text" placeholder="Search the forums...">-->
-<!--							<button>-->
-<!--								<svg class="olymp-magnifying-glass-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>-->
-<!--							</button>-->
-<!--						<span class="material-input"></span></div>-->
-<!--					</form>-->
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<?php $this->load->view('layout/inner_header', [
+    'title' => '팀 게시물',
+    'content' => '게시물 목록입니다.',
+    'color' => 3
+]); ?>
+
 <?php
 foreach ($result as $rows) {
     ?>
-<div class="container">
+<div class="container mt-3">
 	<div class="row">
-		<div class="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
 			<div class="ui-block responsive-flex">
 				<div class="ui-block-title">
@@ -81,107 +69,11 @@ foreach ($result as $rows) {
 				
 					</tbody>
 				</table>
-				
-				<!-- ... end Open Topic Table -->
-			</div>
-
-			
-			<!-- Pagination -->
-			
-
-			<!-- ... end Pagination -->
-
-		</div>
-
-		<div class="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Featured Topics</h6>
-				</div>
-				<div class="ui-block-content">
-
-					
-					<!-- Widget Featured Topics -->
-					
-					<ul class="widget w-featured-topics">
-						<li>
-
-							<div class="content">
-								<a href="#" class="h6 title">The new Goddess of War trailer was launched at E3!</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">2 hours, 16 minutes ago</time>
-							</div>
-						</li>
-						<li>
-
-							<div class="content">
-								<a href="#" class="h6 title">This year’s ComixCon will have the best presentations</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">14 hours, 36 minutes ago</time>
-							</div>star
-						</li>
-						<li>
-							
-							<div class="content">
-								<a href="#" class="h6 title">Here are the behind-the-scenes photos of “Vilords”</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">9 hours, 8 minutes ago</time>
-							</div>
-						</li>
-					</ul>
-					
-					<!-- ... end Widget Featured Topics -->
-				</div>
-			</div>
-
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Recent Topics</h6>
-				</div>
-				<div class="ui-block-content">
-
-					
-					<!-- Widget Recent Topics -->
-					
-					<ul class="widget w-featured-topics">
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">Summer is Coming! Picnic in the east boulevard park</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">26 minutes ago</time>
-								<div class="forums">The Community</div>
-							</div>
-						</li>
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">Kung Fighters released a new video, check it out here!</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">44 minutes ago</time>
-								<div class="forums">The Boombox</div>
-							</div>
-						</li>
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">What’s your favourite season?</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">59 minutes ago</time>
-								<div class="forums">The Community</div>
-							</div>
-						</li>
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">Who had the best presentation at this year’s E3? Rate them!</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">1 hour, 3 minutes ago</time>
-								<div class="forums">Arcade Planet</div>
-							</div>
-						</li>
-					</ul>
-					
-					<!-- ... end Widget Recent Topics -->
-				</div>
 			</div>
 
 		</div>
 
 	</div>
 </div>
-
-<script>
-document.querySelector(".bg-group").style.backgroundImage = "url(/assets/img/top-header5.png)";
-</script>
 
 <?php $this->load->view('layout/footer'); ?>
