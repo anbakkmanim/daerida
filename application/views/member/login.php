@@ -152,7 +152,7 @@
   	document.body.classList.add("landing-page");
 		gapi.load('auth2', () => {
 			auth2 = gapi.auth2.init({
-				client_id: "<?= $google['client_id'] ?>.apps.googleusercontent.com",
+				client_id: "<?= $google['client_id'] ?>",
 				cookiepolicy: 'single_host_origin'
 			});
 			attachSignin(document.getElementById("btn-login-google"));
