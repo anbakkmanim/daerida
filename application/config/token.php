@@ -28,7 +28,8 @@ $config['google_login'] = [
   'client_secret' => 'I0N2MbQMVxLAwS1xSXgMDoTG',
   'authorize_url' => 'https://accounts.google.com/o/oauth2/v2/auth',
   'token_url' => 'https://www.googleapis.com/oauth2/v4/token',
-  'info_url' => 'https://www.googleapis.com/plus/v1/people/me'
+  'info_url2' => 'https://www.googleapis.com/plus/v1/people/me',
+  'info_url' => 'https://www.googleapis.com/auth/userinfo.profile'
 ];
 
 // Daum Map (관리자: 남현욱, na*u**lu*er)
