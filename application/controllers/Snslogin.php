@@ -66,7 +66,7 @@ class Snslogin extends CI_Controller
     public function authGoogle() {
         $this->session->set_userdata("authMode", "auth");
         $google = $this->config->item("google_login", "token");
-        location_href($google['authorize_url']."?scope=profile&access_type=offline&include_granted_scopes=true&state=state_parameter_passthrough_value&response_type=code&client_id=" . $google['client_id'] ."&redirect_uri=" . site_url('/snslogin/google'));
+        location_href($google['authorize_url']."?scope=https://www.googleapis.com/auth/userinfo.profile&access_type=offline&include_granted_scopes=true&state=state_parameter_passthrough_value&response_type=code&client_id=" . $google['client_id'] ."&redirect_uri=" . site_url('/snslogin/google'));
     }
 
     public function addGoogle() {
@@ -190,15 +190,32 @@ class Snslogin extends CI_Controller
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $google['token_url']);
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, "client_id=" . $google['client_id'] . "&client_secret=" . $google['client_secret'] . "&grant_type=authorization_code&redirect_uri=" . site_url('/snslogin/google') . "&code" + $_GET["code"]);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, "client_id=" . $google['client_id'] . "&client_secret=" . $google['client_secret'] . "&grant_type=authorization_code&redirect_uri=" . site_url('/snslogin/google') . "&code=" . $_GET["code"]);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
         $response = curl_exec($ch);
         $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-        // $accessToken = get_object_vars(json_decode($response));
-        // $accessToken = $accessToken['access_token'];
+        $accessToken = get_object_vars(json_decode($response));
+        $accessToken = $accessToken['access_token'];
 
+        print_r($accessToken);
+
+        $url = $google['info_url'];
+        $header = "Authorization: Bearer " . $accessToken;
+
+        $headers = [];
+        array_push($headers, $header);
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, false);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $response = curl_exec($ch);
+        $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        curl_close($ch);
         print_r(get_object_vars(json_decode($response)));
+        print_r(json_decode($response));
     }
 }
