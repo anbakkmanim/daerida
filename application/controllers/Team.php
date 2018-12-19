@@ -101,14 +101,14 @@ class Team extends CI_Controller
 
     public function inviteTeam(){
         $data['te_idx'] = $this->input->post('te_idx');
-        $data['me_n_idx'] = $this->input->post('me_n_idx');
-        $data['fi_s_idx'] = $this->input->post('fi_s_idx');
+        $user['me_n_idx'] = $this->input->post('me_n_idx');
+        $user['fi_s_idx'] = $this->input->post('fi_s_idx');
         if(count($data['me_n_idx']) != 1){
-            foreach($data['me_n_Idx'] as $row){
-                $this->TeamModel->joinTeam($data['te_idx'],$row);
+            foreach($user as $row){
+                $this->TeamModel->joinTeam($data['te_idx'],$row['me_n_idx'],$row['fi_s_idx']);
             }
         }else{
-            $this->TeamModel->joinTeam($data['te_idx'],$data['me_n_idx'][0]);
+            $this->TeamModel->joinTeam($data['te_idx'],$user['me_n_idx'][0],$user['fi_s_idx'][0]);
         }
 
         alert("팀 초대 성공!");
