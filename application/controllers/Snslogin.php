@@ -186,6 +186,18 @@ class Snslogin extends CI_Controller
         location_href($naver['authorize_url'] . "?response_type=code&client_id=".$naver['client_id']."&redirect_uri=".site_url('/snslogin/naver')."&state=RANDOM_STATE");
     }
 
+    public function authKakao() {
+        $this->session->set_userdata("authMode", "auth");
+        $kakao = $this->config->item("kakao_login", "token");
+        location_href($kakao['authorize_url']."?response_type=code&client_id=" . $kakao['client_id'] ."&redirect_uri=" . site_url('/snslogin/kakao'));
+    }
+
+    public function addKakao() {
+        $this->session->set_userdata("authMode", "add");
+        $kakao = $this->config->item("kakao_login", "token");
+        location_href($kakao['authorize_url']."?response_type=code&client_id=" . $kakao['client_id'] ."&redirect_uri=" . site_url('/snslogin/kakao'));
+    }
+
     public function naver() {
         $naver = $this->config->item('naver_login', 'token');
         $url = $naver['token_url'] . "?grant_type=authorization_code"
@@ -221,7 +233,6 @@ class Snslogin extends CI_Controller
         curl_close($ch);
 
         $token = get_object_vars(get_object_vars(json_decode($response))['response'])['id'];
-        echo $token;
         if ($this->session->authMode == "auth") {
             $result = $this->AuthModel->authSNS('naver', $token);
             if (count($result) == 0) {
@@ -277,7 +288,25 @@ class Snslogin extends CI_Controller
         curl_close($ch);
 
         $token = get_object_vars(get_object_vars(json_decode($response))['response'])['id'];
-
+        if ($this->session->authMode == "auth") {
+            $result = $this->AuthModel->authSNS('kakao', $token);
+            if (count($result) == 0) {
+                alert("해당 카카오 계정이 연결되어있지 않습니다. 회원가입 뒤에 연결해 주세요");
+                location_href("/member/registerNormal");
+                return;
+            } else {
+                $this->auth($result[0]);
+            }
+        } else {
+            $success = $this->AuthModel->addSNS($this->session->me_idx, 'kakao', $token);
+            if ($success) {
+                alert("추가 성공");
+                location_previous();
+            } else {
+                alert("추가 실패");
+                location_previous();
+            }
+        }
 
     }
 }
