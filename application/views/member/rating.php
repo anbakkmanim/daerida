@@ -32,6 +32,9 @@
 									<li>
 										<a href="<?= '/member/companyQnA?me_c_idx='.$CompanyInfo->me_c_idx.'' ?>" class="active">Q&A</a>
 									</li>
+                                    <li>
+                                        <a href="/hiring/hiringList?co_idx=<?= $me_c_idx ?>">채용 공고</a>
+                                    </li>
 								</ul>
 							</div>
 						</div>
