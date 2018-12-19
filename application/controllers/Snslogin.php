@@ -191,4 +191,40 @@ class Snslogin extends CI_Controller
 
         print_r(get_object_vars(json_decode($response)));
     }
+
+    public function kakao() {
+        $kakao = $this->config->item('kakao_login', 'token');
+        $url =
+        $kakao['token_url'] . "?grant_type=authorization_code"
+        . "&client_id=" . $kakao['client_id']
+        . "&redirect_uri=" . site_url('/snslogin/kakao')
+        . "&code=" . $_GET["code"];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $response = curl_exec($ch);
+        $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        $accessToken = get_object_vars(json_decode($response));
+        $accessToken = $accessToken['access_token'];
+
+        $url = "https://kapi.kakao.com/v1/user/signup";
+        $header = "Authorization: Bearer " . $accessToken;
+
+        $headers = [];
+        array_push($headers, $header);
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        $response = curl_exec($ch);
+        $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        curl_close($ch);
+
+        print_r(get_object_vars(json_decode($response)));
+    }
 }
