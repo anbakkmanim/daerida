@@ -71,7 +71,7 @@ geocoder.addressSearch('<?= $company['me_c_sido'] ?>', function(result, status) 
 
         daum.maps.event.addListener(marker, 'click', function() {
             const moveLatLon = coords;
-            map.panTo(moveLatLon);
+            map.setCenter(moveLatLon);
 
             const level = map.getLevel();
             map.setLevel(level - 8);
