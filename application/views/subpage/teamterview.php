@@ -21,16 +21,6 @@
 							<a href="#" class="h4 post-title">억장이 무너진다</a>
 							<p>IoT 데이터 시각화 웹 어플리케이션</p>
 					
-							<div class="author-date">
-								
-								<a class="h6 post__author-name fn" href="#">Maddy Simmons</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										- 7 hours ago
-									</time>
-								</div>
-							</div>
-					
 							
 						</div>
 					
@@ -56,15 +46,6 @@
 							<a href="#" class="h4 post-title">스마트심마니</a>
 							<p>스마트팜 구축을 위한 IoT 플랫폼 개발</p>
 					
-							<div class="author-date">
-								by
-								<a class="h6 post__author-name fn" href="#">JACK SCORPIO</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										- 12 hours ago
-									</time>
-								</div>
-							</div>
 					
 						
 						</div>
@@ -91,15 +72,6 @@
 							<a href="#" class="h4 post-title">NOA</a>
 							<p>학교 시스템 개발 (메신저 & 부가기능)</p>
 					
-							<div class="author-date">
-								by
-								<a class="h6 post__author-name fn" href="#">Maddy Simmons</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										- 2 days ago
-									</time>
-								</div>
-							</div>
 					
 							
 						</div>
@@ -125,17 +97,7 @@
 							<a href="#" class="post-category bg-primary">Interview</a>
 							<a href="#" class="h4 post-title">자치차량</a>
 							<p>방범	레이다용 임베디드 소프트웨어 개발</p>
-					
-							<div class="author-date">
-								by
-								<a class="h6 post__author-name fn" href="#">JACK SCORPIO</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										- 20 days ago
-									</time>
-								</div>
-							</div>
-					
+				
 							
 						</div>
 					
@@ -161,15 +123,6 @@
 							<a href="#" class="h4 post-title">2U</a>
 							<p>데이터 수집 및 자료 전송 App 개발</p>
 					
-							<div class="author-date">
-								by
-								<a class="h6 post__author-name fn" href="#">Maddy Simmons</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										-  1 MONTH ago
-									</time>
-								</div>
-							</div>
 					
 							
 						</div>
@@ -196,17 +149,7 @@
 							<a href="#" class="h4 post-title">도지삽니다</a>
 							<p>아날로그 필터와 OpAmp</p>
 					
-							<div class="author-date">
-								by
-								<a class="h6 post__author-name fn" href="#">JAMES SPIEGEL</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										-  1 MONTH ago
-									</time>
-								</div>
-							</div>
 					
-							
 						</div>
 					
 					</article>
@@ -233,16 +176,7 @@
 							<a href="#" class="h4 post-title">얄리얄리</a>
 							<p>오픈마켓 출시용 모바일 게임 개발</p>
 					
-							<div class="author-date">
-								by
-								<a class="h6 post__author-name fn" href="#">JACK SCORPIO</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										-  2 MONTHS ago
-									</time>
-								</div>
-							</div>
-					
+				
 							
 						</div>
 					
@@ -267,17 +201,7 @@
 							<a href="#" class="post-category bg-purple">Interview</a>
 							<a href="#" class="h4 post-title">쿠키요미</a>
 							<p>Kraken unleashed VR Roller Coaster</p>
-					
-							<div class="author-date">
-								by
-								<a class="h6 post__author-name fn" href="#">MADDY SIMMONS</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										- 2 months ago
-									</time>
-								</div>
-							</div>
-					
+
 							
 						</div>
 					
@@ -303,15 +227,7 @@
 							<a href="#" class="h4 post-title">떡잎마을 두부방범대</a>
 							<p>딥러닝 기반 지능형 CCTV 솔루션 개발</p>
 					
-							<div class="author-date">
-								by
-								<a class="h6 post__author-name fn" href="#">MADDY SIMMONS</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										- 3 months ago
-									</time>
-								</div>
-							</div>
+				
 					
 							
 						</div>
