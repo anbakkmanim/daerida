@@ -48,21 +48,25 @@
 									<div class="col col-lg-4 col-md-4 col-3 pl-0">
 										<script>
 											function checkID() {
-												$.ajax({
-													type: "GET",
-													url: "/member/idCheck",
-													data: {"me_id" : $("#me_id")[0].value},
-													success (data) {
-														console.log(data)
-														if (data == 1) {
-															alert("사용 가능한 아이디입니다.");
-															$("#submit").attr("disabled", false);
-															$("#me_id").attr("readonly", true);
-														} else {
-															alert("중북된 아이디입니다.");
-														}
-													}
-												})
+											    if($("#me_id")[0].value == ""){
+											        alert("아이디를 기입해주십시오.")
+                                                }else {
+                                                    $.ajax({
+                                                        type: "GET",
+                                                        url: "/member/idCheck",
+                                                        data: {"me_id": $("#me_id")[0].value},
+                                                        success(data) {
+                                                            console.log(data)
+                                                            if (data == 1) {
+                                                                alert("사용 가능한 아이디입니다.");
+                                                                $("#submit").attr("disabled", false);
+                                                                $("#me_id").attr("readonly", true);
+                                                            } else {
+                                                                alert("중북된 아이디입니다.");
+                                                            }
+                                                        }
+                                                    })
+                                                }
 											}
 										</script>
 									<a onclick="checkID()" class="btn btn-purple btn-lg" style="color:#fff" id="checkid">중복확인<div class="ripple-container"></div></a>
