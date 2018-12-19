@@ -2,9 +2,19 @@
 
 <?php $this->load->view('layout/nav'); ?>
 
-<div id="map" style="width: calc(100vw - 140px); height: calc(100vh - 70px); margin-left: 70px; margin-right: 70px; position: fixed;"></div>
+<div id="map" style="
+width: 100vw;
+height: 100vh;
+position: fixed;
+@media (min-width: 992px) {
+    width: calc(100vw - 140px);
+    height: calc(100vh - 70px);
+    margin-left: 70px;
+    margin-right: 70px;
+}
+"></div>
 
-<div style="position: fixed; margin-left: 70px;">
+<div style="position: fixed; @media (min-width: 992px) { margin-left: 70px; }">
   <div class="mt-2 ml-2">
     <div class="card d-inline-block">
       <div class="card-body">
