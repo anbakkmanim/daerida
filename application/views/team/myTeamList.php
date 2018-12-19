@@ -35,8 +35,8 @@ if ($this->session->me_type != "me_n_") {
 <!--                        </div>-->
 
                         <div class="post-content">
-                            <div href="#" class="post-category badge-primary"><?= $item['te_isOpen'] ?></div>
-                            <div href="#" class="post-category badge-success">내 역할 : <?= $item['fi_s_name'] ?></div>
+                            <div href="#" class="post-category badge-primary" style="font-size: 14px"><?= $item['te_isOpen'] ?></div>
+                            <div href="#" class="post-category badge-success" style="font-size: 14px">내 역할 : <?= $item['fi_s_name'] ?></div>
                             <a href="/team/board?te_idx=<?= $item['te_idx']?>" class="h4 post-title"><?=  $item['te_name'] ?></a>
 							<p><?= $item['te_info'] ?></p>
 

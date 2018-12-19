@@ -73,7 +73,7 @@ if ($mode == "all") {
                         </div>
 
                         <div class="post-content">
-                            <div href="#" class="post-category <?= ($item['re_endDate'] != null) ? "badge-primary" : "badge-success" ?>" id="fromnow-<?= $item['re_idx']?>">
+                            <div href="#" class="post-category <?= ($item['re_endDate'] != null) ? "badge-primary" : "badge-success" ?>" id="fromnow-<?= $item['re_idx']?>" style="font-size: 12px">
                                 <?php
                                 if ($item['re_endDate'] != null) {
                                     ?>
@@ -91,8 +91,8 @@ if ($mode == "all") {
 							<a href="/hiring/detail?re_idx=<?= $item['re_idx']?>" class="h4 post-title"><?=  $item['re_content'] ?></a>
 
 							<div class="author-date">
-								<a class="h6 post__author-name fn" href="/member/Company?me_c_idx=<?= $item['me_c_idx'] ?>"><?= $item['me_c_name'] ?></a>
-								<div class="post__date">
+								<a class="h5 text-t-none fn font-weight-normal" href="/member/Company?me_c_idx=<?= $item['me_c_idx'] ?>"><?= $item['me_c_name'] ?></a>
+								<div class="h6 font-weight-normal">
 									<span class="published">
                                         <?php
                                             if ($item['re_startDate'] != null) {

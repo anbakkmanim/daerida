@@ -39,8 +39,8 @@ if ($this->session->me_type != "me_n_") {
                     <article class="hentry blog-post">
 
                         <div class="post-content">
-                            <div href="#" class="post-category badge-primary"><?= $item['te_isOpen'] ?></div>
-                            <div href="#" class="post-category badge-success">분야 : <?= $item['fi_l_name'] ?></div>
+                            <div href="#" class="post-category badge-primary" style="font-size: 14px"><?= $item['te_isOpen'] ?></div>
+                            <div href="#" class="post-category badge-success" style="font-size: 14px">분야 : <?= $item['fi_l_name'] ?></div>
 
                             <a href="#" class="h4 post-title" onclick="joinTeam(event, <?= $item['te_idx'] ?>)"><?=  $item['te_name'] ?></a>
 							<p><?= $item['te_info'] ?></p>
