@@ -1,7 +1,7 @@
 <?php $this->load->view('layout/header'); ?>
 <?php $this->load->view('layout/nav'); ?>
 
-	<div class="container">
+	<div class="container mt-5">
 		<div class="row">
 			<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
 				<div class="ui-block">
