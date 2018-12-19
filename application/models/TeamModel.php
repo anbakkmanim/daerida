@@ -26,8 +26,8 @@ class TeamModel extends CI_Model
           $fi_l_idx,
           $te_isOpen
         );
-        // array로 반환
-        return $this->db->query($sql, $bind)->result_array();
+        // bool로 반환
+        return $this->db->insert_id($sql, $bind);
     }
     /**
      * 팀 목록
