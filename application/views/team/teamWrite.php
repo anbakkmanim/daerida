@@ -74,6 +74,7 @@
 						
 				
 						<div class="col mt-2 ">
+							
 							<input type="submit" class="btn btn-secondary btn-lg  btn--half-width  m-0 mb-2 mr-4" value="생성">
 							<input type="button" class="btn btn-secondary btn-lg btn--half-width  m-0 mb-2" data-dismiss="modal" aria-label="Close" value="취소">
 						</div>
