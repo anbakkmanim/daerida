@@ -2,6 +2,12 @@
 
 <?php $this->load->view('layout/nav'); ?>
 
+<?php $this->load->view('layout/inner_header', [
+    'title' => '내 지원 목록',
+    'content' => '상태를 확인하세요.',
+    'color' => 1
+]); ?>
+
 <div class="container mt-3">
   <div class="row">
     <div class="col-12">

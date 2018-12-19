@@ -1,30 +1,17 @@
-hp<?php $this->load->view('layout/header'); ?>
+<?php $this->load->view('layout/header'); ?>
 
 <?php $this->load->view('layout/nav'); ?>
 
-<div class="container">
+<?php $this->load->view('layout/inner_header', [
+    'title' => '팀 게시물 작성',
+    'content' => '글을 작성해 주세요.',
+    'color' => 3
+]); ?>
+
+
+<div class="container mt-3">
 	<div class="row">
 		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-			<div class="ui-block responsive-flex">
-				<div class="ui-block-title">
-					<div class="h6 title">Olympus Forums</div>
-					<form class="w-search">
-						<div class="form-group with-button is-empty">
-							<input class="form-control" type="text" placeholder="Search the forums...">
-							<button>
-								<svg class="olymp-magnifying-glass-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
-							</button>
-						<span class="material-input"></span></div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="container">
-	<div class="row">
-		<div class="col col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
 
 			<div class="ui-block">
 				<div class="ui-block-title bg-blue">
@@ -62,93 +49,8 @@ hp<?php $this->load->view('layout/header'); ?>
 
 		</div>
 
-		<div class="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Featured Topics</h6>
-				</div>
-				<div class="ui-block-content">
-
-					
-					<!-- Widget Featured Topics -->
-					
-					<ul class="widget w-featured-topics">
-						<li>
-							<svg class="svg-inline--fa fa-star fa-w-18 icon" aria-hidden="true" data-prefix="fa" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><!-- <i class="icon fa fa-star" aria-hidden="true"></i> -->
-							<div class="content">
-								<a href="#" class="h6 title">The new Goddess of War trailer was launched at E3!</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">2 hours, 16 minutes ago</time>
-							</div>
-						</li>
-						<li>
-							<svg class="svg-inline--fa fa-star fa-w-18 icon" aria-hidden="true" data-prefix="fa" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><!-- <i class="icon fa fa-star" aria-hidden="true"></i> -->
-							<div class="content">
-								<a href="#" class="h6 title">This year’s ComixCon will have the best presentations</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">14 hours, 36 minutes ago</time>
-							</div>
-						</li>
-						<li>
-							<svg class="svg-inline--fa fa-star fa-w-18 icon" aria-hidden="true" data-prefix="fa" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path></svg><!-- <i class="icon fa fa-star" aria-hidden="true"></i> -->
-							<div class="content">
-								<a href="#" class="h6 title">Here are the behind-the-scenes photos of “Vilords”</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">9 hours, 8 minutes ago</time>
-							</div>
-						</li>
-					</ul>
-					
-					<!-- ... end Widget Featured Topics -->
-				</div>
-			</div>
-
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Recent Topics</h6>
-				</div>
-				<div class="ui-block-content">
-
-					
-					<!-- Widget Recent Topics -->
-					
-					<ul class="widget w-featured-topics">
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">Summer is Coming! Picnic in the east boulevard park</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">26 minutes ago</time>
-								<div class="forums">The Community</div>
-							</div>
-						</li>
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">Kung Fighters released a new video, check it out here!</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">44 minutes ago</time>
-								<div class="forums">The Boombox</div>
-							</div>
-						</li>
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">What’s your favourite season?</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">59 minutes ago</time>
-								<div class="forums">The Community</div>
-							</div>
-						</li>
-						<li>
-							<div class="content">
-								<a href="#" class="h6 title">Who had the best presentation at this year’s E3? Rate them!</a>
-								<time class="entry-date updated" datetime="2017-06-24T18:18">1 hour, 3 minutes ago</time>
-								<div class="forums">Arcade Planet</div>
-							</div>
-						</li>
-					</ul>
-					
-					<!-- ... end Widget Recent Topics -->
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
 
-<script>
-document.querySelector(".bg-group").style.backgroundImage = "url(/assets/img/top-header5.png)";
-</script>
 
 <?php $this->load->view('layout/footer'); ?>

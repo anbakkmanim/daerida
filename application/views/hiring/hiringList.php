@@ -2,12 +2,22 @@
 
 <?php $this->load->view('layout/nav'); ?>
 
-<?php $this->load->view('layout/inner_header', [
-	'title' => '구인 공고 리스트',
-	'content' => '구인 공고들을 확인할 수 있습니다.',
-	'color' => 1
-]); ?>
-<?php if($mode == "all") { ?>
+<?php
+if ($mode == "all") {
+    $this->load->view('layout/inner_header', [
+        'title' => '구인 공고 리스트',
+        'content' => '구인 공고들을 확인할 수 있습니다.',
+        'color' => 1
+    ]);
+} else {
+    $this->load->view('layout/inner_header', [
+        'title' => '즐겨찾는 기업의 구인 공고 리스트',
+        'content' => '내가 즐겨찾기 한 기업들의 구인공고 리스트를 볼 수 있습니다.',
+        'color' => 1
+    ]);
+}
+?>
+<?php if($mode == "all" ) { ?>
 <div class="container">
 	<div class="row">
 		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3">
