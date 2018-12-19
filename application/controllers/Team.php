@@ -70,7 +70,11 @@ class Team extends CI_Controller
         $fi_l_idx = $_POST['fi_l_idx']; // 팀 분야 대분류
         $te_isOpen = $_POST['te_isOpen']; // 팀 공개 여부
 
-        $te_idx = $this->TeamModel->createTeam($te_name, $te_info , $fi_l_idx, $te_isOpen);
+        $return = $this->TeamModel->createTeam($te_name, $te_info , $fi_l_idx, $te_isOpen);
+
+        if($return){
+            $te_idx = $this->db->insert_id();
+        }
         $fi_s_idx = $this->ProfileModel->mySField($me_n_idx);
 
         $result = $this->TeamModel->joinTeam($te_idx, $me_n_idx, $fi_s_idx);
