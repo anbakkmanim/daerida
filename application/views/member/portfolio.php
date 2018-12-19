@@ -32,10 +32,10 @@
 						<div class="col col-xl-8 m-auto">
 								<ul class="profile-menu mb-0">
 									<li>
-										<a href="<?= '/member/User?me_n_idx='.$userInfo->me_n_idx.'' ?>" >정보</a>
+										<a href="<?= '/member/User?me_n_idx='.$userInfo->me_n_idx.'' ?>" style="font-size:1.25rem;" >정보</a>
 									</li>
 									<li>
-										<a href="<?= '/member/portfolio?me_n_idx='.$userInfo->me_n_idx.'' ?>"  class="active">포트폴리오</a>
+										<a href="<?= '/member/portfolio?me_n_idx='.$userInfo->me_n_idx.'' ?>"  class="active" style="font-size:1.25rem;">포트폴리오</a>
 									</li>
 								</ul>
 							</div>
@@ -71,7 +71,7 @@
 										<svg class="olymp-plus-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-plus-icon" ></use></svg>
 									</a>
 							
-									<a href="#"  class="title h5" data-toggle="modal" data-target="#create-photo-album">포트폴리오 추가</a>
+									<a href="#"  class="title h5" data-toggle="modal" data-target="#create-photo-album" style="font-size:1.25rem;">포트폴리오 추가</a>
 							
 								</div>
 							
@@ -105,8 +105,8 @@
 													<a href='#' data-toggle='modal' data-target='#open-photo-popup-v2' onclick='getinfo(<?=$row->ca_idx?>)' class='full-block'></a>
 											</div>
 											<div class='content'>
-													<a href='#'  class='title h5'><?=$row->ca_career?></a>
-													<span class='sub-title'><?=$row->ca_info?></span>
+													<a href='#'  class='title h5 mt-4' style="font-size:1.25rem;"><?=$row->ca_career?></a>
+													<span class='sub-title' style="font-size:1rem;"> <?=$row->ca_info?></span>
 													<div class='swiper-container'>
 															<div class='swiper-wrapper'></div>
 															<div class='swiper-pagination'></div>
