@@ -5,7 +5,7 @@
 
 		<a href="/" class="logo">
 			<div class="img-wrap">
-				<img src="<?= '/assets/img/logo.png' ?>" alt="Daerida">
+				<img src="/assets/img/logo.png" alt="Daerida">
 			</div>
 		</a>
 
@@ -13,24 +13,24 @@
 			<ul class="left-menu">
 				<li>
 					<a href="#" class="js-sidebar-open">
-                            <svg class="olymp-menu-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="메뉴 열기"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-menu-icon' ?>"></use></svg>
+                            <svg class="olymp-menu-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="메뉴 열기"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
                         </a>
                     </li>
 				<li>
 					<a href="/hiring/hiringList">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="최근 구인 공고들"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon' ?>"></use></svg>
+						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="최근 구인 공고들"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
 					</a>
 				</li>
 				<?php if ($this->session->me_type == "me_c_") {?>
                     <li>
                         <a href="/hiring/broadcastWrite">
-                            <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="구인 공고 작성"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
+                            <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="구인 공고 작성"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
                         </a>
                     </li>
 
                     <li>
                         <a href="/hiring/resume">
-                            <svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="지원자"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
+                            <svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="지원자"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
                         </a>
                     </li>
 				<?php } else { ?>
@@ -38,36 +38,36 @@
                     <?php if ($this->session->me_idx != null){ ?>
                         <li>
                             <a href="/hiring/followList">
-                                <svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팔로우 한 회사의 구인"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-star-icon' ?>"></use></svg>
+                                <svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팔로우 한 회사의 구인"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
                             </a>
                         </li>
                     <?php } ?>
                     <li>
                         <a href="/team/teamList">
-                            <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀 목록"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
+                            <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀 목록"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
                         </a>
                     </li>
                     <?php if ($this->session->me_idx != null){ ?>
                         <li>
                             <a href="/team/myTeamList">
-                                <svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="내 팀"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon' ?>"></use></svg>
+                                <svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="내 팀"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon"></use></svg>
                             </a>
                         </li>
                         <li>
                             <a href="/hiring/appliedList">
-                                <svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="구직 신청 한 공고"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
+                                <svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="구직 신청 한 공고"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
                             </a>
                         </li>
                     <?php } ?>
 				<?php } ?>
 				<li>
 					<a href="/hiring/map">
-						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="지도"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-badge-icon' ?>"></use></svg>
+						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="지도"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
 					</a>
 				</li>
 				<li>
 					<a href="/subpage/teamterview">
-						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀터뷰"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-cupcake-icon' ?>"></use></svg>
+						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="팀터뷰"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use></svg>
 					</a>
 				</li>
 			
@@ -78,7 +78,7 @@
 	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1">
 		<a href="/" class="logo">
 			<div class="img-wrap">
-				<img src="<?= '/assets/img/logo.png' ?>" alt="Daerida">
+				<img src="/assets/img/logo.png" alt="Daerida">
 			</div>
 			<div class="title-block">
 				<h6 class="logo-title">Daerida</h6>
@@ -89,27 +89,27 @@
 			<ul class="left-menu">
 				<li>
 					<a href="#" class="js-sidebar-open">
-						<svg class="olymp-close-icon left-menu-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-close-icon' ?>"></use></svg>
+						<svg class="olymp-close-icon left-menu-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 						<span class="left-menu-title">닫기</span>
 					</a>
 				</li>
 				<li>
 					<a href="/hiring/hiringList">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon' ?>"></use></svg>
+						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
 						<span class="left-menu-title">최근 구인 공고들</span>
 					</a>
 				</li>
 				<?php if ($this->session->me_type == "me_c_") { ?>
 					<li>
 					<a href="/hiring/broadcastWrite">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WRITE APPLY"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
+						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WRITE APPLY"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
 						<span class="left-menu-title">구인 공고 작성</span>
 					</a>
 					</li>
 
                     <li>
                         <a href="/hiring/resume">
-                            <svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY JOB OFFER"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
+                            <svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY JOB OFFER"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
                             <span class="left-menu-title">지원자</span>
                         </a>
                     </li>
@@ -118,27 +118,27 @@
                     <?php if($this->session->me_idx != null){ ?>
                         <li>
                             <a href="/hiring/followList">
-                                <svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Follow Job Offer"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-star-icon' ?>"></use></svg>
+                                <svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Follow Job Offer"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
                                 <span class="left-menu-title">팔로우 한 회사의 구인</span>
                             </a>
                         </li>
                     <?php } ?>
                     <li>
                         <a href="/team/teamList">
-                            <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="TEAM BUILD"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon' ?>"></use></svg>
+                            <svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="TEAM BUILD"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
                             <span class="left-menu-title">팀 목록</span>
                         </a>
                     </li>
                     <?php if ($this->session->me_idx != null){ ?>
                         <li>
                             <a href="/team/myTeamList">
-                                <svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY TEAM"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon' ?>"></use></svg>
+                                <svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY TEAM"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-headphones-icon"></use></svg>
                                 <span class="left-menu-title">내 팀</span>
                             </a>
                         </li>
                         <li>
                             <a href="/hiring/appliedList">
-                                <svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY JOB OFFER"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon' ?>"></use></svg>
+                                <svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MY JOB OFFER"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
                                 <span class="left-menu-title">구직 신청 한 공고</span>
                             </a>
                         </li>
@@ -146,13 +146,13 @@
 				<?php } ?>
 				<li>
 					<a href="/hiring/map">
-						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MAP"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-badge-icon' ?>"></use></svg>
+						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MAP"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
 						<span class="left-menu-title">지도</span>
 					</a>
 				</li>
 				<li>
 					<a href="/subpage/teamterview">
-						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="TEAMTERVIEW"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-cupcake-icon' ?>"></use></svg>
+						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="TEAMTERVIEW"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use></svg>
 						<span class="left-menu-title">팀터뷰</span>
 					</a>
 				</li>
@@ -171,7 +171,7 @@
 
 	<div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
 		<a href="/" class="logo js-sidebar-open" >
-			<img src="<?= '/assets/img/logo.png' ?>" alt="Daerida" >
+			<img src="/assets/img/logo.png" alt="Daerida" >
 		</a>
 
 	</div>
@@ -179,7 +179,7 @@
 	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
 		<a href="/" class="logo">
 			<div class="img-wrap" style="width:100%">
-				<img src="<?= '/assets/img/logo.png' ?>" style="height: 50px" alt="Daerida">
+				<img src="/assets/img/logo.png" style="height: 50px" alt="Daerida">
 			</div>
 			<div class="title-block">
 				<h6 class="logo-title">Daerida</h6>
@@ -226,13 +226,13 @@
 					echo "/member/Company?me_c_idx=". $this->session->me_idx;
 				?>">
 
-						<svg class="olymp-menu-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-menu-icon' ?>"></use></svg>
+						<svg class="olymp-menu-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
 
 						<span>프로필 설정</span>
 					</a>
 				</li>
 					<a href="/member/logout">
-						<svg class="olymp-logout-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-logout-icon' ?>"></use></svg>
+						<svg class="olymp-logout-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
 						<span>로그아웃</span>
 					</a>
@@ -292,14 +292,14 @@
 				else
 					echo "/member/Company?me_c_idx=". $this->session->me_idx;
 				?>">
-                                            <svg class="olymp-menu-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-menu-icon' ?>"></use></svg>
+                                            <svg class="olymp-menu-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
 
 										<span>프로필 설정</span>
 									</a>
 								</li>
 								<li>
 									<a href="/member/logout">
-										<svg class="olymp-logout-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-logout-icon' ?>"></use></svg>
+										<svg class="olymp-logout-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
 										<span>로그아웃</span>
 									</a>
@@ -317,7 +317,7 @@
 				?>
 				"  >
 					<div class="author-title">
-						<?= $this->session->me_name?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="<?= '/assets/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon' ?>"></use></svg>
+						<?= $this->session->me_name?> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
 					</div>
 					<span class="author-subtitle"><?php
 					 	if ($this->session->me_type == "me_n_")

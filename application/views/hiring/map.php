@@ -26,9 +26,10 @@
 
 <script src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=<?= $this->config->item('daum_map_token', 'token'); ?>&libraries=drawing,clusterer,services"></script>
 <script>
+    const mapLevel = 12;
 const map = new daum.maps.Map(document.getElementById('map'), {
 	center: new daum.maps.LatLng(36.463185, 128.413770),
-	level: 12
+	level: mapLevel
 });
 
 // const place = new daum.maps.services.Places();
@@ -64,13 +65,15 @@ geocoder.addressSearch('<?= $company['me_c_sido'] ?>', function(result, status) 
         });
 
         // 인포윈도우로 장소에 대한 설명을 표시합니다
-        var infowindow = new daum.maps.InfoWindow({
+        const infowindow = new daum.maps.InfoWindow({
             content: '<div style="width:150px;text-align:center;padding:6px 0;"><?= $company['me_c_name'] ?></div>'
         });
         infowindow.open(map, marker);
 
-        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-        map.setCenter(coords);
+        daum.maps.event.addListener(marker, 'click', function() {
+            map.setCenter(coords);
+            map.setLevel(mapLevel - 8);
+        });
     }
 });
 <?php } ?>

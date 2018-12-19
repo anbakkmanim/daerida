@@ -70,7 +70,14 @@ class Snslogin extends CI_Controller
     }
 
     public function addGoogle() {
-
+        if ($this->session->me_idx == null) {
+            alert("로그인 해주세요");
+            location_previous();
+            return;
+        }
+        $this->session->set_userdata("authMode", "add");
+        $google = $this->config->item("google_login", "token");
+        location_href($google['authorize_url']."?scope=https://www.googleapis.com/auth/userinfo.profile&access_type=offline&include_granted_scopes=true&state=state_parameter_passthrough_value&response_type=code&client_id=" . $google['client_id'] ."&redirect_uri=" . site_url('/snslogin/google'));
     }
 
     public function naver() {
@@ -213,6 +220,26 @@ class Snslogin extends CI_Controller
         $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
         curl_close($ch);
-        print_r(get_object_vars(json_decode($response))['id']);
+        $token = (get_object_vars(json_decode($response))['id']);
+
+        if ($this->session->authMode == "auth") {
+            $result = $this->AuthModel->authSNS('google', $token);
+            if (count($result) == 0) {
+                alert("해당 구글 계정이 연결되어있지 않습니다. 회원가입 뒤에 연결해 주세요");
+                location_href("/member/registerNormal");
+                return;
+            } else {
+                $this->auth($result[0]);
+            }
+        } else {
+            $success = $this->AuthModel->addSNS($this->session->me_idx, 'google', $token);
+            if ($success) {
+                alert("추가 성공");
+                location_href("/");
+            } else {
+                alert("추가 실패");
+                location_href("/");
+            }
+        }
     }
 }

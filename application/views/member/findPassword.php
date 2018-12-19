@@ -62,7 +62,7 @@
 							<div class="col col-lg-12 col-sm-12 col-sm-12 col-12">
 								<div class="remember">
 
-									<a href="<?= '/member/findid' ?>"  class="forgot">아이디가 기억나지 않는다면?</a>
+									<a href="/member/findid"  class="forgot">아이디가 기억나지 않는다면?</a>
 								</div>
 							</div>
 					
@@ -105,7 +105,7 @@
 			<div class="modal-content">
 				<a href="#"  class="close icon-close" data-dismiss="modal" aria-label="Close">
 					<svg class="olymp-close-icon">
-						<use xlink:href="<?= '/svg-icons/sprites/icons.svg#olymp-close-icon' ?>" ></use>
+						<use xlink:href="/svg-icons/sprites/icons.svg#olymp-close-icon" ></use>
 					</svg>
 				</a>
 
