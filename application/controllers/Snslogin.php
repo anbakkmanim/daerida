@@ -216,7 +216,7 @@ class Snslogin extends CI_Controller
         $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
         curl_close($ch);
-        print_r($status_code);
         print_r(get_object_vars(json_decode($response)));
+        echo $response;
     }
 }
