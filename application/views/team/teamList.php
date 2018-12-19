@@ -23,8 +23,10 @@ if ($this->session->me_type != "me_n_") {
         }
     }
 </script>
+
 <section class="blog-post-wrap medium-padding80" style="padding-top: 20px; padding-bottom: 0;">
 	<div class="container">
+        <a href="/team/teamWrite" class="btn btn-blue btn-md">팀 만들기</a>
 		<div class="row">
 
             <?php
@@ -53,6 +55,7 @@ if ($this->session->me_type != "me_n_") {
 					
 							</div>
 						</div>
+
 					
 					</article>
 					
