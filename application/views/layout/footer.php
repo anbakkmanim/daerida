@@ -1,9 +1,9 @@
 <?= $_SERVER['REQUEST_URI'] ?>
 
 <?php if (
-	strpos($_SERVER['REQUEST_URI'], '/member/login') == false &&
-	strpos($_SERVER['REQUEST_URI'], '/hiring/map') == false &&
-	strpos($_SERVER['REQUEST_URI'], '/hiring/resumeSend') == false
+	$_SERVER['REQUEST_URI'] != '/member/login' &&
+	$_SERVER['REQUEST_URI'] != '/hiring/map' &&
+	$_SERVER['REQUEST_URI'] != '/hiring/resumeSend'
 	) { ?>
 <div class="footer pt-0" id="footer" style="width: 100vw;">
 	<div class="container-fluid">
