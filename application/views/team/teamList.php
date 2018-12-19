@@ -3,8 +3,8 @@
 <?php $this->load->view('layout/nav'); ?>
 
 <?php $this->load->view('layout/inner_header', [
-	'title' => '내 팀 목록',
-	'content' => '팀을 선택해 주세요.',
+	'title' => '팀 목록',
+	'content' => '가입을 원하는 팀을 선택해 주세요.',
 	'color' => 2
 ]); ?>
 
@@ -16,35 +16,39 @@ if ($this->session->me_type != "me_n_") {
 }
 ?>
 
+<script>
+    function joinTeam(e, idx) {
+        if (confirm("확인을 누르면 " + e.target.innerText + " 기업에 가입 신청이 됩니다.")) {
+
+        }
+    }
+</script>
 <section class="blog-post-wrap medium-padding80" style="padding-top: 20px; padding-bottom: 0;">
 	<div class="container">
 		<div class="row">
 
             <?php
-                foreach($teamList as $item) {
-
+            foreach($teamList as $item) {
             ?>
             <div class="col col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                 <div class="ui-block">
                     <!-- Post -->
 
                     <article class="hentry blog-post">
-<!---->
-<!--                        <div class="post-thumb">-->
-<!--                            <img src="--><?//= '/uploads/profile/' . $item['me_c_profile'] ?><!--" alt="photo">-->
-<!--                        </div>-->
 
                         <div class="post-content">
                             <div href="#" class="post-category badge-primary"><?= $item['te_isOpen'] ?></div>
-                            <a href="/team/board?te_idx=<?= $item['te_idx']?>" class="h4 post-title"><?=  $item['te_name'] ?></a>
+                            <div href="#" class="post-category badge-success">분야 : <?= $item['fi_l_name'] ?></div>
+
+                            <a href="#" class="h4 post-title" onclick="joinTeam(event, <?= $item['te_idx'] ?>)"><?=  $item['te_name'] ?></a>
 							<p><?= $item['te_info'] ?></p>
 
 							<div class="post-additional-info inline-items">
 								<div class="comments-shared">
-									<a href="/team/board?te_idx=<?= $item['te_idx']?>" class="post-add-icon inline-items">
+									<div href="/team/board?te_idx=<?= $item['te_idx']?>" class="post-add-icon inline-items">
 										<svg class="olymp-speech-balloon-icon"><use xlink:href="/assets/svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
                                         <span><?= $item['post_Count'] ?>개의 게시물이 있습니다.</span>
-									</a>
+									</div>
 								</div>
 					
 							</div>

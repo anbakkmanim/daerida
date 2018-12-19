@@ -13,12 +13,12 @@
             <!-- Administration Tool -->
             <?php if ($details['me_c_id'] == $this->session->me_id) { ?>
 
-            <div class="ui-block">
+            <form class="ui-block" action="/hiring/fieldAdd" method="POST">
                 <div class="ui-block-content">
                     <div class="col">
                         <div class="form-group label-floating">
                             <label class="control-label">모집 공고 제목</label>
-                            <input class="form-control" placeholder="" type="text" name="">
+                            <input class="form-control" placeholder="" type="text" name="re_fi_explain">
                         </div>
                     </div>
                     <div class="col">
@@ -50,7 +50,7 @@
                                     </script>
                                         <select class="selectpicker form-control" tabindex="-98" onchange="getsfield(event)" name="me_rfield">
                                                 <?php
-                                                    foreach($rfield as $row){
+                                                    foreach($lfields as $row){
                                                         echo "<option name='me_rfield' value=".$row['fi_l_idx'].">".$row['fi_l_name']."</option>";
                                                     }
                                                 ?>
@@ -59,9 +59,9 @@
                             </div>
                             <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="form-group label-floating is-empty">
-                                    <select class="selectpicker form-control" tabindex="-98" id="sfield" name="me_sfield">
+                                    <select class="selectpicker form-control" tabindex="-98" id="sfield" name="fi_s_idx">
                                                 <?php
-                                                    foreach($sfield as $row){
+                                                    foreach($sfields as $row){
                                                         echo "<option value=".$row['fi_s_idx'].">".$row['fi_s_name']."</option>";
                                                     }
                                                 ?>
@@ -73,12 +73,12 @@
                     <div class="col">
                         <div class="form-group label-floating">
                             <label class="control-label">모집 인원</label>
-                            <input class="form-control" placeholder="" type="text" name="">
+                            <input class="form-control" placeholder="" type="text" name="re_fi_personal">
                         </div>
                     </div>
-                    <a class="btn btn-primary mt-3 mb-0 d-block text-white">공고 추가</a>
+                    <input class="btn btn-primary mt-3 mb-0 d-block text-white" type="submit" value="공고추가">
                 </div>
-            </div>
+            </form>
             <?php } ?>
 
             <!-- End Administration Tool -->

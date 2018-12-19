@@ -21,12 +21,20 @@ class Member extends CI_Controller
 
     // 세션에 자신의 인덱스가 존재하면 메인페이지 아니면 로그인 페이지로 리다이렉트
     public function login(){
+        $this->config->load('token', true);
+
+        $data = [
+            'naver' => $this->config->item('naver_login', 'token'),
+            'kakao' => $this->config->item('kakao_login', 'token'),
+            'google' => $this->config->item('google_login', 'token')
+        ];
+
         $me_idx = $this->session->me_idx;
 
         if($me_idx != null){
             location_href("/hiring/hiringList");
         }else{
-            $this->load->view('member/login');
+            $this->load->view('member/login', $data);
         }
     }
 
@@ -176,6 +184,8 @@ class Member extends CI_Controller
         $data['me_profile'] = null;
         if($this->upload->do_upload('me_profile')){
             $data['me_profile'] = $this->upload->data('file_name');
+        } else {
+            alert($this->upload->display_errors());
         }
 
         $data['me_answer'] = $this->input->post('me_answer');

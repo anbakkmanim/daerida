@@ -148,14 +148,14 @@ class RecruitModel extends CI_Model
      * @return mixed SQL Value (Boolean)
      */
     public function addField($re_idx, $re_fi_explain, $fi_s_idx, $re_fi_personal) {
-        $sql = "insert into RECRUIT_FIELD_TB (re_idx, re_fi_explain, fi_s_idx, re_fi_explain) values (?, ?, ?, ?)";
+        $sql = "insert into RECRUIT_FIELD_TB (re_idx, re_fi_explain, fi_s_idx, re_fi_personal) values (?, ?, ?, ?)";
         $bind = array(
             $re_idx,
             $re_fi_explain,
             $fi_s_idx,
             $re_fi_personal
         );
-        return $this->db->query($sql, $bind)->result_array();
+        return $this->db->query($sql, $bind);
     }
 
     /**
