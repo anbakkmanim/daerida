@@ -54,6 +54,7 @@
 	<!-- ... end Header Standard Landing  -->
 	<div class="header-spacer--standard"></div>
 
+	<div class="mt-5 d-block d-lg-none"></div>
 	<div class="stunning-header-content">
 		<h1 class="stunning-header-title"><?= $title ?></h1>
 		<ul class="breadcrumbs">
