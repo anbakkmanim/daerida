@@ -10,6 +10,7 @@ class Team extends CI_Controller
         parent::__construct();
         $this->load->model('TeamModel');
         $this->load->model('RegisterModel');
+        $this->load->model('ProfileModel');
     }
 
     /**
@@ -53,7 +54,6 @@ class Team extends CI_Controller
 
     public function teamWrite(){
         $data['rfield'] = $this->RegisterModel->getRField();
-        $data['sfield'] = $this->RegisterModel->getSField(array("rfield" => 1));
         $this->load->view('team/teamWrite', $data);
     }
 
@@ -64,12 +64,16 @@ class Team extends CI_Controller
      * @Params te_name, te_info, fi_l_idx, te_isOpen
      */
     public function createTeam() {
+        $me_n_idx = $_POST['me_n_idx'];
         $te_name = $_POST['te_name']; // 팀 이름
         $te_info = $_POST['te_info']; // 팀 정보
-        $fi_s_idx = $_POST['fi_s_idx']; // 팀 분야 소분류
+        $fi_l_idx = $_POST['fi_l_idx']; // 팀 분야 대분류
         $te_isOpen = $_POST['te_isOpen']; // 팀 공개 여부
 
-        $result = $this->TeamModel->createTeam($te_name, $te_info , $fi_l_idx, $te_isOpen);
+        $te_idx = $this->TeamModel->createTeam($te_name, $te_info , $fi_l_idx, $te_isOpen);
+        $fi_s_idx = $this->ProfileModel->mySField($me_n_idx);
+
+        $result = $this->TeamModel->joinTeam($te_idx, $me_n_idx, $fi_s_idx);
         if ($result) {
             alert('팀 생성 성공!');
         } else {
