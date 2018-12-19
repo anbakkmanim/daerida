@@ -7,9 +7,9 @@
 		<div class="row mb60">
 			<div class="col col-xl-5 col-lg-5 m-auto col-md-12 col-sm-12 col-12">
 				<div class="crumina-module crumina-heading align-center">
-					<div class="heading-sup-title">스타트업 도우미</div>
+					<div class="heading-sup-title"  style="font-size: 1rem">스타트업 도우미</div>
 					<h2 class="heading-title">최고의 사람을 데리다!</h2>
-					<p class="heading-text">
+					<p class="heading-text" style="font-size: 1.2rem">
             전국 스타트업 네트워크 서비스입니다. <br>
             사람을 데리다 모집하고, 공유하고, 팀을 만들어 보세요!<br>
             데리다는 여러분을 기다립니다.            
@@ -27,11 +27,11 @@
 					
 					<div class="crumina-module crumina-info-box" data-mh="box--classic">
 						<div class="info-box-image">
-							<img src="/assets/img/구인구직.png" alt="icon" style="width:110px">
+							<img src="/assets/img/구인구직.png" alt="icon" width="200">
 						</div>
 						<div class="info-box-content">
-							<h3 class="info-box-title">구인·구직</h3>
-							<p class="info-box-text">
+							<h3 class="info-box-title" >구인·구직</h3>
+							<p class="info-box-text" style="font-size: 1.2rem">
                 원하는 회사를, 원하는 직원을 원하는 데로!
               </p>
 						</div>
@@ -47,11 +47,11 @@
 					
 					<div class="crumina-module crumina-info-box" data-mh="box--classic">
 						<div class="info-box-image">
-							<img src="/assets/img/포트폴리오.png" alt="icon" style="width:110px">
+							<img src="/assets/img/포트폴리오.png" alt="icon" width="200">
 						</div>
 						<div class="info-box-content">
 							<h3 class="info-box-title">포트폴리오</h3>
-							<p class="info-box-text">
+							<p class="info-box-text" style="font-size: 1.2rem">
                 나만의 포트폴리오를 정리하고, 관리할 수 있어요!
               </p>
 						</div>
@@ -67,11 +67,11 @@
 					
 					<div class="crumina-module crumina-info-box" data-mh="box--classic">
 						<div class="info-box-image">
-							<img src="/assets/img/이력서.png" alt="icon" style="width:110px">
+							<img src="/assets/img/이력서.png" alt="icon" width="200">
 						</div>
 						<div class="info-box-content">
 							<h3 class="info-box-title">이력서</h3>
-							<p class="info-box-text">
+							<p class="info-box-text" style="font-size: 1.2rem">
                 원하는 회사에 이력서를 넣을 수 있다!
               </p>
 						</div>
@@ -87,11 +87,11 @@
 					
 					<div class="crumina-module crumina-info-box" data-mh="box--classic">
 						<div class="info-box-image">
-							<img src="/assets/img/팀빌딩.png" alt="icon" style="width:110px">
+							<img src="/assets/img/팀빌딩.png" alt="icon" width="200">
 						</div>
 						<div class="info-box-content">
 							<h3 class="info-box-title">팀빌딩</h3>
-							<p class="info-box-text">
+							<p class="info-box-text" style="font-size: 1.2rem">
                 같이 프로젝트할 팀원을 데리다가 구해드립니다!
               </p>
 						</div>
@@ -115,34 +115,13 @@
 
 <section class="medium-padding180 bg-body">
 	<div class="container">
-		<!-- <div class="row">
-			<div class="col col-xl-5 col-lg-5 col-md-12 col-sm-12  m-auto">
-				<div class="crumina-module crumina-heading">
-					<div class="heading-sup-title">DAERIDA</div>
-					<h2 class="heading-title"> <span class="c-primary">데리다</span> 사용 설명서</h2>
-					<p class="heading-text">
-            데리다는 일반 로그인뿐만 아니라 구글과 카카오 계정 로그인도 지원하고 있습니다.
-            포트폴리오를 나만의 체계적인 방식으로 관리할 수 있습니다.
-            내가 작성한 이력서를 원하는 회사에 보낼 수 있습니다.
-            만들고 싶은 프로젝트는 있는 같이 할 팀원이 부족하다면,
-            대회에 같이 나갈 팀원이 부족하다면 팀빌딩을 할 수 있습니다. <br><br>
-            <span class="c-primary">데리다</span>는 여러분을 기다리고 있습니다.
-					</p>
-				</div>
-			</div>
-
-			<div class="col col-xl-6 col-lg-6 ml-auto col-md-12 col-sm-12  align-right">
-				<img src="/assets/img/screen_.png" alt="screen" class="negative-margin-right150">
-			</div>
-		</div> -->
-
 		<div class="col">
 			<div class="row">
 				<div class="col">
 					<div class="crumina-module crumina-heading">
 						<div class="heading-sup-title">DAERIDA</div>
 						<h2 class="heading-title"> <span class="c-primary">데리다</span> 사용 설명서</h2>
-						<p class="heading-text">
+						<p class="heading-text"  style="font-size: 1.2rem">
 							데리다는 일반 로그인뿐만 아니라 구글과 카카오 계정 로그인도 지원하고 있습니다.
 							포트폴리오를 나만의 체계적인 방식으로 관리할 수 있습니다.
 							내가 작성한 이력서를 원하는 회사에 보낼 수 있습니다.
@@ -168,8 +147,8 @@
 				<div class="crumina-module crumina-heading align-center">
 					<div class="heading-sup-title">ANBAKKMANIM</div>
 					<h2 class="heading-title">안밖마님</h2>
-					<p class="heading-text">
-						소프트웨어와 하드웨어, 안과 밖을 어우르는 사람들에게 서비스를 제공하겠습니다.
+					<p class="heading-text" style="font-size: 1.2rem">
+						소프트웨어와 하드웨어, 안과 밖을 어우르는 <br>사람들에게 서비스를 제공하겠습니다.
 					</p>
 				</div>
 			</div>
@@ -192,7 +171,7 @@
 				
 						<a href="#" class="h5 teammembers-item-name">남현욱</a>
 				
-						<div class="teammembers-item-prof">TEAM LEADER</div>
+						<div class="teammembers-item-prof"  style="font-size: .85rem">TEAM LEADER</div>
 				
 						<ul class="socials socials--round">
 							<li>
@@ -229,7 +208,7 @@
 				
 						<a href="#" class="h5 teammembers-item-name">김민기</a>
 				
-						<div class="teammembers-item-prof">BACKEND DEVELOPER</div>
+						<div class="teammembers-item-prof" style="font-size: .85rem">BACKEND DEVELOPER</div>
 				
 						<ul class="socials socials--round">
 							<li>
@@ -266,7 +245,7 @@
 				
 						<a href="#" class="h5 teammembers-item-name">남가영</a>
 				
-						<div class="teammembers-item-prof">FRONTEND DEVELOPER</div>
+						<div class="teammembers-item-prof" style="font-size: .85rem">FRONTEND DEVELOPER</div>
 				
 						<ul class="socials socials--round">
 							<li>
@@ -303,7 +282,7 @@
 				
 						<a href="#" class="h5 teammembers-item-name">서상희</a>
 				
-						<div class="teammembers-item-prof">BACKEND DEVELOPER</div>
+						<div class="teammembers-item-prof" style="font-size: .85rem">BACKEND DEVELOPER</div>
 				
 						<ul class="socials socials--round">
 							<li>
@@ -334,7 +313,7 @@
 				
 						<a href="#" class="h5 teammembers-item-name">진우민</a>
 				
-						<div class="teammembers-item-prof">BACKEND DEVELOPER</div>
+						<div class="teammembers-item-prof" style="font-size: .85rem">BACKEND DEVELOPER</div>
 				
 						<ul class="socials socials--round">
 							<li>
@@ -365,7 +344,7 @@
 				
 						<a href="#" class="h5 teammembers-item-name">채단비</a>
 				
-						<div class="teammembers-item-prof">FRONTEND DEVELOPER</div>
+						<div class="teammembers-item-prof" style="font-size: .85rem">FRONTEND DEVELOPER</div>
 				
 						<ul class="socials socials--round">
 							<li>
