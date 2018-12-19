@@ -85,7 +85,6 @@ class Team extends CI_Controller
      * @Redirect : team/teamList
      */
     public function joinTeam() {
-
         $te_idx = $_POST['te_idx']; // 팀 인덱스
         $me_n_idx = $_POST['me_n_idx']; // 멤버 아이디
         $fi_s_idx = $_POST['fi_s_idx']; // 역할 분야 소분류
@@ -100,6 +99,22 @@ class Team extends CI_Controller
         location_href('/team/teamList');
     }
 
+    public function inviteTeam(){
+        $data['te_idx'] = $this->input->post('te_idx');
+        $data['me_n_idx'] = $this->input->post('me_n_idx');
+        $data['fi_s_idx'] = $this->input->post('fi_s_idx');
+        if(count($data['me_n_idx']) != 1){
+            foreach($data['me_n_Idx'] as $row){
+                $this->TeamModel->joinTeam($data['te_idx'],$row);
+            }
+        }else{
+            $this->TeamModel->joinTeam($data['te_idx'],$data['me_n_idx'][0]);
+        }
+
+        alert("팀 초대 성공!");
+        location_href('/team/teamList');
+    }
+
     /**
      * 팀 공고 작성
      * @METHOD GET
@@ -108,7 +123,9 @@ class Team extends CI_Controller
      */
 
     public function invite() {
-        $this->load->view('team/invite');
+        $data['te_idx'] = $this->input->get('te_idx');
+        $result['user'] = $this->TeamModel->getAllUser();
+        $this->load->view('team/invite',$result);
     }
 
     /**
