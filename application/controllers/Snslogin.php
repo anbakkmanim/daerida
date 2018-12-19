@@ -175,7 +175,7 @@ class Snslogin extends CI_Controller
         $accessToken = get_object_vars(json_decode($response));
         $accessToken = $accessToken['access_token'];
 
-        $url = "https://openapi.naver.com/v1/nid/me";
+        $url = $naver['info_url'];
         $header = "Authorization: Bearer " . $accessToken;
 
         $headers = [];
@@ -211,7 +211,7 @@ class Snslogin extends CI_Controller
         $accessToken = get_object_vars(json_decode($response));
         $accessToken = $accessToken['access_token'];
 
-        $url = "https://kapi.kakao.com/v1/user/signup";
+        $url = $kakao['info_url'];
         $header = "Authorization: Bearer " . $accessToken;
 
         $headers = [];
