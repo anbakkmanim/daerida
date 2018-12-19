@@ -26,7 +26,7 @@ if ($this->session->me_type != "me_n_") {
 
 <section class="blog-post-wrap medium-padding80" style="padding-top: 20px; padding-bottom: 0;">
 	<div class="container">
-        <a href="/team/teamWrite" class="btn btn-blue btn-md">팀 만들기</a>
+        <a href="/team/teamWrite" class="btn btn-purple btn-md">팀 만들기</a>
 		<div class="row">
 
             <?php
