@@ -22,7 +22,7 @@ class Snslogin extends CI_Controller
             'me_profile' => $row['me_n_profile'],
             'me_id' => $row['me_n_id'],
             'me_password' => $row['me_n_password'],
-            'me_table' => $row,
+            'me_table' => "MEMBER_NORMAL_TB",
             'me_type' => "me_n_"
         );
         $this->session->set_userdata($user_data);
