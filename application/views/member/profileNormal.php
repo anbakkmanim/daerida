@@ -304,7 +304,7 @@
 							</li>
                             <li>
 								<h5 class="title">이메일:</h5>
-								<a href="mailto:<?= $me_n_email ?>" class="text" style="font-weight:500;"><?= $me_n_email ?></a>
+								<a href="mailto:<?= $me_n_email ?>" class="text" style="font-size:1rem;"><?= $me_n_email ?></a>
 							</li>
 							<li>
 								<h5 class="title">전화번호:</h5>

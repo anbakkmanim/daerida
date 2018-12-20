@@ -167,7 +167,7 @@
 							</li>
 							<li>
 								<h5 class="title">이메일:</h5>
-									<a href="mailto:<?= $me_c_email ?>" class="text h5" style="font-weight:500;"><?= $me_c_email ?></a>
+									<a href="mailto:<?= $me_c_email ?>" class="text h5" style="font-size:1rem;"><?= $me_c_email ?></a>
 							</li>
 							<li>
 								<h5 class="title">초봉:</h5>
