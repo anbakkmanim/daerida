@@ -194,8 +194,12 @@
 						<img alt="author" src="/uploads/profile/<?=$this->session->me_idx != null ? ($this->session->me_profile != null ? $this->session->me_profile : "default.png") : "default.png" ?>" class="avatar" width="40px">
 						<span class="icon-status online"></span>
 					</div>
-					<a href="<?php if($this->session->me_idx != null){ ?>
-					            /member/User?me_n_idx=<?=$this->session->me_idx?>
+					<a href="<?php if($this->session->me_idx != null){
+					                    if($this->session->me_type == "me_n_"){ ?>
+					                        /member/User?me_n_idx=<?=$this->session->me_idx?>
+					                    <?php } else { ?>
+					                        /member/Company?me_c_idx=<?=$this->session->me_idx?>
+					                    <?php } ?>
                              <?php } else { ?>
                                 #
                              <?php } ?>"     class="author-name fn">
