@@ -27,7 +27,7 @@ foreach ($result as $rows) {
 				
 					<thead>
 				
-					<tr>
+					<tr class="text-center">
 						<th width="200">
 							작성자
 						</th>

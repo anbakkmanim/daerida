@@ -78,7 +78,7 @@
 						<td class="forum">
 							<div class="forum-item">
 								
-								<div class="content">
+								<div class="content text-center">
 									<a href="/team/boardView?te_po_idx=<?= $rows['te_po_idx'] ?>" class="h6 title"><?= $rows['te_po_title'] ?></a>
 								</div>
 <!--								<div class="author-started">-->
