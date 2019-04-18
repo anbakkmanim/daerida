@@ -13,6 +13,11 @@
    ~~포트가 사용 중일 수 있으니 오류가 나면 다른 포트로 시도해보자.~~  
    3000포트로 고정되었습니다.
 
+## DB ERD 
+[AQueryTool](http://aquerytool.com:80/aquerymain/index/?rurl=4f7fe869-6b14-4cd9-a9d4-626f8eb361f7)
+
+비밀번호 1ycjmo
+
 ## Coding Conventions
 
 [코딩 컨벤션 보기](https://github.com/hw0k/daerida/blob/master/coding-convention.md)
